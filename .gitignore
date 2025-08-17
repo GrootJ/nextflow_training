@@ -1,8 +1,9 @@
+# macOS
 .DS_Store
-.cache
-.idea
-serve
-work
+
+# Nextflow runtime
+work/
+.work/
 .nextflow*
 results
 transcript-index
@@ -27,3 +28,39 @@ _scripts/.venv/
 
 # Tutorial working directories (created by learners during exercises)
 hello-nf-core/core-hello/
+
+.cache/
+timeline*
+reports/
+trace.txt
+dag.png
+flowchart.png
+*.report.html
+*.timeline.html
+*.dag.svg
+
+# nf-test
+.nf-test*
+**/.nf-test.log
+
+# Results & large artifacts
+results/
+output/
+**/results/
+**/output/
+*.bam
+*.bai
+*.sam
+*.cram
+*.fastq
+*.fq
+*.gz
+*.zip
+*.tar
+*.vcf
+*.idx
+*.bw
+*.bigWig
+
+# VS Code
+.vscode/
