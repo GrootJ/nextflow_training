@@ -152,27 +152,10 @@ hide:
 
 </div>
 
-## Archived materials
+!!! info "Looking for archived training materials?"
 
-### Original Nextflow training materials
-
-These were developed at the start of the project. We are in the process of deprecating them in favor of the newer materials listed above. However, some topics covered in the original trainings are not yet represented in the newer material, so we are keeping these around for reference, with the caveat that they are no longer maintained and some exercises may no longer work.
-
-- **Fundamentals Training** — Intended as a reference material for anyone looking to build complex workflows with Nextflow ([docs](archive/basic_training/) / [code](https://github.com/nextflow-io/training/tree/master/nf-training))
-
-- **Advanced Training** — More advanced features of the Nextflow language and runtime, and how to use them to write efficient and scalable data-intensive workflows ([docs](archive/advanced/) / [code](https://github.com/nextflow-io/training/tree/master/nf-training-advanced))
-
-### Other/Experimental
-
-These are other training courses that are not being actively taught/maintained and that we may repurpose elsewhere or delete in the near future.
-The corresponding materials are not available within the training environment.
-You can still find the materials in the GitHub repository and download them for local use.
-
-- **nf-customize** — Configuring nf-core pipelines ([docs](other/nf_customize) / [code](https://github.com/nextflow-io/training/tree/master/other/nf-customize))
-
-- **troubleshoot** — Troubleshooting exercises ([docs](other/troubleshoot) / [code](https://github.com/nextflow-io/training/tree/master/other/troubleshoot))
-
-- **hands-on (rnaseq)** — Developing a pipeline for bulk RNAseq (deprecated) ([docs](other/hands_on) / [code](https://github.com/nextflow-io/training/tree/master/other/hands-on))
+    Older training materials (Fundamentals Training, Advanced Training, and other experimental courses) have been removed from the training portal as they are incompatible with Nextflow 3.0 strict syntax.
+    If you need access to these materials, they are available in the [git history](https://github.com/nextflow-io/training) prior to January 2026.
 
 ---
 
