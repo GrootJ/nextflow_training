@@ -72,7 +72,7 @@ The **only** sustainable way to fix translations is to improve the LLM prompts:
 3. **Re-run the translation** via GitHub Actions:
 
    - Go to **Actions** → **Translate** → **Run workflow**
-   - Select language and command (`translate-page` or `update-outdated`)
+   - Select language and command (`sync`)
 
 4. **Submit a PR** with both the prompt change and regenerated translation
 
@@ -178,7 +178,7 @@ flowchart TD
 - Translations preserve line-by-line structure for easy diff review
 - Each language gets a separate PR for independent review/merge
 - The system uses git commit timestamps to detect outdated files
-- **Prompt changes trigger automatic fixes** with multi-pass verification (up to 8 iterations) until all translations comply
+- **Prompt changes trigger automatic re-translation** of affected files
 
 ---
 
@@ -240,7 +240,7 @@ flowchart TD
 2. **Trigger the translation workflow** to regenerate:
 
    - Go to **Actions** → **Translate** → **Run workflow**
-   - Select the language and `translate-page` or `update-outdated`
+   - Select the language and `sync`
    - Target the PR branch (not `master`)
 
 3. **Review the updated translation** to verify the fix
@@ -279,9 +279,8 @@ If a language exists but is missing content (e.g., Portuguese has `hello_nextflo
 
 1. Go to **Actions** → **Translate** → **Run workflow**
 2. Select language (e.g., `pt`)
-3. Select command: `add-missing`
-4. Optionally specify a filter (e.g., `nf4_science`)
-5. The workflow creates a PR with translations
+3. Select command: `sync`
+4. The workflow creates a PR with translations
 
 ### Using the CLI (Requires API Key)
 
@@ -290,14 +289,14 @@ For maintainers with `ANTHROPIC_API_KEY` access:
 ```bash
 cd _scripts
 
-# Check what's missing
-uv run python translate.py list-missing pt
+# Preview what needs translating
+uv run translate.py sync pt --dry-run
 
-# Translate one file at a time (recommended for large files)
-uv run python translate.py translate-page -l pt -p nf4_science/index.md
+# Translate one file at a time
+uv run translate.py translate nf4_science/index.md --lang pt
 
-# Or translate all missing with a filter
-uv run python translate.py add-missing -l pt --include nf4_science
+# Or sync all (update outdated + add missing + remove orphaned)
+uv run translate.py sync pt
 ```
 
 ### After Translation
@@ -350,9 +349,8 @@ See existing language prompts for examples (e.g., `docs/pt/llm-prompt.md`).
 
 Add the language code to:
 
-1. `_scripts/docs.py` - `SUPPORTED_LANGS` list
+1. `docs/language_names.yml` - map code to language name
 2. `docs/en/mkdocs.yml` - `extra.alternate` for language switcher
-3. `.github/workflows/translate.yml` - language dropdown options
 
 ### Step 4: Generate Initial Translations
 
@@ -360,8 +358,7 @@ Use GitHub Actions:
 
 1. Go to **Actions** → **Translate** → **Run workflow**
 2. Select the new language
-3. Select command: `add-missing`
-4. Filter to `hello_nextflow` for initial testing
+3. Select command: `sync`
 
 ### Step 5: Review and Iterate
 
@@ -406,74 +403,30 @@ All commands run from `_scripts/` directory:
 cd _scripts
 ```
 
-### List Commands (No API key required)
+### Translation Commands
 
 ```bash
-# List files that need translation
-uv run python translate.py list-missing <lang>
+# Preview what sync would do (no API key required)
+uv run translate.py sync <lang> --dry-run
 
-# List translations older than English source
-uv run python translate.py list-outdated <lang>
+# Sync all translations (update outdated + add missing + remove orphaned)
+uv run translate.py sync <lang>
 
-# List translated files with no English source (orphans)
-uv run python translate.py list-removable <lang>
-```
+# Sync with filter pattern
+uv run translate.py sync <lang> --include hello_nextflow
 
-### Translation Commands (Require ANTHROPIC_API_KEY)
-
-```bash
 # Translate a single file
-uv run python translate.py translate-page -l <lang> -p <path>
-
-# Translate all missing files
-uv run python translate.py add-missing -l <lang>
-
-# Translate missing files matching pattern
-uv run python translate.py add-missing -l <lang> --include hello_nextflow
-
-# Update outdated translations (smart minimal diff)
-uv run python translate.py update-outdated -l <lang>
-
-# Update with verification pass (recommended)
-uv run python translate.py update-outdated -l <lang> --verify
-
-# Remove orphaned translations
-uv run python translate.py remove-removable -l <lang>
+uv run translate.py translate <path> --lang <lang>
 ```
-
-### Fix Commands (For Prompt Updates)
-
-When translation prompts are updated, use these commands to fix existing translations:
-
-```bash
-# Fix all translations for a language (multi-pass until compliant)
-uv run python translate.py fix-translations -l <lang>
-
-# Preview what would be checked (no API calls)
-uv run python translate.py fix-translations -l <lang> --dry-run
-
-# Fix specific files only
-uv run python translate.py fix-translations -l <lang> --files hello_nextflow/index.md
-
-# Customize max iterations (default: 8)
-uv run python translate.py fix-translations -l <lang> --max-iterations 5
-```
-
-The `fix-translations` command:
-
-- Reviews each translation against current prompt guidelines
-- Makes minimal changes to fix violations
-- Loops until no more changes needed (or max iterations reached)
-- Runs automatically via GitHub Actions when prompts change
 
 ### Preview Commands (No API key required)
 
 ```bash
 # Serve docs locally
-uv run python docs.py serve <lang>
+uv run docs.py serve <lang>
 
 # Build docs
-uv run python docs.py build-lang <lang>
+uv run docs.py build-lang <lang>
 ```
 
 ---

@@ -11,927 +11,747 @@
 # ]
 # ///
 """
-LLM-powered translation using Anthropic Claude.
+LLM-powered translation CLI for Nextflow training docs.
 
 Usage:
-    uv run translate.py list-missing pt
-    uv run translate.py translate-page --language pt --en-path docs/en/docs/index.md
-    uv run translate.py update-outdated --language pt
+    uv run translate.py sync pt --dry-run
+    uv run translate.py sync pt
+    uv run translate.py translate docs/en/docs/index.md --lang pt
 """
 
+from __future__ import annotations
+
 import json
+import os
+import re
 import secrets
 import subprocess
 import sys
+from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
+from typing import NamedTuple
 
 import anthropic
 import git
 import typer
 import yaml
-from github import Github
 from rich.console import Console
-from rich.progress import Progress, SpinnerColumn, TextColumn
 
-app = typer.Typer(help="Translation tools for Nextflow training docs")
-console = Console()
-console_err = Console(stderr=True)
+# =============================================================================
+# Configuration
+# =============================================================================
 
-# Must be run from repo root
 REPO_ROOT = Path(__file__).parent.parent
-DOCS_PATH = REPO_ROOT / "docs"
-EN_DOCS_PATH = DOCS_PATH / "en" / "docs"
-SCRIPTS_PATH = REPO_ROOT / "_scripts"
+DOCS_ROOT = REPO_ROOT / "docs"
+EN_DOCS = DOCS_ROOT / "en" / "docs"
+SCRIPTS_DIR = REPO_ROOT / "_scripts"
 
-# Model to use for translations
-# Using alias to automatically get the latest Sonnet version
-# Sonnet is ~40% cheaper than Opus and recommended for translation tasks
 MODEL = "claude-sonnet-4-5"
+MAX_TOKENS = 16384
 
-# Priority directories for translation (most important first)
 PRIORITY_DIRS = ["hello_nextflow", "hello_nf-core", "nf4_science", "envsetup"]
+
+# Comment styles by language
+HASH_COMMENT_LANGS = {"python", "py", "sh", "bash", "dockerfile", "yaml", "yml", "toml"}
+SLASH_COMMENT_LANGS = {"console"}  # Note: json has no comments
+MIXED_COMMENT_LANGS = {"nextflow", "groovy", "nf", "java", "kotlin"}  # # and /* */
+
+
+# =============================================================================
+# Exceptions
+# =============================================================================
+
+
+class TranslationError(Exception):
+    """Base exception for translation errors."""
+
+
+class ConfigError(TranslationError):
+    """Configuration or setup error."""
+
+
+class StructureMismatchError(TranslationError):
+    """Translation structure doesn't match source."""
+
+
+# =============================================================================
+# Data structures
+# =============================================================================
+
+
+@dataclass
+class TranslationFile:
+    """A file that needs translation."""
+
+    en_path: Path
+    lang_path: Path
+    language: str
+
+    @property
+    def exists(self) -> bool:
+        return self.lang_path.exists()
+
+    @property
+    def relative_path(self) -> Path:
+        return self.en_path.relative_to(EN_DOCS)
+
+
+class Header(NamedTuple):
+    line_no: int
+    level: str
+    title: str
+    anchor: str
+
+
+class Link(NamedTuple):
+    line_no: int
+    start: int
+    end: int
+    text: str
+    url: str
+    title: str | None
+    attrs: str | None
+
+
+class HtmlLink(NamedTuple):
+    line_no: int
+    start: int
+    end: int
+    attrs: str
+    text: str
+
+
+@dataclass
+class CodeBlock:
+    start_line: int
+    end_line: int
+    lang: str
+    lines: list[str]
+
+
+# =============================================================================
+# Path utilities
+# =============================================================================
+
+
+@lru_cache
+def get_languages() -> dict[str, str]:
+    """Load language code -> name mapping."""
+    path = DOCS_ROOT / "language_names.yml"
+    if not path.exists():
+        raise ConfigError(f"Language names file not found: {path}")
+    return yaml.safe_load(path.read_text(encoding="utf-8"))
+
+
+def get_translation_languages() -> list[str]:
+    """Get all translation language codes (excludes English)."""
+    return [
+        d.name
+        for d in DOCS_ROOT.iterdir()
+        if d.is_dir() and (d / "mkdocs.yml").exists() and d.name != "en"
+    ]
+
+
+def en_to_lang_path(en_path: Path, lang: str) -> Path:
+    """Convert English doc path to equivalent path in target language."""
+    return DOCS_ROOT / lang / "docs" / en_path.relative_to(EN_DOCS)
+
+
+def lang_to_en_path(lang_path: Path, lang: str) -> Path:
+    """Convert language doc path to equivalent English path."""
+    return EN_DOCS / lang_path.relative_to(DOCS_ROOT / lang / "docs")
+
+
+def iter_en_docs() -> list[Path]:
+    """List all English docs in priority order."""
+    paths: list[Path] = []
+    seen: set[Path] = set()
+
+    def add(p: Path) -> None:
+        if p not in seen:
+            paths.append(p)
+            seen.add(p)
+
+    # Root files first
+    for p in sorted(EN_DOCS.glob("*.md")):
+        add(p)
+
+    # Priority directories
+    for dir_name in PRIORITY_DIRS:
+        dir_path = EN_DOCS / dir_name
+        if dir_path.exists():
+            for p in sorted(dir_path.rglob("*.md")):
+                add(p)
+
+    # Remaining
+    for p in sorted(EN_DOCS.rglob("*.md")):
+        add(p)
+
+    return paths
+
+
+# =============================================================================
+# Prompt loading
+# =============================================================================
 
 
 @lru_cache
 def get_general_prompt() -> str:
     """Load the general translation prompt."""
-    prompt_path = SCRIPTS_PATH / "general-llm-prompt.md"
-    return prompt_path.read_text(encoding="utf-8")
+    path = SCRIPTS_DIR / "general-llm-prompt.md"
+    if not path.exists():
+        raise ConfigError(f"General prompt not found: {path}")
+    return path.read_text(encoding="utf-8")
 
 
 @lru_cache
-def get_langs() -> dict[str, str]:
-    """Load language names from YAML file."""
-    return yaml.safe_load(
-        (DOCS_PATH / "language_names.yml").read_text(encoding="utf-8")
-    )
-
-
 def get_lang_prompt(lang: str) -> str:
     """Load language-specific prompt."""
-    prompt_path = DOCS_PATH / lang / "llm-prompt.md"
-    if not prompt_path.exists():
-        console.print(f"[red]Error:[/red] Prompt file not found: {prompt_path}")
-        raise typer.Exit(code=1)
-    return prompt_path.read_text(encoding="utf-8")
+    path = DOCS_ROOT / lang / "llm-prompt.md"
+    if not path.exists():
+        raise ConfigError(f"Language prompt not found: {path}")
+    return path.read_text(encoding="utf-8")
 
 
-def to_lang_path(en_path: Path, lang: str) -> Path:
-    """Convert an English docs path to a language-specific path."""
-    rel_path = en_path.relative_to(EN_DOCS_PATH)
-    return DOCS_PATH / lang / "docs" / rel_path
+def build_translation_prompt(
+    lang: str, lang_name: str, en_content: str, existing: str | None = None
+) -> str:
+    """Build the full prompt for translation."""
+    parts = [get_general_prompt(), get_lang_prompt(lang)]
 
-
-def to_en_path(lang_path: Path, lang: str) -> Path:
-    """Convert a language-specific path to an English docs path."""
-    rel_path = lang_path.relative_to(DOCS_PATH / lang / "docs")
-    return EN_DOCS_PATH / rel_path
-
-
-def iter_en_docs() -> list[Path]:
-    """
-    Iterate English markdown files in priority order.
-
-    Returns files in this order:
-    1. Root-level .md files
-    2. Priority directories (hello_nextflow, etc.)
-    3. Remaining directories
-    """
-    paths: list[Path] = []
-
-    # Root level files first
-    paths.extend(sorted(EN_DOCS_PATH.glob("*.md")))
-
-    # Priority directories
-    for dir_name in PRIORITY_DIRS:
-        dir_path = EN_DOCS_PATH / dir_name
-        if dir_path.exists():
-            paths.extend(sorted(dir_path.rglob("*.md")))
-
-    # Remaining directories (skip already processed)
-    priority_prefixes = tuple(str(EN_DOCS_PATH / d) for d in PRIORITY_DIRS)
-    for path in sorted(EN_DOCS_PATH.rglob("*.md")):
-        if path.parent == EN_DOCS_PATH:
-            continue  # Already added root files
-        if str(path).startswith(priority_prefixes):
-            continue  # Already added priority dirs
-        paths.append(path)
-
-    return paths
-
-
-def check_api_key() -> None:
-    """Check that ANTHROPIC_API_KEY is set and provide helpful error if not."""
-    import os
-
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        console.print(
-            "[red]Error:[/red] ANTHROPIC_API_KEY environment variable not set"
+    if existing:
+        parts.append(
+            "## Existing Translation\n"
+            "Update minimally: add new content, remove deleted content, "
+            "fix guideline violations, preserve correct lines exactly.\n\n"
+            f"Previous translation:\n%%%\n{existing}%%%"
         )
-        console.print()
-        console.print("[dim]To fix this, set the environment variable:[/dim]")
-        console.print("  export ANTHROPIC_API_KEY='your-api-key-here'")
-        console.print()
-        console.print("[dim]Get your API key from:[/dim]")
-        console.print("  https://console.anthropic.com/settings/keys")
-        raise typer.Exit(code=1)
 
-
-def resolve_en_path(en_path: Path) -> Path:
-    """
-    Resolve an English docs path to an absolute path.
-
-    Accepts paths in several formats:
-    - Absolute path: /full/path/to/docs/en/docs/file.md
-    - Relative to repo root: docs/en/docs/file.md
-    - Relative to EN_DOCS_PATH: hello_nextflow/index.md
-    """
-    # If already absolute and exists, use it
-    if en_path.is_absolute() and en_path.exists():
-        return en_path
-
-    # Try as relative to current directory
-    if en_path.exists():
-        return en_path.resolve()
-
-    # Try as relative to repo root
-    repo_relative = REPO_ROOT / en_path
-    if repo_relative.exists():
-        return repo_relative
-
-    # Try as relative to EN_DOCS_PATH (e.g., "hello_nextflow/index.md")
-    en_docs_relative = EN_DOCS_PATH / en_path
-    if en_docs_relative.exists():
-        return en_docs_relative
-
-    # Return original for error message
-    return en_path
-
-
-@app.command()
-def translate_page(
-    language: str = typer.Option(..., "--language", "-l", envvar="LANGUAGE"),
-    en_path: Path = typer.Option(..., "--en-path", "-p", envvar="EN_PATH"),
-):
-    """Translate a single page from English to another language."""
-    check_api_key()
-
-    if language == "en":
-        console.print("[red]Error:[/red] Cannot translate to English (source language)")
-        raise typer.Exit(code=1)
-
-    # Resolve the path
-    en_path = resolve_en_path(en_path)
-
-    if not en_path.exists():
-        console.print(f"[red]Error:[/red] Source file not found: {en_path}")
-        raise typer.Exit(code=1)
-
-    langs = get_langs()
-    if language not in langs:
-        console.print(f"[red]Error:[/red] Unknown language: {language}")
-        raise typer.Exit(code=1)
-
-    language_name = langs[language]
-    out_path = to_lang_path(en_path, language)
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-
-    original_content = en_path.read_text(encoding="utf-8")
-    old_translation = (
-        out_path.read_text(encoding="utf-8") if out_path.exists() else None
+    parts.append(
+        f"## Task\nTranslate to {lang} ({lang_name}).\n\n"
+        f"Original content:\n%%%\n{en_content}%%%"
     )
 
-    console.print(f"Translating [cyan]{en_path.name}[/cyan] to {language_name}")
+    return "\n\n".join(parts)
 
-    # Build prompt
-    prompt_parts = [get_general_prompt(), get_lang_prompt(language)]
 
-    if old_translation:
-        console.print("  [dim]Updating existing translation[/dim]")
-        prompt_parts.extend(
-            [
-                "There is an existing translation that may be outdated. Update only where necessary:",
-                "- Add new parts from the English source",
-                "- Remove parts deleted from the English source",
-                "- Update changed parts",
-                "- Fix any violations of current instructions",
-                "- Otherwise preserve the translation LINE-BY-LINE, AS-IS",
-                "",
-                "Do NOT rephrase correct lines or change formatting unless required.",
-                "Minimize diffs for easier human review.",
-                "",
-                "Previous translation:",
-                f"%%%\n{old_translation}%%%",
-            ]
-        )
+# =============================================================================
+# Git utilities
+# =============================================================================
 
-    prompt_parts.extend(
-        [
-            f"Translate to {language} ({language_name}).",
-            "Original content:",
-            f"%%%\n{original_content}%%%",
-        ]
-    )
 
-    prompt = "\n\n".join(prompt_parts)
+@lru_cache
+def _get_repo() -> git.Repo:
+    return git.Repo(REPO_ROOT)
 
-    with Progress(
-        SpinnerColumn(),
-        TextColumn("[progress.description]{task.description}"),
-        console=console,
-    ) as progress:
-        progress.add_task("Calling Claude API...", total=None)
-        client = anthropic.Anthropic()
-        message = client.messages.create(
-            model=MODEL,
-            max_tokens=16384,
-            messages=[{"role": "user", "content": prompt}],
-        )
 
-    out_content = f"{message.content[0].text.strip()}\n"
-    out_path.write_text(out_content, encoding="utf-8", newline="\n")
-    console.print(f"  [green]Saved:[/green] {out_path}")
+def get_file_commit_time(path: Path) -> int | None:
+    """Get timestamp of last commit affecting a file."""
+    try:
+        commits = list(_get_repo().iter_commits(paths=str(path), max_count=1))
+        return commits[0].committed_date if commits else None
+    except git.GitCommandError:
+        return None
 
 
-@app.command()
-def list_missing(language: str):
-    """List English files that haven't been translated."""
-    missing = []
-    for en_path in iter_en_docs():
-        lang_path = to_lang_path(en_path, language)
-        if not lang_path.exists():
-            missing.append(en_path)
-
-    if not missing:
-        console.print(f"[green]All files translated for {language}[/green]")
-        return
-
-    console.print(f"[yellow]Missing translations for {language}:[/yellow]")
-    for path in missing:
-        console.print(f"  {path.relative_to(REPO_ROOT)}")
-    console.print(f"\nTotal: {len(missing)} files")
-
-
-@app.command()
-def list_outdated(language: str):
-    """List translations older than their English source (by git commit time)."""
-    outdated = get_outdated_files(language)
-
-    if not outdated:
-        console.print(f"[green]All translations up to date for {language}[/green]")
-        return
-
-    console.print(f"[yellow]Outdated translations for {language}:[/yellow]")
-    for path in outdated:
-        console.print(f"  {path.relative_to(REPO_ROOT)}")
-    console.print(f"\nTotal: {len(outdated)} files")
-
-
-@app.command()
-def list_removable(language: str):
-    """List translation files without English source (orphaned)."""
-    lang_docs = DOCS_PATH / language / "docs"
-    if not lang_docs.exists():
-        console.print(f"[red]Error:[/red] Language docs not found: {lang_docs}")
-        raise typer.Exit(code=1)
-
-    removable = []
-    for lang_path in lang_docs.rglob("*.md"):
-        en_path = to_en_path(lang_path, language)
-        if not en_path.exists():
-            removable.append(lang_path)
-
-    if not removable:
-        console.print(f"[green]No orphaned files for {language}[/green]")
-        return
-
-    console.print(f"[yellow]Orphaned files for {language}:[/yellow]")
-    for path in removable:
-        console.print(f"  {path.relative_to(REPO_ROOT)}")
-    console.print(f"\nTotal: {len(removable)} files")
-
-
-@app.command()
-def update_outdated(
-    language: str = typer.Option(..., "--language", "-l", envvar="LANGUAGE"),
-    verify: bool = typer.Option(
-        False,
-        "--verify",
-        "-v",
-        help="Run verification pass after translation to ensure compliance with prompt guidelines",
-    ),
-    verify_iterations: int = typer.Option(
-        2,
-        "--verify-iterations",
-        help="Number of verification iterations (only used with --verify)",
-    ),
-):
-    """Update all outdated translations for a language."""
-    outdated = get_outdated_files(language)
-
-    if not outdated:
-        console.print(f"[green]All translations up to date for {language}[/green]")
-        return
-
-    console.print(f"Updating {len(outdated)} outdated translations...")
-    translated_paths = []
-    for i, en_path in enumerate(outdated, 1):
-        console.print(f"\n[{i}/{len(outdated)}] {en_path.name}")
-        translate_page(language=language, en_path=en_path)
-        translated_paths.append(to_lang_path(en_path, language))
-
-    # Run verification pass if requested
-    if verify and translated_paths:
-        console.print(
-            f"\n[bold]Running verification pass on {len(translated_paths)} translated files...[/bold]"
-        )
-        for iteration in range(1, verify_iterations + 1):
-            console.print(
-                f"\n[cyan]Verification pass {iteration}/{verify_iterations}[/cyan]"
-            )
-            changes = 0
-            for lang_path in translated_paths:
-                if fix_single_file(lang_path, language):
-                    console.print(f"  [yellow]Fixed:[/yellow] {lang_path.name}")
-                    changes += 1
-            if changes == 0:
-                console.print("[green]All translations verified![/green]")
-                break
-            console.print(f"  [dim]Fixed {changes} files in this pass[/dim]")
-
-
-@app.command()
-def add_missing(
-    language: str = typer.Option(..., "--language", "-l", envvar="LANGUAGE"),
-    include: str = typer.Option(
-        None,
-        "--include",
-        "-i",
-        help="Only translate files matching this pattern (e.g., 'hello_nextflow')",
-    ),
-    verify: bool = typer.Option(
-        False,
-        "--verify",
-        "-v",
-        help="Run verification pass after translation to ensure compliance with prompt guidelines",
-    ),
-    verify_iterations: int = typer.Option(
-        2,
-        "--verify-iterations",
-        help="Number of verification iterations (only used with --verify)",
-    ),
-):
-    """Translate all missing files for a language."""
-    missing = []
-    for en_path in iter_en_docs():
-        # Filter by include pattern if specified
-        if include and include not in str(en_path):
-            continue
-        lang_path = to_lang_path(en_path, language)
-        if not lang_path.exists():
-            missing.append(en_path)
-
-    if not missing:
-        if include:
-            console.print(
-                f"[green]All matching files already translated for {language}[/green]"
-            )
-        else:
-            console.print(f"[green]All files already translated for {language}[/green]")
-        return
-
-    console.print(f"Translating {len(missing)} missing files...")
-    translated_paths = []
-    for i, en_path in enumerate(missing, 1):
-        console.print(f"\n[{i}/{len(missing)}] {en_path.name}")
-        translate_page(language=language, en_path=en_path)
-        translated_paths.append(to_lang_path(en_path, language))
-
-    # Run verification pass if requested
-    if verify and translated_paths:
-        console.print(
-            f"\n[bold]Running verification pass on {len(translated_paths)} translated files...[/bold]"
-        )
-        for iteration in range(1, verify_iterations + 1):
-            console.print(
-                f"\n[cyan]Verification pass {iteration}/{verify_iterations}[/cyan]"
-            )
-            changes = 0
-            for lang_path in translated_paths:
-                if fix_single_file(lang_path, language):
-                    console.print(f"  [yellow]Fixed:[/yellow] {lang_path.name}")
-                    changes += 1
-            if changes == 0:
-                console.print("[green]All translations verified![/green]")
-                break
-            console.print(f"  [dim]Fixed {changes} files in this pass[/dim]")
-
-
-@app.command()
-def update_and_add(
-    language: str = typer.Option(..., "--language", "-l", envvar="LANGUAGE"),
-    include: str = typer.Option(
-        None,
-        "--include",
-        "-i",
-        help="Only translate files matching this pattern (e.g., 'hello_nextflow')",
-    ),
-    verify: bool = typer.Option(
-        False,
-        "--verify",
-        "-v",
-        help="Run verification pass after translation to ensure compliance with prompt guidelines",
-    ),
-    verify_iterations: int = typer.Option(
-        2,
-        "--verify-iterations",
-        help="Number of verification iterations (only used with --verify)",
-    ),
-):
-    """Update outdated translations and add missing ones."""
-    console.print(f"[bold]Updating outdated translations for {language}...[/bold]")
-    update_outdated(
-        language=language, verify=False, verify_iterations=verify_iterations
-    )
-
-    console.print(f"\n[bold]Adding missing translations for {language}...[/bold]")
-    add_missing(
-        language=language,
-        include=include,
-        verify=verify,
-        verify_iterations=verify_iterations,
-    )
-
-
-@app.command()
-def remove_removable(
-    language: str = typer.Option(..., "--language", "-l", envvar="LANGUAGE"),
-):
-    """Remove orphaned translation files (no English source)."""
-    lang_docs = DOCS_PATH / language / "docs"
-    removed = 0
-
-    for lang_path in lang_docs.rglob("*.md"):
-        en_path = to_en_path(lang_path, language)
-        if not en_path.exists():
-            lang_path.unlink()
-            console.print(f"[red]Removed:[/red] {lang_path.relative_to(REPO_ROOT)}")
-            removed += 1
-
-    console.print(f"\nRemoved {removed} orphaned files")
-
-
-def fix_single_file(
-    lang_path: Path,
-    language: str,
-    run_post_fixer: bool = True,
-) -> bool:
-    """
-    Fix a single translation file to comply with current prompt guidelines.
-
-    Returns True if changes were made, False if file was already compliant.
-    """
-    from translation_fixer import fix_one_page
-
-    if not lang_path.exists():
-        console.print(f"[red]Error:[/red] File not found: {lang_path}")
-        return False
-
-    # Find English source
-    en_path = to_en_path(lang_path, language)
-    if not en_path.exists():
-        console.print(
-            f"[yellow]Warning:[/yellow] No English source for {lang_path.name}, skipping"
-        )
-        return False
-
-    original_content = lang_path.read_text(encoding="utf-8")
-    en_content = en_path.read_text(encoding="utf-8")
-
-    # Build fix prompt
-    prompt_parts = [
-        "# Translation Fix Task",
-        "",
-        "You are reviewing an existing translation of Nextflow training materials.",
-        "",
-        "## Your Task",
-        "Check the translation against the guidelines below and fix any violations.",
-        "Make MINIMAL changes - only fix what violates the guidelines.",
-        "If the translation is already correct, output it unchanged.",
-        "",
-        "## Guidelines",
-        get_general_prompt(),
-        get_lang_prompt(language),
-        "",
-        "## English Source (for reference)",
-        f"%%%\n{en_content}%%%",
-        "",
-        "## Current Translation to Fix",
-        f"%%%\n{original_content}%%%",
-        "",
-        "## Output",
-        "Output ONLY the corrected markdown file. No explanations or commentary.",
-    ]
-
-    prompt = "\n\n".join(prompt_parts)
-
-    client = anthropic.Anthropic()
-    message = client.messages.create(
-        model=MODEL,
-        max_tokens=16384,
-        messages=[{"role": "user", "content": prompt}],
-    )
-
-    fixed_content = f"{message.content[0].text.strip()}\n"
-
-    # Check if content changed
-    if fixed_content == original_content:
-        return False
-
-    # Write fixed content
-    lang_path.write_text(fixed_content, encoding="utf-8", newline="\n")
-
-    # Run post-processing fixer (restores code blocks, links, etc.)
-    if run_post_fixer:
-        try:
-            fix_one_page(lang_path)
-        except ValueError as e:
-            console.print(f"[yellow]Warning:[/yellow] Post-fixer issue: {e}")
-
-    return True
-
-
-@app.command()
-def fix_translations(
-    language: str = typer.Option(..., "--language", "-l", help="Language code to fix"),
-    max_iterations: int = typer.Option(
-        8, "--max-iterations", "-m", help="Maximum fix iterations"
-    ),
-    files: list[Path] = typer.Option(
-        None,
-        "--files",
-        "-f",
-        help="Specific files to fix (relative to docs/{lang}/docs/)",
-    ),
-    dry_run: bool = typer.Option(
-        False, "--dry-run", help="Show what would be fixed without making changes"
-    ),
-):
-    """
-    Fix existing translations to comply with current prompt guidelines.
-
-    Uses LLM to review and fix translations, with multiple passes until
-    no more changes are needed or max iterations reached.
-    """
-    langs = get_langs()
-    if language not in langs:
-        console.print(f"[red]Error:[/red] Unknown language: {language}")
-        raise typer.Exit(code=1)
-
-    lang_docs = DOCS_PATH / language / "docs"
-    if not lang_docs.exists():
-        console.print(f"[red]Error:[/red] Language docs not found: {lang_docs}")
-        raise typer.Exit(code=1)
-
-    # Get list of files to process
-    if files:
-        # Resolve specified files
-        paths_to_fix = []
-        for f in files:
-            # Try as relative to lang docs
-            full_path = lang_docs / f
-            if full_path.exists():
-                paths_to_fix.append(full_path)
-            elif f.exists():
-                paths_to_fix.append(f.resolve())
-            else:
-                console.print(f"[red]Error:[/red] File not found: {f}")
-                raise typer.Exit(code=1)
-    else:
-        # Get all translation files
-        paths_to_fix = sorted(lang_docs.rglob("*.md"))
-
-    if not paths_to_fix:
-        console.print(f"[yellow]No translation files found for {language}[/yellow]")
-        return
-
-    console.print(
-        f"[bold]Fixing {len(paths_to_fix)} translation files for {langs[language]}[/bold]"
-    )
-
-    if dry_run:
-        console.print("[yellow]DRY RUN - no changes will be made[/yellow]")
-        for p in paths_to_fix:
-            console.print(f"  Would check: {p.relative_to(REPO_ROOT)}")
-        return
-
-    # Check API key only when actually running (not dry-run)
-    check_api_key()
-
-    total_changes = 0
-    for iteration in range(1, max_iterations + 1):
-        console.print(f"\n[bold cyan]Pass {iteration}/{max_iterations}[/bold cyan]")
-
-        changes_this_pass = 0
-        for i, lang_path in enumerate(paths_to_fix, 1):
-            console.print(f"  [{i}/{len(paths_to_fix)}] {lang_path.name}", end=" ")
-
-            with Progress(
-                SpinnerColumn(),
-                TextColumn("[progress.description]{task.description}"),
-                console=console,
-                transient=True,
-            ) as progress:
-                progress.add_task("checking...", total=None)
-                changed = fix_single_file(lang_path, language)
-
-            if changed:
-                console.print("[yellow]fixed[/yellow]")
-                changes_this_pass += 1
-            else:
-                console.print("[green]OK[/green]")
-
-        total_changes += changes_this_pass
-        console.print(
-            f"  [dim]Pass {iteration} complete: {changes_this_pass} files changed[/dim]"
-        )
-
-        if changes_this_pass == 0:
-            console.print(
-                f"\n[green]All translations now comply with guidelines![/green]"
-            )
-            console.print(f"Total changes across all passes: {total_changes}")
-            return
-
-    console.print(f"\n[yellow]Max iterations ({max_iterations}) reached.[/yellow]")
-    console.print(f"Total changes: {total_changes}")
-    console.print("Some issues may remain - consider running again or manual review.")
-
-
-def get_all_languages() -> list[str]:
-    """Get all translation language codes (excludes 'en')."""
-    langs = []
-    for mkdocs_yml in DOCS_PATH.glob("*/mkdocs.yml"):
-        lang = mkdocs_yml.parent.name
-        if lang != "en":
-            langs.append(lang)
-    return sorted(langs)
-
-
-def get_outdated_files(language: str) -> list[Path]:
-    """Get list of outdated translation files for a language."""
-    repo = git.Repo(REPO_ROOT)
+def get_outdated_files(lang: str) -> list[TranslationFile]:
+    """Find translations older than their English source."""
     outdated = []
-
     for en_path in iter_en_docs():
-        lang_path = to_lang_path(en_path, language)
+        lang_path = en_to_lang_path(en_path, lang)
         if not lang_path.exists():
             continue
 
-        en_commits = list(repo.iter_commits(paths=str(en_path), max_count=1))
-        lang_commits = list(repo.iter_commits(paths=str(lang_path), max_count=1))
+        en_time = get_file_commit_time(en_path)
+        lang_time = get_file_commit_time(lang_path)
 
-        if en_commits and lang_commits:
-            if lang_commits[0].committed_datetime < en_commits[0].committed_datetime:
-                outdated.append(en_path)
+        if en_time and lang_time and lang_time < en_time:
+            outdated.append(TranslationFile(en_path, lang_path, lang))
 
     return outdated
 
 
-@app.command()
-def detect_work(
-    event_name: str = typer.Option(
-        ..., "--event-name", help="GitHub event name (push/workflow_dispatch)"
-    ),
-    command: str = typer.Option("auto", "--command", "-c", help="Command to run"),
-    language: str = typer.Option(None, "--language", "-l", help="Specific language"),
-    before_sha: str = typer.Option(None, "--before-sha", help="Git SHA before push"),
-    after_sha: str = typer.Option(None, "--after-sha", help="Git SHA after push"),
-):
-    """
-    Detect what translation work needs to be done.
+def get_missing_files(lang: str) -> list[TranslationFile]:
+    """Find English files without translations."""
+    return [
+        TranslationFile(en_path, en_to_lang_path(en_path, lang), lang)
+        for en_path in iter_en_docs()
+        if not en_to_lang_path(en_path, lang).exists()
+    ]
 
-    Outputs GitHub Actions-compatible key=value pairs for workflow outputs.
-    """
-    all_languages = get_all_languages()
 
-    # Validate language if specified
-    if language:
-        if language not in all_languages:
-            console.print(f"[red]Error:[/red] Language '{language}' not found")
-            console.print(f"Available: {', '.join(all_languages)}")
-            raise typer.Exit(code=1)
+def get_orphaned_files(lang: str) -> list[Path]:
+    """Find translation files without English source."""
+    lang_docs = DOCS_ROOT / lang / "docs"
+    if not lang_docs.exists():
+        return []
+    return [p for p in lang_docs.rglob("*.md") if not lang_to_en_path(p, lang).exists()]
 
-    # For list-* commands, just pass through the language(s)
-    if command.startswith("list-"):
-        langs = [language] if language else all_languages
-        print(f"languages_outdated={json.dumps(langs)}")
-        print("languages_fix=[]")
-        print("has_work=true")
-        print(f"command={command}")
-        return
 
-    # For fix-translations command
-    if command == "fix-translations":
-        langs = [language] if language else all_languages
-        print("languages_outdated=[]")
-        print(f"languages_fix={json.dumps(langs)}")
-        print("has_work=true")
-        print(f"command={command}")
-        return
+# =============================================================================
+# Translation API
+# =============================================================================
 
-    # For specific language with non-list command
-    if language:
-        if command == "auto":
-            # Check if this language has outdated files
-            outdated = get_outdated_files(language)
-            if outdated:
-                print(f"languages_outdated={json.dumps([language])}")
-                print("has_work=true")
-            else:
-                print("languages_outdated=[]")
-                print("has_work=false")
-            print("languages_fix=[]")
-        else:
-            # Specific command with specific language
-            print(f"languages_outdated={json.dumps([language])}")
-            print("languages_fix=[]")
-            print("has_work=true")
-        print(f"command={command}")
-        return
 
-    # Auto-detect mode: check all languages
-    languages_outdated = []
-    languages_fix = []
+def check_api_key() -> None:
+    """Verify ANTHROPIC_API_KEY is set."""
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        raise ConfigError(
+            "ANTHROPIC_API_KEY not set. Get key at https://console.anthropic.com/settings/keys"
+        )
 
-    # Check for prompt changes (on push events)
-    if event_name == "push" and before_sha and after_sha:
-        repo = git.Repo(REPO_ROOT)
-        try:
-            diff = repo.git.diff("--name-only", before_sha, after_sha)
-            changed_files = diff.split("\n") if diff else []
 
-            # Check if general prompt changed (affects all languages)
-            if "_scripts/general-llm-prompt.md" in changed_files:
-                console_err.print(
-                    "[dim]General prompt changed - all languages need fixing[/dim]"
+def call_claude(prompt: str) -> str:
+    """Call Claude API and return the response text."""
+    client = anthropic.Anthropic()
+    message = client.messages.create(
+        model=MODEL,
+        max_tokens=MAX_TOKENS,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return message.content[0].text.strip()
+
+
+def translate_file(tf: TranslationFile, console: Console) -> None:
+    """Translate a single file."""
+    langs = get_languages()
+    if tf.language not in langs:
+        raise ConfigError(f"Unknown language: {tf.language}")
+
+    en_content = tf.en_path.read_text(encoding="utf-8")
+    existing = tf.lang_path.read_text(encoding="utf-8") if tf.exists else None
+
+    action = "Updating" if existing else "Translating"
+    console.print(f"  {action} [cyan]{tf.relative_path}[/cyan]")
+
+    prompt = build_translation_prompt(
+        tf.language, langs[tf.language], en_content, existing
+    )
+    result = call_claude(prompt)
+
+    tf.lang_path.parent.mkdir(parents=True, exist_ok=True)
+    tf.lang_path.write_text(f"{result}\n", encoding="utf-8", newline="\n")
+
+
+# =============================================================================
+# Post-processing
+# =============================================================================
+
+HEADER_RE = re.compile(r"^(#{1,6})\s+(.+?)(\s*\{#[^}]+\})?\s*$")
+MARKDOWN_LINK_RE = re.compile(
+    r"(?<!!)\[(?P<text>[^\]]*)\]\((?P<url>[^)\s]+)(?:\s+\"(?P<title>[^\"]*)\")?\)(?:\{(?P<attrs>[^}]*)\})?"
+)
+HTML_LINK_RE = re.compile(r"<a\s+([^>]*)>(.*?)</a>", re.DOTALL)
+CODE_FENCE_RE = re.compile(r"^(`{3,4})([\w-]*)")
+HASH_COMMENT_RE = re.compile(r"^(.*?)((?:\s+#|^#)\s.*)$")
+SLASH_COMMENT_RE = re.compile(r"^(.*?)((?:\s+//|^//)\s.*)$")
+BLOCK_COMMENT_START_RE = re.compile(r"^\s*/\*")
+BLOCK_COMMENT_END_RE = re.compile(r"\*/\s*$")
+
+
+def _iter_lines_outside_code(lines: list[str]):
+    """Yield (line_no, line) for lines outside code blocks."""
+    in_code = False
+    fence = ""
+    for i, line in enumerate(lines):
+        stripped = line.lstrip()
+        if not in_code:
+            if m := CODE_FENCE_RE.match(stripped):
+                in_code, fence = True, m.group(1)
+                continue
+        elif stripped.startswith(fence) and stripped.strip() == fence:
+            in_code, fence = False, ""
+            continue
+        if not in_code:
+            yield i, line
+
+
+def extract_headers(lines: list[str]) -> list[Header]:
+    """Extract headers outside code blocks."""
+    return [
+        Header(i, m.group(1), m.group(2).strip(), m.group(3) or "")
+        for i, line in _iter_lines_outside_code(lines)
+        if (m := HEADER_RE.match(line))
+    ]
+
+
+def extract_links(lines: list[str]) -> list[Link]:
+    """Extract markdown links outside code blocks."""
+    links = []
+    for i, line in _iter_lines_outside_code(lines):
+        for m in MARKDOWN_LINK_RE.finditer(line):
+            links.append(
+                Link(
+                    i,
+                    m.start(),
+                    m.end(),
+                    m.group("text"),
+                    m.group("url"),
+                    m.group("title"),
+                    m.group("attrs"),
                 )
-                languages_fix = all_languages.copy()
-            else:
-                # Check which language-specific prompts changed
-                for lang in all_languages:
-                    if f"docs/{lang}/llm-prompt.md" in changed_files:
-                        console_err.print(f"[dim]Prompt changed for {lang}[/dim]")
-                        languages_fix.append(lang)
-        except git.GitCommandError:
-            # Git diff failed (e.g., shallow clone), skip prompt detection
-            pass
-
-    # Check each language for outdated translations
-    for lang in all_languages:
-        outdated = get_outdated_files(lang)
-        if outdated:
-            console_err.print(
-                f"[dim]Found {len(outdated)} outdated files for {lang}[/dim]"
             )
-            languages_outdated.append(lang)
-
-    has_work = bool(languages_outdated or languages_fix)
-
-    print(f"languages_outdated={json.dumps(languages_outdated)}")
-    print(f"languages_fix={json.dumps(languages_fix)}")
-    print(f"has_work={'true' if has_work else 'false'}")
-    print(f"command={command}")
-
-    if not has_work:
-        console_err.print("[dim]No languages need updates[/dim]")
+    return links
 
 
-@app.command()
-def run_batch(
-    command: str = typer.Option("auto", "--command", "-c", help="Command to run"),
-    languages_outdated: str = typer.Option(
-        "[]", "--languages-outdated", help="JSON array of languages needing update"
-    ),
-    languages_fix: str = typer.Option(
-        "[]", "--languages-fix", help="JSON array of languages needing fix"
-    ),
-):
-    """
-    Run translation commands for multiple languages (for CI use).
-
-    This command dispatches the appropriate translation commands based on
-    the detected work from detect-work.
-    """
-    outdated_list: list[str] = json.loads(languages_outdated)
-    fix_list: list[str] = json.loads(languages_fix)
-
-    console.print(f"[bold]Command:[/bold] {command}")
-    console.print(f"[bold]Languages (outdated):[/bold] {outdated_list}")
-    console.print(f"[bold]Languages (fix):[/bold] {fix_list}")
-
-    # Handle explicit commands (non-auto)
-    if command != "auto":
-        # Use outdated list for most commands, fix list for fix-translations
-        lang_list = fix_list if command == "fix-translations" else outdated_list
-
-        for lang in lang_list:
-            console.print(f"\n{'=' * 42}")
-            console.print(f"Processing language: {lang} (command: {command})")
-            console.print("=" * 42)
-
-            if command == "list-outdated":
-                list_outdated(lang)
-            elif command == "list-missing":
-                list_missing(lang)
-            elif command == "update-outdated":
-                update_outdated(language=lang, verify=False, verify_iterations=2)
-            elif command == "add-missing":
-                add_missing(
-                    language=lang, include=None, verify=False, verify_iterations=2
-                )
-            elif command == "update-and-add":
-                update_and_add(
-                    language=lang, include=None, verify=False, verify_iterations=2
-                )
-            elif command == "fix-translations":
-                fix_translations(
-                    language=lang, max_iterations=8, files=None, dry_run=False
-                )
-        return
-
-    # Auto mode: run appropriate command per language
-    # First, update outdated translations
-    for lang in outdated_list:
-        console.print(f"\n{'=' * 42}")
-        console.print(f"Updating outdated translations: {lang}")
-        console.print("=" * 42)
-        update_outdated(language=lang, verify=False, verify_iterations=2)
-
-    # Then, fix translations for languages with prompt changes
-    for lang in fix_list:
-        console.print(f"\n{'=' * 42}")
-        console.print(f"Fixing translations (prompt changed): {lang}")
-        console.print("=" * 42)
-        fix_translations(language=lang, max_iterations=8, files=None, dry_run=False)
+def extract_html_links(lines: list[str]) -> list[HtmlLink]:
+    """Extract HTML <a> links outside code blocks."""
+    links = []
+    for i, line in _iter_lines_outside_code(lines):
+        for m in HTML_LINK_RE.finditer(line):
+            links.append(HtmlLink(i, m.start(), m.end(), m.group(1), m.group(2)))
+    return links
 
 
-@app.command()
-def run_post_fix(
-    languages_outdated: str = typer.Option(
-        "[]", "--languages-outdated", help="JSON array of languages that were updated"
-    ),
-    languages_fix: str = typer.Option(
-        "[]", "--languages-fix", help="JSON array of languages that were fixed"
-    ),
-):
-    """
-    Run post-processing fixer for translated languages (for CI use).
+def extract_code_blocks(lines: list[str]) -> list[CodeBlock]:
+    """Extract code blocks with content."""
+    blocks = []
+    in_code, fence, lang, start = False, "", "", 0
+    block_lines: list[str] = []
 
-    Combines and deduplicates the language lists and runs translation_fixer.
-    """
-    from translation_fixer import fix_one_page
+    for i, line in enumerate(lines):
+        stripped = line.lstrip()
+        if not in_code:
+            if m := CODE_FENCE_RE.match(stripped):
+                in_code, fence, lang, start = True, m.group(1), m.group(2), i
+                block_lines = [line]
+        else:
+            block_lines.append(line)
+            if stripped.startswith(fence) and stripped.strip() == fence:
+                blocks.append(CodeBlock(start, i, lang, block_lines))
+                in_code, fence, block_lines = False, "", []
+    return blocks
 
-    outdated_list: list[str] = json.loads(languages_outdated)
-    fix_list: list[str] = json.loads(languages_fix)
 
-    # Combine and dedupe
-    all_langs = sorted(set(outdated_list + fix_list))
+def _extract_comment(line: str, lang: str) -> str | None:
+    """Extract comment from a line based on language."""
+    if lang in HASH_COMMENT_LANGS or lang in MIXED_COMMENT_LANGS:
+        if m := HASH_COMMENT_RE.match(line):
+            return m.group(2)
+    if lang in SLASH_COMMENT_LANGS:
+        if m := SLASH_COMMENT_RE.match(line):
+            return m.group(2)
+    return None
 
-    for lang in all_langs:
-        lang_docs = DOCS_PATH / lang / "docs"
-        if not lang_docs.exists():
-            console.print(f"[yellow]Warning:[/yellow] Language docs not found: {lang}")
+
+def fix_headers(trans: list[str], source_headers: list[Header]) -> list[str]:
+    """Replace header anchors with those from source."""
+    trans_headers = extract_headers(trans)
+    if len(trans_headers) != len(source_headers):
+        raise StructureMismatchError(
+            f"Header count: {len(trans_headers)} vs {len(source_headers)}"
+        )
+
+    result = trans.copy()
+    for th, sh in zip(trans_headers, source_headers):
+        if th.level != sh.level:
+            raise StructureMismatchError(f"Header level mismatch at line {th.line_no}")
+        result[th.line_no] = f"{th.level} {th.title}{sh.anchor}"
+    return result
+
+
+def fix_links(trans: list[str], source_links: list[Link]) -> list[str]:
+    """Replace link URLs/attrs with source, keeping translated text."""
+    trans_links = extract_links(trans)
+    if len(trans_links) != len(source_links):
+        raise StructureMismatchError(
+            f"Link count: {len(trans_links)} vs {len(source_links)}"
+        )
+
+    result = trans.copy()
+    for tl, sl in reversed(list(zip(trans_links, source_links))):
+        new = f"[{tl.text}]({sl.url}"
+        if tl.title:
+            new += f' "{tl.title}"'
+        new += ")"
+        if sl.attrs:
+            new += f"{{{sl.attrs}}}"
+        result[tl.line_no] = (
+            result[tl.line_no][: tl.start] + new + result[tl.line_no][tl.end :]
+        )
+    return result
+
+
+def fix_html_links(trans: list[str], source_links: list[HtmlLink]) -> list[str]:
+    """Replace HTML link attributes with source, keeping translated text."""
+    trans_links = extract_html_links(trans)
+    if len(trans_links) != len(source_links):
+        raise StructureMismatchError(
+            f"HTML link count: {len(trans_links)} vs {len(source_links)}"
+        )
+
+    result = trans.copy()
+    for tl, sl in reversed(list(zip(trans_links, source_links))):
+        new = f"<a {sl.attrs}>{tl.text}</a>"
+        result[tl.line_no] = (
+            result[tl.line_no][: tl.start] + new + result[tl.line_no][tl.end :]
+        )
+    return result
+
+
+def fix_code_block(trans_block: CodeBlock, src_block: CodeBlock) -> list[str]:
+    """Fix code block: use source code, preserve translated comments."""
+    if trans_block.lang != src_block.lang:
+        raise StructureMismatchError(
+            f"Code lang mismatch at line {trans_block.start_line}"
+        )
+    if len(trans_block.lines) != len(src_block.lines):
+        raise StructureMismatchError(
+            f"Code lines mismatch at line {trans_block.start_line}"
+        )
+
+    lang = trans_block.lang.lower()
+
+    # Mermaid diagrams are structural, use source entirely
+    if lang == "mermaid":
+        return src_block.lines.copy()
+
+    result = []
+    in_block_comment = False
+
+    for trans_line, src_line in zip(trans_block.lines, src_block.lines):
+        # Fence lines: use source
+        if trans_line.lstrip().startswith("```"):
+            result.append(src_line)
             continue
 
-        files = list(lang_docs.rglob("*.md"))
-        console.print(f"Post-processing {len(files)} files for {lang}...")
+        # Block comments in mixed languages: keep translation
+        if lang in MIXED_COMMENT_LANGS:
+            if BLOCK_COMMENT_START_RE.match(trans_line):
+                in_block_comment = True
+            if in_block_comment:
+                result.append(trans_line)
+                if BLOCK_COMMENT_END_RE.search(trans_line):
+                    in_block_comment = False
+                continue
 
-        for path in files:
-            console.print(f"  {path.name}", end=" ")
-            try:
-                fix_one_page(path)
-                console.print("[green]OK[/green]")
-            except ValueError as e:
-                console.print(f"[yellow]Warning:[/yellow] {e}")
+        # Line comments: use source code with translated comment
+        trans_comment = _extract_comment(trans_line, lang)
+        if trans_comment:
+            src_comment = _extract_comment(src_line, lang)
+            if src_comment:
+                result.append(src_line.replace(src_comment, trans_comment))
+                continue
+
+        # Default: use source line
+        result.append(src_line)
+
+    return result
+
+
+def fix_code_blocks(trans: list[str], source_blocks: list[CodeBlock]) -> list[str]:
+    """Fix all code blocks in translation."""
+    trans_blocks = extract_code_blocks(trans)
+    if len(trans_blocks) != len(source_blocks):
+        raise StructureMismatchError(
+            f"Code block count: {len(trans_blocks)} vs {len(source_blocks)}"
+        )
+
+    result = trans.copy()
+    for tb, sb in zip(trans_blocks, source_blocks):
+        fixed = fix_code_block(tb, sb)
+        for i, line in enumerate(fixed):
+            result[tb.start_line + i] = line
+    return result
+
+
+def fix_translation(translation: list[str], source: list[str]) -> list[str]:
+    """Fix translation against English source."""
+    result = translation.copy()
+    result = fix_headers(result, extract_headers(source))
+    result = fix_links(result, extract_links(source))
+    result = fix_html_links(result, extract_html_links(source))
+    result = fix_code_blocks(result, extract_code_blocks(source))
+    return result
+
+
+def post_process_file(lang_path: Path, lang: str) -> bool:
+    """Post-process a translation. Returns True if changes were made."""
+    en_path = lang_to_en_path(lang_path, lang)
+    if not en_path.exists():
+        return False
+
+    original = lang_path.read_text(encoding="utf-8")
+    source = en_path.read_text(encoding="utf-8")
+
+    try:
+        fixed = fix_translation(original.splitlines(), source.splitlines())
+    except StructureMismatchError:
+        return False
+
+    fixed_text = "\n".join(fixed) + "\n"
+    if fixed_text != original:
+        lang_path.write_text(fixed_text, encoding="utf-8", newline="\n")
+        return True
+    return False
+
+
+# =============================================================================
+# CLI
+# =============================================================================
+
+app = typer.Typer(help="Translation CLI for Nextflow training docs")
+
+
+def _resolve_en_path(path: Path) -> Path:
+    """Resolve path to English doc file."""
+    # Absolute path
+    if path.is_absolute():
+        if path.exists():
+            return path
+        raise ConfigError(f"File not found: {path}")
+
+    # Relative to EN_DOCS
+    if (EN_DOCS / path).exists():
+        return EN_DOCS / path
+
+    # Relative to cwd
+    if path.exists():
+        return path.resolve()
+
+    raise ConfigError(f"File not found: {path}")
 
 
 @app.command()
-def make_pr(
-    language: str = typer.Option(None, "--language", "-l", envvar="LANGUAGE"),
-    command: str = typer.Option(None, "--command", "-c", envvar="COMMAND"),
+def translate(
+    path: Path = typer.Argument(..., help="English file to translate"),
+    lang: str = typer.Option(..., "--lang", "-l", help="Target language code"),
+):
+    """Translate a single file."""
+    check_api_key()
+    console = Console()
+
+    if lang == "en":
+        raise typer.Exit("Cannot translate to English")
+
+    en_path = _resolve_en_path(path)
+    tf = TranslationFile(en_path, en_to_lang_path(en_path, lang), lang)
+
+    translate_file(tf, console)
+    post_process_file(tf.lang_path, lang)
+    console.print(f"[green]Done:[/green] {tf.lang_path}")
+
+
+@app.command()
+def sync(
+    lang: str = typer.Argument(..., help="Language code"),
+    include: str | None = typer.Option(None, "--include", "-i", help="Filter pattern"),
+    dry_run: bool = typer.Option(False, "--dry-run", "-n", help="Preview only"),
+):
+    """Sync translations: update outdated, add missing, remove orphaned."""
+    console = Console()
+
+    # Gather work
+    orphaned = get_orphaned_files(lang)
+    outdated = get_outdated_files(lang)
+    missing = get_missing_files(lang)
+
+    if include:
+        outdated = [tf for tf in outdated if include in str(tf.en_path)]
+        missing = [tf for tf in missing if include in str(tf.en_path)]
+
+    # Dry run: just print
+    if dry_run:
+        if orphaned:
+            console.print(f"[red]Would remove {len(orphaned)} orphaned:[/red]")
+            for p in orphaned:
+                console.print(f"  {p.relative_to(REPO_ROOT)}")
+        if outdated:
+            console.print(f"[yellow]Would update {len(outdated)} outdated:[/yellow]")
+            for tf in outdated:
+                console.print(f"  {tf.relative_path}")
+        if missing:
+            console.print(f"[blue]Would add {len(missing)} missing:[/blue]")
+            for tf in missing:
+                console.print(f"  {tf.relative_path}")
+        if not (orphaned or outdated or missing):
+            console.print(f"[green]Nothing to do for {lang}[/green]")
+        return
+
+    check_api_key()
+
+    # Remove orphaned
+    if orphaned:
+        console.print(f"[bold]Removing {len(orphaned)} orphaned...[/bold]")
+        for p in orphaned:
+            p.unlink()
+            console.print(f"  [red]Removed:[/red] {p.relative_to(REPO_ROOT)}")
+
+    # Update outdated
+    if outdated:
+        console.print(f"[bold]Updating {len(outdated)} outdated...[/bold]")
+        for i, tf in enumerate(outdated, 1):
+            console.print(f"[{i}/{len(outdated)}]", end="")
+            translate_file(tf, console)
+            post_process_file(tf.lang_path, lang)
+
+    # Add missing
+    if missing:
+        console.print(f"[bold]Adding {len(missing)} missing...[/bold]")
+        for i, tf in enumerate(missing, 1):
+            console.print(f"[{i}/{len(missing)}]", end="")
+            translate_file(tf, console)
+            post_process_file(tf.lang_path, lang)
+
+    console.print("[green]Sync complete[/green]")
+
+
+# =============================================================================
+# CI Commands
+# =============================================================================
+
+
+@app.command("ci-detect")
+def ci_detect(language: str | None = typer.Option(None, "--language")):
+    """Detect languages needing sync (GitHub Actions output)."""
+    all_langs = get_translation_languages()
+
+    if language:
+        if language not in all_langs:
+            raise typer.Exit(f"Unknown language: {language}")
+        langs = [language]
+    else:
+        langs = all_langs
+
+    # Check which have work
+    need_sync = [
+        lang
+        for lang in langs
+        if get_missing_files(lang)
+        or get_outdated_files(lang)
+        or get_orphaned_files(lang)
+    ]
+
+    print(f"languages={json.dumps(need_sync)}")
+    print(f"has_work={'true' if need_sync else 'false'}")
+
+
+@app.command("ci-run")
+def ci_run(
+    languages: str = typer.Option("[]", "--languages"),
+    dry_run: bool = typer.Option(False, "--dry-run"),
+):
+    """Run sync for multiple languages (CI)."""
+    console = Console()
+    for lang in json.loads(languages):
+        console.rule(f"[bold]{lang}[/bold]")
+        sync(lang, include=None, dry_run=dry_run)
+
+
+@app.command("ci-pr")
+def ci_pr(
     github_token: str = typer.Option(..., envvar="GITHUB_TOKEN"),
     github_repository: str = typer.Option(..., envvar="GITHUB_REPOSITORY"),
 ):
-    """Create a PR with translation changes (for CI use)."""
-    repo = git.Repo(REPO_ROOT)
+    """Create PR with translation changes (CI)."""
+    from github import Github
 
+    repo = _get_repo()
     if not repo.is_dirty(untracked_files=True):
-        console.print("[yellow]No changes to commit[/yellow]")
+        print("No changes to commit")
         return
 
-    # Configure git
     subprocess.run(
         ["git", "config", "user.name", "github-actions[bot]"], check=True, cwd=REPO_ROOT
     )
@@ -941,41 +761,26 @@ def make_pr(
         cwd=REPO_ROOT,
     )
 
-    # Create branch
-    branch_name = (
-        f"translate-{language or 'all'}-{command or 'update'}-{secrets.token_hex(4)}"
-    )
-    subprocess.run(["git", "checkout", "-b", branch_name], check=True, cwd=REPO_ROOT)
-
-    # Commit
+    branch = f"translate-{secrets.token_hex(4)}"
+    subprocess.run(["git", "checkout", "-b", branch], check=True, cwd=REPO_ROOT)
     subprocess.run(["git", "add", "docs/"], check=True, cwd=REPO_ROOT)
-    message = "Update translations"
-    if language:
-        message += f" for {language}"
-    if command:
-        message += f" ({command})"
-    subprocess.run(["git", "commit", "-m", message], check=True, cwd=REPO_ROOT)
+    subprocess.run(
+        ["git", "commit", "-m", "Update translations"], check=True, cwd=REPO_ROOT
+    )
+    subprocess.run(["git", "push", "origin", branch], check=True, cwd=REPO_ROOT)
 
-    # Push
-    subprocess.run(["git", "push", "origin", branch_name], check=True, cwd=REPO_ROOT)
-
-    # Create PR
-    g = Github(github_token)
-    gh_repo = g.get_repo(github_repository)
-    body = f"""{message}
-
-This PR was created automatically using LLM translation.
-
-Prompt file: https://github.com/{github_repository}/blob/master/docs/{language}/llm-prompt.md
-
-To improve translations, edit the prompt file rather than individual translations."""
-
-    pr = gh_repo.create_pull(title=message, body=body, base="master", head=branch_name)
-    console.print(f"[green]Created PR:[/green] {pr.html_url}")
+    gh = Github(github_token)
+    pr = gh.get_repo(github_repository).create_pull(
+        title="Update translations",
+        body="Automated translation update.\n\nTo improve translations, edit prompt files:\n"
+        "- `_scripts/general-llm-prompt.md`\n- `docs/*/llm-prompt.md`",
+        base="master",
+        head=branch,
+    )
+    print(f"Created PR: {pr.html_url}")
 
 
 if __name__ == "__main__":
-    if not DOCS_PATH.exists():
-        console.print("[red]Error:[/red] Must run from repository root")
-        sys.exit(1)
+    if not DOCS_ROOT.exists():
+        sys.exit("Error: Must run from repository root")
     app()
