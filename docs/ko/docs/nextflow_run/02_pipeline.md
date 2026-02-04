@@ -2,7 +2,7 @@
 
 <span class="ai-translation-notice">:material-information-outline:{ .ai-translation-notice-icon } AI 지원 번역 - [자세히 알아보기 및 개선 제안](https://github.com/nextflow-io/training/blob/master/TRANSLATING.md)</span>
 
-이 과정의 Part 1(기본 작업 실행)에서 코드 복잡성을 낮추기 위해 최소한의 기능만 있는 예제 workflow로 시작했습니다.
+이 과정의 Part 1(기본 작업 실행)에서는 코드 복잡성을 낮추기 위해 최소한의 기능만 있는 예제 workflow로 시작했습니다.
 예를 들어 `1-hello.nf`는 명령줄 매개변수(`--input`)를 사용하여 한 번에 하나의 값을 제공했습니다.
 
 그러나 대부분의 실제 pipeline은 대규모 데이터를 효율적으로 처리하고 때로는 복잡한 로직으로 연결된 여러 처리 단계를 적용하기 위해 더 정교한 기능을 사용합니다.
@@ -168,7 +168,7 @@ ANSI 로깅을 비활성화하면 Nextflow가 터미널 출력에서 색상을 �
 
 ### 1.4. Workflow 코드 검토
 
-이 버전의 workflow는 입력의 CSV 파일을 읽고 입력을 별도로 처리하고 출력 이름을 고유하게 지정할 수 있습니다.
+이 버전의 workflow는 입력의 CSV 파일을 읽고, 입력을 별도로 처리하고, 출력 이름을 고유하게 지정할 수 있습니다.
 
 workflow 코드에서 무엇이 이를 가능하게 하는지 살펴보겠습니다.
 
@@ -227,9 +227,9 @@ workflow 코드에서 무엇이 이를 가능하게 하는지 살펴보겠습니
 
 #### 1.4.1. CSV에서 입력 데이터 로드
 
-이것이 가장 흥미로운 부분입니다: 명령줄에서 단일 값을 가져오는 것에서 CSV 파일을 가져와 구문 분석하고 포함된 개별 인사말을 처리하는 것으로 어떻게 전환했을까요?
+이것이 가장 흥미로운 부분입니다: 명령줄에서 단일 값을 가져오는 것에서 CSV 파일을 가져와 분석하고 포함된 개별 인사말을 처리하는 것으로 어떻게 전환했을까요?
 
-Nextflow에서는 **channel**로 이를 수행합니다. channel은 입력을 효율적으로 처리하고 다단계 workflow에서 한 단계에서 다른 단계로 셔틀하도록 설계된 구조로, 내장된 병렬 처리와 많은 추가 이점을 제공합니다.
+Nextflow에서는 [**channel**](https://nextflow.io/docs/latest/channel.html)로 이를 수행합니다. channel은 입력을 효율적으로 처리하고 다단계 workflow에서 한 단계에서 다른 단계로 전달하도록 설계된 큐 구조로, 내장된 병렬 처리와 많은 추가 이점을 제공합니다.
 
 분석해 보겠습니다.
 
@@ -243,7 +243,7 @@ Nextflow에서는 **channel**로 이를 수행합니다. channel은 입력을 �
     sayHello(greeting_ch)
 ```
 
-이 코드는 CSV 파일을 읽고 구문 분석하고 각 행에서 첫 번째 열을 추출하는 `greeting_ch`라는 channel을 생성합니다.
+이 코드는 CSV 파일을 읽고 분석하고 각 행에서 첫 번째 열을 추출하는 `greeting_ch`라는 channel을 생성합니다.
 결과는 `Hello`, `Bonjour`, `Holà`를 포함하는 channel입니다.
 
 ??? tip "이것이 어떻게 작동하나요?"
@@ -255,9 +255,9 @@ Nextflow에서는 **channel**로 이를 수행합니다. channel은 입력을 �
 
     즉, 그 줄은 Nextflow에게 `--input`으로 제공된 파일 경로를 가져와 그 내용을 입력 데이터로 처리할 준비를 하라고 말합니다.
 
-    그런 다음 다음 두 줄은 파일의 실제 구문 분석과 적절한 데이터 구조로의 데이터 로드를 수행하는 **연산자**를 적용합니다:
+    그런 다음 다음 두 줄은 파일의 실제 분석과 적절한 데이터 구조로의 데이터 로드를 수행하는 **연산자**를 적용합니다:
 
-    - `.splitCsv()`는 Nextflow에게 CSV 파일을 행과 열을 나타내는 배열로 구문 분석하라고 말합니다
+    - `.splitCsv()`는 Nextflow에게 CSV 파일을 행과 열을 나타내는 배열로 분석하라고 말합니다
     - `.map { line -> line[0] }`는 Nextflow에게 각 행에서 첫 번째 열의 요소만 가져오라고 말합니다
 
     실제로 다음 CSV 파일에서 시작하여:
@@ -292,7 +292,7 @@ Nextflow에서는 **channel**로 이를 수행합니다. channel은 입력을 �
     sayHello(greeting_ch)
 ```
 
-이것은 Nextflow에게 channel의 각 요소, 즉 각 인사말에 대해 process를 개별적으로 실행하라고 말합니다.
+이것은 Nextflow에게 channel의 각 요소, _즉_ 각 인사말에 대해 process를 개별적으로 실행하라고 말합니다.
 그리고 Nextflow는 똑똑하기 때문에 사용 가능한 컴퓨팅 인프라에 따라 가능한 경우 이러한 process 호출을 병렬로 실행합니다.
 
 이것이 상대적으로 매우 적은 코드로 많은 데이터(많은 샘플, 데이터 포인트 또는 연구 단위)의 효율적이고 확장 가능한 처리를 달성할 수 있는 방법입니다.
@@ -323,7 +323,7 @@ process sayHello {
 
 그리고 이것이 process 선언 내에서 변경해야 했던 유일한 변경 사항입니다!
 
-### 요약
+### 핵심 정리
 
 channel과 연산자가 여러 입력을 효율적으로 처리하는 방법을 기본적인 수준에서 이해합니다.
 
@@ -336,7 +336,7 @@ channel과 연산자가 여러 입력을 효율적으로 처리하는 방법을 
 ## 2. 다단계 workflow 실행
 
 대부분의 실제 workflow에는 둘 이상의 단계가 포함됩니다.
-channel에 대해 방금 배운 것을 바탕으로 Nextflow가 channel과 연산자를 사용하여 다단계 workflow에서 process를 함께 연결하는 방법을 살펴보겠습니다.
+channel에 대해 방금 배운 것을 바탕으로, Nextflow가 channel과 연산자를 사용하여 다단계 workflow에서 process를 함께 연결하는 방법을 살펴보겠습니다.
 
 이를 위해 세 개의 별도 단계를 연결하고 다음을 시연하는 예제 workflow를 제공합니다:
 
@@ -534,7 +534,7 @@ nextflow run 2b-multistep.nf --input data/greetings.csv
     }
     ```
 
-많은 일이 일어나고 있지만 이전 버전의 workflow와 비교했을 때 가장 명백한 차이점은 이제 여러 process 정의가 있고 해당하여 workflow 블록에 여러 process 호출이 있다는 것입니다.
+많은 일이 일어나고 있지만 이전 버전의 workflow와 비교했을 때 가장 명백한 차이점은 이제 여러 process 정의가 있고, 그에 따라 workflow 블록에 여러 process 호출이 있다는 것입니다.
 
 자세히 살펴보고 가장 흥미로운 부분을 식별할 수 있는지 확인해 보겠습니다.
 
@@ -577,7 +577,7 @@ Nextflow 확장이 있는 VSCode를 사용하는 경우 Nextflow 스크립트의
 그런 다음 `convertToUpper`에 대한 다음 process 호출은 `sayHello`의 출력을 `sayHello.out`으로 참조합니다.
 
 패턴은 간단합니다: `processName.out`은 process의 출력 channel을 참조하며, 이를 다음 process에 직접 전달할 수 있습니다.
-이것이 Nextflow에서 한 단계에서 다음 단계로 데이터를 셔틀하는 방법입니다.
+이것이 Nextflow에서 한 단계에서 다음 단계로 데이터를 전달하는 방법입니다.
 
 #### 2.3.3. Process는 여러 입력을 받을 수 있습니다
 
@@ -601,7 +601,7 @@ process collectGreetings {
     val batch_name
 ```
 
-Nextflow가 이것을 구문 분석할 때 호출의 첫 번째 입력을 `path input_files`에 할당하고 두 번째를 `val batch_name`에 할당합니다.
+Nextflow가 이것을 분석할 때 호출의 첫 번째 입력을 `path input_files`에 할당하고 두 번째를 `val batch_name`에 할당합니다.
 
 이제 process가 여러 입력을 받을 수 있다는 것과 workflow 블록에서 호출이 어떻게 보이는지 알게 되었습니다.
 
@@ -619,22 +619,19 @@ Nextflow가 이것을 구문 분석할 때 호출의 첫 번째 입력을 `path 
 `collect` 연산자는 동일한 process에 대한 여러 호출의 출력을 수집하고 단일 channel 요소로 패키징하는 데 사용됩니다.
 
 이 workflow의 맥락에서 `convertToUpper.out` channel의 세 개의 대문자 인사말(세 개의 별도 channel 항목이며 일반적으로 다음 process에 의해 별도의 호출로 처리됨)을 가져와 단일 항목으로 패키징합니다.
-
-더 실용적인 용어로: `convertToUpper()`의 출력을 `collectGreetings()`에 공급하기 전에 `collect()`를 적용하지 않으면 Nextflow는 단순히 각 인사말에 대해 `collectGreetings()`를 독립적으로 실행하여 목표를 달성하지 못합니다.
-
-<figure class="excalidraw">
---8<-- "docs/en/docs/nextflow_run/img/without-collect-operator.svg"
-</figure>
-
-반대로 `collect()`를 사용하면 workflow의 두 번째 단계에서 생성된 모든 별도의 대문자 인사말을 가져와 pipeline의 세 번째 단계에서 단일 호출에 모두 함께 공급할 수 있습니다.
+이것이 모든 인사말을 같은 파일로 다시 가져오는 방법입니다.
 
 <figure class="excalidraw">
 --8<-- "docs/en/docs/nextflow_run/img/with-collect-operator.svg"
 </figure>
 
-이것이 모든 인사말을 같은 파일로 다시 가져오는 방법입니다.
+반대로 `convertToUpper()`의 출력을 `collectGreetings()`에 공급하기 전에 `collect()`를 적용하지 않으면 Nextflow는 단순히 각 인사말에 대해 `collectGreetings()`를 독립적으로 실행하여 목표를 달성하지 못합니다.
 
-process 호출 간에 channel 내용에 변환을 적용할 수 있는 다른 많은 [연산자](https://www.nextflow.io/docs/latest/reference/operator.html#operator-page)가 있습니다.
+<figure class="excalidraw">
+--8<-- "docs/en/docs/nextflow_run/img/without-collect-operator.svg"
+</figure>
+
+process 호출 간에 channel 내용에 변환을 적용할 수 있는 다른 많은 [연산자](https://nextflow.io/docs/latest/reference/operator.html)가 있습니다.
 
 이것은 pipeline 개발자에게 pipeline의 흐름 로직을 사용자 정의하는 데 많은 유연성을 제공합니다.
 단점은 때때로 pipeline이 무엇을 하고 있는지 해독하기 어렵게 만들 수 있다는 것입니다.
@@ -763,14 +760,14 @@ output {
 
     다단계 workflow 구축에 대한 자세한 내용은 [Hello Nextflow Part 3: Hello Workflow](../hello_nextflow/03_hello_workflow.md)를 참조하세요.
 
-### 요약
+### 핵심 정리
 
 channel과 연산자를 사용하여 다단계 workflow가 어떻게 구성되고 작동하는지 기본적인 수준에서 이해합니다.
 또한 process가 여러 입력을 받고 여러 출력을 생성할 수 있으며 이것들이 구조화된 방식으로 게시될 수 있음을 보았습니다.
 
 ### 다음 단계
 
-Nextflow pipeline이 코드 재사용과 유지 관리성을 촉진하기 위해 어떻게 모듈화될 수 있는지 배웁니다.
+Nextflow pipeline이 코드 재사용과 유지 관리성을 촉진하기 위해 어떻게 모듈화될 수 있는지 학습합니다.
 
 ---
 
@@ -783,7 +780,7 @@ Nextflow pipeline이 코드 재사용과 유지 관리성을 촉진하기 위해
 
 여기서는 Nextflow에서 가장 일반적인 코드 모듈성 형태인 **모듈** 사용을 시연하겠습니다.
 
-Nextflow에서 **모듈**은 독립 실행형 코드 파일에 자체적으로 캡슐화된 단일 process 정의입니다.
+Nextflow에서 [**모듈**](https://nextflow.io/docs/latest/module.html)은 독립 실행형 코드 파일에 자체적으로 캡슐화된 단일 process 정의입니다.
 workflow에서 모듈을 사용하려면 workflow 코드 파일에 한 줄 import 문을 추가하기만 하면 됩니다. 그런 다음 일반적으로 하는 것과 같은 방식으로 process를 workflow에 통합할 수 있습니다.
 이를 통해 코드의 여러 복사본을 생성하지 않고도 여러 workflow에서 process 정의를 재사용할 수 있습니다.
 
@@ -943,13 +940,13 @@ Nextflow에게 중요한 것은 모든 코드가 함께 가져와지고 평가�
 
     [Workflows of Workflows](https://training.nextflow.io/latest/side_quests/workflows_of_workflows/)에 대한 Side Quest에서 조합 가능한 workflow 개발에 대해 더 자세히 알아볼 수 있습니다.
 
-### 요약
+### 핵심 정리
 
 process가 코드 재사용을 촉진하고 유지 관리성을 개선하기 위해 독립 실행형 모듈에 저장될 수 있음을 알게 되었습니다.
 
 ### 다음 단계
 
-소프트웨어 의존성을 관리하기 위해 컨테이너를 사용하는 방법을 배웁니다.
+소프트웨어 의존성을 관리하기 위해 컨테이너를 사용하는 방법을 학습합니다.
 
 ---
 
@@ -967,7 +964,8 @@ process가 코드 재사용을 촉진하고 유지 관리성을 개선하기 위
 
 !!! Tip
 
-    [Docker](https://www.docker.com/get-started/) 기술을 사용하여 가르치지만, Nextflow는 [다른 여러 컨테이너 기술](https://www.nextflow.io/docs/latest/container.html#)도 지원합니다.
+    [Docker](https://www.docker.com/get-started/) 기술을 사용하여 가르치지만, Nextflow는 여러 다른 컨테이너 기술도 지원합니다.
+    Nextflow의 컨테이너 지원에 대해 더 자세히 알아보려면 [여기](https://nextflow.io/docs/latest/container.html)를 참조하세요.
 
 ### 4.1. 컨테이너 직접 사용
 
@@ -1148,7 +1146,7 @@ pipeline을 실행할 때 각 단계에서 사용할 컨테이너를 Nextflow에
 이것이 어떻게 작동하는지 보여주기 위해 세 번째 단계에서 생성된 수집된 인사말 파일에서 `cowpy`를 실행하는 workflow의 또 다른 버전을 만들었습니다.
 
 <figure class="excalidraw">
---8<-- "docs/en/docs/nextflow_run/img/hello-pipeline-cowpy.svg"
+--8<-- "docs/en/docs/hello_nextflow/img/hello-pipeline-cowpy.svg"
 </figure>
 
 이것은 말풍선에 세 개의 인사말이 포함된 ASCII 아트가 포함된 파일을 출력해야 합니다.
@@ -1396,7 +1394,7 @@ nxf_launch() {
 
 이것은 이전 섹션에서 수동으로 수행해야 했던 모든 힘든 작업이 이제 Nextflow에 의해 수행된다는 것을 확인합니다!
 
-### 요약
+### 핵심 정리
 
 컨테이너가 소프트웨어 도구 버전을 관리하고 재현성을 보장하는 데 어떤 역할을 하는지 이해합니다.
 
@@ -1408,7 +1406,7 @@ Nextflow가 여러 입력을 효율적으로 처리하고, 함께 연결된 여�
 또 다른 휴식을 취하세요! Nextflow pipeline이 작동하는 방법에 대한 많은 정보였습니다.
 
 교육의 마지막 섹션에서는 구성 주제에 대해 더 깊이 파고들 것입니다.
-인프라에 맞게 pipeline 실행을 구성하고 입력 및 매개변수의 구성을 관리하는 방법을 배웁니다.
+인프라에 맞게 pipeline 실행을 구성하고 입력 및 매개변수의 구성을 관리하는 방법을 학습합니다.
 
 ---
 

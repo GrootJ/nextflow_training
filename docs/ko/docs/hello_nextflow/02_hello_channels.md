@@ -16,14 +16,14 @@
 
 이 과정의 파트 1(Hello World)에서는 process 호출에서 직접 입력을 제공하여 process에 변수 입력을 전달하는 방법을 보여드렸습니다: `sayHello(params.input)`.
 이것은 의도적으로 단순화된 접근 방식이었습니다.
-실제로 이 접근 방식은 주요한 제한 사항이 있습니다. 즉, 단일 값에 대해 process를 한 번만 실행하려는 매우 간단한 경우에만 작동합니다.
+실제로 이 접근 방식에는 주요한 제한 사항이 있습니다. 즉, 단일 값에 대해 process를 한 번만 실행하려는 매우 간단한 경우에만 작동합니다.
 대부분의 실제 workflow 사용 사례에서는 여러 값(예: 여러 샘플의 실험 데이터)을 처리하려고 하므로 입력을 처리하는 더 정교한 방법이 필요합니다.
 
-이것이 바로 Nextflow **channel**의 역할입니다.
-Channel은 입력을 효율적으로 처리하고 다단계 workflow에서 한 단계에서 다른 단계로 입력을 전달하도록 설계된 큐(queue)이며, 내장된 병렬 처리와 많은 추가적인 이점을 제공합니다.
+이것이 바로 Nextflow [**channel**](https://nextflow.io/docs/latest/channel.html)의 역할입니다.
+Channel은 입력을 효율적으로 처리하고 다단계 workflow에서 한 단계에서 다른 단계로 입력을 전달하도록 설계된 큐이며, 내장된 병렬 처리와 많은 추가적인 이점을 제공합니다.
 
 이 파트에서는 다양한 소스에서 여러 입력을 처리하기 위해 channel을 사용하는 방법을 배웁니다.
-또한 필요에 따라 channel 내용을 변환하기 위해 **연산자**를 사용하는 방법도 배웁니다.
+또한 필요에 따라 channel 내용을 변환하기 위해 [**연산자**](https://nextflow.io/docs/latest/reference/operator.html)를 사용하는 방법도 배웁니다.
 
 ??? info "이 섹션부터 시작하는 방법"
 
@@ -31,7 +31,7 @@ Channel은 입력을 효율적으로 처리하고 다단계 workflow에서 한 �
 
 ---
 
-## 0. 워밍업: `hello-channels.nf` 실행
+## 0. 준비 운동: `hello-channels.nf` 실행
 
 시작점으로 workflow 스크립트 `hello-channels.nf`를 사용할 것입니다.
 이 스크립트는 이 교육 과정의 파트 1을 완료하여 생성된 스크립트와 동일하지만, 출력 대상을 변경했습니다:
@@ -91,8 +91,8 @@ nextflow run hello-channels.nf --input 'Hello Channels!'
 
 ### 1.1. 입력 channel 생성
 
-Channel을 설정하는 데 사용할 수 있는 다양한 **channel 팩토리**가 있습니다.
-지금은 간단하게 유지하기 위해 단일 값을 포함하는 channel을 생성하는 `channel.of`라는 가장 기본적인 channel 팩토리를 사용할 것입니다.
+Channel을 설정하는 데 사용할 수 있는 다양한 [**channel 팩토리**](https://nextflow.io/docs/latest/reference/channel.html)가 있습니다.
+지금은 간단하게 유지하기 위해 단일 값을 포함하는 channel을 생성하는 [`channel.of`](https://nextflow.io/docs/latest/reference/channel.html#of)라는 가장 기본적인 channel 팩토리를 사용할 것입니다.
 기능적으로는 이전에 설정한 방식과 유사하지만, Nextflow가 암묵적으로 channel을 생성하는 대신 명시적으로 수행합니다.
 
 사용할 코드 라인입니다:
@@ -107,7 +107,7 @@ greeting_ch = channel.of('Hello Channels!')
 --8<-- "docs/en/docs/hello_nextflow/img/hello-pipeline-channel.svg"
 </figure>
 
-!!! note "참고"
+!!! note
 
     가독성을 위해 CLI 매개변수 대신 임시로 하드코딩된 문자열로 전환합니다. Channel 수준에서 무슨 일이 일어나는지 다룬 후에 CLI 매개변수 사용으로 돌아갈 것입니다.
 
@@ -185,7 +185,7 @@ workflow 블록에서 다음 코드 변경을 수행하십시오:
 
 이것은 Nextflow에게 `greeting_ch` channel의 내용에 대해 `sayHello` process를 실행하도록 지시합니다.
 
-이제 workflow가 제대로 작동합니다; 이것은 `sayHello('Hello Channels!')`를 작성하는 것과 동일한 명시적 표현입니다.
+이제 workflow가 제대로 작동합니다. 이것은 `sayHello('Hello Channels!')`를 작성하는 것과 동일한 명시적 표현입니다.
 
 ### 1.3. Workflow 실행
 
@@ -218,7 +218,7 @@ results 디렉토리를 확인하여 결과가 이전과 동일한지 확인할 
 동일한 최종 결과를 얻으면서 workflow의 유연성을 높였습니다.
 더 많은 코드를 작성하면서 실질적인 이점이 없는 것처럼 보일 수 있지만, 더 많은 입력을 처리하기 시작하면 그 가치가 명확해질 것입니다.
 
-다음으로 넘어가기 전에 한 가지 더 살펴보겠습니다: 데이터 입력 관리를 위해 명시적 channel을 사용하는 것의 작지만 편리한 이점입니다.
+다음으로 넘어가기 전에 한 가지 더 살펴보겠습니다. 데이터 입력 관리를 위해 명시적 channel을 사용하는 것의 작지만 편리한 이점입니다.
 
 ### 1.4. `view()`를 사용하여 channel 내용 검사
 
@@ -262,7 +262,7 @@ workflow 블록에 이 작은 라인을 추가하십시오:
     }
     ```
 
-정확한 공백 수는 4의 배수인 한 중요하지 않습니다; `.view()` 문의 시작을 channel 구성의 `.of()` 부분에 맞추는 것이 목표입니다.
+정확한 공백 수는 4의 배수인 한 중요하지 않습니다. `.view()` 문의 시작을 channel 구성의 `.of()` 부분에 맞추는 것이 목표입니다.
 
 이제 workflow를 다시 실행하십시오:
 
@@ -285,7 +285,7 @@ nextflow run hello-channels.nf
 보시다시피 channel 내용이 콘솔에 출력됩니다.
 여기서는 요소가 하나뿐이지만, 다음 섹션에서 channel에 여러 값을 로드하기 시작하면 줄당 하나의 요소가 출력되도록 설정되어 있는 것을 볼 수 있습니다.
 
-### 핵심 내용
+### 핵심 정리
 
 기본 channel 팩토리를 사용하여 process에 입력을 제공하는 방법을 알게 되었습니다.
 
@@ -305,12 +305,6 @@ Workflow는 일반적으로 대량으로 처리해야 하는 입력 배치에서
 Channel에 여러 값을 로드하기만 하면 됩니다.
 
 `'Hello'`, `'Bonjour'`, `'Holà'`로 만들어 봅시다.
-
-<figure class="excalidraw">
---8<-- "docs/en/docs/hello_nextflow/img/hello-pipeline-channel-multi.svg"
-</figure>
-
-_다이어그램에서 channel은 녹색으로 표시되며, 요소의 순서는 파이프 안의 구슬처럼 표현됩니다: 처음 로드된 것이 오른쪽에, 두 번째가 중간에, 세 번째가 왼쪽에 있습니다._
 
 #### 2.1.1. 더 많은 인사말 추가
 
@@ -381,6 +375,12 @@ nextflow run hello-channels.nf
 세 개의 인사말 중 하나가 있어야 하지만, 여기에 표시된 것과 다를 수 있습니다.
 왜 그럴 수 있는지 생각해 보셨습니까?
 
+<figure class="excalidraw">
+--8<-- "docs/en/docs/hello_nextflow/img/hello-pipeline-channel-multi.svg"
+</figure>
+
+_다이어그램에서 channel은 녹색으로 표시되며, 요소의 순서는 파이프 안의 구슬처럼 표현됩니다. 처음 로드된 것이 오른쪽에, 두 번째가 중간에, 세 번째가 왼쪽에 있습니다._
+
 실행 모니터를 다시 살펴보면, 하나의 하위 디렉토리 경로(`f4/c9962c`)만 제공했습니다.
 그 안을 살펴봅시다.
 
@@ -434,11 +434,11 @@ nextflow run hello-channels.nf -ansi-log false
 
 이번에는 세 개의 process 실행과 관련 작업 하위 디렉토리가 모두 출력에 나열됩니다.
 
-훨씬 낫습니다, 적어도 간단한 workflow에서는요.
+훨씬 낫습니다. 적어도 간단한 workflow에서는요.
 복잡한 workflow나 많은 수의 입력의 경우 전체 목록이 터미널에 출력되면 다소 압도적일 수 있습니다.
 그래서 `-ansi-log false`가 기본 동작이 아닙니다.
 
-!!! tip "팁"
+!!! tip
 
     상태가 보고되는 방식은 두 로깅 모드 간에 약간 다릅니다.
     압축 모드에서 Nextflow는 호출이 성공적으로 완료되었는지 여부를 보고합니다.
@@ -504,6 +504,10 @@ nextflow run hello-channels.nf -ansi-log false
 
 `sayHello` process의 출력 파일 이름을 하드코딩했기 때문에 세 번의 호출 모두 `output.txt`라는 파일을 생성했던 것을 기억하실 것입니다.
 
+<figure class="excalidraw">
+--8<-- "docs/en/docs/hello_nextflow/img/hello-channels-task-dirs.svg"
+</figure>
+
 출력 파일이 다른 process와 격리된 작업 하위 디렉토리에 있는 한 괜찮습니다.
 그러나 동일한 results 디렉토리에 게시되면 먼저 복사된 것이 다음 것에 의해 덮어쓰여지고, 계속 반복됩니다.
 
@@ -515,6 +519,10 @@ nextflow run hello-channels.nf -ansi-log false
 그러면 파일 이름을 어떻게 고유하게 만들까요?
 일반적인 방법은 입력(입력 channel에서 받은)의 고유한 메타데이터 조각을 출력 파일 이름의 일부로 사용하는 것입니다.
 여기서는 편의상 인사말 자체가 짧은 문자열이므로 그것을 사용하여 기본 출력 파일명 앞에 추가하겠습니다.
+
+<figure class="excalidraw">
+--8<-- "docs/en/docs/hello_nextflow/img/hello-pipeline-channel-multi-unique.svg"
+</figure>
 
 #### 2.2.1. 동적 출력 파일 이름 구성
 
@@ -558,7 +566,7 @@ process 블록에서 다음 코드 변경을 수행하십시오:
 
 출력 정의와 `script:` 명령 블록 모두에서 `output.txt`를 교체해야 합니다.
 
-!!! tip "팁"
+!!! tip
 
     출력 정의에서 출력 파일명 표현식 주위에 큰따옴표를 사용해야 합니다(작은따옴표가 아님). 그렇지 않으면 실패합니다.
 
@@ -617,14 +625,14 @@ nextflow run hello-channels.nf
 
 성공입니다! 이제 출력 파일이 덮어쓰여지는 것에 대해 걱정하지 않고 원하는 만큼 많은 인사말을 추가할 수 있습니다.
 
-!!! tip "팁"
+!!! tip
 
     실제로 입력 데이터 자체를 기반으로 파일 이름을 지정하는 것은 거의 항상 비실용적입니다.
     동적 파일 이름을 생성하는 더 좋은 방법은 입력 파일과 함께 메타데이터를 process에 전달하는 것입니다.
     메타데이터는 일반적으로 'sample sheet' 또는 이와 동등한 것을 통해 제공됩니다.
     나중에 Nextflow 교육에서 이를 수행하는 방법을 배우게 됩니다([메타데이터 사이드 퀘스트](../side_quests/metadata.md) 참조).
 
-### 핵심 내용
+### 핵심 정리
 
 Channel을 통해 여러 입력 요소를 공급하는 방법을 알게 되었습니다.
 
@@ -654,7 +662,7 @@ Channel을 통해 여러 입력 요소를 공급하는 방법을 알게 되었�
 ### 3.1. Channel에 값 배열을 입력으로 제공
 
 상식적으로 단일 값 대신 값 배열을 간단히 전달할 수 있어야 합니다.
-시도해 봅시다; 입력 변수를 설정하고 channel 팩토리에 로드해야 합니다.
+시도해 봅시다. 입력 변수를 설정하고 channel 팩토리에 로드해야 합니다.
 
 #### 3.1.1. 입력 변수 설정
 
@@ -790,18 +798,22 @@ nextflow run hello-channels.nf
 
 `view()`의 출력과 오류 메시지를 살펴보십시오.
 
-Nextflow가 배열의 세 문자열을 별도의 값으로 사용하는 대신 `[Hello, Bonjour, Holà]`를 문자열 값으로 사용하여 단일 process 호출을 실행하려고 시도한 것 같습니다.
+Nextflow가 배열의 세 문자열을 별도의 값으로 사용하는 대신 `[Hello, Bonjour, Holà]`를 단일 문자열 값으로 사용하여 단일 process 호출을 실행하려고 시도한 것 같습니다.
+
+<figure class="excalidraw">
+--8<-- "docs/en/docs/hello_nextflow/img/hello-channels-array-fail.svg"
+</figure>
 
 따라서 '패키징'이 문제를 일으키고 있습니다.
 Nextflow가 배열을 풀고 개별 문자열을 channel에 로드하도록 하려면 어떻게 해야 할까요?
 
 ### 3.2. 연산자를 사용하여 channel 내용 변환
 
-여기서 **[연산자](https://www.nextflow.io/docs/latest/reference/operator.html)**가 등장합니다.
+여기서 [**연산자**](https://nextflow.io/docs/latest/reference/operator.html)가 등장합니다.
 내부 내용을 확인하는 `.view()` 연산자를 이미 사용했습니다.
 이제 channel의 내용에 대해 작업할 수 있는 연산자를 살펴보겠습니다.
 
-Nextflow 문서의 [연산자 목록](https://www.nextflow.io/docs/latest/reference/operator.html)을 훑어보면, 정확히 필요한 것을 수행하는 [`flatten()`](https://www.nextflow.io/docs/latest/reference/operator.html#flatten)을 찾을 수 있습니다: 배열의 내용을 풀고 개별 항목으로 내보냅니다.
+Nextflow 문서의 [연산자 목록](https://nextflow.io/docs/latest/reference/operator.html)을 훑어보면, 정확히 필요한 것을 수행하는 [`flatten()`](https://www.nextflow.io/docs/latest/reference/operator.html#flatten)을 찾을 수 있습니다. 배열의 내용을 풀고 개별 항목으로 내보냅니다.
 
 #### 3.2.1. `flatten()` 연산자 추가
 
@@ -850,6 +862,10 @@ workflow 블록에서 다음 코드 변경을 수행하십시오:
 
 여기서 가독성을 위해 다음 줄에 연산자를 추가했지만, 원한다면 다음과 같이 channel 팩토리와 같은 줄에 연산자를 추가할 수 있습니다:
 `greeting_ch = channel.of(greetings_array).view().flatten()`
+
+<figure class="excalidraw">
+--8<-- "docs/en/docs/hello_nextflow/img/hello-channels-array-success.svg"
+</figure>
 
 #### 3.2.2. `view()` 문 개선
 
@@ -908,7 +924,7 @@ workflow 블록에서 다음 코드 변경을 수행하십시오:
 이 예에서 `$greeting`은 channel에 로드된 각 개별 항목을 나타냅니다.
 이렇게 하면 깔끔하게 레이블이 지정된 콘솔 출력이 생성됩니다.
 
-!!! info "정보"
+!!! info
 
     일부 파이프라인에서는 연산자 클로저 내에서 `$it`라는 특수 변수가 사용되는 것을 볼 수 있습니다.
     이것은 `->`로 정의할 필요 없이 내부 변수에 대한 단축 액세스를 허용하는 _암묵적_ 변수입니다.
@@ -940,17 +956,17 @@ nextflow run hello-channels.nf
 
 이번에는 작동하며 `flatten()` 연산자를 실행하기 전과 후에 channel의 내용이 어떻게 보이는지에 대한 추가 통찰력을 제공합니다.
 
-- - 해당 시점에서 channel에는 원래 배열인 하나의 항목이 포함되어 있으므로 단일 `Before flatten:` 문이 표시됩니다.
-    그런 다음 이제 channel의 개별 항목인 각 인사말에 대해 세 개의 별도 `After flatten:` 문이 표시됩니다.
+- 해당 시점에서 channel에는 원래 배열인 하나의 항목이 포함되어 있으므로 단일 `Before flatten:` 문이 표시됩니다.
+- 그런 다음 이제 channel의 개별 항목인 각 인사말에 대해 세 개의 별도 `After flatten:` 문이 표시됩니다.
 
 중요한 것은 이제 각 항목이 workflow에서 별도로 처리될 수 있다는 것입니다.
 
-!!! tip "팁"
+!!! tip
 
     작동에 암묵적 매핑 단계를 포함하는 다른 channel 팩토리인 [`channel.fromList`](https://nextflow.io/docs/latest/reference/channel.html#fromlist)를 사용하여 기술적으로 동일한 결과를 얻을 수 있습니다.
     여기서는 간단한 사용 사례에서 연산자 사용을 시연하기 위해 이를 사용하지 않기로 했습니다.
 
-### 핵심 내용
+### 핵심 정리
 
 `flatten()`과 같은 연산자를 사용하여 channel의 내용을 변환하는 방법과 연산자를 적용하기 전과 후에 channel 내용을 검사하기 위해 `view()` 연산자를 사용하는 방법을 알게 되었습니다.
 
@@ -1022,7 +1038,7 @@ Holà,Spanish,789
 #### 4.1.2. 파일을 처리하도록 설계된 channel 팩토리로 전환
 
 이제 입력으로 단순 문자열 대신 파일을 사용하고자 하므로 이전의 `channel.of()` channel 팩토리를 사용할 수 없습니다.
-파일 경로 처리를 위한 일부 내장 기능이 있는 새로운 channel 팩토리 [`channel.fromPath()`](https://www.nextflow.io/docs/latest/reference/channel.html#channel-path)를 사용하도록 전환해야 합니다.
+파일 경로 처리를 위한 일부 내장 기능이 있는 새로운 channel 팩토리 [`channel.fromPath()`](https://nextflow.io/docs/latest/reference/channel.html#frompath)를 사용하도록 전환해야 합니다.
 
 workflow 블록에서 다음 코드 변경을 수행하십시오:
 
@@ -1119,11 +1135,11 @@ Nextflow가 파일 경로 자체를 문자열 값으로 사용하여 단일 proc
 
 Nextflow가 파일을 열고 그 내용을 channel에 로드하도록 하려면 어떻게 해야 할까요?
 
-또 다른 [연산자](https://www.nextflow.io/docs/latest/reference/operator.html)가 필요한 것 같습니다!
+또 다른 [연산자](https://nextflow.io/docs/latest/reference/operator.html)가 필요한 것 같습니다!
 
 ### 4.2. `splitCsv()` 연산자를 사용하여 파일 구문 분석
 
-연산자 목록을 다시 살펴보면, CSV 형식 텍스트를 구문 분석하고 분할하도록 설계된 [`splitCsv()`](https://www.nextflow.io/docs/latest/reference/operator.html#splitCsv)를 찾을 수 있습니다.
+연산자 목록을 다시 살펴보면, CSV 형식 텍스트를 구문 분석하고 분할하도록 설계된 [`splitCsv()`](https://nextflow.io/docs/latest/reference/operator.html#splitcsv)를 찾을 수 있습니다.
 
 #### 4.2.1. Channel에 `splitCsv()` 적용
 
@@ -1220,6 +1236,10 @@ nextflow run hello-channels.nf
 흥미롭게도 이것도 실패하지만 다른 오류가 발생합니다.
 이번에 Nextflow는 파일 내용을 구문 분석했지만(야호!) 각 행을 배열로 로드했으며 각 배열이 channel의 요소입니다.
 
+<figure class="excalidraw">
+--8<-- "docs/en/docs/hello_nextflow/img/hello-channels-split-fail.svg"
+</figure>
+
 각 행에서 첫 번째 열만 가져오도록 지시해야 합니다.
 그러면 이것을 어떻게 풀까요?
 
@@ -1229,7 +1249,7 @@ nextflow run hello-channels.nf
 
 ### 4.3. `map()` 연산자를 사용하여 인사말 추출
 
-[`map()`](https://www.nextflow.io/docs/latest/reference/operator.html#map) 연산자는 channel의 내용에 모든 종류의 매핑을 수행할 수 있게 해주는 매우 편리한 도구입니다.
+[`map()`](https://nextflow.io/docs/latest/reference/operator.html#map) 연산자는 channel의 내용에 모든 종류의 매핑을 수행할 수 있게 해주는 매우 편리한 도구입니다.
 
 이 경우 데이터 파일의 각 행에서 원하는 요소를 추출하는 데 사용할 것입니다.
 구문은 다음과 같습니다:
@@ -1322,18 +1342,27 @@ nextflow run hello-channels.nf
 - 세 개의 별도 `After splitCsv:` 문: 각 인사말에 대해 하나씩이지만 각각 파일의 해당 줄에 해당하는 배열 내에 포함되어 있습니다.
 - 세 개의 별도 `After map:` 문: 각 인사말에 대해 하나씩이며 이제 channel의 개별 요소입니다.
 
-출력에서 줄이 다른 순서로 나타날 수 있습니다.
+_출력에서 줄이 다른 순서로 나타날 수 있습니다._
+
+<figure class="excalidraw">
+--8<-- "docs/en/docs/hello_nextflow/img/hello-channels-split-and-map.svg"
+</figure>
 
 출력 파일을 확인하여 각 인사말이 올바르게 추출되어 workflow를 통해 처리되었는지 확인할 수도 있습니다.
 
 이전과 동일한 결과를 얻었지만, 이제 코드를 수정하지 않고 입력 파일을 수정하여 처리하려는 인사말 channel에 더 많은 요소를 추가할 수 있는 훨씬 더 많은 유연성을 갖게 되었습니다.
 나중 교육에서 복잡한 입력을 처리하는 더 정교한 접근 방식을 배우게 됩니다.
 
-### 핵심 내용
+### 핵심 정리
 
 `.fromPath()` channel 생성자와 `splitCsv()` 및 `map()` 연산자를 사용하여 입력 값 파일을 읽고 적절하게 처리하는 방법을 알게 되었습니다.
 
 더 일반적으로, Nextflow가 process에 대한 입력을 관리하기 위해 **channel**을 사용하고 내용을 변환하기 위해 **연산자**를 사용하는 방법에 대한 기본적인 이해를 갖게 되었습니다.
+또한 channel이 암묵적으로 병렬 실행을 처리하는 방법도 보았습니다.
+
+<figure class="excalidraw">
+--8<-- "docs/en/docs/hello_nextflow/img/hello-channels-parallel.svg"
+</figure>
 
 ### 다음 단계
 
