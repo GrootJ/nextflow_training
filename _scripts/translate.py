@@ -1374,7 +1374,7 @@ def ci_detect(
             if orphaned:
                 console.print(f"  [red]Orphaned:[/red] {len(orphaned)}")
                 for f in orphaned:
-                    console.print(f"    {f.relative_path}")
+                    console.print(f"    {f.relative_to(DOCS_ROOT)}")
 
     print(f"languages={json.dumps(need_sync)}")
     print(f"has_work={'true' if need_sync else 'false'}")
