@@ -1,3 +1,5 @@
+#!/usr/bin/env nextflow
+
 /*
  * Call variants with GATK HaplotypeCaller
  */
@@ -13,16 +15,15 @@ process GATK_HAPLOTYPECALLER {
     path interval_list
 
     output:
-    path "${input_bam}.g.vcf"     , emit: vcf
-    path "${input_bam}.g.vcf.idx" , emit: idx
+    path "${input_bam}.vcf"     , emit: vcf
+    path "${input_bam}.vcf.idx" , emit: idx
 
     script:
     """
     gatk HaplotypeCaller \
         -R ${ref_fasta} \
         -I ${input_bam} \
-        -O ${input_bam}.g.vcf \
-        -L ${interval_list} \
-        -ERC GVCF
+        -O ${input_bam}.vcf \
+        -L ${interval_list}
     """
 }

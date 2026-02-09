@@ -2,39 +2,51 @@
 title: Nextflow for Genomics
 hide:
   - toc
+page_type: index_page
+index_type: course
+additional_information:
+  technical_requirements: true
+  learning_objectives:
+    - Write a linear workflow to apply variant calling to a single sample
+    - Handle accessory files such as index files and reference genome resources appropriately
+    - Leverage Nextflow's dataflow paradigm to parallelize per-sample variant calling
+    - Implement multi-sample joint calling using relevant channel operators
+  audience_prerequisites:
+    - "**Audience:** This course is designed for researchers in genomics and related fields who want to develop or customize data analysis pipelines."
+    - "**Skills:** Some familiarity with the command line, basic scripting concepts, and common genomics file formats is assumed."
+    - "**Prerequisites:** Foundational Nextflow concepts and tooling covered in [Hello Nextflow](../../hello_nextflow/)."
 ---
 
 # Nextflow for Genomics
 
-This training course is intended for researchers in genomics and related fields who are interested in developing or customizing data analysis pipelines.
-It builds on the [Hello Nextflow](../../hello_nextflow/) beginner training and demonstrates how to use Nextflow in the specific context of the genomics domain.
+**A hands-on course applying Nextflow to a real-world genomics use case: variant calling with GATK.**
 
-Specifically, this course demonstrates how to implement a simple variant calling pipeline with [GATK](https://gatk.broadinstitute.org/) (Genome Analysis Toolkit), a widely used software package for analyzing high-throughput sequencing data.
+This course builds on the [Hello Nextflow](../../hello_nextflow/) beginner training and demonstrates how to use Nextflow in the specific context of the genomics domain.
+You will implement a variant calling pipeline with [GATK](https://gatk.broadinstitute.org/) (Genome Analysis Toolkit), a widely used software package for analyzing high-throughput sequencing data.
 
-Let's get started! Click on the "Open in GitHub Codespaces" button below to launch the training environment (preferably in a separate tab), then read on while it loads.
+<!-- additional_information -->
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nextflow-io/training?quickstart=1&ref=master)
+## Course overview
 
-## Learning objectives
+This course is hands-on, with goal-oriented exercises structured to introduce information gradually.
 
-By working through this course, you will learn how to apply foundational Nextflow concepts and tooling to a typical genomics use case.
+You will start by running the variant calling tools manually in the terminal to understand the methodology, then progressively build up a Nextflow pipeline that automates and scales the analysis.
 
-By the end of this workshop you will be able to:
+### Lesson plan
 
-- Write a linear workflow to apply variant calling to a single sample
-- Handle accessory files such as index files and reference genome resources appropriately
-- Leverage Nextflow's dataflow paradigm to parallelize per-sample variant calling
-- Implement multi-sample variant calling using relevant channel operators
-- Implement per-step and end-to-end pipeline tests that handle genomics-specific idiosyncrasies appropriately
+We've broken this down into three parts that each focus on specific aspects of applying Nextflow to a genomics use case.
 
-<!-- TODO for future expansion: add metadata/samplesheet handling -->
+| Course chapter                                                           | Summary                                                                                         | Estimated duration |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | ------------------ |
+| [Part 1: Method overview](./01_method.md)                                | Understanding the variant calling methodology and running the tools manually                    | 30 mins            |
+| [Part 2: Per-sample variant calling](./02_per_sample_variant_calling.md) | Building a pipeline that indexes BAM files and calls variants, then scaling to multiple samples | 60 mins            |
+| [Part 3: Joint calling on a cohort](./03_joint_calling.md)               | Adding multi-sample joint genotyping using channel operators to aggregate per-sample outputs    | 45 mins            |
 
-## Prerequisites
+By the end of this course, you will be able to apply foundational Nextflow concepts and tooling to a typical genomics use case.
 
-The course assumes some minimal familiarity with the following:
+Ready to take the course?
 
-- Tools and file formats commonly used in this scientific domain
-- Experience with the command line
-- Foundational Nextflow concepts and tooling covered in the [Hello Nextflow](../../hello_nextflow/) beginner training.
+[Get started :material-arrow-right:](00_orientation.md){ .md-button .md-button--primary }
 
-For technical requirements and environment setup, see the [Environment Setup](../../envsetup/) mini-course.
+<!-- Clearfix for float -->
+<div style="content: ''; clear: both; display: table;"></div>

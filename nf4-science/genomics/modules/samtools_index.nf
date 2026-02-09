@@ -1,12 +1,6 @@
 #!/usr/bin/env nextflow
 
 /*
- * Pipeline parameters
- */
-
-// Primary input
-
-/*
  * Generate BAM index file
  */
 process SAMTOOLS_INDEX {
@@ -21,13 +15,4 @@ process SAMTOOLS_INDEX {
     """
 
     """
-
-}
-
-workflow {
-
-    // Create input channel
-
-    // Create index file for input BAM file
-
 }
