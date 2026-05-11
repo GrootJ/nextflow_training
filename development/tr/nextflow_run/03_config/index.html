@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -163,6 +163,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -846,10 +877,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet" class="md-nav__link">
+  <a href="#ozetle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -1022,10 +1053,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_1" class="md-nav__link">
+  <a href="#ozetle_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -1092,10 +1123,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_2" class="md-nav__link">
+  <a href="#ozetle_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -1151,10 +1182,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_3" class="md-nav__link">
+  <a href="#ozetle_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -1243,10 +1274,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_4" class="md-nav__link">
+  <a href="#ozetle_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -1397,10 +1428,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_5" class="md-nav__link">
+  <a href="#ozetle_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -1456,10 +1487,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_6" class="md-nav__link">
+  <a href="#ozetle_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -1727,7 +1758,7 @@
   <span class="md-ellipsis">
     
   
-    Geri bildirim anketi
+    Geri Bildirim Anketi
   
 
     
@@ -2580,7 +2611,7 @@
   <span class="md-ellipsis">
     
   
-    Bölüm 1: Yönteme genel bakış
+    Bölüm 1: Yönteme Genel Bakış
   
 
     
@@ -3340,7 +3371,7 @@
   <span class="md-ellipsis">
     
   
-    Yönlendirme
+    Başlarken
   
 
     
@@ -3389,14 +3420,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/metadata/" class="md-nav__link">
+      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Metadata ve meta map'ler
+    Temel Betik Kalıpları
   
 
     
@@ -3445,6 +3476,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../side_quests/metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metadata ve Meta Map'ler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
@@ -3473,14 +3532,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/workflows_of_workflows/" class="md-nav__link">
+      <a href="../../side_quests/nf_test/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    İç İçe Workflow'lar
+    nf-test ile Test Etme
   
 
     
@@ -3508,7 +3567,7 @@
   <span class="md-ellipsis">
     
   
-    İş Akışlarında Hata Ayıklama
+    İş Akışlarında Sorun Giderme
   
 
     
@@ -3529,14 +3588,89 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../side_quests/workflows_of_workflows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Temel Nextflow Kodlama Kalıpları
+    İş Akışlarının İş Akışları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin Geliştirme
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plugin Geliştirme
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin Geliştirme
   
 
     
@@ -3557,14 +3691,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    nf-test ile Test Etme
+    Bölüm 1: Eklenti Temelleri
   
 
     
@@ -3573,6 +3707,210 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bölüm 2: Plugin Projesi Oluşturma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bölüm 3: Özel Fonksiyonlar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bölüm 4: Test Etme
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bölüm 5: Trace Observer'lar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bölüm 6: Yapılandırma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Özet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sonraki Adımlar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4172,10 +4510,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet" class="md-nav__link">
+  <a href="#ozetle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -4348,10 +4686,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_1" class="md-nav__link">
+  <a href="#ozetle_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -4418,10 +4756,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_2" class="md-nav__link">
+  <a href="#ozetle_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -4477,10 +4815,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_3" class="md-nav__link">
+  <a href="#ozetle_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -4569,10 +4907,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_4" class="md-nav__link">
+  <a href="#ozetle_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -4723,10 +5061,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_5" class="md-nav__link">
+  <a href="#ozetle_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -4782,10 +5120,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_6" class="md-nav__link">
+  <a href="#ozetle_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -5010,43 +5348,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -5186,7 +5487,7 @@ Yapılandırmada bunlar değer atamalarıdır.</p>
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">Launching `3-main.nf` [disturbed_einstein] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
@@ -5202,7 +5503,7 @@ Yapılandırmada bunlar değer atamalarıdır.</p>
 <details class="abstract">
 <summary>Dosya içeriği</summary>
 <div class="highlight"><span class="filename">results/3-main/cowpy-COLLECTED-batch-output.txt</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">_________</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">/ HOLà    \</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">/ HOLA    \</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">| HELLO   |</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="go">\ BONJOUR /</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="go">---------</span>
@@ -5265,7 +5566,7 @@ Yolu buna göre uyarladığınızdan emin olun!</p>
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">Launching `../3-main.nf` [trusting_escher] DSL2 - revision: 356df0818d</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
@@ -5284,7 +5585,7 @@ Yolu buna göre uyarladığınızdan emin olun!</p>
 <div class="highlight"><span class="filename">tux-run/results/3-main/cowpy-COLLECTED-experiment-output.txt</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="go">_________</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="go">/ HELLO   \</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="go">| BONJOUR |</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="go">\ HOLà    /</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="go">\ HOLA    /</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="go">---------</span>
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="go">  \</span>
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="go">    \</span>
@@ -5335,7 +5636,7 @@ Onu kendi başınıza denemeye çekinmeyin.</p>
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="go">Launching `3-main.nf` [disturbed_sammet] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
@@ -5351,7 +5652,7 @@ Onu kendi başınıza denemeye çekinmeyin.</p>
 <summary>Dosya içeriği</summary>
 <div class="highlight"><span class="filename">results/3-main/cowpy-COLLECTED-yaml-output.txt</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="go">_________</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="go">/ HELLO   \</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="go">| HOLà    |</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="go">| HOLA    |</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="go">\ BONJOUR /</span>
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="go">---------</span>
 <a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="go">\                             .       .</span>
@@ -5374,7 +5675,7 @@ Onu kendi başınıza denemeye çekinmeyin.</p>
 Bu durumlarda, bir parametre dosyası kullanmak, devasa komut satırları yazmak zorunda kalmadan ve workflow betiğini değiştirmeden çalışma zamanında parametre değerleri sağlamamıza olanak tanır.</p>
 <p>Ayrıca parametre setlerini iş arkadaşlarına veya örneğin bir yayın için destekleyici bilgi olarak dağıtmayı kolaylaştırır.
 Bu, çalışmanızı başkaları tarafından daha tekrar üretilebilir hale getirir.</p>
-<h3 id="ozet">Özet<a class="headerlink" href="#ozet" title="Permanent link">&para;</a></h3>
+<h3 id="ozetle">Özetle<a class="headerlink" href="#ozetle" title="Permanent link">&para;</a></h3>
 <p>Workflow girdilerini yönetmek için temel yapılandırma seçeneklerinden nasıl yararlanacağınızı biliyorsunuz.</p>
 <h3 id="srada-ne-var">Sırada ne var?<a class="headerlink" href="#srada-ne-var" title="Permanent link">&para;</a></h3>
 <p>Workflow çıktılarınızın nerede ve nasıl yayınlandığını yönetmeyi öğrenin.</p>
@@ -5554,7 +5855,7 @@ CLI bayrağını kullanmak, yapılandırmada ayarlanmışsa <code>outputDir</cod
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="go">Launching `3-main.nf` [amazing_church] DSL2 - revision: 6e18cd130e</span>
 <a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
@@ -5574,10 +5875,10 @@ CLI bayrağını kullanmak, yapılandırmada ayarlanmışsa <code>outputDir</cod
 <a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="go">│   ├── Bonjour-output.txt</span>
 <a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="go">│   ├── COLLECTED-outdir-output.txt</span>
 <a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="go">│   ├── Hello-output.txt</span>
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="go">│   ├── Holà-output.txt</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="go">│   ├── Hola-output.txt</span>
 <a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="go">│   ├── UPPER-Bonjour-output.txt</span>
 <a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="go">│   ├── UPPER-Hello-output.txt</span>
-<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="go">│   └── UPPER-Holà-output.txt</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="go">│   └── UPPER-Hola-output.txt</span>
 <a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="go">└── outdir-report.txt</span>
 </code></pre></div>
 </details>
@@ -5690,7 +5991,7 @@ CLI bayrağını kullanmak, yapılandırmada ayarlanmışsa <code>outputDir</cod
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
 <a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="go">Launching `3-main.nf` [jovial_mcclintock] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
@@ -5711,13 +6012,13 @@ CLI bayrağını kullanmak, yapılandırmada ayarlanmışsa <code>outputDir</cod
 <a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="go">├── convertToUpper</span>
 <a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="go">│   ├── UPPER-Bonjour-output.txt</span>
 <a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="go">│   ├── UPPER-Hello-output.txt</span>
-<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="go">│   └── UPPER-Holà-output.txt</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="go">│   └── UPPER-Hola-output.txt</span>
 <a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="go">├── cowpy</span>
 <a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="go">│   └── cowpy-COLLECTED-pnames-output.txt</span>
 <a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="go">└── sayHello</span>
 <a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="go">    ├── Bonjour-output.txt</span>
 <a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="go">    ├── Hello-output.txt</span>
-<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="go">    └── Holà-output.txt</span>
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="go">    └── Hola-output.txt</span>
 </code></pre></div>
 </details>
 <div class="admonition note">
@@ -5851,7 +6152,7 @@ Bu yaklaşımları karıştırıp eşleştirebilirsiniz ve hatta birden fazla de
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
 <a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="go">Launching `3-main.nf` [rowdy_sagan] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
@@ -5873,18 +6174,18 @@ Hala hepsi düzgün kopyalar, symlink değil.</p>
 <a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="go">├── convertToUpper</span>
 <a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="go">│   ├── UPPER-Bonjour-output.txt</span>
 <a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="go">│   ├── UPPER-Hello-output.txt</span>
-<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="go">│   └── UPPER-Holà-output.txt</span>
+<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="go">│   └── UPPER-Hola-output.txt</span>
 <a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a><span class="go">├── cowpy</span>
 <a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a><span class="go">│   └── cowpy-COLLECTED-outmode-output.txt</span>
 <a id="__codelineno-36-11" name="__codelineno-36-11" href="#__codelineno-36-11"></a><span class="go">└── sayHello</span>
 <a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a><span class="go">    ├── Bonjour-output.txt</span>
 <a id="__codelineno-36-13" name="__codelineno-36-13" href="#__codelineno-36-13"></a><span class="go">    ├── Hello-output.txt</span>
-<a id="__codelineno-36-14" name="__codelineno-36-14" href="#__codelineno-36-14"></a><span class="go">    └── Holà-output.txt</span>
+<a id="__codelineno-36-14" name="__codelineno-36-14" href="#__codelineno-36-14"></a><span class="go">    └── Hola-output.txt</span>
 </code></pre></div>
 </details>
 <p>Çıktı başına mod ayarlama yolunu hala kullanmak istemenizin ana nedeni, aynı workflow içinde karıştırıp eşleştirmek istemeniz durumudur; yani bazı çıktıların kopyalanmasını ve bazılarının symlink olmasını isterseniz.</p>
 <p>Bu şekilde özelleştirebileceğiniz birçok başka seçenek var, ancak umarız bu size seçeneklerin kapsamı ve bunları tercihlerinize uygun şekilde etkili bir şekilde nasıl kullanacağınız hakkında bir fikir verir.</p>
-<h3 id="ozet_1">Özet<a class="headerlink" href="#ozet_1" title="Permanent link">&para;</a></h3>
+<h3 id="ozetle_1">Özetle<a class="headerlink" href="#ozetle_1" title="Permanent link">&para;</a></h3>
 <p>Çıktılarınızın yayınlandığı dizinlerin adlandırmasını ve yapısını ve workflow çıktı yayınlama modunu nasıl kontrol edeceğinizi biliyorsunuz.</p>
 <h3 id="srada-ne-var_1">Sırada ne var?<a class="headerlink" href="#srada-ne-var_1" title="Permanent link">&para;</a></h3>
 <p>Yazılım paketleme teknolojisiyle başlayarak workflow yapılandırmanızı hesaplama ortamınıza nasıl uyarlayacağınızı öğrenin.</p>
@@ -5968,7 +6269,7 @@ Bu da artık <code>cowpy</code> sürecimize bunlardan birini eklememiz gerektiğ
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><span class="filename">Çıktı</span><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
 <a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="go">Launching `3-main.nf` [trusting_lovelace] DSL2 - revision: 028a841db1</span>
 <a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>
@@ -5995,7 +6296,7 @@ Bu durumda, yapılandırma dosyanızda hem Docker'ı hem de Conda'yı etkinleşt
 Belirli bir süreç için her ikisi de mevcutsa, Nextflow konteynerleri önceliklendirecektir.</p>
 <p>Ve daha önce belirtildiği gibi, Nextflow birden fazla başka yazılım paketleme ve konteyner teknolojisini destekler, bu yüzden sadece bu ikisiyle sınırlı değilsiniz.</p>
 </details>
-<h3 id="ozet_2">Özet<a class="headerlink" href="#ozet_2" title="Permanent link">&para;</a></h3>
+<h3 id="ozetle_2">Özetle<a class="headerlink" href="#ozetle_2" title="Permanent link">&para;</a></h3>
 <p>Her sürecin hangi yazılım paketini kullanması gerektiğini nasıl yapılandıracağınızı ve teknolojiler arasında nasıl geçiş yapacağınızı biliyorsunuz.</p>
 <h3 id="srada-ne-var_2">Sırada ne var?<a class="headerlink" href="#srada-ne-var_2" title="Permanent link">&para;</a></h3>
 <p>Nextflow'un işi gerçekten yapmak için kullandığı çalıştırma platformunu nasıl değiştireceğinizi öğrenin.</p>
@@ -6011,15 +6312,15 @@ Bu, her görevi Nextflow'un çalıştığı makinede yürütür.
 Nextflow başladığında, mevcut CPU'lara ve belleğe bakar.
 Çalıştırılmaya hazır görevlerin kaynakları mevcut kaynakları aşarsa, Nextflow önceki görevlerden bir veya daha fazlası tamamlanıp gerekli kaynakları serbest bırakana kadar son görevleri çalıştırmaktan geri tutar.</p>
 <p>Yerel executor uygun ve verimlidir, ancak tek bir makineyle sınırlıdır. Çok büyük iş yükleri için, yerel makinenizin bir darboğaz olduğunu keşfedebilirsiniz; ya mevcut kaynaklardan daha fazlasını gerektiren tek bir göreviniz var ya da tek bir makinenin onları çalıştırmasını beklemenin çok uzun süreceği kadar çok göreviniz var.</p>
-<p>Nextflow, HPC scheduler'ları (Slurm, LSF, SGE, PBS, Moab, OAR, Bridge, HTCondor ve diğerleri) ve bulut çalıştırma backend'leri (AWS Batch, Google Cloud Batch, Azure Batch, Kubernetes ve daha fazlası) dahil <a href="https://www.nextflow.io/docs/latest/executor.html">birçok farklı çalıştırma backend'ini</a> destekler.</p>
+<p>Nextflow, HPC scheduler'ları (Slurm, LSF, SGE, PBS, Moab, OAR, Bridge, HTCondor ve diğerleri) ve bulut çalıştırma backend'leri (AWS Batch, Google Cloud Batch, Azure Batch, Kubernetes ve daha fazlası) dahil <a href="https://nextflow.io/docs/latest/executor.html">birçok farklı çalıştırma backend'ini</a> destekler.</p>
 <h3 id="41-farkl-bir-backendi-hedefleme">4.1. Farklı bir backend'i hedefleme<a class="headerlink" href="#41-farkl-bir-backendi-hedefleme" title="Permanent link">&para;</a></h3>
 <p>Executor seçimi <code>executor</code> adlı bir süreç yönergesiyle ayarlanır.
 Varsayılan olarak <code>local</code> olarak ayarlanmıştır, bu yüzden aşağıdaki yapılandırma ima edilir:</p>
-<div class="highlight"><span class="filename">Yerleşik yapılandırma</span><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">process</span><span class="w"> </span><span class="o">{</span>
+<div class="highlight"><span class="filename">Built-in configuration</span><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">process</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">    </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;local&#39;</span>
 <a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="o">}</span>
 </code></pre></div>
-<p>Executor'ı farklı bir backend'i hedefleyecek şekilde ayarlamak için, kaynak tahsisleri için yukarıda açıklanan benzer sözdizimini kullanarak istediğiniz executor'ı belirtmeniz yeterlidir (tüm seçenekler için <a href="https://www.nextflow.io/docs/latest/executor.html">Executors</a> belgesine bakın).</p>
+<p>Executor'ı farklı bir backend'i hedefleyecek şekilde ayarlamak için, kaynak tahsisleri için yukarıda açıklanan benzer sözdizimini kullanarak istediğiniz executor'ı belirtmeniz yeterlidir (tüm seçenekler için <a href="https://nextflow.io/docs/latest/executor.html">Executors</a> belgesine bakın).</p>
 <div class="highlight"><span class="filename">nextflow.config</span><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="n">process</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="w">    </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
 <a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="o">}</span>
@@ -6034,19 +6335,19 @@ Varsayılan olarak <code>local</code> olarak ayarlanmıştır, bu yüzden aşağ
 <details class="abstract">
 <summary>Örnekler</summary>
 <p>Örneğin, 8 CPU ve 4GB RAM gerektiren ve "my-science-work" kuyruğunda çalıştırılacak aynı iş, backend'e bağlı olarak farklı şekillerde ifade edilmelidir.</p>
-<div class="highlight"><span class="filename">SLURM için yapılandırma / sbatch ile gönder</span><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="c1">#SBATCH -o /path/to/my/task/directory/my-task-1.log</span>
+<div class="highlight"><span class="filename">Config for SLURM / submit using sbatch</span><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="c1">#SBATCH -o /path/to/my/task/directory/my-task-1.log</span>
 <a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="c1">#SBATCH --no-requeue</span>
 <a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="c1">#SBATCH -c 8</span>
 <a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="c1">#SBATCH --mem 4096M</span>
 <a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="c1">#SBATCH -p my-science-work</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">PBS için yapılandırma / qsub ile gönder</span><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="c1">#PBS -o /path/to/my/task/directory/my-task-1.log</span>
+<div class="highlight"><span class="filename">Config for PBS / submit using qsub</span><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="c1">#PBS -o /path/to/my/task/directory/my-task-1.log</span>
 <a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="c1">#PBS -j oe</span>
 <a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="c1">#PBS -q my-science-work</span>
 <a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="c1">#PBS -l nodes=1:ppn=5</span>
 <a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="c1">#PBS -l mem=4gb</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">SGE için yapılandırma / qsub ile gönder</span><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="c1">#$ -o /path/to/my/task/directory/my-task-1.log</span>
+<div class="highlight"><span class="filename">Config for SGE / submit using qsub</span><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="c1">#$ -o /path/to/my/task/directory/my-task-1.log</span>
 <a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="c1">#$ -j y</span>
 <a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="c1">#$ -terse</span>
 <a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="c1">#$ -notify</span>
@@ -6056,10 +6357,10 @@ Varsayılan olarak <code>local</code> olarak ayarlanmıştır, bu yüzden aşağ
 </code></pre></div>
 </details>
 <p>Neyse ki, Nextflow tüm bunları basitleştirir.
-İlgili özellikleri, <code>cpus</code>, <code>memory</code> ve <code>queue</code> gibi (tüm kullanılabilir seçenekler için <a href="https://www.nextflow.io/docs/latest/reference/process.html#process-directives">Süreç yönergeleri</a> belgesine bakın) yalnızca bir kez belirtebilmeniz için standartlaştırılmış bir sözdizimi sağlar.
+İlgili özellikleri, <code>cpus</code>, <code>memory</code> ve <code>queue</code> gibi (tüm kullanılabilir seçenekler için <a href="https://nextflow.io/docs/latest/reference/process.html#process-directives">Süreç yönergeleri</a> belgesine bakın) yalnızca bir kez belirtebilmeniz için standartlaştırılmış bir sözdizimi sağlar.
 Ardından, çalışma zamanında, Nextflow executor ayarına göre uygun backend'e özgü betikleri oluşturmak için bu ayarları kullanacaktır.</p>
 <p>Bu standartlaştırılmış sözdizimini bir sonraki bölümde ele alacağız.</p>
-<h3 id="ozet_3">Özet<a class="headerlink" href="#ozet_3" title="Permanent link">&para;</a></h3>
+<h3 id="ozetle_3">Özetle<a class="headerlink" href="#ozetle_3" title="Permanent link">&para;</a></h3>
 <p>Artık farklı türde hesaplama altyapısı kullanmak için executor'ı nasıl değiştireceğinizi biliyorsunuz.</p>
 <h3 id="srada-ne-var_3">Sırada ne var?<a class="headerlink" href="#srada-ne-var_3" title="Permanent link">&para;</a></h3>
 <p>Nextflow'da kaynak tahsislerini ve sınırlamalarını değerlendirmeyi ve ifade etmeyi öğrenin.</p>
@@ -6073,7 +6374,7 @@ Ya da belki kullanmadığınız kaynaklar için ücretlendiriliyorsunuz ve maliy
 <p>Çoğu yüksek performanslı hesaplama platformu, CPU sayısı ve bellek gibi belirli kaynak tahsis parametrelerini belirtmenize izin verir (ve bazen gerektirir).</p>
 <p>Varsayılan olarak, Nextflow her süreç için tek bir CPU ve 2GB bellek kullanacaktır.
 İlgili süreç yönergeleri <code>cpus</code> ve <code>memory</code> olarak adlandırılır, bu yüzden aşağıdaki yapılandırma ima edilir:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Yerleşik yapılandırma</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Built-in configuration</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-1">1</a></span>
 <span class="normal"><a href="#__codelineno-48-2">2</a></span>
 <span class="normal"><a href="#__codelineno-48-3">3</a></span>
 <span class="normal"><a href="#__codelineno-48-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="n">process</span><span class="w"> </span><span class="o">{</span>
@@ -6097,7 +6398,7 @@ Nextflow bunları seçilen executor için uygun talimatlara çevirecektir.</p>
 <p>Rapor, tarayıcınızda indirebileceğiniz ve açabileceğiniz bir html dosyasıdır. Ayrıca eğitim ortamında görüntülemek için soldaki dosya gezgininde sağ tıklayıp <code>Show preview</code>'a tıklayabilirsiniz.</p>
 <p>Kaynakları ayarlama fırsatlarını tanımlayıp tanımlayamayacağınızı görmek için rapora bakıp birkaç dakikanızı ayırın.
 Kullanım sonuçlarını tahsis edilenin yüzdesi olarak gösteren sekmelere tıkladığınızdan emin olun.</p>
-<p>Mevcut tüm özellikleri açıklayan <a href="https://www.nextflow.io/docs/latest/reports.html">Raporlar</a> belgelerine bakın.</p>
+<p>Mevcut tüm özellikleri açıklayan <a href="https://nextflow.io/docs/latest/reports.html">Raporlar</a> belgelerine bakın.</p>
 <h3 id="52-tum-surecler-icin-kaynak-tahsislerini-ayarlama">5.2. Tüm süreçler için kaynak tahsislerini ayarlama<a class="headerlink" href="#52-tum-surecler-icin-kaynak-tahsislerini-ayarlama" title="Permanent link">&para;</a></h3>
 <p>Profilleme, eğitim workflow'umuzdaki süreçlerin çok hafif olduğunu gösteriyor, bu yüzden süreç başına varsayılan bellek tahsisini 1GB'a düşürelim.</p>
 <p><code>nextflow.config</code> dosyanıza, pipeline parametreleri bölümünden önce aşağıdakini ekleyin:</p>
@@ -6171,14 +6472,14 @@ Bunun nedeni, Nextflow'un mevcut olandan daha fazla CPU istememizi engellemesidi
 <div class="admonition tip">
 <p class="admonition-title">İpucu</p>
 <p>Bu, kaynakları optimize etmek için yapabileceğiniz şeylerin sadece küçük bir tadımlığı.
-Nextflow'un kendisi, kaynak sınırlamaları nedeniyle başarısız olan işleri yeniden denemek için gerçekten şık bir <a href="https://www.nextflow.io/docs/latest/process.html#dynamic-task-resources">dinamik yeniden deneme mantığı</a> yerleşik olarak içerir.
+Nextflow'un kendisi, kaynak sınırlamaları nedeniyle başarısız olan işleri yeniden denemek için gerçekten şık bir <a href="https://nextflow.io/docs/latest/process.html#dynamic-task-resources">dinamik yeniden deneme mantığı</a> yerleşik olarak içerir.
 Ayrıca, Seqera Platform kaynak tahsislerinizi otomatik olarak optimize etmek için yapay zeka odaklı araçlar da sunmaktadır.</p>
 </div>
 <h3 id="55-kaynak-snrlar-ekleme">5.5. Kaynak sınırları ekleme<a class="headerlink" href="#55-kaynak-snrlar-ekleme" title="Permanent link">&para;</a></h3>
 <p>Hangi hesaplama executor'ını ve hesaplama altyapısını kullandığınıza bağlı olarak, tahsis edebileceğiniz (veya etmeniz gereken) konusunda bazı kısıtlamalar olabilir.
 Örneğin, kümeniz belirli sınırlar içinde kalmanızı gerektirebilir.</p>
 <p>İlgili sınırlamaları ayarlamak için <code>resourceLimits</code> yönergesini kullanabilirsiniz. Sözdizimi, tek başına bir süreç bloğunda olduğunda şöyle görünür:</p>
-<div class="highlight"><span class="filename">Sözdizimi örneği</span><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="n">process</span><span class="w"> </span><span class="o">{</span>
+<div class="highlight"><span class="filename">Syntax example</span><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="n">process</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="w">    </span><span class="n">resourceLimits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
 <a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">        </span><span class="nl">memory:</span><span class="w"> </span><span class="mi">750</span><span class="o">.</span><span class="na">GB</span><span class="o">,</span>
 <a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="w">        </span><span class="nl">cpus:</span><span class="w"> </span><span class="mi">200</span><span class="o">,</span>
@@ -6194,7 +6495,7 @@ Ancak, bu sınırları aşan kaynak tahsisleriyle workflow'u çalıştırmaya ç
 <p>nf-core projesi, çok çeşitli HPC ve bulut executor'larını kapsayan, dünya genelindeki çeşitli kurumlar tarafından paylaşılan bir <a href="https://nf-co.re/configs/">yapılandırma dosyaları koleksiyonu</a> derlemiştir.</p>
 <p>Bu paylaşılan yapılandırmalar hem orada çalışan ve bu nedenle kurumlarının yapılandırmasını hazır olarak kullanabilen insanlar için hem de kendi altyapıları için bir yapılandırma geliştirmek isteyen insanlar için bir model olarak değerlidir.</p>
 </details>
-<h3 id="ozet_4">Özet<a class="headerlink" href="#ozet_4" title="Permanent link">&para;</a></h3>
+<h3 id="ozetle_4">Özetle<a class="headerlink" href="#ozetle_4" title="Permanent link">&para;</a></h3>
 <p>Kaynak kullanımını değerlendirmek için bir profilleme raporu oluşturmayı ve tüm süreçler ve/veya bireysel süreçler için kaynak tahsislerini nasıl değiştireceğinizi ve HPC'de çalıştırmak için kaynak sınırlamalarını nasıl ayarlayacağınızı biliyorsunuz.</p>
 <h3 id="srada-ne-var_4">Sırada ne var?<a class="headerlink" href="#srada-ne-var_4" title="Permanent link">&para;</a></h3>
 <p>Önceden ayarlanmış yapılandırma profillerini nasıl kuracağınızı ve çalışma zamanında bunlar arasında nasıl geçiş yapacağınızı öğrenin.</p>
@@ -6256,7 +6557,7 @@ Her ortam değiştirdiğinizde yapılandırma ayarlarını manuel olarak değiş
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>
 <a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="go">Launching `3-main.nf` [gigantic_brazil] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>
@@ -6284,7 +6585,7 @@ Başkalarının uygun girdi değerlerini kendileri toplamak zorunda kalmadan wor
 Bunu bir parametre dosyası kullanmaya alternatif olarak düşünebilirsiniz.</p>
 <h4 id="621-profili-kurun">6.2.1. Profili kurun<a class="headerlink" href="#621-profili-kurun" title="Permanent link">&para;</a></h4>
 <p>Bu bağlamda varsayılan değerleri ifade etmek için sözdizimi, <code>test</code> olarak adlandırdığımız bir profil için şöyle görünür:</p>
-<div class="highlight"><span class="filename">Sözdizimi örneği</span><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="w">    </span><span class="n">test</span><span class="w"> </span><span class="o">{</span>
+<div class="highlight"><span class="filename">Syntax example</span><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="w">    </span><span class="n">test</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="w">        </span><span class="n">params</span><span class="o">.&lt;</span><span class="n">parameter1</span><span class="o">&gt;</span>
 <a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="w">        </span><span class="n">params</span><span class="o">.&lt;</span><span class="n">parameter2</span><span class="o">&gt;</span>
 <a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="w">        </span><span class="o">...</span>
@@ -6341,13 +6642,13 @@ Bunu bir parametre dosyası kullanmaya alternatif olarak düşünebilirsiniz.</p
 <h4 id="622-workflowu-yerel-olarak-test-profiliyle-calstrn">6.2.2. Workflow'u yerel olarak test profiliyle çalıştırın<a class="headerlink" href="#622-workflowu-yerel-olarak-test-profiliyle-calstrn" title="Permanent link">&para;</a></h4>
 <p>Uygun bir şekilde, profiller karşılıklı olarak dışlayıcı değildir, bu yüzden komut satırımızda <code>-profile &lt;profile1&gt;,&lt;profile2&gt;</code> sözdizimini kullanarak birden fazla profil belirtebiliriz (herhangi bir sayıda profil için).</p>
 <p>Aynı yapılandırma öğeleri için değerler ayarlayan ve aynı yapılandırma dosyasında tanımlanan profilleri birleştirirseniz, Nextflow hangi değeri en son okuduğunu kullanarak çakışmayı çözecektir (yani dosyada daha sonra gelen).
-Çakışan ayarlar farklı yapılandırma kaynaklarında ayarlanmışsa, varsayılan <a href="https://www.nextflow.io/docs/latest/config.html#configuration-file">öncelik sırası</a> geçerlidir.</p>
+Çakışan ayarlar farklı yapılandırma kaynaklarında ayarlanmışsa, varsayılan <a href="https://www.nextflow.io/docs/latest/config.html">öncelik sırası</a> geçerlidir.</p>
 <p>Önceki komutumza test profilini eklemeyi deneyelim:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span><span class="m">3</span>-main.nf<span class="w"> </span>-profile<span class="w"> </span>my_laptop,test
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>
 <a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="go">Launching `3-main.nf` [jovial_coulomb] DSL2 - revision: 46a6763141</span>
 <a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a>
@@ -6362,7 +6663,7 @@ Bunu bir parametre dosyası kullanmaya alternatif olarak düşünebilirsiniz.</p
 <details class="abstract">
 <summary>Dosya içeriği</summary>
 <div class="highlight"><span class="filename">results_config/test/</span><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="go"> _________</span>
-<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="go">/ HOLà    \</span>
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="go">/ HOLA    \</span>
 <a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="go">| HELLO   |</span>
 <a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a><span class="go">\ BONJOUR /</span>
 <a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a><span class="go">---------</span>
@@ -6476,7 +6777,7 @@ Bu, herhangi bir şey başlatmak zorunda kalmadan hangi ayarların kullanılaca�
 </code></pre></div>
 </details>
 <p>Bu, birden fazla yapılandırma katmanı içeren karmaşık projeler için özellikle yararlı olur.</p>
-<h3 id="ozet_5">Özet<a class="headerlink" href="#ozet_5" title="Permanent link">&para;</a></h3>
+<h3 id="ozetle_5">Özetle<a class="headerlink" href="#ozetle_5" title="Permanent link">&para;</a></h3>
 <p>Çalışma zamanında minimum güçlükle önceden ayarlanmış bir yapılandırmayı seçmek için profilleri nasıl kullanacağınızı biliyorsunuz.
 Daha genel olarak, workflow çalıştırmalarınızı farklı hesaplama platformlarına uyacak şekilde ve analizlerinizin tekrar üretilebilirliğini artırmak için nasıl yapılandıracağınızı biliyorsunuz.</p>
 <h3 id="srada-ne-var_5">Sırada ne var?<a class="headerlink" href="#srada-ne-var_5" title="Permanent link">&para;</a></h3>
@@ -6497,7 +6798,7 @@ Pratikte, genellikle GitHub gibi uzak havuzlarda depolanan pipeline'ları çalı
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>
 <a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a><span class="go">Pulling nextflow-io/hello ...</span>
 <a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a><span class="go"> downloaded from https://github.com/nextflow-io/hello.git</span>
@@ -6523,7 +6824,7 @@ Sonraki çalıştırmalar, açıkça bir güncelleme istemediğiniz sürece önb
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a>
 <a id="__codelineno-70-3" name="__codelineno-70-3" href="#__codelineno-70-3"></a><span class="go">Launching `https://github.com/nextflow-io/hello` [sick_carson] DSL2 - revision: 2ce0b0e294 [v1.3]</span>
 <a id="__codelineno-70-4" name="__codelineno-70-4" href="#__codelineno-70-4"></a>
@@ -6539,7 +6840,7 @@ Sonraki çalıştırmalar, açıkça bir güncelleme istemediğiniz sürece önb
 </code></pre></div>
 </details>
 <p>Tam versiyonları belirtmek tekrar üretilebilirlik için önemlidir.</p>
-<h3 id="ozet_6">Özet<a class="headerlink" href="#ozet_6" title="Permanent link">&para;</a></h3>
+<h3 id="ozetle_6">Özetle<a class="headerlink" href="#ozetle_6" title="Permanent link">&para;</a></h3>
 <p>Pipeline'ları doğrudan GitHub ve diğer uzak havuzlardan nasıl çalıştıracağınızı ve tekrar üretilebilirlik için versiyonları nasıl belirteceğinizi biliyorsunuz.</p>
 <h3 id="srada-ne-var_6">Sırada ne var?<a class="headerlink" href="#srada-ne-var_6" title="Permanent link">&para;</a></h3>
 <p>Kendinize büyük bir tebrik verin!
@@ -6547,7 +6848,7 @@ Nextflow pipeline'larını çalıştırmaya ve yönetmeye başlamak için bilmen
 <p>Bu, bu kursu sonlandırıyor, ancak öğrenmeye devam etmek istiyorsanız, iki ana önerimiz var:</p>
 <ul>
 <li>Kendi pipeline'larınızı geliştirmeyi daha derinlemesine incelemek istiyorsanız, bu kursla aynı genel ilerlemeyi kapsayan ancak kanallar ve operatörler hakkında çok daha ayrıntılı giden yeni başlayanlar için bir kurs olan <a href="../../hello_nextflow/">Hello Nextflow</a>'a bakın.</li>
-<li>Koda daha derinlemesine girmeden Nextflow pipeline'larını çalıştırmayı öğrenmeye devam etmek istiyorsanız, son derece popüler <a href="https://nf-co.re/">nf-core</a> projesinden pipeline'ları bulmak ve çalıştırmak için araçları tanıtan <a href="../../hello_nf-core/">Hello nf-core</a>'un ilk bölümüne bakın.</li>
+<li>Koda daha derinlemesine girmeden Nextflow pipeline'larını çalıştırmayı öğrenmeye devam etmek istiyorsanız, son derece popüler <a href="../../hello_nf-core/">nf-core</a> projesinden pipeline'ları bulmak ve çalıştırmak için araçları tanıtan <a href="https://nf-co.re/">Hello nf-core</a>'un ilk bölümüne bakın.</li>
 </ul>
 <p>İyi eğlenceler!</p>
 <hr />
@@ -6875,7 +7176,60 @@ Daha fazla bilgi: [6. Önceden ayarlanmış yapılandırmalar arasında geçiş 
         <button type="submit" class="quiz-button">Submit</button>
     </form>
     <section class="content hidden"><p>Daha fazla bilgi: <a href="#6-use-profiles-to-switch-between-preset-configurations">6. Önceden ayarlanmış yapılandırmalar arasında geçiş yapmak için profilleri kullanın</a></p></section>
-</div><style type="text/css">.quiz {
+</div><div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    Quiz Progress
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          Reset
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        Reset
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -6922,10 +7276,12 @@ Daha fazla bilgi: [6. Önceden ayarlanmış yapılandırmalar arasında geçiş 
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -7846,16 +8202,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -8489,9 +8835,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

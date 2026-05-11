@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -157,12 +157,70 @@
     <div data-md-component="skip">
       
         
-        <a href="#quetes-secondaires" class="md-skip">
+        <a href="#side-questscourse" class="md-skip">
           Aller au contenu
         </a>
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
                 
@@ -2338,22 +2369,30 @@
   </label>
   <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
      <li class="md-nav__item">
-  <a href="#prerequis" class="md-nav__link">
+  <a href="#apercu-du-cours" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prérequis
+        Aperçu du cours
       
     </span>
   </a>
   
-</li>  <li class="md-nav__item">
-  <a href="#quetes-secondaires_1" class="md-nav__link">
+    <nav class="md-nav" aria-label="Aperçu du cours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quetes-secondaires" class="md-nav__link">
     <span class="md-ellipsis">
       
         Quêtes secondaires
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li> 
   </ul>
@@ -2565,7 +2604,7 @@
   <span class="md-ellipsis">
     
   
-    Orientation
+    Premiers pas
   
 
     
@@ -2593,7 +2632,7 @@
   <span class="md-ellipsis">
     
   
-    Environnement de Développement
+    Index
   
 
     
@@ -2614,14 +2653,14 @@
   
   
     <li class="md-nav__item">
-      <a href="metadata/" class="md-nav__link">
+      <a href="essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Métadonnées et meta maps
+    Modèles de Scripting Essentiels
   
 
     
@@ -2670,14 +2709,14 @@
   
   
     <li class="md-nav__item">
-      <a href="splitting_and_grouping/" class="md-nav__link">
+      <a href="metadata/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Division et regroupement
+    Métadonnées et meta maps
   
 
     
@@ -2698,14 +2737,42 @@
   
   
     <li class="md-nav__item">
-      <a href="workflows_of_workflows/" class="md-nav__link">
+      <a href="splitting_and_grouping/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Workflows de workflows
+    Séparation et regroupement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nf_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tests avec nf-test
   
 
     
@@ -2733,7 +2800,7 @@
   <span class="md-ellipsis">
     
   
-    Débogage des Workflows
+    Résolution des problèmes dans les Workflows
   
 
     
@@ -2754,14 +2821,89 @@
   
   
     <li class="md-nav__item">
-      <a href="essential_scripting_patterns/" class="md-nav__link">
+      <a href="workflows_of_workflows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Modèles de Script Nextflow Essentiels
+    Workflows de Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Développement de plugins
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Développement de plugins
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Développement de plugins
   
 
     
@@ -2782,14 +2924,14 @@
   
   
     <li class="md-nav__item">
-      <a href="nf-test/" class="md-nav__link">
+      <a href="plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Tests avec nf-test
+    Partie 1 : Les bases des plugins
   
 
     
@@ -2798,6 +2940,210 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/02_create_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 2 : Créer un projet de plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 3 : Fonctions personnalisées
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 4 : Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 5 : Observateurs de trace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 6 : Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Résumé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prochaines étapes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3248,22 +3594,30 @@
   </label>
   <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
      <li class="md-nav__item">
-  <a href="#prerequis" class="md-nav__link">
+  <a href="#apercu-du-cours" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prérequis
+        Aperçu du cours
       
     </span>
   </a>
   
-</li>  <li class="md-nav__item">
-  <a href="#quetes-secondaires_1" class="md-nav__link">
+    <nav class="md-nav" aria-label="Aperçu du cours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quetes-secondaires" class="md-nav__link">
     <span class="md-ellipsis">
       
         Quêtes secondaires
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li> 
   </ul>
@@ -3460,43 +3814,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -3525,65 +3842,165 @@
 </a>
  
 
-<h1 id="quetes-secondaires">Quêtes secondaires<a class="headerlink" href="#quetes-secondaires" title="Permanent link">&para;</a></h1>
-<p><span class="ai-translation-notice"><span class="twemoji ai-translation-notice-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> Traduction assistée par IA - <a href="https://github.com/nextflow-io/training/blob/master/TRANSLATING.md">en savoir plus et suggérer des améliorations</a></span></p>
-<p>Ceci est une collection de mini-cours de formation autonomes qui approfondissent des sujets spécifiques. Vous pouvez les suivre dans n'importe quel ordre.</p>
-<p>Commençons ! Cliquez sur le bouton « Open in GitHub Codespaces » ci-dessous pour lancer l'environnement de formation (de préférence dans un onglet séparé), puis continuez votre lecture pendant le chargement.</p>
-<p><a href="https://codespaces.new/nextflow-io/training?quickstart=1&amp;ref=master"><img alt="Open in GitHub Codespaces" src="https://github.com/codespaces/badge.svg" /></a></p>
-<h2 id="prerequis">Prérequis<a class="headerlink" href="#prerequis" title="Permanent link">&para;</a></h2>
-<p>Les prérequis spécifiques de chaque mini-cours varient et sont documentés dans les pages correspondantes.
-Néanmoins, tous supposent une familiarité minimale avec les éléments suivants :</p>
+<h1 id="side-questscourse">Side Quests<span class="index-type-badge">course</span><a class="headerlink" href="#side-questscourse" title="Permanent link">&para;</a></h1>
+<div class="grid cards">
 <ul>
-<li>Expérience avec la ligne de commande</li>
-<li>Concepts et outils fondamentaux de Nextflow couverts dans le cours de formation pour débutants <a href="../../hello_nextflow/">Hello Nextflow</a>.</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <strong>Résumé du cours</strong></p>
+<hr />
+<p><span class="ai-translation-notice"><span class="twemoji ai-translation-notice-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> Traduction assistée par IA - <a href="https://github.com/nextflow-io/training/blob/master/TRANSLATING.md">en savoir plus et suggérer des améliorations</a></span></p>
+<p><strong>Les Quêtes secondaires sont des mini-cours de formation autonomes qui approfondissent des sujets Nextflow spécifiques.</strong></p>
+<p>Chaque quête secondaire peut être suivie indépendamment, dans n'importe quel ordre, selon vos intérêts et vos besoins.</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> <strong>Informations complémentaires</strong></p>
+<hr />
+<details class="terminal">
+<summary>Prérequis techniques</summary>
+<p>Vous aurez besoin d'un compte GitHub OU d'une installation locale de Nextflow. Consultez <a href="../envsetup/">Options d'environnement</a> pour plus de détails.</p>
+</details>
+<details class="learning">
+<summary>Objectifs d'apprentissage</summary>
+<ul>
+<li>Configurer un environnement de développement Nextflow productif</li>
+<li>Appliquer des modèles de script avancés pour des transformations de données complexes</li>
+<li>Gérer et propager des métadonnées dans des workflows en plusieurs étapes</li>
+<li>Diviser et regrouper des canaux de données pour un traitement parallèle et séquentiel</li>
+<li>Tester des workflows Nextflow avec nf-test</li>
+<li>Composer des pipelines complexes à partir de modules de workflow nommés et réutilisables</li>
+<li>Travailler efficacement avec des fichiers grâce aux opérations sur les fichiers Nextflow</li>
+<li>Déboguer systématiquement les problèmes courants de workflow</li>
+<li>Utiliser et créer des plugins Nextflow</li>
 </ul>
-<p>Pour les exigences techniques et la configuration de l'environnement, consultez le mini-cours <a href="../../envsetup/">Configuration de l'environnement</a>.</p>
-<p><strong>Si c'est la première fois que vous explorez les Quêtes secondaires, assurez-vous de consulter d'abord la page <a href="orientation/">Orientation</a> !</strong></p>
-<p>Sinon, sélectionnez une quête secondaire dans le tableau ci-dessous.</p>
-<h2 id="quetes-secondaires_1">Quêtes secondaires<a class="headerlink" href="#quetes-secondaires_1" title="Permanent link">&para;</a></h2>
+</details>
+<details class="people">
+<summary>Public et prérequis</summary>
+<ul>
+<li><strong>Public :</strong> Cette collection est destinée aux apprenant·es ayant terminé le cours débutant Hello Nextflow et souhaitant approfondir des sujets spécifiques.</li>
+<li><strong>Compétences :</strong> Une expérience avec la ligne de commande et une familiarité avec les concepts et outils de base de Nextflow sont supposées.</li>
+<li><strong>Cours :</strong> Avoir complété <a href="../hello_nextflow/">Hello Nextflow</a> ou équivalent.</li>
+</ul>
+</details>
+</li>
+</ul>
+</div>
+<h2 id="apercu-du-cours">Aperçu du cours<a class="headerlink" href="#apercu-du-cours" title="Permanent link">&para;</a></h2>
+<p>Si c'est la première fois que vous explorez les Quêtes secondaires, commencez par la page <a href="orientation/">Orientation</a> pour un aperçu de l'environnement de formation et des supports.</p>
+<h3 id="quetes-secondaires">Quêtes secondaires<a class="headerlink" href="#quetes-secondaires" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Quête secondaire</th>
-<th>Durée estimée pour l'enseignement</th>
+<th>Résumé</th>
+<th>Durée estimée</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="./ide_features.md">Présentation de l'environnement de développement Nextflow</a></td>
+<td><a href="dev_environment/">Environnement de développement</a></td>
+<td>Configurer un environnement de développement Nextflow local et productif</td>
 <td>45 min</td>
 </tr>
 <tr>
-<td><a href="essential_scripting_patterns/">Modèles de script Nextflow essentiels</a></td>
+<td><a href="essential_scripting_patterns/">Modèles de script essentiels</a></td>
+<td>Techniques de script avancées pour les défis courants des workflows</td>
 <td>90 min</td>
 </tr>
 <tr>
-<td><a href="metadata/">Métadonnées dans les workflows</a></td>
+<td><a href="working_with_files/">Traitement des fichiers en entrée</a></td>
+<td>Gestion des fichiers, opérations sur les chemins et organisation des sorties</td>
+<td>45 min</td>
+</tr>
+<tr>
+<td><a href="metadata/">Métadonnées et meta maps</a></td>
+<td>Utiliser des maps de métadonnées pour suivre et propager les informations sur les échantillons</td>
 <td>45 min</td>
 </tr>
 <tr>
 <td><a href="splitting_and_grouping/">Division et regroupement</a></td>
+<td>Techniques de division et de regroupement des canaux de données</td>
 <td>45 min</td>
 </tr>
 <tr>
-<td><a href="nf-test/">Tests avec nf-test</a></td>
+<td><a href="nf_test/">Tests avec nf-test</a></td>
+<td>Écrire et exécuter des tests pour les workflows Nextflow</td>
+<td>1 heure</td>
+</tr>
+<tr>
+<td><a href="debugging/">Débogage des workflows</a></td>
+<td>Identifier et corriger les erreurs courantes dans les workflows</td>
 <td>1 heure</td>
 </tr>
 <tr>
 <td><a href="workflows_of_workflows/">Workflows de workflows</a></td>
+<td>Composer des pipelines complexes à partir de modules de workflow nommés et réutilisables</td>
 <td>30 min</td>
 </tr>
 <tr>
-<td><a href="working_with_files/">Travailler avec les fichiers</a></td>
-<td>45 min</td>
-</tr>
-<tr>
-<td><a href="debugging/">Débogage des workflows</a></td>
-<td>1 heure</td>
+<td><a href="plugin_development/">Développement de plugins</a></td>
+<td>Utiliser et créer des plugins Nextflow</td>
+<td>3 heures</td>
 </tr>
 </tbody>
 </table>
-<p>Faites-nous savoir quels autres domaines et cas d'usage vous aimeriez voir couverts ici en publiant dans la <a href="https://community.seqera.io/c/training/">section Formation</a> du forum communautaire.</p><style type="text/css">.quiz {
+<p><a class="md-button md-button--primary" href="orientation/">Commencer <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
+<!-- Clearfix for float -->
+<div style="content: ''; clear: both; display: table;"></div>
+
+<p>Faites-nous savoir quels autres sujets vous aimeriez voir couverts ici en publiant dans la <a href="https://community.seqera.io/c/training/">section Formation</a> du forum communautaire.</p><div id="quiz-progress-sidebar" aria-label="Progression du quiz" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    Progression du quiz
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          Répondu : <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          Correctes : <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          Réinitialiser
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Progression du quiz" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        Répondu : <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        Correctes : <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        Réinitialiser
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -3630,10 +4047,12 @@ Néanmoins, tous supposent une familiarité minimale avec les éléments suivant
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -4554,16 +4973,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -5198,9 +5607,6 @@ window.mkdocsQuizConfig = {
     // Initialize tracker
     quizTracker.init();
 
-    // Translate template elements
-    translateTemplateElements();
-
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();
 
@@ -5302,13 +5708,13 @@ window.mkdocsQuizConfig = {
         
         
           
-          <a href="orientation/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Orientation">
+          <a href="orientation/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Premiers pas">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Suivant
               </span>
               <div class="md-ellipsis">
-                Orientation
+                Premiers pas
               </div>
             </div>
             <div class="md-footer__button md-icon">

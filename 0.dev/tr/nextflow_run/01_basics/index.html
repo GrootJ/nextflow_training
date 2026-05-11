@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -163,6 +163,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -684,10 +715,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet" class="md-nav__link">
+  <a href="#ozetle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -776,10 +807,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_1" class="md-nav__link">
+  <a href="#ozetle_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -868,10 +899,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_2" class="md-nav__link">
+  <a href="#ozetle_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -977,10 +1008,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_3" class="md-nav__link">
+  <a href="#ozetle_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -1304,7 +1335,7 @@
   <span class="md-ellipsis">
     
   
-    Geri bildirim anketi
+    Geri Bildirim Anketi
   
 
     
@@ -2157,7 +2188,7 @@
   <span class="md-ellipsis">
     
   
-    Bölüm 1: Yönteme genel bakış
+    Bölüm 1: Yönteme Genel Bakış
   
 
     
@@ -2917,7 +2948,7 @@
   <span class="md-ellipsis">
     
   
-    Yönlendirme
+    Başlarken
   
 
     
@@ -2966,14 +2997,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/metadata/" class="md-nav__link">
+      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Metadata ve meta map'ler
+    Temel Betik Kalıpları
   
 
     
@@ -3022,6 +3053,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../side_quests/metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metadata ve Meta Map'ler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
@@ -3050,14 +3109,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/workflows_of_workflows/" class="md-nav__link">
+      <a href="../../side_quests/nf_test/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    İç İçe Workflow'lar
+    nf-test ile Test Etme
   
 
     
@@ -3085,7 +3144,7 @@
   <span class="md-ellipsis">
     
   
-    İş Akışlarında Hata Ayıklama
+    İş Akışlarında Sorun Giderme
   
 
     
@@ -3106,14 +3165,89 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../side_quests/workflows_of_workflows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Temel Nextflow Kodlama Kalıpları
+    İş Akışlarının İş Akışları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin Geliştirme
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plugin Geliştirme
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin Geliştirme
   
 
     
@@ -3134,14 +3268,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    nf-test ile Test Etme
+    Bölüm 1: Eklenti Temelleri
   
 
     
@@ -3150,6 +3284,210 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bölüm 2: Plugin Projesi Oluşturma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bölüm 3: Özel Fonksiyonlar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bölüm 4: Test Etme
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bölüm 5: Trace Observer'lar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bölüm 6: Yapılandırma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Özet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sonraki Adımlar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3643,10 +3981,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet" class="md-nav__link">
+  <a href="#ozetle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -3735,10 +4073,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_1" class="md-nav__link">
+  <a href="#ozetle_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -3827,10 +4165,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_2" class="md-nav__link">
+  <a href="#ozetle_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -3936,10 +4274,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ozet_3" class="md-nav__link">
+  <a href="#ozetle_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Özet
+        Özetle
       
     </span>
   </a>
@@ -4164,43 +4502,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -4271,7 +4572,7 @@ Dosya gezgininde açabilir veya örneğin <code>cat</code> yardımcı programın
 </code></pre></div></td></tr></table></div>
 </details>
 <p>İlk Nextflow workflow'umuzla çoğaltmaya çalışacağımız şey budur.</p>
-<h3 id="ozet">Özet<a class="headerlink" href="#ozet" title="Permanent link">&para;</a></h3>
+<h3 id="ozetle">Özetle<a class="headerlink" href="#ozetle" title="Permanent link">&para;</a></h3>
 <p>Artık terminalde bazı metinler çıktı veren basit bir komutu nasıl çalıştıracağınızı ve isteğe bağlı olarak çıktıyı bir dosyaya nasıl yazdıracağınızı biliyorsunuz.</p>
 <h3 id="srada-ne-var">Sırada ne var?<a class="headerlink" href="#srada-ne-var" title="Permanent link">&para;</a></h3>
 <p>Aynı sonucu elde eden bir Nextflow workflow'u çalıştırmanın ne gerektirdiğini öğrenin.</p>
@@ -4285,7 +4586,7 @@ Dosya gezgininde açabilir veya örneğin <code>cat</code> yardımcı programın
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">Launching `1-hello.nf` [goofy_torvalds] DSL2 - revision: c33d41f479</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
@@ -4337,7 +4638,7 @@ Bunlar hakkında daha sonra daha fazla bilgi.</p>
 </code></pre></div>
 <details class="success">
 <summary>Komut çıktısı</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="go">Launching `1-hello.nf` [hungry_celsius] DSL2 - revision: f048d6ea78</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
@@ -4497,7 +4798,7 @@ Açarsanız, <code>Hello World!</code> selamlamasını tekrar bulacaksınız.</p
 </code></pre></div>
 </details>
 <p>Bu size yayınlanan sonuçların sonraki çalıştırmalar tarafından üzerine yazılacağını, oysa <code>work/</code> altındaki görev dizinlerinin korunduğunu gösterir.</p>
-<h3 id="ozet_1">Özet<a class="headerlink" href="#ozet_1" title="Permanent link">&para;</a></h3>
+<h3 id="ozetle_1">Özetle<a class="headerlink" href="#ozetle_1" title="Permanent link">&para;</a></h3>
 <p>Basit bir Nextflow betiğini nasıl çalıştıracağınızı, yürütülmesini nasıl izleyeceğinizi ve çıktılarını nasıl bulacağınızı biliyorsunuz.</p>
 <h3 id="srada-ne-var_1">Sırada ne var?<a class="headerlink" href="#srada-ne-var_1" title="Permanent link">&para;</a></h3>
 <p>Temel bir Nextflow betiğini nasıl okuyacağınızı ve bileşenlerinin işlevselliğiyle nasıl ilişkili olduğunu öğrenin.</p>
@@ -4724,7 +5025,7 @@ Bir workflow birden fazla çıktı ürettiğinde, her birinin <code>output</code
 <p>Çok yakın zamana kadar, çıktıları yayınlamanın yerleşik yolu, <code>publishDir</code> yönergesi kullanarak her bir süreç düzeyinde yapmaktı.</p>
 <p>Bu kod kalıbını eski Nextflow pipeline'larında ve süreç modüllerinde hala her yerde bulacaksınız, bu yüzden bunun farkında olmak önemlidir.</p>
 <p>Workflow'da <code>publish:</code> bloğu ve üst düzeyde <code>output</code> bloğu yerine, <code>sayHello</code> süreç tanımında bir <code>publishDir</code> satırı görürdünüz:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Sözdizimi örneği</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Syntax example</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-28-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-28-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-28-4"> 4</a></span>
@@ -4750,7 +5051,7 @@ Bir workflow birden fazla çıktı ürettiğinde, her birinin <code>output</code
 </code></pre></div></td></tr></table></div>
 <p>Ancak, gelecekteki Nextflow dil sürümlerinde sonunda yasaklanacağı için bunu herhangi bir yeni çalışmada kullanmanızı önermiyoruz.</p>
 </details>
-<h3 id="ozet_2">Özet<a class="headerlink" href="#ozet_2" title="Permanent link">&para;</a></h3>
+<h3 id="ozetle_2">Özetle<a class="headerlink" href="#ozetle_2" title="Permanent link">&para;</a></h3>
 <p>Artık basit bir Nextflow workflow'unun nasıl yapılandırıldığını ve temel bileşenlerin işlevselliğiyle nasıl ilişkili olduğunu biliyorsunuz.</p>
 <h3 id="srada-ne-var_2">Sırada ne var?<a class="headerlink" href="#srada-ne-var_2" title="Permanent link">&para;</a></h3>
 <p>Workflow çalıştırmalarınızı rahatça yönetmeyi öğrenin.</p>
@@ -4777,7 +5078,7 @@ Bu, Nextflow'un yalnızca son çalıştırmadan bu yana eklediğiniz veya deği�
 <span class="normal"><a href="#__codelineno-30-2">2</a></span>
 <span class="normal"><a href="#__codelineno-30-3">3</a></span>
 <span class="normal"><a href="#__codelineno-30-4">4</a></span>
-<span class="normal"><a href="#__codelineno-30-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<span class="normal"><a href="#__codelineno-30-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-30-2" name="__codelineno-30-2"></a>
 <a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="go">Launching `1-hello.nf` [tiny_noyce] DSL2 - revision: c33d41f479</span>
 <a id="__codelineno-30-4" name="__codelineno-30-4"></a>
@@ -4873,7 +5174,7 @@ Bunun iki karakterli alt dizinleri (yukarıdaki <code>eb/</code> gibi) kaldırma
 Bu, Nextflow'un ilgili süreçleri yeniden çalıştırmadan çalışmaya devam etme yeteneğini bozar.</p>
 <p>Önemsediğiniz çıktıları kaydetmekten siz sorumlusunuz! Bu, <code>publish</code> yönergesi için <code>symlink</code> modu yerine <code>copy</code> modunu tercih etmemizin ana nedenidir.</p>
 </div>
-<h3 id="ozet_3">Özet<a class="headerlink" href="#ozet_3" title="Permanent link">&para;</a></h3>
+<h3 id="ozetle_3">Özetle<a class="headerlink" href="#ozetle_3" title="Permanent link">&para;</a></h3>
 <p>Aynı şekilde zaten çalıştırılmış adımları tekrarlamadan bir pipeline'ı nasıl yeniden başlatacağınızı, çalıştırma logunu nasıl inceleyeceğinizi ve eski çalışma dizinlerini temizlemek için <code>nextflow clean</code> komutunu nasıl kullanacağınızı biliyorsunuz.</p>
 <h3 id="srada-ne-var_3">Sırada ne var?<a class="headerlink" href="#srada-ne-var_3" title="Permanent link">&para;</a></h3>
 <p>Biraz ara verin! Nextflow sözdiziminin ve temel kullanım talimatlarının yapı taşlarını yeni özümsediniz.</p>
@@ -4888,7 +5189,7 @@ Bu, Nextflow'un ilgili süreçleri yeniden çalıştırmadan çalışmaya devam 
 - [x] Görevin çalışma dizinine kısaltılmış yol
 - [ ] Çıktı dosyasının sağlama toplamı
 
-Daha fazla bilgi: [2.4. Orijinal çıktıyı ve logları `work/` dizininde bulun](#24-orijinal-ciktiyi-ve-loglari-work-dizininde-bulun)
+Daha fazla bilgi: [2.4. Orijinal çıktıyı ve logları `work/` dizininde bulun](#23-find-the-original-output-and-logs-in-the-work-directory)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-0">
@@ -4902,7 +5203,7 @@ Daha fazla bilgi: [2.4. Orijinal çıktıyı ve logları `work/` dizininde bulun
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Daha fazla bilgi: <a href="#24-orijinal-ciktiyi-ve-loglari-work-dizininde-bulun">2.4. Orijinal çıktıyı ve logları <code>work/</code> dizininde bulun</a></p></section>
+    <section class="content hidden"><p>Daha fazla bilgi: <a href="#23-find-the-original-output-and-logs-in-the-work-directory">2.4. Orijinal çıktıyı ve logları <code>work/</code> dizininde bulun</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -4913,7 +5214,7 @@ Görev dizinindeki `.command.sh` dosyasının amacı nedir?
 - [ ] Başarısız görevlerden hata mesajlarını içerir
 - [ ] Görev için hazırlanan girdi dosyalarını listeler
 
-Daha fazla bilgi: [2.4. Orijinal çıktıyı ve logları `work/` dizininde bulun](#24-orijinal-ciktiyi-ve-loglari-work-dizininde-bulun)
+Daha fazla bilgi: [2.4. Orijinal çıktıyı ve logları `work/` dizininde bulun](#23-find-the-original-output-and-logs-in-the-work-directory)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-1">
@@ -4927,7 +5228,7 @@ Daha fazla bilgi: [2.4. Orijinal çıktıyı ve logları `work/` dizininde bulun
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Daha fazla bilgi: <a href="#24-orijinal-ciktiyi-ve-loglari-work-dizininde-bulun">2.4. Orijinal çıktıyı ve logları <code>work/</code> dizininde bulun</a></p></section>
+    <section class="content hidden"><p>Daha fazla bilgi: <a href="#23-find-the-original-output-and-logs-in-the-work-directory">2.4. Orijinal çıktıyı ve logları <code>work/</code> dizininde bulun</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -4938,7 +5239,7 @@ Daha fazla bilgi: [2.4. Orijinal çıktıyı ve logları `work/` dizininde bulun
 - [ ] Nextflow üzerine yazmayı engeller ve başarısız olur
 - [ ] Otomatik olarak yedeklenirler
 
-Daha fazla bilgi: [2.5. Workflow'u farklı selamlamalarla yeniden çalıştırın](#25-workflowu-farkli-selamlamalarla-yeniden-calistirin)
+Daha fazla bilgi: [2.5. Workflow'u farklı selamlamalarla yeniden çalıştırın](#24-re-run-the-workflow-with-different-greetings)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-2">
@@ -4952,7 +5253,7 @@ Daha fazla bilgi: [2.5. Workflow'u farklı selamlamalarla yeniden çalıştırı
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Daha fazla bilgi: <a href="#25-workflowu-farkli-selamlamalarla-yeniden-calistirin">2.5. Workflow'u farklı selamlamalarla yeniden çalıştırın</a></p></section>
+    <section class="content hidden"><p>Daha fazla bilgi: <a href="#24-re-run-the-workflow-with-different-greetings">2.5. Workflow'u farklı selamlamalarla yeniden çalıştırın</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -4968,7 +5269,7 @@ Bu konsol çıktısı neyi gösterir?
 - [x] Nextflow önceki özdeş bir çalıştırmadan sonuçları yeniden kullandı
 - [ ] Görev manuel olarak iptal edildi
 
-Daha fazla bilgi: [4.1. `-resume` ile bir workflow'u yeniden başlatın](#41--resume-ile-bir-workflowu-yeniden-baslatin)
+Daha fazla bilgi: [4.1. `-resume` ile bir workflow'u yeniden başlatın](#41-re-launch-a-workflow-with--resume)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-3">
@@ -4984,7 +5285,7 @@ Daha fazla bilgi: [4.1. `-resume` ile bir workflow'u yeniden başlatın](#41--re
                     <div class="quiz-feedback hidden"></div>
 
                 </form>
-                <section class="content hidden"><p>Daha fazla bilgi: <a href="#41--resume-ile-bir-workflowu-yeniden-baslatin">4.1. <code>-resume</code> ile bir workflow'u yeniden başlatın</a></p></section>
+                <section class="content hidden"><p>Daha fazla bilgi: <a href="#41-re-launch-a-workflow-with--resume">4.1. <code>-resume</code> ile bir workflow'u yeniden başlatın</a></p></section>
             </div>
 
 <!-- mkdocs-quiz-source
@@ -4995,7 +5296,7 @@ Daha fazla bilgi: [4.1. `-resume` ile bir workflow'u yeniden başlatın](#41--re
 - [x] `.nextflow/history` dosyasında
 - [ ] `nextflow.config` dosyasında
 
-Daha fazla bilgi: [4.2. Geçmiş çalıştırmaların logunu inceleyin](#42-gecmis-calistirmalarin-logunu-inceleyin)
+Daha fazla bilgi: [4.2. Geçmiş çalıştırmaların logunu inceleyin](#42-inspect-the-log-of-past-executions)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-4">
@@ -5009,7 +5310,7 @@ Daha fazla bilgi: [4.2. Geçmiş çalıştırmaların logunu inceleyin](#42-gecm
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Daha fazla bilgi: <a href="#42-gecmis-calistirmalarin-logunu-inceleyin">4.2. Geçmiş çalıştırmaların logunu inceleyin</a></p></section>
+    <section class="content hidden"><p>Daha fazla bilgi: <a href="#42-inspect-the-log-of-past-executions">4.2. Geçmiş çalıştırmaların logunu inceleyin</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -5020,7 +5321,7 @@ Bir workflow dosyasındaki `params` bloğunun amacı nedir?
 - [x] Workflow girdi parametrelerini bildirmek ve türünü belirlemek
 - [ ] Çıktı yayınlama seçeneklerini belirtmek
 
-Daha fazla bilgi: [3.4. Komut satırı parametreleri için params sistemi](#34-komut-satiri-parametreleri-icin-params-sistemi)
+Daha fazla bilgi: [3.4. Komut satırı parametreleri için params sistemi](#34-the-params-system-of-command-line-parameters)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-5">
@@ -5034,7 +5335,7 @@ Daha fazla bilgi: [3.4. Komut satırı parametreleri için params sistemi](#34-k
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Daha fazla bilgi: <a href="#34-komut-satiri-parametreleri-icin-params-sistemi">3.4. Komut satırı parametreleri için params sistemi</a></p></section>
+    <section class="content hidden"><p>Daha fazla bilgi: <a href="#34-the-params-system-of-command-line-parameters">3.4. Komut satırı parametreleri için params sistemi</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -5045,7 +5346,7 @@ Workflow'un `output` bloğunda `mode 'copy'` ne yapar?
 - [ ] Workflow betiğini sonuçlara kopyalar
 - [ ] Artımlı dosya kopyalamayı etkinleştirir
 
-Daha fazla bilgi: [3.5. publish yönergesi](#35-publish-yonergesi)
+Daha fazla bilgi: [3.5. publish yönergesi](#35-the-publish-directive)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-6">
@@ -5059,7 +5360,7 @@ Daha fazla bilgi: [3.5. publish yönergesi](#35-publish-yonergesi)
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Daha fazla bilgi: <a href="#35-publish-yonergesi">3.5. publish yönergesi</a></p></section>
+    <section class="content hidden"><p>Daha fazla bilgi: <a href="#35-the-publish-directive">3.5. publish yönergesi</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -5070,7 +5371,7 @@ Dosyaları gerçekten silmeden önce `nextflow clean` komutuyla kullanılması �
 - [ ] `-a` (tümü) tüm dizinleri seçmek için
 - [ ] `-q` (sessiz) uyarıları bastırmak için
 
-Daha fazla bilgi: [4.3. Eski çalışma dizinlerini silin](#43-eski-calisma-dizinlerini-silin)
+Daha fazla bilgi: [4.3. Eski çalışma dizinlerini silin](#43-delete-older-work-directories)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-7">
@@ -5084,8 +5385,61 @@ Daha fazla bilgi: [4.3. Eski çalışma dizinlerini silin](#43-eski-calisma-dizi
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Daha fazla bilgi: <a href="#43-eski-calisma-dizinlerini-silin">4.3. Eski çalışma dizinlerini silin</a></p></section>
-</div><style type="text/css">.quiz {
+    <section class="content hidden"><p>Daha fazla bilgi: <a href="#43-delete-older-work-directories">4.3. Eski çalışma dizinlerini silin</a></p></section>
+</div><div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    Quiz Progress
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          Reset
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        Reset
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -5132,10 +5486,12 @@ Daha fazla bilgi: [4.3. Eski çalışma dizinlerini silin](#43-eski-calisma-dizi
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -6056,16 +6412,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -6699,9 +7045,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

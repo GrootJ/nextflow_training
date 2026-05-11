@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -163,6 +163,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -3183,7 +3214,7 @@
   <span class="md-ellipsis">
     
   
-    Orientation
+    Premiers pas
   
 
     
@@ -3211,7 +3242,7 @@
   <span class="md-ellipsis">
     
   
-    Environnement de Développement
+    Index
   
 
     
@@ -3232,14 +3263,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/metadata/" class="md-nav__link">
+      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Métadonnées et meta maps
+    Modèles de Scripting Essentiels
   
 
     
@@ -3288,14 +3319,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/splitting_and_grouping/" class="md-nav__link">
+      <a href="../../side_quests/metadata/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Division et regroupement
+    Métadonnées et meta maps
   
 
     
@@ -3316,14 +3347,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/workflows_of_workflows/" class="md-nav__link">
+      <a href="../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Workflows de workflows
+    Séparation et regroupement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/nf_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tests avec nf-test
   
 
     
@@ -3351,7 +3410,7 @@
   <span class="md-ellipsis">
     
   
-    Débogage des Workflows
+    Résolution des problèmes dans les Workflows
   
 
     
@@ -3372,14 +3431,89 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../side_quests/workflows_of_workflows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Modèles de Script Nextflow Essentiels
+    Workflows de Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Développement de plugins
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Développement de plugins
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Développement de plugins
   
 
     
@@ -3400,14 +3534,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Tests avec nf-test
+    Partie 1 : Les bases des plugins
   
 
     
@@ -3416,6 +3550,210 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 2 : Créer un projet de plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 3 : Fonctions personnalisées
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 4 : Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 5 : Observateurs de trace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 6 : Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Résumé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prochaines étapes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4696,43 +5034,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -4957,13 +5258,13 @@ Mais nous en aurons besoin pour profiter des sorties au niveau du workflow, donc
 </code></pre></div>
 <details class="success">
 <summary>Sortie de la commande</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">Launching `hello-world.nf` [goofy_torvalds] DSL2 - revision: c33d41f479</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="go">executor &gt;  local (1)</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="go">[65/7be2fa] sayHello | 1 of 1 ✔</span>
-</code></pre></div>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="hll"><span class="go">[65/7be2fa] sayHello | 1 of 1 ✔</span>
+</span></code></pre></div>
 </details>
 <p>Si votre sortie console ressemble à cela, alors félicitations, vous venez d'exécuter votre premier workflow Nextflow !</p>
 <p>La sortie la plus importante ici est la dernière ligne, qui est mise en évidence dans la sortie ci-dessus :</p>
@@ -4977,7 +5278,7 @@ Examinons cela maintenant.</p>
 <p>Dans le répertoire <code>work</code>, Nextflow organise les sorties et les logs par appel de <strong>process</strong>.
 Pour chaque appel de <strong>process</strong>, Nextflow crée un sous-répertoire imbriqué, nommé avec un hash pour le rendre unique, où il préparera toutes les entrées nécessaires (en utilisant des liens symboliques par défaut), écrira les fichiers d'aide, et écrira les logs et toutes les sorties du <strong>process</strong>.</p>
 <p>Le chemin vers ce sous-répertoire est affiché sous forme tronquée entre crochets dans la sortie console.
-En regardant ce que nous avons obtenu pour l'exécution montrée ci-dessus, la ligne de log console pour le <strong>process</strong> sayHello commence par <code>[65/7be2fa]</code>. Cela correspond au chemin de répertoire suivant : <code>work/65/7be2fad5e71e5f49998f795677fd68</code></p>
+En regardant ce que nous avons obtenu pour l'exécution montrée ci-dessus, la ligne de log console pour le <strong>process</strong> sayHello commence par <code>[65/7be2fa]</code>. Cela correspond au chemin de répertoire suivant : <code>work/65/7be2fa7be2fad5e71e5f49998f795677fd68</code></p>
 <p>Voyons ce qu'il y a dedans.</p>
 <details class="abstract">
 <summary>Contenu du répertoire</summary>
@@ -5098,7 +5399,7 @@ Cela vous montre que l'exécution du même workflow plusieurs fois n'écrasera p
 <p>Comme vous venez de l'apprendre, la sortie produite par notre pipeline est enfouie dans un répertoire de travail situé plusieurs niveaux plus bas.
 Ceci est fait exprès ; Nextflow contrôle ce répertoire et nous ne sommes pas censés interagir avec lui.
 Cependant, cela rend peu pratique la récupération des sorties qui nous importent.</p>
-<p>Heureusement, Nextflow fournit un moyen de publier les sorties dans un répertoire désigné en utilisant des <a href="https://www.nextflow.io/docs/latest/workflow.html#workflow-outputs">définitions de sortie au niveau du workflow</a>.</p>
+<p>Heureusement, Nextflow fournit un moyen de publier les sorties dans un répertoire désigné en utilisant des <a href="https://nextflow.io/docs/latest/workflow.html#workflow-outputs">définitions de sortie au niveau du workflow</a>.</p>
 <h3 id="21-utilisation-de-base">2.1. Utilisation de base<a class="headerlink" href="#21-utilisation-de-base" title="Permanent link">&para;</a></h3>
 <p>Cela va impliquer deux nouveaux morceaux de code :</p>
 <ol>
@@ -5214,7 +5515,7 @@ Plus tard, vous apprendrez des moyens de générer des structures de répertoire
 </code></pre></div>
 <details class="success">
 <summary>Sortie de la commande</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="go">Launching `hello-world.nf` [jovial_mayer] DSL2 - revision: 35bd3425e5</span>
 <a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
@@ -5294,7 +5595,7 @@ Pour définir un emplacement personnalisé, modifiez simplement le <code>path</c
 </code></pre></div>
 <details class="success">
 <summary>Sortie de la commande</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="go"> N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="go"> N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="go">Launching `hello-world.nf` [tiny_shaw] DSL2 - revision: 757723adc1</span>
 <a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
@@ -5369,7 +5670,7 @@ Ajoutez simplement <code>mode 'copy'</code> à la définition de sortie au nivea
 </code></pre></div>
 <details class="success">
 <summary>Sortie de la commande</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="go"> N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="go"> N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
 <a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="go">Launching `hello-world.nf` [tiny_shaw] DSL2 - revision: 757723adc1</span>
 <a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>
@@ -5542,7 +5843,7 @@ En principe, nous pouvons l'écrire n'importe où ; mais puisque nous allons vou
 </code></pre></div>
 <details class="success">
 <summary>Sortie de la commande</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
 <a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="go">Launching `hello-world.nf` [elated_lavoisier] DSL2 - revision: 7c031b42ea</span>
 <a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>
@@ -5581,7 +5882,7 @@ Cependant, les résultats des exécutions précédentes sont toujours préservé
 <a id="__codelineno-43-21" name="__codelineno-43-21"></a><span class="cm"> * Paramètres du pipeline</span>
 <a id="__codelineno-43-22" name="__codelineno-43-22"></a><span class="cm"> */</span>
 <a id="__codelineno-43-23" name="__codelineno-43-23"></a><span class="n">params</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-43-24" name="__codelineno-43-24"></a><span class="w">    </span><span class="nl">input:</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Holà mundo!&#39;</span>
+<a id="__codelineno-43-24" name="__codelineno-43-24"></a><span class="w">    </span><span class="nl">input:</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hola mundo!&#39;</span>
 <a id="__codelineno-43-25" name="__codelineno-43-25"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Comme vous pouvez le voir, nous pouvons spécifier le type d'entrée que le workflow attend (Nextflow 25.10.2 et ultérieur).
@@ -5589,7 +5890,7 @@ La syntaxe est <code>nom: Type = valeur_par_defaut</code>.
 Les types supportés incluent <code>String</code>, <code>Integer</code>, <code>Float</code>, <code>Boolean</code> et <code>Path</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Dans les anciens workflows, vous pouvez voir que tout ce bloc <code>params</code> est écrit simplement comme <code>input = 'Holà mundo!'</code>.</p>
+<p>Dans les anciens workflows, vous pouvez voir que tout ce bloc <code>params</code> est écrit simplement comme <code>input = 'Hola mundo!'</code>.</p>
 </div>
 <p>À mesure que vous ajoutez plus de paramètres à votre pipeline, vous devriez tous les ajouter à ce bloc, que vous ayez besoin de leur donner une valeur par défaut ou non.
 Cela facilitera la recherche de tous les paramètres configurables en un coup d'œil.</p>
@@ -5599,7 +5900,7 @@ Cela facilitera la recherche de tous les paramètres configurables en un coup d'
 </code></pre></div>
 <details class="success">
 <summary>Sortie de la commande</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>
 <a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="go">Launching `hello-world.nf` [determined_edison] DSL2 - revision: 3539118582</span>
 <a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>
@@ -5614,7 +5915,7 @@ Cela facilitera la recherche de tous les paramètres configurables en un coup d'
 <a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>- file : /workspaces/training/hello-nextflow/solutions/1-hello-world/hello-world-3.nf
 <a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>- cause: you tried to assign a value to the class &#39;java.lang.String&#39;
 <a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>@ line 24, column 12.
-<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>      input: String = &#39;Holà mundo!&#39;
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>      input: String = &#39;Hola mundo!&#39;
 <a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>              ^
 <a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a>
 <a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a>1 error
@@ -5632,7 +5933,7 @@ Consultez le matériel d'aide sur les <a href="../../info/nxf_versions/">version
 <p>La sortie sera au même endroit que précédemment, mais le contenu devrait être mis à jour avec le nouveau texte.</p>
 <details class="abstract">
 <summary>Contenu du fichier</summary>
-<div class="highlight"><span class="filename">results/hello_world/output.txt</span><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="go">Holà mundo!</span>
+<div class="highlight"><span class="filename">results/hello_world/output.txt</span><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="go">Hola mundo!</span>
 </code></pre></div>
 </details>
 <p>Nextflow a utilisé la valeur par défaut du paramètre greeting pour créer la sortie.</p>
@@ -5643,7 +5944,7 @@ Consultez le matériel d'aide sur les <a href="../../info/nxf_versions/">version
 </code></pre></div>
 <details class="success">
 <summary>Sortie de la commande</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>
 <a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="go">Launching `hello-world.nf` [elegant_faraday] DSL2 - revision: 3539118582</span>
 <a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>
@@ -5688,7 +5989,7 @@ Cela signifie que Nextflow n'exécutera que les <strong>processus</strong> que v
 </code></pre></div>
 <details class="success">
 <summary>Sortie de la commande</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>
 <a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="go">Launching `hello-world.nf` [golden_cantor] DSL2 - revision: 35bd3425e5</span>
 <a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>
@@ -5796,7 +6097,7 @@ Quels sont les composants minimaux requis d'un processus Nextflow ?
 - [ ] Blocs input, output et script
 - [ ] Uniquement un bloc script
 
-En savoir plus : [1.1.1. La définition du processus](#111-la-definition-du-process)
+En savoir plus : [1.1.1. La définition du processus](#111-the-process-definition)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-0">
@@ -5810,7 +6111,7 @@ En savoir plus : [1.1.1. La définition du processus](#111-la-definition-du-proc
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>En savoir plus : <a href="#111-la-definition-du-process">1.1.1. La définition du processus</a></p></section>
+    <section class="content hidden"><p>En savoir plus : <a href="#111-the-process-definition">1.1.1. La définition du processus</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -5821,7 +6122,7 @@ Quel est le but du bloc output dans un processus ?
 - [x] Déclarer les sorties attendues du processus
 - [ ] Définir les variables d'environnement
 
-En savoir plus : [1.1.1. La définition du processus](#111-la-definition-du-process)
+En savoir plus : [1.1.1. La définition du processus](#111-the-process-definition)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-1">
@@ -5835,7 +6136,7 @@ En savoir plus : [1.1.1. La définition du processus](#111-la-definition-du-proc
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>En savoir plus : <a href="#111-la-definition-du-process">1.1.1. La définition du processus</a></p></section>
+    <section class="content hidden"><p>En savoir plus : <a href="#111-the-process-definition">1.1.1. La définition du processus</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -5882,7 +6183,7 @@ work/a3/7be2fa.../
 - [ ] `.command.log`
 - [ ] `.command.out`
 
-En savoir plus : [1.2.2. Trouver la sortie et les logs dans le répertoire `work`](#122-trouver-la-sortie-et-les-logs-dans-le-repertoire-work)
+En savoir plus : [1.2.2. Trouver la sortie et les logs dans le répertoire `work`](#122-find-the-output-and-logs-in-the-work-directory)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-3">
@@ -5906,7 +6207,7 @@ En savoir plus : [1.2.2. Trouver la sortie et les logs dans le répertoire `work
                     <div class="quiz-feedback hidden"></div>
 
                 </form>
-                <section class="content hidden"><p>En savoir plus : <a href="#122-trouver-la-sortie-et-les-logs-dans-le-repertoire-work">1.2.2. Trouver la sortie et les logs dans le répertoire <code>work</code></a></p></section>
+                <section class="content hidden"><p>En savoir plus : <a href="#122-find-the-output-and-logs-in-the-work-directory">1.2.2. Trouver la sortie et les logs dans le répertoire <code>work</code></a></p></section>
             </div>
 
 <!-- mkdocs-quiz-source
@@ -5917,7 +6218,7 @@ Que fait le drapeau `-resume` ?
 - [x] Ignore les processus qui se sont déjà terminés avec succès
 - [ ] Crée une sauvegarde du workflow
 
-En savoir plus : [4.1. Relancer un workflow avec `-resume`](#41-relancer-un-workflow-avec--resume)
+En savoir plus : [4.1. Relancer un workflow avec `-resume`](#41-re-launch-a-workflow-with--resume)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-4">
@@ -5931,7 +6232,7 @@ En savoir plus : [4.1. Relancer un workflow avec `-resume`](#41-relancer-un-work
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>En savoir plus : <a href="#41-relancer-un-workflow-avec--resume">4.1. Relancer un workflow avec <code>-resume</code></a></p></section>
+    <section class="content hidden"><p>En savoir plus : <a href="#41-re-launch-a-workflow-with--resume">4.1. Relancer un workflow avec <code>-resume</code></a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -5942,7 +6243,7 @@ Quel est le mode par défaut pour publier les sorties du workflow ?
 - [ ] Déplacer les fichiers dans le répertoire de sortie
 - [ ] Compresser les fichiers dans le répertoire de sortie
 
-En savoir plus : [2.3. Définir le mode de publication sur copy](#23-definir-le-mode-de-publication-sur-copy)
+En savoir plus : [2.3. Définir le mode de publication sur copy](#23-set-the-publish-mode-to-copy)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-5">
@@ -5956,7 +6257,7 @@ En savoir plus : [2.3. Définir le mode de publication sur copy](#23-definir-le-
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>En savoir plus : <a href="#23-definir-le-mode-de-publication-sur-copy">2.3. Définir le mode de publication sur copy</a></p></section>
+    <section class="content hidden"><p>En savoir plus : <a href="#23-set-the-publish-mode-to-copy">2.3. Définir le mode de publication sur copy</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -5967,7 +6268,7 @@ Comment passez-vous une valeur de paramètre à un workflow Nextflow depuis la l
 - [x] `--parameter value`
 - [ ] `-p parameter=value`
 
-En savoir plus : [3.2. Configurer un paramètre de ligne de commande pour capturer l'entrée utilisateur](#32-configurer-un-parametre-de-ligne-de-commande-pour-capturer-lentree-utilisateur)
+En savoir plus : [3.2. Configurer un paramètre de ligne de commande pour capturer l'entrée utilisateur](#32-set-up-a-command-line-parameter-to-capture-user-input)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-6">
@@ -5981,7 +6282,7 @@ En savoir plus : [3.2. Configurer un paramètre de ligne de commande pour captur
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>En savoir plus : <a href="#32-configurer-un-parametre-de-ligne-de-commande-pour-capturer-lentree-utilisateur">3.2. Configurer un paramètre de ligne de commande pour capturer l'entrée utilisateur</a></p></section>
+    <section class="content hidden"><p>En savoir plus : <a href="#32-set-up-a-command-line-parameter-to-capture-user-input">3.2. Configurer un paramètre de ligne de commande pour capturer l'entrée utilisateur</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6005,7 +6306,60 @@ Comment référencez-vous une variable à l'intérieur d'un bloc script Nextflow
 
     </form>
     <section class="content hidden"></section>
-</div><style type="text/css">.quiz {
+</div><div id="quiz-progress-sidebar" aria-label="Progression du quiz" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    Progression du quiz
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          Répondu : <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          Correctes : <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          Réinitialiser
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Progression du quiz" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        Répondu : <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        Correctes : <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        Réinitialiser
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -6052,10 +6406,12 @@ Comment référencez-vous une variable à l'intérieur d'un bloc script Nextflow
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -6976,16 +7332,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -7619,9 +7965,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

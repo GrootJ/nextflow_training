@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -163,6 +163,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -2163,10 +2194,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cosa-seguira_1" class="md-nav__link">
+  <a href="#cosa-ce-dopo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cosa seguirà?
+        Cosa c'è dopo?
       
     </span>
   </a>
@@ -2316,7 +2347,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cosa-seguira_2" class="md-nav__link">
+  <a href="#cosa-seguira_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Cosa seguirà?
@@ -2964,7 +2995,7 @@
   <span class="md-ellipsis">
     
   
-    Orientamento
+    Per iniziare
   
 
     
@@ -3013,6 +3044,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pattern Essenziali di Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/working_with_files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elaborazione dell'input di file
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../side_quests/metadata/" class="md-nav__link">
         
   
@@ -3041,34 +3128,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/working_with_files/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Elaborazione di file in input
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
@@ -3076,7 +3135,7 @@
   <span class="md-ellipsis">
     
   
-    Divisione e Raggruppamento
+    Suddivisione e Raggruppamento
   
 
     
@@ -3097,14 +3156,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/workflows_of_workflows/" class="md-nav__link">
+      <a href="../../../side_quests/nf_test/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Workflows di Workflows
+    Index
   
 
     
@@ -3132,7 +3191,7 @@
   <span class="md-ellipsis">
     
   
-    Debug dei Workflow
+    Risoluzione dei Problemi nei Workflow
   
 
     
@@ -3153,14 +3212,89 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../../side_quests/workflows_of_workflows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Pattern di Scripting Essenziali in Nextflow
+    Flussi di Lavoro di Flussi di Lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sviluppo di Plugin
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sviluppo di Plugin
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sviluppo di Plugin
   
 
     
@@ -3181,14 +3315,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Testing con nf-test
+    Parte 1: Nozioni di Base sui Plugin
   
 
     
@@ -3197,6 +3331,210 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 2: Creare un Progetto Plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 3: Funzioni Personalizzate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 4: Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 5: Trace Observer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 6: Configurazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Riepilogo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passi Successivi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3895,10 +4233,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cosa-seguira_1" class="md-nav__link">
+  <a href="#cosa-ce-dopo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cosa seguirà?
+        Cosa c'è dopo?
       
     </span>
   </a>
@@ -4048,7 +4386,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cosa-seguira_2" class="md-nav__link">
+  <a href="#cosa-seguira_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Cosa seguirà?
@@ -4256,43 +4594,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -4605,7 +4906,7 @@ L'URI del container era <code>community.wave.seqera.io/library/pip_multiqc:a3c26
 <p>Per questo, usiamo l'operatore <code>.mix()</code>, che aggrega più canali in uno solo.
 Partiamo da <code>channel.empty()</code> e mescoliamo tutti i canali di output che vogliamo combinare.
 Questo è più pulito che concatenare <code>.mix()</code> direttamente su uno dei canali di output, perché tratta tutti gli input in modo simmetrico.</p>
-<p>Nel nostro workflow, gli output relativi al QC da aggregare sono:</p>
+<p>Nel nostro flusso di lavoro, gli output relativi al QC da aggregare sono:</p>
 <ul>
 <li><code>FASTQC.out.zip</code></li>
 <li><code>FASTQC.out.html</code></li>
@@ -4866,14 +5167,14 @@ L'input <code>val output_name</code> è una stringa che controlla il nome del fi
 <span class="normal"><a href="#__codelineno-24-91">91</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-82" name="__codelineno-24-82"></a><span class="w">    </span><span class="n">align_log</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-24-83" name="__codelineno-24-83"></a><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s1">&#39;align&#39;</span>
 <a id="__codelineno-24-84" name="__codelineno-24-84"></a><span class="w">    </span><span class="o">}</span>
-<a id="__codelineno-24-85" name="__codelineno-24-85"></a><span class="w">    </span><span class="n">multiqc_report</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-24-86" name="__codelineno-24-86"></a><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s1">&#39;multiqc&#39;</span>
-<a id="__codelineno-24-87" name="__codelineno-24-87"></a><span class="w">    </span><span class="o">}</span>
-<a id="__codelineno-24-88" name="__codelineno-24-88"></a><span class="hll"><span class="w">    </span><span class="n">multiqc_data</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-24-85" name="__codelineno-24-85"></a><span class="hll"><span class="w">    </span><span class="n">multiqc_report</span><span class="w"> </span><span class="o">{</span>
+</span><a id="__codelineno-24-86" name="__codelineno-24-86"></a><span class="hll"><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s1">&#39;multiqc&#39;</span>
+</span><a id="__codelineno-24-87" name="__codelineno-24-87"></a><span class="hll"><span class="w">    </span><span class="o">}</span>
+</span><a id="__codelineno-24-88" name="__codelineno-24-88"></a><span class="hll"><span class="w">    </span><span class="n">multiqc_data</span><span class="w"> </span><span class="o">{</span>
 </span><a id="__codelineno-24-89" name="__codelineno-24-89"></a><span class="hll"><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s1">&#39;multiqc&#39;</span>
 </span><a id="__codelineno-24-90" name="__codelineno-24-90"></a><span class="hll"><span class="w">    </span><span class="o">}</span>
-</span><a id="__codelineno-24-91" name="__codelineno-24-91"></a><span class="hll"><span class="o">}</span>
-</span></code></pre></div></td></tr></table></div>
+</span><a id="__codelineno-24-91" name="__codelineno-24-91"></a><span class="o">}</span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">rnaseq.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-82">82</a></span>
@@ -4909,7 +5210,9 @@ L'input <code>val output_name</code> è una stringa che controlla il nome del fi
 <p>Potete trovare gli output MultiQC nella directory dei risultati.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>tree<span class="w"> </span>-L<span class="w"> </span><span class="m">2</span><span class="w"> </span>results/multiqc
 </code></pre></div>
-<div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="go">results/multiqc</span>
+<details class="abstract">
+<summary>Contenuto della directory</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="go">results/multiqc</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="go">├── all_single-end_data</span>
 <a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="go">│   ├── cutadapt_filtered_reads_plot.txt</span>
 <a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="go">│   ├── cutadapt_trimmed_sequences_plot_3_Counts.txt</span>
@@ -4938,11 +5241,12 @@ L'input <code>val output_name</code> è una stringa che controlla il nome del fi
 <a id="__codelineno-29-27" name="__codelineno-29-27" href="#__codelineno-29-27"></a><span class="go">│   └── multiqc_sources.txt</span>
 <a id="__codelineno-29-28" name="__codelineno-29-28" href="#__codelineno-29-28"></a><span class="go">└── all_single-end.html</span>
 </code></pre></div>
+</details>
 <p>Quell'ultimo file <code>all_single-end.html</code> è il report aggregato completo, comodamente confezionato in un unico file HTML facile da consultare.</p>
 <h3 id="takeaway_1">Takeaway<a class="headerlink" href="#takeaway_1" title="Permanent link">&para;</a></h3>
 <p>Sapete come raccogliere output da canali multipli, raggrupparli con <code>.mix()</code> e <code>.collect()</code>, e passarli a un processo di aggregazione.</p>
-<h3 id="cosa-seguira_1">Cosa seguirà?<a class="headerlink" href="#cosa-seguira_1" title="Permanent link">&para;</a></h3>
-<p>Adattare il workflow per gestire dati RNAseq paired-end.</p>
+<h3 id="cosa-ce-dopo">Cosa c'è dopo?<a class="headerlink" href="#cosa-ce-dopo" title="Permanent link">&para;</a></h3>
+<p>Adattare il flusso di lavoro per gestire dati RNAseq paired-end.</p>
 <hr />
 <h2 id="3-abilitare-lelaborazione-di-dati-rnaseq-paired-end">3. Abilitare l'elaborazione di dati RNAseq paired-end<a class="headerlink" href="#3-abilitare-lelaborazione-di-dati-rnaseq-paired-end" title="Permanent link">&para;</a></h2>
 <p>Attualmente il nostro workflow può gestire solo dati RNAseq single-end.
@@ -5442,9 +5746,62 @@ Il passo logico successivo sarebbe rendere il workflow in grado di accettare ent
 <hr />
 <h3 id="takeaway_2">Takeaway<a class="headerlink" href="#takeaway_2" title="Permanent link">&para;</a></h3>
 <p>Sapete come adattare un workflow per campione singolo per parallelizzare l'elaborazione di campioni multipli, generare un report QC completo e adattare il workflow per utilizzare dati read paired-end.</p>
-<h3 id="cosa-seguira_2">Cosa seguirà?<a class="headerlink" href="#cosa-seguira_2" title="Permanent link">&para;</a></h3>
+<h3 id="cosa-seguira_1">Cosa seguirà?<a class="headerlink" href="#cosa-seguira_1" title="Permanent link">&para;</a></h3>
 <p>Datevi una grande pacca sulla spalla! Avete completato il corso Nextflow per RNAseq.</p>
-<p>Passate al <a href="../next_steps/">riepilogo finale del corso</a> per rivedere ciò che avete imparato e scoprire cosa viene dopo.</p><style type="text/css">.quiz {
+<p>Passate al <a href="../next_steps/">riepilogo finale del corso</a> per rivedere ciò che avete imparato e scoprire cosa viene dopo.</p><div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    Quiz Progress
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          Reset
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        Reset
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -5491,10 +5848,12 @@ Il passo logico successivo sarebbe rendere il workflow in grado di accettare ent
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -6415,16 +6774,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -7058,9 +7407,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

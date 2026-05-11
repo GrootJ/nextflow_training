@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -163,6 +163,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -2838,7 +2869,7 @@
   <span class="md-ellipsis">
     
   
-    Orientacja
+    Pierwsze kroki
   
 
     
@@ -2866,7 +2897,7 @@
   <span class="md-ellipsis">
     
   
-    Środowisko programistyczne
+    Index
   
 
     
@@ -2887,14 +2918,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/metadata/" class="md-nav__link">
+      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Metadane i mapy meta
+    Podstawowe Wzorce Skryptowania
   
 
     
@@ -2943,14 +2974,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/splitting_and_grouping/" class="md-nav__link">
+      <a href="../../side_quests/metadata/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dzielenie i Grupowanie
+    Metadane i mapy metadanych
   
 
     
@@ -2971,14 +3002,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/workflows_of_workflows/" class="md-nav__link">
+      <a href="../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Workflow'y złożone z workflow'ów
+    Podział i grupowanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/nf_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
   
 
     
@@ -3006,7 +3065,7 @@
   <span class="md-ellipsis">
     
   
-    Debugowanie Workflow'ów
+    Rozwiązywanie problemów z Workflow'ami
   
 
     
@@ -3027,14 +3086,89 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../side_quests/workflows_of_workflows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Podstawowe Wzorce Skryptowe w Nextflow
+    Workflow'y Workflow'ów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tworzenie wtyczek
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tworzenie wtyczek
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tworzenie wtyczek
   
 
     
@@ -3055,14 +3189,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Testowanie z nf-test
+    Część 1: Podstawy wtyczek
   
 
     
@@ -3071,6 +3205,210 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 create project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Część 3: Własne funkcje
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Część 4: Testowanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Część 5: Obserwatory śladów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Część 6: Konfiguracja
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Podsumowanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kolejne kroki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4006,43 +4344,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -4090,15 +4391,15 @@ Możesz przetestować, czy działa poprawnie, uruchamiając następujące polece
 <h3 id="01-dlaczego-walidacja-ma-znaczenie">0.1. Dlaczego walidacja ma znaczenie<a class="headerlink" href="#01-dlaczego-walidacja-ma-znaczenie" title="Permanent link">&para;</a></h3>
 <p>Wyobraź sobie, że uruchamiasz Swój pipeline przez dwie godziny, tylko po to, by się zawiesił, ponieważ użytkownik podał plik z niewłaściwym rozszerzeniem. Lub spędzasz godziny na debugowaniu tajemniczych błędów, aby ostatecznie odkryć, że parametr był błędnie napisany. Bez walidacji danych wejściowych takie scenariusze są powszechne.</p>
 <p>Rozważ ten przykład:</p>
-<div class="highlight"><span class="filename">Bez walidacji</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>nextflow<span class="w"> </span>run<span class="w"> </span>my-pipeline<span class="w"> </span>--input<span class="w"> </span>data.txt<span class="w"> </span>--output<span class="w"> </span>results
+<div class="highlight"><span class="filename">Without validation</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>nextflow<span class="w"> </span>run<span class="w"> </span>my-pipeline<span class="w"> </span>--input<span class="w"> </span>data.txt<span class="w"> </span>--output<span class="w"> </span>results
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">...2 godziny później...</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">...2 hours later...</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="go">ERROR ~ No such file: &#39;data.fq.gz&#39;</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="go">  Expected FASTQ format but received TXT</span>
 </code></pre></div>
 <p>Pipeline zaakceptował nieprawidłowe dane wejściowe i działał przez godziny przed awarią. Z odpowiednią walidacją:</p>
-<div class="highlight"><span class="filename">Z walidacją</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>nextflow<span class="w"> </span>run<span class="w"> </span>my-pipeline<span class="w"> </span>--input<span class="w"> </span>data.txt<span class="w"> </span>--output<span class="w"> </span>results
+<div class="highlight"><span class="filename">With validation</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>nextflow<span class="w"> </span>run<span class="w"> </span>my-pipeline<span class="w"> </span>--input<span class="w"> </span>data.txt<span class="w"> </span>--output<span class="w"> </span>results
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="go">ERROR ~ Validation of pipeline parameters failed!</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -4180,11 +4481,11 @@ Chociaż nf-schema działa z dowolnym workflow'em Nextflow'a, jest to standardow
 </div>
 <h3 id="04-kiedy-powinna-nastapic-walidacja">0.4. Kiedy powinna nastąpić walidacja?<a class="headerlink" href="#04-kiedy-powinna-nastapic-walidacja" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>graph LR
-    A[Użytkownik uruchamia pipeline] --&gt; B[Walidacja parametrów]
-    B --&gt;|✓ Poprawne| C[Walidacja danych wejściowych]
-    B --&gt;|✗ Niepoprawne| D[Błąd: Napraw parametry]
-    C --&gt;|✓ Poprawne| E[Pipeline wykonuje się]
-    C --&gt;|✗ Niepoprawne| F[Błąd: Napraw dane wejściowe]</code></pre>
+    A[User runs pipeline] --&gt; B[Parameter validation]
+    B --&gt;|✓ Valid| C[Input data validation]
+    B --&gt;|✗ Invalid| D[Error: Fix parameters]
+    C --&gt;|✓ Valid| E[Pipeline executes]
+    C --&gt;|✗ Invalid| F[Error: Fix input data]</code></pre>
 <p>Walidacja powinna nastąpić <strong>przed</strong> uruchomieniem jakichkolwiek procesów pipeline'u, aby zapewnić szybkie informacje zwrotne i zapobiec marnowaniu czasu obliczeniowego.</p>
 <p>Teraz zastosujmy te zasady w praktyce, zaczynając od walidacji parametrów.</p>
 <hr />
@@ -4199,29 +4500,29 @@ Chociaż nf-schema działa z dowolnym workflow'em Nextflow'a, jest to standardow
 </ul>
 <p>Zachowanie walidacji jest kontrolowane przez zakres <code>validation{}</code> w <code>nextflow.config</code>.</p>
 <p>Ponieważ najpierw będziemy pracować nad walidacją parametrów (ta sekcja) i nie skonfigurujemy schematu danych wejściowych do sekcji 2, musimy tymczasowo powiedzieć nf-schema, aby pominął walidację zawartości pliku parametru <code>input</code>.</p>
-<p>Otwórz <code>nextflow.config</code> i znajdź blok <code>validation</code> (około linii 246). Dodaj <code>ignoreParams</code>, aby pominąć walidację pliku wejściowego:</p>
+<p>Otwórz <code>nextflow.config</code> i znajdź blok <code>validation</code> (około linii 247). Dodaj <code>ignoreParams</code>, aby pominąć walidację pliku wejściowego:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Po</label><label for="__tabbed_1_2">Przed</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-246">246</a></span>
-<span class="normal"><a href="#__codelineno-5-247">247</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-247">247</a></span>
 <span class="normal"><a href="#__codelineno-5-248">248</a></span>
 <span class="normal"><a href="#__codelineno-5-249">249</a></span>
-<span class="normal"><a href="#__codelineno-5-250">250</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-246" name="__codelineno-5-246"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-5-247" name="__codelineno-5-247"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
-<a id="__codelineno-5-248" name="__codelineno-5-248"></a><span class="hll"><span class="w">    </span><span class="n">ignoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;input&#39;</span><span class="o">]</span>
-</span><a id="__codelineno-5-249" name="__codelineno-5-249"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
-<a id="__codelineno-5-250" name="__codelineno-5-250"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-5-250">250</a></span>
+<span class="normal"><a href="#__codelineno-5-251">251</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-247" name="__codelineno-5-247"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-5-248" name="__codelineno-5-248"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
+<a id="__codelineno-5-249" name="__codelineno-5-249"></a><span class="hll"><span class="w">    </span><span class="n">ignoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;input&#39;</span><span class="o">]</span>
+</span><a id="__codelineno-5-250" name="__codelineno-5-250"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
+<a id="__codelineno-5-251" name="__codelineno-5-251"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-246">246</a></span>
-<span class="normal"><a href="#__codelineno-6-247">247</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-247">247</a></span>
 <span class="normal"><a href="#__codelineno-6-248">248</a></span>
-<span class="normal"><a href="#__codelineno-6-249">249</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-246" name="__codelineno-6-246"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-6-247" name="__codelineno-6-247"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
-<a id="__codelineno-6-248" name="__codelineno-6-248"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
-<a id="__codelineno-6-249" name="__codelineno-6-249"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-6-249">249</a></span>
+<span class="normal"><a href="#__codelineno-6-250">250</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-247" name="__codelineno-6-247"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-6-248" name="__codelineno-6-248"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
+<a id="__codelineno-6-249" name="__codelineno-6-249"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
+<a id="__codelineno-6-250" name="__codelineno-6-250"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -4243,7 +4544,7 @@ Usuniemy to ustawienie w sekcji 2 po skonfigurowaniu schematu danych wejściowyc
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="s1">&#39;&quot;input_output_options&quot;&#39;</span><span class="w"> </span>nextflow_schema.json
 </code></pre></div>
 <p>Schemat parametrów jest zorganizowany w grupy. Oto grupa <code>input_output_options</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">core-hello/nextflow_schema.json (fragment)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">core-hello/nextflow_schema.json (excerpt)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-8-10">10</a></span>
 <span class="normal"><a href="#__codelineno-8-11">11</a></span>
@@ -4318,13 +4619,13 @@ Zamiast tego nf-core zapewnia interaktywne narzędzie GUI, które obsługuje sk�
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nf-core<span class="w"> </span>pipelines<span class="w"> </span>schema<span class="w"> </span>build
 </code></pre></div>
 <p>Powinieneś zobaczyć coś takiego:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="go">                                      ,--./,-.</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="go">      ___     __   __   __   ___     /,-._.--\</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="go">|\ | |__  __ /  ` /  \ |__) |__         }  {</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="go">| \| |       \__, \__/ |  \ |___     \`-._,-`-,</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="go">                                      `._,._,&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="go">                                          ,--./,-.</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="go">          ___     __   __   __   ___     /,-._.--~\</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="go">    |\ | |__  __ /  ` /  \ |__) |__         }  {</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="go">    | \| |       \__, \__/ |  \ |___     \`-._,-`-,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="go">                                          `._,._,&#39;</span>
 <a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="go">nf-core/tools version 3.5.2 - https://nf-co.re</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="go">    nf-core/tools version 3.5.2 - https://nf-co.re</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
 <a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="go">INFO     [✓] Default parameters match schema validation</span>
 <a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="go">INFO     [✓] Pipeline schema looks valid (found 17 params)</span>
@@ -4356,7 +4657,7 @@ Zamiast tego nf-core zapewnia interaktywne narzędzie GUI, które obsługuje sk�
 <h3 id="14-zweryfikuj-zmiany">1.4. Zweryfikuj zmiany<a class="headerlink" href="#14-zweryfikuj-zmiany" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="s1">&#39;&quot;input_output_options&quot;&#39;</span><span class="w"> </span>nextflow_schema.json
 </code></pre></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">core-hello/nextflow_schema.json (fragment)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">core-hello/nextflow_schema.json (excerpt)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-13-10">10</a></span>
 <span class="normal"><a href="#__codelineno-13-11">11</a></span>
@@ -4424,14 +4725,14 @@ Zamiast tego nf-core zapewnia interaktywne narzędzie GUI, które obsługuje sk�
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="go"> N E X T F L O W   ~  version 25.04.3</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="go"> N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="go">Launching `./main.nf` [peaceful_wozniak] DSL2 - revision: b9e9b3b8de</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="go">executor &gt;  local (8)</span>
 <a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="go">[de/a1b2c3] CORE_HELLO:HELLO:sayHello (3)       | 3 of 3 ✔</span>
 <a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="go">[4f/d5e6f7] CORE_HELLO:HELLO:convertToUpper (3) | 3 of 3 ✔</span>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="go">[8a/b9c0d1] CORE_HELLO:HELLO:CAT_CAT (test)     | 1 of 1 ✔</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="go">[8a/b9c0d1] CORE_HELLO:HELLO:FIND_CONCATENATE (test)     | 1 of 1 ✔</span>
 <a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="go">[e2/f3a4b5] CORE_HELLO:HELLO:COWPY (test)       | 1 of 1 ✔</span>
 <a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="go">-[core/hello] Pipeline completed successfully-</span>
 </code></pre></div>
@@ -4452,7 +4753,7 @@ Podczas gdy walidacja parametrów sprawdza flagi linii poleceń, walidacja danyc
 </code></pre></div>
 <div class="highlight"><span class="filename">assets/greetings.csv</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Hello,en,87
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>Bonjour,fr,96
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Holà,es,98
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Hola,es,98
 </code></pre></div>
 <p>To prosty CSV z:</p>
 <ul>
@@ -4509,7 +4810,7 @@ Musimy zastąpić go prostszym schematem dla naszego przypadku użycia powitań.
 <span class="normal"><a href="#__codelineno-20-28">28</a></span>
 <span class="normal"><a href="#__codelineno-20-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="p">{</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">    </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json-schema.org/draft/2020-12/schema&quot;</span><span class="p">,</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">    </span><span class="nt">&quot;$id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/core/hello/main/assets/schema_input.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">    </span><span class="nt">&quot;$id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/core/hello/master/assets/schema_input.json&quot;</span><span class="p">,</span>
 <a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;core/hello pipeline - params.input schema&quot;</span><span class="p">,</span>
 <a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Schema for the greetings file provided with params.input&quot;</span><span class="p">,</span>
 <a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">,</span>
@@ -4573,7 +4874,7 @@ Musimy zastąpić go prostszym schematem dla naszego przypadku użycia powitań.
 <span class="normal"><a href="#__codelineno-21-32">32</a></span>
 <span class="normal"><a href="#__codelineno-21-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="p">{</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">    </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json-schema.org/draft/2020-12/schema&quot;</span><span class="p">,</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">    </span><span class="nt">&quot;$id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/core/hello/main/assets/schema_input.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">    </span><span class="nt">&quot;$id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/core/hello/master/assets/schema_input.json&quot;</span><span class="p">,</span>
 <a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;core/hello pipeline - params.input schema&quot;</span><span class="p">,</span>
 <a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Schema for the file provided with params.input&quot;</span><span class="p">,</span>
 <a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">,</span>
@@ -4631,7 +4932,7 @@ Musimy zastąpić go prostszym schematem dla naszego przypadku użycia powitań.
 <span class="normal"><a href="#__codelineno-22-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="hll">greeting,language,score
 </span><a id="__codelineno-22-2" name="__codelineno-22-2"></a>Hello,en,87
 <a id="__codelineno-22-3" name="__codelineno-22-3"></a>Bonjour,fr,96
-<a id="__codelineno-22-4" name="__codelineno-22-4"></a>Holà,es,98
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a>Hola,es,98
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -4639,7 +4940,7 @@ Musimy zastąpić go prostszym schematem dla naszego przypadku użycia powitań.
 <span class="normal"><a href="#__codelineno-23-2">2</a></span>
 <span class="normal"><a href="#__codelineno-23-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>Hello,en,87
 <a id="__codelineno-23-2" name="__codelineno-23-2"></a>Bonjour,fr,96
-<a id="__codelineno-23-3" name="__codelineno-23-3"></a>Holà,es,98
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a>Hola,es,98
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -4748,7 +5049,7 @@ Musimy zastąpić go prostszym schematem dla naszego przypadku użycia powitań.
 <p>Rozłóżmy, co się zmieniło:</p>
 <ol>
 <li><strong><code>samplesheetToList(params.input, "${projectDir}/assets/schema_input.json")</code></strong>: Waliduje plik wejściowy względem naszego schematu i zwraca listę</li>
-<li><strong><code>Channel.fromList(...)</code></strong>: Konwertuje listę na kanał Nextflow'a</li>
+<li><strong><code>channel.fromList(...)</code></strong>: Konwertuje listę na kanał Nextflow'a</li>
 </ol>
 <p>To kończy implementację walidacji danych wejściowych używając <code>samplesheetToList</code> i schematów JSON.</p>
 <p>Teraz, gdy skonfigurowaliśmy schemat danych wejściowych, możemy usunąć tymczasowe ustawienie ignorowania, które dodaliśmy wcześniej.</p>
@@ -4757,25 +5058,25 @@ Musimy zastąpić go prostszym schematem dla naszego przypadku użycia powitań.
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Po</label><label for="__tabbed_5_2">Przed</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-246">246</a></span>
-<span class="normal"><a href="#__codelineno-27-247">247</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-247">247</a></span>
 <span class="normal"><a href="#__codelineno-27-248">248</a></span>
-<span class="normal"><a href="#__codelineno-27-249">249</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-246" name="__codelineno-27-246"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-27-247" name="__codelineno-27-247"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
-<a id="__codelineno-27-248" name="__codelineno-27-248"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
-<a id="__codelineno-27-249" name="__codelineno-27-249"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-27-249">249</a></span>
+<span class="normal"><a href="#__codelineno-27-250">250</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-247" name="__codelineno-27-247"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-27-248" name="__codelineno-27-248"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
+<a id="__codelineno-27-249" name="__codelineno-27-249"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
+<a id="__codelineno-27-250" name="__codelineno-27-250"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-246">246</a></span>
-<span class="normal"><a href="#__codelineno-28-247">247</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-247">247</a></span>
 <span class="normal"><a href="#__codelineno-28-248">248</a></span>
 <span class="normal"><a href="#__codelineno-28-249">249</a></span>
-<span class="normal"><a href="#__codelineno-28-250">250</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-246" name="__codelineno-28-246"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-28-247" name="__codelineno-28-247"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
-<a id="__codelineno-28-248" name="__codelineno-28-248"></a><span class="hll"><span class="w">    </span><span class="n">ignoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;input&#39;</span><span class="o">]</span>
-</span><a id="__codelineno-28-249" name="__codelineno-28-249"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
-<a id="__codelineno-28-250" name="__codelineno-28-250"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-28-250">250</a></span>
+<span class="normal"><a href="#__codelineno-28-251">251</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-247" name="__codelineno-28-247"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-28-248" name="__codelineno-28-248"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
+<a id="__codelineno-28-249" name="__codelineno-28-249"></a><span class="hll"><span class="w">    </span><span class="n">ignoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;input&#39;</span><span class="o">]</span>
+</span><a id="__codelineno-28-250" name="__codelineno-28-250"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
+<a id="__codelineno-28-251" name="__codelineno-28-251"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -4799,7 +5100,7 @@ Zauważ, że nie potrzebujemy już <code>--validate_params false</code>, poniewa
 <a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="go">executor &gt;  local (8)</span>
 <a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="go">[c1/39f64a] CORE_HELLO:HELLO:sayHello (1)       | 3 of 3 ✔</span>
 <a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="go">[44/c3fb82] CORE_HELLO:HELLO:convertToUpper (3) | 3 of 3 ✔</span>
-<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="go">[62/80fab2] CORE_HELLO:HELLO:CAT_CAT (test)     | 1 of 1 ✔</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="go">[62/80fab2] CORE_HELLO:HELLO:FIND_CONCATENATE (test)     | 1 of 1 ✔</span>
 <a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="go">[e1/4db4fd] CORE_HELLO:HELLO:COWPY (test)       | 1 of 1 ✔</span>
 <a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="go">-[core/hello] Pipeline completed successfully-</span>
 </code></pre></div>
@@ -4822,7 +5123,7 @@ Jeśli chcesz, użyj tego, czego się nauczyłeś, aby dodać walidację równie
 <span class="normal"><a href="#__codelineno-32-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="hll">message,language,score
 </span><a id="__codelineno-32-2" name="__codelineno-32-2"></a>Hello,en,87
 <a id="__codelineno-32-3" name="__codelineno-32-3"></a>Bonjour,fr,96
-<a id="__codelineno-32-4" name="__codelineno-32-4"></a>Holà,es,98
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a>Hola,es,98
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -4832,7 +5133,7 @@ Jeśli chcesz, użyj tego, czego się nauczyłeś, aby dodać walidację równie
 <span class="normal"><a href="#__codelineno-33-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="hll">greeting,language,score
 </span><a id="__codelineno-33-2" name="__codelineno-33-2"></a>Hello,en,87
 <a id="__codelineno-33-3" name="__codelineno-33-3"></a>Bonjour,fr,96
-<a id="__codelineno-33-4" name="__codelineno-33-4"></a>Holà,es,98
+<a id="__codelineno-33-4" name="__codelineno-33-4"></a>Hola,es,98
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -4843,7 +5144,7 @@ Jeśli chcesz, użyj tego, czego się nauczyłeś, aby dodać walidację równie
 </code></pre></div>
 <details class="failure">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="go">N E X T F L O W   ~  version 24.10.4</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
 <a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="go">Launching `./main.nf` [trusting_ochoa] DSL2 - revision: b9e9b3b8de</span>
 <a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
@@ -4852,17 +5153,17 @@ Jeśli chcesz, użyj tego, czego się nauczyłeś, aby dodać walidację równie
 <a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="go">  outdir             : test-results</span>
 <a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
 <a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="go">Generic options</span>
-<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="go">  trace_report_suffix: 2025-01-27_03-16-04</span>
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="go">  trace_report_suffix: 2025-11-21_07-35-12</span>
 <a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>
 <a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="go">Core Nextflow options</span>
 <a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="go">  runName            : trusting_ochoa</span>
 <a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="go">  containerEngine    : docker</span>
-<a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="go">  launchDir          : /workspace/hello-nf-core</span>
-<a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="go">  workDir            : /workspace/hello-nf-core/work</span>
-<a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="go">  projectDir         : /workspace/hello-nf-core</span>
-<a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="go">  userName           : user</span>
+<a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="go">  launchDir          : /workspaces/training/hello-nf-core/core-hello</span>
+<a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="go">  workDir            : /workspaces/training/hello-nf-core/core-hello/work</span>
+<a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="go">  projectDir         : /workspaces/training/hello-nf-core/core-hello</span>
+<a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="go">  userName           : root</span>
 <a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a><span class="go">  profile            : docker</span>
-<a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="go">  configFiles        : /workspace/hello-nf-core/nextflow.config</span>
+<a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="go">  configFiles        : /workspaces/training/hello-nf-core/core-hello/nextflow.config</span>
 <a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a>
 <a id="__codelineno-35-22" name="__codelineno-35-22" href="#__codelineno-35-22"></a><span class="go">!! Only displaying parameters that differ from the pipeline defaults !!</span>
 <a id="__codelineno-35-23" name="__codelineno-35-23" href="#__codelineno-35-23"></a><span class="go">------------------------------------------------------</span>
@@ -4896,7 +5197,60 @@ Jeśli chcesz, użyj tego, czego się nauczyłeś, aby dodać walidację równie
 </div>
 <h3 id="co-dalej_1">Co dalej?<a class="headerlink" href="#co-dalej_1" title="Permanent link">&para;</a></h3>
 <p>Ukończyłeś wszystkie pięć części kursu szkoleniowego Hello nf-core!</p>
-<p>Przejdź do <a href="summary.md">Podsumowania</a>, aby zastanowić się nad tym, co zbudowałeś i czego się nauczyłeś.</p><style type="text/css">.quiz {
+<p>Przejdź do <a href="../next_steps/">Podsumowania</a>, aby zastanowić się nad tym, co zbudowałeś i czego się nauczyłeś.</p><div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    Quiz Progress
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          Reset
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        Reset
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -4943,10 +5297,12 @@ Jeśli chcesz, użyj tego, czego się nauczyłeś, aby dodać walidację równie
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -5867,16 +6223,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -6510,9 +6856,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

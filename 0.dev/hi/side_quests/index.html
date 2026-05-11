@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -157,12 +157,70 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#course" class="md-skip">
           विषय पर बढ़ें
         </a>
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
                 
@@ -2338,22 +2369,30 @@
   </label>
   <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
      <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        पूर्वापेक्षाएँ
+        कोर्स का अवलोकन
       
     </span>
   </a>
   
-</li>  <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+    <nav class="md-nav" aria-label="कोर्स का अवलोकन">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         साइड क्वेस्ट
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li> 
   </ul>
@@ -2565,7 +2604,7 @@
   <span class="md-ellipsis">
     
   
-    अभिविन्यास
+    शुरू करना
   
 
     
@@ -2593,7 +2632,7 @@
   <span class="md-ellipsis">
     
   
-    विकास वातावरण
+    डेवलपमेंट एनवायरनमेंट
   
 
     
@@ -2614,14 +2653,14 @@
   
   
     <li class="md-nav__item">
-      <a href="metadata/" class="md-nav__link">
+      <a href="essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    मेटाडेटा और मेटा मैप्स
+    आवश्यक स्क्रिप्टिंग पैटर्न
   
 
     
@@ -2670,6 +2709,34 @@
   
   
     <li class="md-nav__item">
+      <a href="metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    मेटाडेटा और मेटा मैप्स
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="splitting_and_grouping/" class="md-nav__link">
         
   
@@ -2678,6 +2745,62 @@
     
   
     विभाजन और समूहीकरण
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nf_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nf-test के साथ परीक्षण
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    वर्कफ़्लो की समस्या निवारण
   
 
     
@@ -2725,15 +2848,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plugin Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="debugging/" class="md-nav__link">
+      <a href="plugin_development/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    वर्कफ़्लो की डिबगिंग
+    Plugin Development
   
 
     
@@ -2754,14 +2924,14 @@
   
   
     <li class="md-nav__item">
-      <a href="essential_scripting_patterns/" class="md-nav__link">
+      <a href="plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    आवश्यक Nextflow स्क्रिप्टिंग पैटर्न
+    भाग 1: Plugin की मूल बातें
   
 
     
@@ -2782,14 +2952,14 @@
   
   
     <li class="md-nav__item">
-      <a href="nf-test/" class="md-nav__link">
+      <a href="plugin_development/02_create_project/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    nf-test के साथ परीक्षण
+    भाग 2: एक Plugin प्रोजेक्ट बनाओ
   
 
     
@@ -2798,6 +2968,182 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    भाग 3: कस्टम फ़ंक्शन
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    भाग 4: परीक्षण
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    भाग 5: Trace Observers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    भाग 6: कॉन्फ़िगरेशन
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    सारांश
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    अगले कदम
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3248,22 +3594,30 @@
   </label>
   <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
      <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        पूर्वापेक्षाएँ
+        कोर्स का अवलोकन
       
     </span>
   </a>
   
-</li>  <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+    <nav class="md-nav" aria-label="कोर्स का अवलोकन">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         साइड क्वेस्ट
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li> 
   </ul>
@@ -3460,43 +3814,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -3525,65 +3842,165 @@
 </a>
  
 
-<h1 id="_1">साइड क्वेस्ट<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p><span class="ai-translation-notice"><span class="twemoji ai-translation-notice-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> AI-सहायता प्राप्त अनुवाद - <a href="https://github.com/nextflow-io/training/blob/master/TRANSLATING.md">अधिक जानें और सुधार सुझाएं</a></span></p>
-<p>यह स्वतंत्र प्रशिक्षण मिनी-कोर्स का संग्रह है जो विशिष्ट विषयों में गहराई से जाते हैं। आप इन्हें किसी भी क्रम में पूरा कर सकते हैं।</p>
-<p>आइए शुरू करें! प्रशिक्षण वातावरण लॉन्च करने के लिए नीचे "Open in GitHub Codespaces" बटन पर क्लिक करें (अधिमानतः एक अलग टैब में), फिर इसके लोड होने के दौरान पढ़ें।</p>
-<p><a href="https://codespaces.new/nextflow-io/training?quickstart=1&amp;ref=master"><img alt="Open in GitHub Codespaces" src="https://github.com/codespaces/badge.svg" /></a></p>
-<h2 id="_2">पूर्वापेक्षाएँ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>प्रत्येक मिनी-कोर्स की विशिष्ट पूर्वापेक्षाएँ अलग-अलग हैं और संबंधित पेजों में प्रलेखित हैं।
-फिर भी, वे सभी निम्नलिखित के साथ कुछ न्यूनतम परिचितता मानते हैं:</p>
+<h1 id="course">साइड क्वेस्ट<span class="index-type-badge">course</span><a class="headerlink" href="#course" title="Permanent link">&para;</a></h1>
+<div class="grid cards">
 <ul>
-<li>कमांड लाइन के साथ अनुभव</li>
-<li><a href="../../hello_nextflow/">Hello Nextflow</a> शुरुआती प्रशिक्षण कोर्स में शामिल बुनियादी Nextflow अवधारणाएँ और टूलिंग।</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <strong>कोर्स सारांश</strong></p>
+<hr />
+<p><span class="ai-translation-notice"><span class="twemoji ai-translation-notice-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> AI-सहायता प्राप्त अनुवाद - <a href="https://github.com/nextflow-io/training/blob/master/TRANSLATING.md">अधिक जानें और सुधार सुझाएं</a></span></p>
+<p><strong>साइड क्वेस्ट स्वतंत्र प्रशिक्षण मिनी-कोर्स हैं जो विशिष्ट Nextflow विषयों में गहराई से जाते हैं।</strong></p>
+<p>प्रत्येक साइड क्वेस्ट को तुम्हारी रुचि और ज़रूरत के अनुसार, किसी भी क्रम में स्वतंत्र रूप से लिया जा सकता है।</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> <strong>अतिरिक्त जानकारी</strong></p>
+<hr />
+<details class="terminal">
+<summary>तकनीकी आवश्यकताएँ</summary>
+<p>आपको एक GitHub खाता या Nextflow का लोकल इंस्टॉलेशन चाहिए होगा। अधिक जानकारी के लिए <a href="../envsetup/">वातावरण विकल्प</a> देखें।</p>
+</details>
+<details class="learning">
+<summary>सीखने के उद्देश्य</summary>
+<ul>
+<li>एक उत्पादक Nextflow डेवलपमेंट वातावरण सेट अप और कॉन्फ़िगर करें</li>
+<li>जटिल डेटा ट्रांसफ़ॉर्मेशन के लिए उन्नत स्क्रिप्टिंग पैटर्न लागू करें</li>
+<li>मल्टी-स्टेप वर्कफ़्लो में मेटाडेटा को हैंडल और प्रोपेगेट करें</li>
+<li>समानांतर और क्रमिक प्रोसेसिंग के लिए डेटा चैनल को विभाजित और समूहित करें</li>
+<li>nf-test का उपयोग करके Nextflow वर्कफ़्लो का परीक्षण करें</li>
+<li>{'पुन': 'उपयोग योग्य नामित वर्कफ़्लो मॉड्यूल से जटिल पाइपलाइन बनाएं'}</li>
+<li>Nextflow फ़ाइल ऑपरेशन का उपयोग करके फ़ाइलों के साथ कुशलतापूर्वक काम करें</li>
+<li>सामान्य वर्कफ़्लो समस्याओं को व्यवस्थित रूप से डीबग करें</li>
+<li>Nextflow plugins का उपयोग और निर्माण करें</li>
 </ul>
-<p>तकनीकी आवश्यकताओं और वातावरण सेटअप के लिए, <a href="../../envsetup/">Environment Setup</a> मिनी-कोर्स देखें।</p>
-<p><strong>यदि आप पहली बार साइड क्वेस्ट में प्रवेश कर रहे हैं, तो पहले <a href="orientation/">Orientation</a> पेज अवश्य देखें!</strong></p>
-<p>अन्यथा, नीचे दी गई तालिका से एक साइड क्वेस्ट चुनें।</p>
-<h2 id="_3">साइड क्वेस्ट<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+</details>
+<details class="people">
+<summary>लक्षित दर्शक और पूर्वापेक्षाएँ</summary>
+<ul>
+<li><strong>दर्शक:</strong> यह संग्रह उन शिक्षार्थियों के लिए बनाया गया है जिन्होंने Hello Nextflow शुरुआती कोर्स पूरा कर लिया है और विशिष्ट विषयों में गहराई से जाना चाहते हैं।</li>
+<li><strong>कौशल:</strong> कमांड लाइन का अनुभव और बुनियादी Nextflow अवधारणाओं और टूलिंग से परिचितता मानी जाती है।</li>
+<li><strong>कोर्स:</strong> <a href="../hello_nextflow/">Hello Nextflow</a> या समकक्ष पूरा किया होना चाहिए।</li>
+</ul>
+</details>
+</li>
+</ul>
+</div>
+<h2 id="_1">कोर्स का अवलोकन<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>यदि तुम पहली बार साइड क्वेस्ट देख रहे हो, तो प्रशिक्षण वातावरण और सामग्री के अवलोकन के लिए <a href="orientation/">Orientation</a> पेज से शुरू करो।</p>
+<h3 id="_2">साइड क्वेस्ट<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>साइड क्वेस्ट</th>
-<th>शिक्षण के लिए अनुमानित समय</th>
+<th>सारांश</th>
+<th>अनुमानित समय</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="./ide_features.md">Nextflow development environment walkthrough</a></td>
+<td><a href="dev_environment/">Development Environment</a></td>
+<td>एक उत्पादक लोकल Nextflow डेवलपमेंट वातावरण सेट अप और कॉन्फ़िगर करें</td>
 <td>45 मिनट</td>
 </tr>
 <tr>
-<td><a href="essential_scripting_patterns/">Essential Nextflow Scripting Patterns</a></td>
+<td><a href="essential_scripting_patterns/">Essential Scripting Patterns</a></td>
+<td>सामान्य वर्कफ़्लो चुनौतियों के लिए उन्नत स्क्रिप्टिंग तकनीकें</td>
 <td>90 मिनट</td>
 </tr>
 <tr>
-<td><a href="metadata/">Metadata in workflows</a></td>
+<td><a href="working_with_files/">File Input Processing</a></td>
+<td>फ़ाइल हैंडलिंग, पाथ ऑपरेशन और आउटपुट व्यवस्थित करना</td>
+<td>45 मिनट</td>
+</tr>
+<tr>
+<td><a href="metadata/">Metadata and Meta Maps</a></td>
+<td>नमूना जानकारी ट्रैक और प्रोपेगेट करने के लिए मेटाडेटा मैप का उपयोग</td>
 <td>45 मिनट</td>
 </tr>
 <tr>
 <td><a href="splitting_and_grouping/">Splitting and Grouping</a></td>
+<td>डेटा चैनल को विभाजित और पुनः समूहित करने की तकनीकें</td>
 <td>45 मिनट</td>
 </tr>
 <tr>
-<td><a href="nf-test/">Testing with nf-test</a></td>
+<td><a href="nf_test/">Testing with nf-test</a></td>
+<td>Nextflow वर्कफ़्लो के लिए परीक्षण लिखना और चलाना</td>
 <td>1 घंटा</td>
 </tr>
 <tr>
-<td><a href="workflows_of_workflows/">Workflows of workflows</a></td>
+<td><a href="debugging/">Troubleshooting Workflows</a></td>
+<td>सामान्य वर्कफ़्लो त्रुटियों की पहचान और सुधार</td>
+<td>1 घंटा</td>
+</tr>
+<tr>
+<td><a href="workflows_of_workflows/">Workflows of Workflows</a></td>
+<td>पुन: उपयोग योग्य नामित वर्कफ़्लो मॉड्यूल से जटिल पाइपलाइन बनाना</td>
 <td>30 मिनट</td>
 </tr>
 <tr>
-<td><a href="working_with_files/">Working with files</a></td>
-<td>45 मिनट</td>
-</tr>
-<tr>
-<td><a href="debugging/">Debugging workflows</a></td>
-<td>1 घंटा</td>
+<td><a href="plugin_development/">Plugin Development</a></td>
+<td>Nextflow plugins का उपयोग और निर्माण</td>
+<td>3 घंटे</td>
 </tr>
 </tbody>
 </table>
-<p>हमें बताएं कि आप यहाँ किन अन्य डोमेन और उपयोग के मामलों को शामिल देखना चाहेंगे, कम्युनिटी फोरम के <a href="https://community.seqera.io/c/training/">Training section</a> में पोस्ट करके।</p><style type="text/css">.quiz {
+<p><a class="md-button md-button--primary" href="orientation/">शुरू करें <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
+<!-- Clearfix for float -->
+<div style="content: ''; clear: both; display: table;"></div>
+
+<p>हमें बताओ कि तुम यहाँ किन अन्य विषयों को शामिल देखना चाहते हो, कम्युनिटी फोरम के <a href="https://community.seqera.io/c/training/">Training section</a> में पोस्ट करके।</p><div id="quiz-progress-sidebar" aria-label="क्विज़ प्रगति" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    क्विज़ प्रगति
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          उत्तर दिए: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          सही: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          रीसेट
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="क्विज़ प्रगति" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        उत्तर दिए: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        सही: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        रीसेट
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -3630,10 +4047,12 @@
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -4554,16 +4973,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -5198,9 +5607,6 @@ window.mkdocsQuizConfig = {
     // Initialize tracker
     quizTracker.init();
 
-    // Translate template elements
-    translateTemplateElements();
-
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();
 
@@ -5302,13 +5708,13 @@ window.mkdocsQuizConfig = {
         
         
           
-          <a href="orientation/" class="md-footer__link md-footer__link--next" aria-label="आगामी: अभिविन्यास">
+          <a href="orientation/" class="md-footer__link md-footer__link--next" aria-label="आगामी: शुरू करना">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 आगामी
               </span>
               <div class="md-ellipsis">
-                अभिविन्यास
+                शुरू करना
               </div>
             </div>
             <div class="md-footer__button md-icon">

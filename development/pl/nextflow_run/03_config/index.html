@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -163,6 +163,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -3340,7 +3371,7 @@
   <span class="md-ellipsis">
     
   
-    Orientacja
+    Pierwsze kroki
   
 
     
@@ -3368,7 +3399,7 @@
   <span class="md-ellipsis">
     
   
-    Środowisko programistyczne
+    Index
   
 
     
@@ -3389,14 +3420,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/metadata/" class="md-nav__link">
+      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Metadane i mapy meta
+    Podstawowe Wzorce Skryptowania
   
 
     
@@ -3445,14 +3476,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/splitting_and_grouping/" class="md-nav__link">
+      <a href="../../side_quests/metadata/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dzielenie i Grupowanie
+    Metadane i mapy metadanych
   
 
     
@@ -3473,14 +3504,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/workflows_of_workflows/" class="md-nav__link">
+      <a href="../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Workflow'y złożone z workflow'ów
+    Podział i grupowanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/nf_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
   
 
     
@@ -3508,7 +3567,7 @@
   <span class="md-ellipsis">
     
   
-    Debugowanie Workflow'ów
+    Rozwiązywanie problemów z Workflow'ami
   
 
     
@@ -3529,14 +3588,89 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../side_quests/workflows_of_workflows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Podstawowe Wzorce Skryptowe w Nextflow
+    Workflow'y Workflow'ów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tworzenie wtyczek
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tworzenie wtyczek
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tworzenie wtyczek
   
 
     
@@ -3557,14 +3691,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Testowanie z nf-test
+    Część 1: Podstawy wtyczek
   
 
     
@@ -3573,6 +3707,210 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 create project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Część 3: Własne funkcje
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Część 4: Testowanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Część 5: Obserwatory śladów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Część 6: Konfiguracja
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Podsumowanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kolejne kroki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -5010,43 +5348,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -5186,7 +5487,7 @@ Możesz zmodyfikować wartość domyślną dla <code>batch</code> i uruchomić w
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">Launching `3-main.nf` [disturbed_einstein] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
@@ -5202,7 +5503,7 @@ Możesz zmodyfikować wartość domyślną dla <code>batch</code> i uruchomić w
 <details class="abstract">
 <summary>Zawartość pliku</summary>
 <div class="highlight"><span class="filename">results/3-main/cowpy-COLLECTED-batch-output.txt</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">_________</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">/ HOLà    \</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">/ HOLA    \</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">| HELLO   |</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="go">\ BONJOUR /</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="go">---------</span>
@@ -5265,7 +5566,7 @@ Upewnij się, że odpowiednio dostosujesz ścieżkę!</p>
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">Launching `../3-main.nf` [trusting_escher] DSL2 - revision: 356df0818d</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
@@ -5284,7 +5585,7 @@ Upewnij się, że odpowiednio dostosujesz ścieżkę!</p>
 <div class="highlight"><span class="filename">tux-run/results/3-main/cowpy-COLLECTED-experiment-output.txt</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="go">_________</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="go">/ HELLO   \</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="go">| BONJOUR |</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="go">\ HOLà    /</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="go">\ HOLA    /</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="go">---------</span>
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="go">  \</span>
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="go">    \</span>
@@ -5325,7 +5626,7 @@ Jest prostsze podejście, gdy chcesz uruchomić pipeline z określonym zestawem 
 Zwróć uwagę na użycie dwukropków (<code>:</code>) zamiast znaków równości (<code>=</code>), jeśli porównujesz składnię z plikiem konfiguracyjnym.
 Plik config jest napisany w Groovy, podczas gdy plik parametrów jest napisany w YAML.</p>
 <div class="admonition info">
-<p class="admonition-title">Informacja</p>
+<p class="admonition-title">Info</p>
 <p>Dostarczamy również wersję JSON pliku parametrów jako przykład, ale nie będziemy go tutaj uruchamiać.
 Możesz spróbować tego samodzielnie.</p>
 </div>
@@ -5335,7 +5636,7 @@ Możesz spróbować tego samodzielnie.</p>
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="go">Launching `3-main.nf` [disturbed_sammet] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
@@ -5351,7 +5652,7 @@ Możesz spróbować tego samodzielnie.</p>
 <summary>Zawartość pliku</summary>
 <div class="highlight"><span class="filename">results/3-main/cowpy-COLLECTED-yaml-output.txt</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="go">_________</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="go">/ HELLO   \</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="go">| HOLà    |</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="go">| HOLA    |</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="go">\ BONJOUR /</span>
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="go">---------</span>
 <a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="go">\                             .       .</span>
@@ -5554,7 +5855,7 @@ Użycie flagi CLI nadpisze <code>outputDir</code> w konfiguracji, jeśli jest us
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="go">Launching `3-main.nf` [amazing_church] DSL2 - revision: 6e18cd130e</span>
 <a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
@@ -5574,10 +5875,10 @@ Użycie flagi CLI nadpisze <code>outputDir</code> w konfiguracji, jeśli jest us
 <a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="go">│   ├── Bonjour-output.txt</span>
 <a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="go">│   ├── COLLECTED-outdir-output.txt</span>
 <a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="go">│   ├── Hello-output.txt</span>
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="go">│   ├── Holà-output.txt</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="go">│   ├── Hola-output.txt</span>
 <a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="go">│   ├── UPPER-Bonjour-output.txt</span>
 <a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="go">│   ├── UPPER-Hello-output.txt</span>
-<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="go">│   └── UPPER-Holà-output.txt</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="go">│   └── UPPER-Hola-output.txt</span>
 <a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="go">└── outdir-report.txt</span>
 </code></pre></div>
 </details>
@@ -5690,7 +5991,7 @@ Użycie flagi CLI nadpisze <code>outputDir</code> w konfiguracji, jeśli jest us
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
 <a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="go">Launching `3-main.nf` [jovial_mcclintock] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
@@ -5711,13 +6012,13 @@ Użycie flagi CLI nadpisze <code>outputDir</code> w konfiguracji, jeśli jest us
 <a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="go">├── convertToUpper</span>
 <a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="go">│   ├── UPPER-Bonjour-output.txt</span>
 <a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="go">│   ├── UPPER-Hello-output.txt</span>
-<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="go">│   └── UPPER-Holà-output.txt</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="go">│   └── UPPER-Hola-output.txt</span>
 <a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="go">├── cowpy</span>
 <a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="go">│   └── cowpy-COLLECTED-pnames-output.txt</span>
 <a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="go">└── sayHello</span>
 <a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="go">    ├── Bonjour-output.txt</span>
 <a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="go">    ├── Hello-output.txt</span>
-<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="go">    └── Holà-output.txt</span>
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="go">    └── Hola-output.txt</span>
 </code></pre></div>
 </details>
 <div class="admonition note">
@@ -5851,7 +6152,7 @@ Możesz mieszać i łączyć te podejścia oraz uwzględniać wiele zmiennych, n
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
 <a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="go">Launching `3-main.nf` [rowdy_sagan] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
@@ -5873,13 +6174,13 @@ Wszystkie nadal są właściwymi kopiami, nie symlinkami.</p>
 <a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="go">├── convertToUpper</span>
 <a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="go">│   ├── UPPER-Bonjour-output.txt</span>
 <a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="go">│   ├── UPPER-Hello-output.txt</span>
-<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="go">│   └── UPPER-Holà-output.txt</span>
+<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="go">│   └── UPPER-Hola-output.txt</span>
 <a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a><span class="go">├── cowpy</span>
 <a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a><span class="go">│   └── cowpy-COLLECTED-outmode-output.txt</span>
 <a id="__codelineno-36-11" name="__codelineno-36-11" href="#__codelineno-36-11"></a><span class="go">└── sayHello</span>
 <a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a><span class="go">    ├── Bonjour-output.txt</span>
 <a id="__codelineno-36-13" name="__codelineno-36-13" href="#__codelineno-36-13"></a><span class="go">    ├── Hello-output.txt</span>
-<a id="__codelineno-36-14" name="__codelineno-36-14" href="#__codelineno-36-14"></a><span class="go">    └── Holà-output.txt</span>
+<a id="__codelineno-36-14" name="__codelineno-36-14" href="#__codelineno-36-14"></a><span class="go">    └── Hola-output.txt</span>
 </code></pre></div>
 </details>
 <p>Głównym powodem, dla którego nadal możesz chcieć użyć sposobu ustawiania trybu dla każdego wyjścia, jest sytuacja, gdy chcesz mieszać i łączyć w tym samym workflow, <em>tzn.</em> mieć niektóre wyjścia kopiowane, a niektóre dowiązane symbolicznie.</p>
@@ -5968,7 +6269,7 @@ Zalecamy korzystanie z zapytania wyszukiwania <a href="https://seqera.io/contain
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><span class="filename">Wyjście</span><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
 <a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="go">Launching `3-main.nf` [trusting_lovelace] DSL2 - revision: 028a841db1</span>
 <a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>
@@ -5982,7 +6283,7 @@ Zalecamy korzystanie z zapytania wyszukiwania <a href="https://seqera.io/contain
 <p>To powinno działać bez problemu i produkować te same wyjścia co poprzednio w <code>results_config/conda</code>.</p>
 <p>Za kulisami Nextflow pobrał pakiety Conda i utworzył środowisko, co normalnie wymaga trochę pracy; więc miło, że nie musimy nic z tego robić sami!</p>
 <div class="admonition info">
-<p class="admonition-title">Informacja</p>
+<p class="admonition-title">Info</p>
 <p>To działa szybko, ponieważ pakiet <code>cowpy</code> jest dość mały, ale jeśli pracujesz z dużymi pakietami, może to zająć nieco więcej czasu za pierwszym razem i możesz zobaczyć, że wyjście konsoli pozostaje 'zablokowane' przez minutę lub więcej przed zakończeniem.
 To jest normalne i wynika z dodatkowej pracy, którą Nextflow wykonuje za pierwszym razem, gdy używasz nowego pakietu.</p>
 </div>
@@ -6016,7 +6317,7 @@ Dla bardzo dużych obciążeń możesz odkryć, że Twój komputer jest wąskim 
 <h3 id="41-celowanie-w-inny-backend">4.1. Celowanie w inny backend<a class="headerlink" href="#41-celowanie-w-inny-backend" title="Permanent link">&para;</a></h3>
 <p>Wybór executora jest ustawiany przez dyrektywę procesu o nazwie <code>executor</code>.
 Domyślnie jest ustawiony na <code>local</code>, więc następująca konfiguracja jest domniemana:</p>
-<div class="highlight"><span class="filename">Wbudowana konfiguracja</span><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">process</span><span class="w"> </span><span class="o">{</span>
+<div class="highlight"><span class="filename">Built-in configuration</span><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">process</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">    </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;local&#39;</span>
 <a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="o">}</span>
 </code></pre></div>
@@ -6035,19 +6336,19 @@ Domyślnie jest ustawiony na <code>local</code>, więc następująca konfiguracj
 <details class="abstract">
 <summary>Przykłady</summary>
 <p>Na przykład to samo zadanie wymagające 8 procesorów i 4GB RAM do wykonania w kolejce "my-science-work" musi być wyrażone na różne sposoby w zależności od backendu.</p>
-<div class="highlight"><span class="filename">Config dla SLURM / przesyłanie przez sbatch</span><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="c1">#SBATCH -o /path/to/my/task/directory/my-task-1.log</span>
+<div class="highlight"><span class="filename">Config for SLURM / submit using sbatch</span><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="c1">#SBATCH -o /path/to/my/task/directory/my-task-1.log</span>
 <a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="c1">#SBATCH --no-requeue</span>
 <a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="c1">#SBATCH -c 8</span>
 <a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="c1">#SBATCH --mem 4096M</span>
 <a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="c1">#SBATCH -p my-science-work</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Config dla PBS / przesyłanie przez qsub</span><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="c1">#PBS -o /path/to/my/task/directory/my-task-1.log</span>
+<div class="highlight"><span class="filename">Config for PBS / submit using qsub</span><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="c1">#PBS -o /path/to/my/task/directory/my-task-1.log</span>
 <a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="c1">#PBS -j oe</span>
 <a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="c1">#PBS -q my-science-work</span>
 <a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="c1">#PBS -l nodes=1:ppn=5</span>
 <a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="c1">#PBS -l mem=4gb</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Config dla SGE / przesyłanie przez qsub</span><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="c1">#$ -o /path/to/my/task/directory/my-task-1.log</span>
+<div class="highlight"><span class="filename">Config for SGE / submit using qsub</span><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="c1">#$ -o /path/to/my/task/directory/my-task-1.log</span>
 <a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="c1">#$ -j y</span>
 <a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="c1">#$ -terse</span>
 <a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="c1">#$ -notify</span>
@@ -6074,7 +6375,7 @@ Lub może jesteś obciążany za zasoby, których nie używasz i chcesz zoptymal
 <p>Większość platform obliczeniowych o wysokiej wydajności pozwala (a czasami wymaga), abyś określił pewne parametry alokacji zasobów, takie jak liczba procesorów i pamięć.</p>
 <p>Domyślnie Nextflow użyje jednego procesora i 2GB pamięci dla każdego procesu.
 Odpowiednie dyrektywy procesu nazywają się <code>cpus</code> i <code>memory</code>, więc następująca konfiguracja jest domniemana:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Wbudowana konfiguracja</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Built-in configuration</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-1">1</a></span>
 <span class="normal"><a href="#__codelineno-48-2">2</a></span>
 <span class="normal"><a href="#__codelineno-48-3">3</a></span>
 <span class="normal"><a href="#__codelineno-48-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="n">process</span><span class="w"> </span><span class="o">{</span>
@@ -6159,7 +6460,7 @@ Upewnij się, że klikasz na karty pokazujące wyniki wykorzystania jako procent
 </div>
 <p>Z tą konfiguracją wszystkie procesy będą żądać 1GB pamięci i jednego procesora (domniemana wartość domyślna), z wyjątkiem procesu <code>cowpy</code>, który będzie żądał 2GB i 2 procesorów.</p>
 <div class="admonition info">
-<p class="admonition-title">Informacja</p>
+<p class="admonition-title">Info</p>
 <p>Jeśli masz maszynę z małą liczbą procesorów i przydzielasz dużą liczbę na proces, możesz zobaczyć, że wywołania procesu są kolejkowane jedno za drugim.
 To dlatego, że Nextflow zapewnia, że nie żądamy więcej procesorów niż jest dostępnych.</p>
 </div>
@@ -6179,7 +6480,7 @@ Dodatkowo Platforma Seqera oferuje narzędzia oparte na sztucznej inteligencji d
 <p>W zależności od tego, jakiego executora i infrastruktury obliczeniowej używasz, mogą istnieć pewne ograniczenia dotyczące tego, co możesz (lub musisz) przydzielić.
 Na przykład Twój klaster może wymagać, abyś pozostał w określonych limitach.</p>
 <p>Możesz użyć dyrektywy <code>resourceLimits</code>, aby ustawić odpowiednie ograniczenia. Składnia wygląda tak, gdy jest sama w bloku process:</p>
-<div class="highlight"><span class="filename">Przykład składni</span><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="n">process</span><span class="w"> </span><span class="o">{</span>
+<div class="highlight"><span class="filename">Syntax example</span><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="n">process</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="w">    </span><span class="n">resourceLimits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
 <a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">        </span><span class="nl">memory:</span><span class="w"> </span><span class="mi">750</span><span class="o">.</span><span class="na">GB</span><span class="o">,</span>
 <a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="w">        </span><span class="nl">cpus:</span><span class="w"> </span><span class="mi">200</span><span class="o">,</span>
@@ -6258,7 +6559,7 @@ Na przykład możesz rozwijać i testować na małą skalę lokalnie na laptopie
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>
 <a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="go">Launching `3-main.nf` [gigantic_brazil] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>
@@ -6286,9 +6587,9 @@ Możemy ich również używać do ustawiania wartości domyślnych dla parametr�
 Możesz rozważyć to jako alternatywę dla używania pliku parametrów.</p>
 <h4 id="621-skonfiguruj-profil">6.2.1. Skonfiguruj profil<a class="headerlink" href="#621-skonfiguruj-profil" title="Permanent link">&para;</a></h4>
 <p>Składnia wyrażania wartości domyślnych w tym kontekście wygląda tak, dla profilu, który nazywamy <code>test</code>:</p>
-<div class="highlight"><span class="filename">Przykład składni</span><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="w">    </span><span class="n">test</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="w">        </span><span class="n">params</span><span class="o">.&lt;</span><span class="n">parametr1</span><span class="o">&gt;</span>
-<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="w">        </span><span class="n">params</span><span class="o">.&lt;</span><span class="n">parametr2</span><span class="o">&gt;</span>
+<div class="highlight"><span class="filename">Syntax example</span><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="w">    </span><span class="n">test</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="w">        </span><span class="n">params</span><span class="o">.&lt;</span><span class="n">parameter1</span><span class="o">&gt;</span>
+<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="w">        </span><span class="n">params</span><span class="o">.&lt;</span><span class="n">parameter2</span><span class="o">&gt;</span>
 <a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="w">        </span><span class="o">...</span>
 <a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="w">    </span><span class="o">}</span>
 </code></pre></div>
@@ -6349,7 +6650,7 @@ Jeśli konfliktujące ustawienia są ustawione w różnych źródłach konfigura
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>
 <a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="go">Launching `3-main.nf` [jovial_coulomb] DSL2 - revision: 46a6763141</span>
 <a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a>
@@ -6364,7 +6665,7 @@ Jeśli konfliktujące ustawienia są ustawione w różnych źródłach konfigura
 <details class="abstract">
 <summary>Zawartość pliku</summary>
 <div class="highlight"><span class="filename">results_config/test/</span><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="go"> _________</span>
-<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="go">/ HOLà    \</span>
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="go">/ HOLA    \</span>
 <a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="go">| HELLO   |</span>
 <a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a><span class="go">\ BONJOUR /</span>
 <a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a><span class="go">---------</span>
@@ -6499,7 +6800,7 @@ W praktyce często będziesz chciał uruchamiać pipeline'y przechowywane w zdal
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>
 <a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a><span class="go">Pulling nextflow-io/hello ...</span>
 <a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a><span class="go"> downloaded from https://github.com/nextflow-io/hello.git</span>
@@ -6525,7 +6826,7 @@ Możesz określić konkretną wersję (tag), gałąź lub commit używając flag
 </code></pre></div>
 <details class="success">
 <summary>Wyjście polecenia</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a>
 <a id="__codelineno-70-3" name="__codelineno-70-3" href="#__codelineno-70-3"></a><span class="go">Launching `https://github.com/nextflow-io/hello` [sick_carson] DSL2 - revision: 2ce0b0e294 [v1.3]</span>
 <a id="__codelineno-70-4" name="__codelineno-70-4" href="#__codelineno-70-4"></a>
@@ -6562,7 +6863,7 @@ Gdy wartości parametrów są ustawione zarówno w pliku workflow'u, jak i w `ne
 - [ ] Pierwsza napotkana wartość
 - [ ] To powoduje błąd
 
-Dowiedz się więcej: [1.1. Ustaw wartości w `nextflow.config`](#11-ustaw-wartosci-w-nextflowconfig)
+Dowiedz się więcej: [1.1. Ustaw wartości w `nextflow.config`](#11-set-up-values-in-nextflowconfig)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-0">
@@ -6576,7 +6877,7 @@ Dowiedz się więcej: [1.1. Ustaw wartości w `nextflow.config`](#11-ustaw-warto
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#11-ustaw-wartosci-w-nextflowconfig">1.1. Ustaw wartości w <code>nextflow.config</code></a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#11-set-up-values-in-nextflowconfig">1.1. Ustaw wartości w <code>nextflow.config</code></a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6587,7 +6888,7 @@ Jaka jest różnica składniowa między ustawianiem domyślnej wartości paramet
 - [ ] Config używa deklaracji typowanej, workflow używa przypisania
 - [ ] Tylko pliki config mogą ustawiać wartości domyślne
 
-Dowiedz się więcej: [1.1. Ustaw wartości w `nextflow.config`](#11-ustaw-wartosci-w-nextflowconfig)
+Dowiedz się więcej: [1.1. Ustaw wartości w `nextflow.config`](#11-set-up-values-in-nextflowconfig)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-1">
@@ -6601,7 +6902,7 @@ Dowiedz się więcej: [1.1. Ustaw wartości w `nextflow.config`](#11-ustaw-warto
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#11-ustaw-wartosci-w-nextflowconfig">1.1. Ustaw wartości w <code>nextflow.config</code></a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#11-set-up-values-in-nextflowconfig">1.1. Ustaw wartości w <code>nextflow.config</code></a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6612,7 +6913,7 @@ Jak określisz plik parametrów podczas uruchamiania workflow'u?
 - [x] `-params-file params.yaml`
 - [ ] `--input-params params.yaml`
 
-Dowiedz się więcej: [1.3. Użyj pliku parametrów](#13-uzyj-pliku-parametrow)
+Dowiedz się więcej: [1.3. Użyj pliku parametrów](#13-use-a-parameter-file)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-2">
@@ -6626,7 +6927,7 @@ Dowiedz się więcej: [1.3. Użyj pliku parametrów](#13-uzyj-pliku-parametrow)
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#13-uzyj-pliku-parametrow">1.3. Użyj pliku parametrów</a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#13-use-a-parameter-file">1.3. Użyj pliku parametrów</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6637,7 +6938,7 @@ Co kontroluje opcja konfiguracji `outputDir`?
 - [ ] Katalog dla plików dziennika
 - [ ] Lokalizację plików modułów
 
-Dowiedz się więcej: [2.1. Dostosuj nazwę katalogu outputDir](#21-dostosuj-nazwe-katalogu-outputdir)
+Dowiedz się więcej: [2.1. Dostosuj nazwę katalogu outputDir](#21-customize-the-outputdir-directory-name)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-3">
@@ -6651,7 +6952,7 @@ Dowiedz się więcej: [2.1. Dostosuj nazwę katalogu outputDir](#21-dostosuj-naz
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#21-dostosuj-nazwe-katalogu-outputdir">2.1. Dostosuj nazwę katalogu outputDir</a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#21-customize-the-outputdir-directory-name">2.1. Dostosuj nazwę katalogu outputDir</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6662,7 +6963,7 @@ Jak odwołujesz się do nazwy procesu dynamicznie w konfiguracji ścieżki wyjś
 - [x] `#!groovy path { <process>.name }`
 - [ ] `@processName`
 
-Dowiedz się więcej: [2.2. Organizuj wyjścia według proces](#22-organizuj-wyjscia-wedlug-process)
+Dowiedz się więcej: [2.2. Organizuj wyjścia według proces](#22-organize-outputs-by-process)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-4">
@@ -6676,7 +6977,7 @@ Dowiedz się więcej: [2.2. Organizuj wyjścia według proces](#22-organizuj-wyj
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#22-organizuj-wyjscia-wedlug-process">2.2. Organizuj wyjścia według proces</a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#22-organize-outputs-by-process">2.2. Organizuj wyjścia według proces</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6687,7 +6988,7 @@ Jeśli zarówno Docker, jak i Conda są włączone i proces ma obie dyrektywy, k
 - [ ] Pierwsza zdefiniowana w procesie
 - [ ] To powoduje błąd
 
-Dowiedz się więcej: [3. Wybierz technologię pakowania oprogramowania](#3-wybierz-technologie-pakowania-oprogramowania)
+Dowiedz się więcej: [3. Wybierz technologię pakowania oprogramowania](#3-select-a-software-packaging-technology)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-5">
@@ -6701,7 +7002,7 @@ Dowiedz się więcej: [3. Wybierz technologię pakowania oprogramowania](#3-wybi
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#3-wybierz-technologie-pakowania-oprogramowania">3. Wybierz technologię pakowania oprogramowania</a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#3-select-a-software-packaging-technology">3. Wybierz technologię pakowania oprogramowania</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6712,7 +7013,7 @@ Jaki jest domyślny executor w Nextflow?
 - [ ] `kubernetes`
 - [ ] `aws`
 
-Dowiedz się więcej: [4. Wybierz platformę wykonawczą](#4-wybierz-platforme-wykonawcza)
+Dowiedz się więcej: [4. Wybierz platformę wykonawczą](#4-select-an-execution-platform)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-6">
@@ -6726,7 +7027,7 @@ Dowiedz się więcej: [4. Wybierz platformę wykonawczą](#4-wybierz-platforme-w
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#4-wybierz-platforme-wykonawcza">4. Wybierz platformę wykonawczą</a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#4-select-an-execution-platform">4. Wybierz platformę wykonawczą</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6737,7 +7038,7 @@ Jakie polecenie generuje raport wykorzystania zasobów?
 - [x] `nextflow run workflow.nf -with-report report.html`
 - [ ] `nextflow run workflow.nf -profile report`
 
-Dowiedz się więcej: [5.1. Uruchom workflow, aby wygenerować raport wykorzystania zasobów](#51-uruchom-workflow-aby-wygenerowac-raport-wykorzystania-zasobow)
+Dowiedz się więcej: [5.1. Uruchom workflow, aby wygenerować raport wykorzystania zasobów](#51-run-the-workflow-to-generate-a-resource-utilization-report)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-7">
@@ -6751,7 +7052,7 @@ Dowiedz się więcej: [5.1. Uruchom workflow, aby wygenerować raport wykorzysta
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#51-uruchom-workflow-aby-wygenerowac-raport-wykorzystania-zasobow">5.1. Uruchom workflow, aby wygenerować raport wykorzystania zasobów</a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#51-run-the-workflow-to-generate-a-resource-utilization-report">5.1. Uruchom workflow, aby wygenerować raport wykorzystania zasobów</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6762,7 +7063,7 @@ Jak ustawiasz wymagania zasobowe dla konkretnego procesu o nazwie `cowpy` w plik
 - [x] `#!groovy process { withName: 'cowpy' { memory = '2.GB' } }`
 - [ ] `#!groovy resources.cowpy.memory = '2.GB'`
 
-Dowiedz się więcej: [5.3. Ustaw alokacje zasobów dla konkretnego proces](#53-ustaw-alokacje-zasobow-dla-konkretnego-process)
+Dowiedz się więcej: [5.3. Ustaw alokacje zasobów dla konkretnego proces](#53-set-resource-allocations-for-a-specific-process)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-8">
@@ -6776,7 +7077,7 @@ Dowiedz się więcej: [5.3. Ustaw alokacje zasobów dla konkretnego proces](#53-
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#53-ustaw-alokacje-zasobow-dla-konkretnego-process">5.3. Ustaw alokacje zasobów dla konkretnego proces</a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#53-set-resource-allocations-for-a-specific-process">5.3. Ustaw alokacje zasobów dla konkretnego proces</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6787,7 +7088,7 @@ Co robi dyrektywa `resourceLimits`?
 - [x] Ogranicza maksymalne zasoby, które można zażądać
 - [ ] Monitoruje wykorzystanie zasobów w czasie rzeczywistym
 
-Dowiedz się więcej: [5.5. Dodaj limity zasobów](#55-dodaj-limity-zasobow)
+Dowiedz się więcej: [5.5. Dodaj limity zasobów](#55-add-resource-limits)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-9">
@@ -6801,7 +7102,7 @@ Dowiedz się więcej: [5.5. Dodaj limity zasobów](#55-dodaj-limity-zasobow)
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#55-dodaj-limity-zasobow">5.5. Dodaj limity zasobów</a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#55-add-resource-limits">5.5. Dodaj limity zasobów</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6812,7 +7113,7 @@ Jak określasz wiele profili w jednym poleceniu?
 - [x] `-profile profile1,profile2`
 - [ ] `--profile profile1 --profile profile2`
 
-Dowiedz się więcej: [6. Używaj profili do przełączania między predefiniowanymi konfiguracjami](#6-uzywaj-profili-do-przelaczania-miedzy-predefiniowanymi-konfiguracjami)
+Dowiedz się więcej: [6. Używaj profili do przełączania między predefiniowanymi konfiguracjami](#6-use-profiles-to-switch-between-preset-configurations)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-10">
@@ -6826,7 +7127,7 @@ Dowiedz się więcej: [6. Używaj profili do przełączania między predefiniowa
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#6-uzywaj-profili-do-przelaczania-miedzy-predefiniowanymi-konfiguracjami">6. Używaj profili do przełączania między predefiniowanymi konfiguracjami</a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#6-use-profiles-to-switch-between-preset-configurations">6. Używaj profili do przełączania między predefiniowanymi konfiguracjami</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6837,7 +7138,7 @@ Jakie polecenie pokazuje w pełni rozwiązaną konfigurację, której użyłby N
 - [x] `nextflow config`
 - [ ] `nextflow resolve`
 
-Dowiedz się więcej: [6.3. Użyj `nextflow config`, aby zobaczyć rozwiązaną konfigurację](#63-uzyj-nextflow-config-aby-zobaczyc-rozwiazana-konfiguracje)
+Dowiedz się więcej: [6.3. Użyj `nextflow config`, aby zobaczyć rozwiązaną konfigurację](#63-use-nextflow-config-to-see-the-resolved-configuration)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-11">
@@ -6851,7 +7152,7 @@ Dowiedz się więcej: [6.3. Użyj `nextflow config`, aby zobaczyć rozwiązaną 
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#63-uzyj-nextflow-config-aby-zobaczyc-rozwiazana-konfiguracje">6.3. Użyj <code>nextflow config</code>, aby zobaczyć rozwiązaną konfigurację</a></p></section>
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#63-use-nextflow-config-to-see-the-resolved-configuration">6.3. Użyj <code>nextflow config</code>, aby zobaczyć rozwiązaną konfigurację</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6862,7 +7163,7 @@ Do czego mogą być używane profile? (Wybierz wszystkie, które pasują)
 - [x] Dostarczanie parametrów testowych do łatwego testowania workflow
 - [ ] Definiowanie nowych procesów
 
-Dowiedz się więcej: [6. Używaj profili do przełączania między predefiniowanymi konfiguracjami](#6-uzywaj-profili-do-przelaczania-miedzy-predefiniowanymi-konfiguracjami)
+Dowiedz się więcej: [6. Używaj profili do przełączania między predefiniowanymi konfiguracjami](#6-use-profiles-to-switch-between-preset-configurations)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-12">
@@ -6876,8 +7177,61 @@ Dowiedz się więcej: [6. Używaj profili do przełączania między predefiniowa
         <div class="quiz-feedback hidden"></div>
         <button type="submit" class="quiz-button">Submit</button>
     </form>
-    <section class="content hidden"><p>Dowiedz się więcej: <a href="#6-uzywaj-profili-do-przelaczania-miedzy-predefiniowanymi-konfiguracjami">6. Używaj profili do przełączania między predefiniowanymi konfiguracjami</a></p></section>
-</div><style type="text/css">.quiz {
+    <section class="content hidden"><p>Dowiedz się więcej: <a href="#6-use-profiles-to-switch-between-preset-configurations">6. Używaj profili do przełączania między predefiniowanymi konfiguracjami</a></p></section>
+</div><div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    Quiz Progress
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          Reset
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        Reset
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -6924,10 +7278,12 @@ Dowiedz się więcej: [6. Używaj profili do przełączania między predefiniowa
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -7848,16 +8204,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -8491,9 +8837,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

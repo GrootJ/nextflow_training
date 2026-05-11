@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -163,6 +163,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -1029,10 +1060,10 @@
   </label>
   <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
      <li class="md-nav__item">
-  <a href="#0-warmup-hello-confignf" class="md-nav__link">
+  <a href="#0-hello-confignf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        0. Warmup: hello-config.nf चलाएं
+        0. वार्मअप: hello-config.nf चलाएं
       
     </span>
   </a>
@@ -1192,7 +1223,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -1203,7 +1234,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -1368,7 +1399,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -1379,7 +1410,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -1438,7 +1469,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -1449,7 +1480,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -1497,7 +1528,7 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -1508,7 +1539,7 @@
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -1589,7 +1620,7 @@
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -1600,7 +1631,7 @@
   <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -1743,7 +1774,7 @@
   <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -1754,7 +1785,7 @@
   <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -3290,7 +3321,7 @@
   <span class="md-ellipsis">
     
   
-    अभिविन्यास
+    शुरू करना
   
 
     
@@ -3318,7 +3349,7 @@
   <span class="md-ellipsis">
     
   
-    विकास वातावरण
+    डेवलपमेंट एनवायरनमेंट
   
 
     
@@ -3339,14 +3370,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/metadata/" class="md-nav__link">
+      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    मेटाडेटा और मेटा मैप्स
+    आवश्यक स्क्रिप्टिंग पैटर्न
   
 
     
@@ -3395,6 +3426,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../side_quests/metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    मेटाडेटा और मेटा मैप्स
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
@@ -3403,6 +3462,62 @@
     
   
     विभाजन और समूहीकरण
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/nf_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nf-test के साथ परीक्षण
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    वर्कफ़्लो की समस्या निवारण
   
 
     
@@ -3450,15 +3565,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plugin Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../side_quests/debugging/" class="md-nav__link">
+      <a href="../../side_quests/plugin_development/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    वर्कफ़्लो की डिबगिंग
+    Plugin Development
   
 
     
@@ -3479,14 +3641,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    आवश्यक Nextflow स्क्रिप्टिंग पैटर्न
+    भाग 1: Plugin की मूल बातें
   
 
     
@@ -3507,14 +3669,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    nf-test के साथ परीक्षण
+    भाग 2: एक Plugin प्रोजेक्ट बनाओ
   
 
     
@@ -3523,6 +3685,182 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    भाग 3: कस्टम फ़ंक्शन
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    भाग 4: परीक्षण
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    भाग 5: Trace Observers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    भाग 6: कॉन्फ़िगरेशन
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    सारांश
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    अगले कदम
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3971,10 +4309,10 @@
   </label>
   <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
      <li class="md-nav__item">
-  <a href="#0-warmup-hello-confignf" class="md-nav__link">
+  <a href="#0-hello-confignf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        0. Warmup: hello-config.nf चलाएं
+        0. वार्मअप: hello-config.nf चलाएं
       
     </span>
   </a>
@@ -4134,7 +4472,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -4145,7 +4483,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -4310,7 +4648,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -4321,7 +4659,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -4380,7 +4718,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -4391,7 +4729,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -4439,7 +4777,7 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -4450,7 +4788,7 @@
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -4531,7 +4869,7 @@
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -4542,7 +4880,7 @@
   <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -4685,7 +5023,7 @@
   <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        सीख
+        सारांश
       
     </span>
   </a>
@@ -4696,7 +5034,7 @@
   <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        आगे क्या?
+        आगे क्या है?
       
     </span>
   </a>
@@ -4910,43 +5248,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -4991,7 +5292,7 @@
 <p>हम Nextflow configuration के essential components जैसे process directives, executors, profiles, और parameter files को cover करेंगे।
 इन configuration options को effectively utilize करना सीखकर, तुम अपनी pipelines की flexibility, scalability, और performance enhance कर सकते हो।</p>
 <details class="info">
-<summary>इस section से कैसे शुरू करें</summary>
+<summary>इस खंड से कैसे शुरू करें</summary>
 <p>Course का यह section मानता है कि तुमने <a href="../">Hello Nextflow</a> course के Parts 1-5 complete कर लिए हैं और एक complete working pipeline है।</p>
 <p>यदि तुम इस point से course शुरू कर रहे हो, तो तुम्हें solutions से <code>modules</code> directory और <code>nextflow.config</code> file copy करनी होगी:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cp<span class="w"> </span>-r<span class="w"> </span>solutions/5-hello-containers/modules<span class="w"> </span>.
@@ -5001,7 +5302,7 @@
 <p>यदि तुम Hello pipeline से familiar नहीं हो या तुम्हें reminder चाहिए, तो <a href="../../info/hello_pipeline/">यह info page</a> देखो।</p>
 </details>
 <hr />
-<h2 id="0-warmup-hello-confignf">0. Warmup: <code>hello-config.nf</code> चलाएं<a class="headerlink" href="#0-warmup-hello-confignf" title="Permanent link">&para;</a></h2>
+<h2 id="0-hello-confignf">0. वार्मअप: <code>hello-config.nf</code> चलाएं<a class="headerlink" href="#0-hello-confignf" title="Permanent link">&para;</a></h2>
 <p>हम starting point के रूप में workflow script <code>hello-config.nf</code> use करेंगे।
 यह इस training course के Part 5 में produce की गई script के equivalent है, except हमने output destinations change कर दिए हैं:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-config.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-37">37</a></span>
@@ -5043,8 +5344,8 @@
 </span><a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="w">        </span><span class="n">mode</span><span class="w"> </span><span class="s1">&#39;copy&#39;</span>
 <a id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="w">    </span><span class="o">}</span>
 <a id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="w">    </span><span class="n">cowpy_art</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s1">&#39;hello_config&#39;</span>
-<a id="__codelineno-1-56" name="__codelineno-1-56"></a><span class="w">        </span><span class="n">mode</span><span class="w"> </span><span class="s1">&#39;copy&#39;</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="hll"><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s1">&#39;hello_config&#39;</span>
+</span><a id="__codelineno-1-56" name="__codelineno-1-56"></a><span class="w">        </span><span class="n">mode</span><span class="w"> </span><span class="s1">&#39;copy&#39;</span>
 <a id="__codelineno-1-57" name="__codelineno-1-57"></a><span class="w">    </span><span class="o">}</span>
 <a id="__codelineno-1-58" name="__codelineno-1-58"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
@@ -5053,7 +5354,7 @@
 </code></pre></div>
 <details class="success">
 <summary>कमांड आउटपुट</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go"> N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go"> N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="go">Launching `hello-config.nf` [nice_escher] DSL2 - revision: d5dfdc9872</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -5066,25 +5367,25 @@
 </details>
 <p>पहले की तरह, तुम output files को <code>output</code> block में specified directory (<code>results/hello_config/</code>) में पाओगे।</p>
 <details class="abstract">
-<summary>Directory contents</summary>
+<summary>डायरेक्टरी सामग्री</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">results/hello_config/</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">├── cowpy-COLLECTED-batch-output.txt</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">├── intermediates</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="go">│   ├── Bonjour-output.txt</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="go">│   ├── COLLECTED-batch-output.txt</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="go">│   ├── Hello-output.txt</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="go">│   ├── Holà-output.txt</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="go">│   ├── Hola-output.txt</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="go">│   ├── UPPER-Bonjour-output.txt</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="go">│   ├── UPPER-Hello-output.txt</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="go">│   └── UPPER-Holà-output.txt</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="go">│   └── UPPER-Hola-output.txt</span>
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="go">└── batch-report.txt</span>
 </code></pre></div>
 </details>
 <p>Final ASCII art output <code>results/hello_config/</code> directory में है, <code>cowpy-COLLECTED-batch-output.txt</code> name के under।</p>
 <details class="abstract">
-<summary>फ़ाइल contents</summary>
+<summary>फ़ाइल सामग्री</summary>
 <div class="highlight"><span class="filename">results/hello_config/cowpy-COLLECTED-batch-output.txt</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">_________</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="go">/ HOLà    \</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="go">/ HOLA    \</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">| HELLO   |</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="go">\ BONJOUR /</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="go">---------</span>
@@ -5124,7 +5425,7 @@
 <p>चलो इसे दो steps में करते हैं।</p>
 <h4 id="111-configuration-file-params-block-create">1.1.1. Configuration file में <code>params</code> block create करें<a class="headerlink" href="#111-configuration-file-params-block-create" title="Permanent link">&para;</a></h4>
 <p><code>nextflow.config</code> file में following code changes करो:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">After</label><label for="__tabbed_1_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">बाद में</label><label for="__tabbed_1_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
@@ -5163,7 +5464,7 @@ Configuration में, वे value assignments हैं।</p>
 <p>लेकिन configuration को पूरी तरह configuration file में move करने की spirit में, चलो उन values को workflow file से पूरी तरह remove करते हैं।</p>
 <h4 id="112-workflow-file-params-block-values-remove">1.1.2. Workflow file में <code>params</code> block से values remove करें<a class="headerlink" href="#112-workflow-file-params-block-values-remove" title="Permanent link">&para;</a></h4>
 <p><code>hello-config.nf</code> workflow file में following code changes करो:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">After</label><label for="__tabbed_2_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">बाद में</label><label for="__tabbed_2_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-config.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
@@ -5210,7 +5511,7 @@ Configuration में, वे value assignments हैं।</p>
 </code></pre></div>
 <details class="success">
 <summary>कमांड आउटपुट</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">Launching `hello-config.nf` [disturbed_einstein] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
@@ -5224,9 +5525,9 @@ Configuration में, वे value assignments हैं।</p>
 <p>यह अभी भी पहले जैसा same output produce करता है।</p>
 <p>Final ASCII art output <code>results/hello_config/</code> directory में है, <code>cowpy-COLLECTED-batch-output.txt</code> name के under, पहले जैसा ही।</p>
 <details class="abstract">
-<summary>फ़ाइल contents</summary>
+<summary>फ़ाइल सामग्री</summary>
 <div class="highlight"><span class="filename">results/hello_config/cowpy-COLLECTED-batch-output.txt</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="go">_________</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="go">/ HOLà    \</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="go">/ HOLA    \</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="go">| HELLO   |</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="go">\ BONJOUR /</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="go">---------</span>
@@ -5286,7 +5587,7 @@ Path को accordingly adapt करना sure करो!</p>
 </code></pre></div>
 <details class="success">
 <summary>कमांड आउटपुट</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="go">Launching `../hello-config.nf` [trusting_escher] DSL2 - revision: 356df0818d</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
@@ -5301,11 +5602,11 @@ Path को accordingly adapt करना sure करो!</p>
 <p>इस run में, Nextflow हमारी current directory में <code>nextflow.config</code> को pipeline की root directory में <code>nextflow.config</code> के साथ combine करता है, और thereby default character (turkey) को tux character के साथ override करता है।</p>
 <p>Final output file में greetings कहता हुआ tux character होना चाहिए।</p>
 <details class="abstract">
-<summary>फ़ाइल contents</summary>
+<summary>फ़ाइल सामग्री</summary>
 <div class="highlight"><span class="filename">tux-run/results/hello_config/cowpy-COLLECTED-experiment-output.txt</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="go">_________</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="go">/ HELLO   \</span>
 <a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="go">| BONJOUR |</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="go">\ HOLà    /</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="go">\ HOLA    /</span>
 <a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="go">---------</span>
 <a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="go">  \</span>
 <a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="go">    \</span>
@@ -5342,7 +5643,7 @@ Path को accordingly adapt करना sure करो!</p>
 Note करो कि यदि तुम syntax को configuration file से compare करो तो equal signs (<code>=</code>) के बजाय colons (<code>:</code>) का use है।
 Config file Groovy में लिखी है, जबकि parameter file YAML में लिखी है।</p>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
+<p class="admonition-title">जानकारी</p>
 <p>हम example के रूप में parameter file का JSON version भी provide करते हैं लेकिन हम यहाँ इसके साथ run नहीं करने वाले।
 उसे अपने आप try करने में free feel करो।</p>
 </div>
@@ -5352,7 +5653,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 </code></pre></div>
 <details class="success">
 <summary>कमांड आउटपुट</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="go">Launching `hello-config.nf` [disturbed_sammet] DSL2 - revision: ede9037d02</span>
 <a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
@@ -5365,10 +5666,10 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 </details>
 <p>Final output file में greetings कहता हुआ stegosaurus character होना चाहिए।</p>
 <details class="abstract">
-<summary>फ़ाइल contents</summary>
+<summary>फ़ाइल सामग्री</summary>
 <div class="highlight"><span class="filename">results/hello_config/cowpy-COLLECTED-yaml-output.txt</span><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="go">_________</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="go">/ HELLO   \</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="go">| HOLà    |</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="go">| HOLA    |</span>
 <a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="go">\ BONJOUR /</span>
 <a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="go">---------</span>
 <a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="go">\                             .       .</span>
@@ -5391,9 +5692,9 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 उन cases में, parameter file use करना हमें massive command lines type किए बिना और workflow script modify किए बिना runtime पर parameter values provide करने allow करेगा।</p>
 <p>यह collaborators को parameter sets distribute करना भी easier बनाता है, या publication के लिए supporting information के रूप में, example के लिए।
 यह तुम्हारे work को दूसरों द्वारा अधिक reproducible बनाता है।</p>
-<h3 id="_1">सीख<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_1">सारांश<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>तुम जानते हो कि workflow inputs manage करने के लिए key configuration options का advantage कैसे लें।</p>
-<h3 id="_2">आगे क्या?<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_2">आगे क्या है?<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>सीखो कि where और how तुम्हारे workflow outputs publish होते हैं यह कैसे manage करें।</p>
 <hr />
 <h2 id="2-workflow-outputs-manage">2. Workflow outputs manage करें<a class="headerlink" href="#2-workflow-outputs-manage" title="Permanent link">&para;</a></h2>
@@ -5414,7 +5715,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 </code></pre></div>
 <details class="success">
 <summary>कमांड आउटपुट</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
 <a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="go">Launching `hello-config.nf` [prickly_kay] DSL2 - revision: 32ecc4fba2</span>
 <a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
@@ -5427,7 +5728,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 </details>
 <p>यह outputs को <code>results/</code> के बजाय <code>custom-outdir-cli/</code> में publish करता है:</p>
 <details class="abstract">
-<summary>Directory contents</summary>
+<summary>डायरेक्टरी सामग्री</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="go">custom-outdir-cli/</span>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="go">└── hello_config</span>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="go">    ├── batch-report.txt</span>
@@ -5436,10 +5737,10 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 <a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="go">        ├── Bonjour-output.txt</span>
 <a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="go">        ├── COLLECTED-batch-output.txt</span>
 <a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="go">        ├── Hello-output.txt</span>
-<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="go">        ├── Holà-output.txt</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="go">        ├── Hola-output.txt</span>
 <a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="go">        ├── UPPER-Bonjour-output.txt</span>
 <a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="go">        ├── UPPER-Hello-output.txt</span>
-<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="go">        └── UPPER-Holà-output.txt</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="go">        └── UPPER-Hola-output.txt</span>
 </code></pre></div>
 </details>
 <p>Notice करो कि हमारे पास अभी भी output block में <code>path</code> declarations से <code>hello_config</code> subdirectory है।
@@ -5448,7 +5749,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 <p><code>hello_config/</code> prefix earlier chapters में hardcoded था, लेकिन चूंकि हम अब output paths flexibly configure करना सीख रहे हैं, हम इस hardcoding को remove कर सकते हैं।
 उन outputs के लिए जिन्हें subdirectory की जरूरत नहीं है हम <code>path</code> directive को empty string पर set कर सकते हैं, या इसे पूरी तरह remove कर सकते हैं।</p>
 <p>Workflow file में following code changes करो:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">After</label><label for="__tabbed_3_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">बाद में</label><label for="__tabbed_3_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-config.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-42">42</a></span>
@@ -5549,7 +5850,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 </code></pre></div>
 <p>अब outputs बिना <code>hello_config</code> subdirectory के directly <code>custom-outdir-cli-2/</code> के under publish होते हैं:</p>
 <details class="abstract">
-<summary>Directory contents</summary>
+<summary>डायरेक्टरी सामग्री</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="go">custom-outdir-cli-2/</span>
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="go">├── batch-report.txt</span>
 <a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="go">├── cowpy-COLLECTED-batch-output.txt</span>
@@ -5557,10 +5858,10 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 <a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="go">    ├── Bonjour-output.txt</span>
 <a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="go">    ├── COLLECTED-batch-output.txt</span>
 <a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="go">    ├── Hello-output.txt</span>
-<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="go">    ├── Holà-output.txt</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="go">    ├── Hola-output.txt</span>
 <a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="go">    ├── UPPER-Bonjour-output.txt</span>
 <a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="go">    ├── UPPER-Hello-output.txt</span>
-<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="go">    └── UPPER-Holà-output.txt</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="go">    └── UPPER-Hola-output.txt</span>
 </code></pre></div>
 </details>
 <div class="admonition tip">
@@ -5572,7 +5873,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 यह हमें directory path dynamically set करने allow करता है - सिर्फ static strings use करके नहीं।</p>
 <h4 id="221-configuration-file-outputdir-set">2.2.1. Configuration file में <code>outputDir</code> set करें<a class="headerlink" href="#221-configuration-file-outputdir-set" title="Permanent link">&para;</a></h4>
 <p><code>nextflow.config</code> file में following code add करो:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">After</label><label for="__tabbed_4_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">बाद में</label><label for="__tabbed_4_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-9"> 9</a></span>
@@ -5635,7 +5936,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 <h4 id="222-batch-process-names-subdirectories">2.2.2. Batch और process names के साथ subdirectories<a class="headerlink" href="#222-batch-process-names-subdirectories" title="Permanent link">&para;</a></h4>
 <p>हम subdirectory output <code>path</code> declarations को भी dynamically set कर सकते हैं, per-output basis पर।</p>
 <p>Example के लिए, हम अपने outputs को process के अनुसार organize कर सकते हैं output path declaration में <code>&lt;process&gt;.name</code> reference करके:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">After</label><label for="__tabbed_5_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">बाद में</label><label for="__tabbed_5_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-config.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-42">42</a></span>
@@ -5738,8 +6039,8 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 <p class="admonition-title">सुझाव</p>
 <p>Output block <code>path</code> में <code>params.batch</code> include करना, <code>outputDir</code> config के बजाय, का मतलब है कि यह CLI पर <code>-output-dir</code> से overwrite नहीं होगा।</p>
 </div>
-<p>पहले, config file update करो <code>outputDir</code> से <code>${params.batch}</code> remove करने के लिए (चूंकि हम इसे path declarations में move कर रहे हैं):</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">After</label><label for="__tabbed_6_2">Before</label></div>
+<p>पहले, config file update करो <code>outputDir</code> से <code class="highlight"><span class="n">$</span><span class="o">{</span><span class="n">params</span><span class="o">.</span><span class="na">batch</span><span class="o">}</span></code> remove करने के लिए (चूंकि हम इसे path declarations में move कर रहे हैं):</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">बाद में</label><label for="__tabbed_6_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-12">12</a></span>
@@ -5764,7 +6065,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 </div>
 </div>
 <p>फिर, workflow file में following changes करो:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">After</label><label for="__tabbed_7_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">बाद में</label><label for="__tabbed_7_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-config.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-42">42</a></span>
@@ -5866,7 +6167,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 </code></pre></div>
 <details class="success">
 <summary>कमांड आउटपुट</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
 <a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="go">Launching `hello-config.nf` [mad_curry] DSL2 - revision: 668a98ccb9</span>
 <a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>
@@ -5879,7 +6180,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 </details>
 <p>यह outputs को <code>custom-outdir-config-2/rep2/</code> में publish करता है, specified base path <em>और</em> batch name subdirectory <em>और</em> process द्वारा grouped results के साथ:</p>
 <details class="abstract">
-<summary>Directory contents</summary>
+<summary>डायरेक्टरी सामग्री</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="go">custom-outdir-config-2</span>
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="go">└── rep2</span>
 <a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="go">    ├── collectGreetings</span>
@@ -5892,18 +6193,18 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 <a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="go">        ├── convertToUpper</span>
 <a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="go">        │   ├── UPPER-Bonjour-output.txt</span>
 <a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a><span class="go">        │   ├── UPPER-Hello-output.txt</span>
-<a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a><span class="go">        │   └── UPPER-Holà-output.txt</span>
+<a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a><span class="go">        │   └── UPPER-Hola-output.txt</span>
 <a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a><span class="go">        └── sayHello</span>
 <a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a><span class="go">            ├── Bonjour-output.txt</span>
 <a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a><span class="go">            ├── Hello-output.txt</span>
-<a id="__codelineno-42-17" name="__codelineno-42-17" href="#__codelineno-42-17"></a><span class="go">            └── Holà-output.txt</span>
+<a id="__codelineno-42-17" name="__codelineno-42-17" href="#__codelineno-42-17"></a><span class="go">            └── Hola-output.txt</span>
 </code></pre></div>
 </details>
 <h3 id="23-workflow-level-publish-mode-set">2.3. Workflow level पर publish mode set करें<a class="headerlink" href="#23-workflow-level-publish-mode-set" title="Permanent link">&para;</a></h3>
 <p>Finally, repetitive code की amount reduce करने की spirit में, हम per-output <code>mode</code> declarations को configuration में single line से replace कर सकते हैं।</p>
 <h4 id="231-configuration-file-workflowoutputmode-add">2.3.1. Configuration file में <code>workflow.output.mode</code> add करें<a class="headerlink" href="#231-configuration-file-workflowoutputmode-add" title="Permanent link">&para;</a></h4>
 <p><code>nextflow.config</code> file में following code add करो:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">After</label><label for="__tabbed_8_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">बाद में</label><label for="__tabbed_8_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-12">12</a></span>
@@ -5932,7 +6233,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 <p>Configuration file में <code>workflow.output.mode</code> set करना workflow file में set किए गए को override करने के लिए sufficient है, लेकिन चलो unnecessary code को anyway remove करते हैं।</p>
 <h4 id="232-workflow-file-output-mode-remove">2.3.2. Workflow file से output mode remove करें<a class="headerlink" href="#232-workflow-file-output-mode-remove" title="Permanent link">&para;</a></h4>
 <p>Workflow file में following changes करो:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">After</label><label for="__tabbed_9_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">बाद में</label><label for="__tabbed_9_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-config.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-45-42">42</a></span>
@@ -6025,7 +6326,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 </code></pre></div>
 <details class="success">
 <summary>कमांड आउटपुट</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>
 <a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="go">Launching `hello-config.nf` [small_stone] DSL2 - revision: 024d6361b5</span>
 <a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>
@@ -6038,7 +6339,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 </details>
 <p>यह outputs को <code>config-output-mode/</code> में publish करता है, और वे सभी अभी भी proper copies हैं, symlinks नहीं।</p>
 <details class="abstract">
-<summary>Directory contents</summary>
+<summary>डायरेक्टरी सामग्री</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="go">config-output-mode</span>
 <a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="go">└── batch</span>
 <a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="go">    ├── collectGreetings</span>
@@ -6051,18 +6352,18 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 <a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a><span class="go">        ├── convertToUpper</span>
 <a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a><span class="go">        │   ├── UPPER-Bonjour-output.txt</span>
 <a id="__codelineno-49-12" name="__codelineno-49-12" href="#__codelineno-49-12"></a><span class="go">        │   ├── UPPER-Hello-output.txt</span>
-<a id="__codelineno-49-13" name="__codelineno-49-13" href="#__codelineno-49-13"></a><span class="go">        │   └── UPPER-Holà-output.txt</span>
+<a id="__codelineno-49-13" name="__codelineno-49-13" href="#__codelineno-49-13"></a><span class="go">        │   └── UPPER-Hola-output.txt</span>
 <a id="__codelineno-49-14" name="__codelineno-49-14" href="#__codelineno-49-14"></a><span class="go">        └── sayHello</span>
 <a id="__codelineno-49-15" name="__codelineno-49-15" href="#__codelineno-49-15"></a><span class="go">            ├── Bonjour-output.txt</span>
 <a id="__codelineno-49-16" name="__codelineno-49-16" href="#__codelineno-49-16"></a><span class="go">            ├── Hello-output.txt</span>
-<a id="__codelineno-49-17" name="__codelineno-49-17" href="#__codelineno-49-17"></a><span class="go">            └── Holà-output.txt</span>
+<a id="__codelineno-49-17" name="__codelineno-49-17" href="#__codelineno-49-17"></a><span class="go">            └── Hola-output.txt</span>
 </code></pre></div>
 </details>
 <p>Main reason जिससे तुम अभी भी per-output way mode set करना चाह सकते हो वह है यदि तुम same workflow के अंदर mix और match करना चाहते हो, <em>i.e.</em> कुछ outputs copied हों और कुछ symlinked हों।</p>
 <p>ऐसे बहुत सारे अन्य options हैं जिन्हें तुम इस way में customize कर सकते हो, लेकिन hopefully यह तुम्हें options की range और अपनी preferences suit करने के लिए उन्हें effectively कैसे utilize करें इसकी sense देता है।</p>
-<h3 id="_3">सीख<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">सारांश<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>तुम जानते हो कि directories का naming और structure जहाँ तुम्हारे outputs publish होते हैं, साथ ही workflow output publishing mode कैसे control करें।</p>
-<h3 id="_4">आगे क्या?<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">आगे क्या है?<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>सीखो कि अपने workflow configuration को अपने compute environment में कैसे adapt करें, software packaging technology से शुरू करके।</p>
 <hr />
 <h2 id="3-software-packaging-technology-select">3. Software packaging technology select करें<a class="headerlink" href="#3-software-packaging-technology-select" title="Permanent link">&para;</a></h2>
@@ -6079,7 +6380,7 @@ Config file Groovy में लिखी है, जबकि parameter file YA
 Fortunately हमारे लिए, Nextflow कई अन्य container technologies support करता है जिसमें Singularity (जो HPC पर अधिक widely use होती है) शामिल है, और software package managers जैसे Conda।</p>
 <p>हम अपनी configuration file को Docker के बजाय <a href="https://nextflow.io/docs/latest/conda.html">Conda</a> use करने के लिए change कर सकते हैं।
 ऐसा करने के लिए, चलो <code>docker.enabled</code> की value को <code>false</code> पर switch करते हैं, और Conda के use को enable करने वाला directive add करते हैं:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">After</label><label for="__tabbed_10_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">बाद में</label><label for="__tabbed_10_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-50-1">1</a></span>
@@ -6098,7 +6399,7 @@ Fortunately हमारे लिए, Nextflow कई अन्य container te
 <h3 id="32-process-definition-conda-package-specify">3.2. Process definition में Conda package specify करें<a class="headerlink" href="#32-process-definition-conda-package-specify" title="Permanent link">&para;</a></h3>
 <p>हम पहले से ही <code>cowpy</code> tool contain करने वाले Conda package के लिए URI retrieve कर चुके हैं: <code>conda-forge::cowpy==1.1.5</code></p>
 <p>अब हम <code>conda</code> directive का use करके URI को <code>cowpy</code> process definition में add करते हैं:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">After</label><label for="__tabbed_11_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">बाद में</label><label for="__tabbed_11_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">modules/cowpy.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-52-4">4</a></span>
@@ -6140,7 +6441,7 @@ Fortunately हमारे लिए, Nextflow कई अन्य container te
 </code></pre></div>
 <details class="success">
 <summary>कमांड आउटपुट</summary>
-<div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>
 <a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a><span class="go">Launching `hello-config.nf` [friendly_lamport] DSL2 - revision: 024d6361b5</span>
 <a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>
@@ -6167,9 +6468,9 @@ Fortunately हमारे लिए, Nextflow कई अन्य container te
 यदि किसी given process के लिए दोनों available हैं, Nextflow containers को prioritize करेगा।</p>
 <p>और जैसा पहले noted है, Nextflow कई अन्य software packaging और container technologies support करता है, तो तुम सिर्फ उन दो तक limited नहीं हो।</p>
 </details>
-<h3 id="_5">सीख<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_5">सारांश<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>तुम जानते हो कि प्रत्येक process को कौन सा software package use करना चाहिए यह कैसे configure करें, और technologies के बीच switch कैसे करें।</p>
-<h3 id="_6">आगे क्या?<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_6">आगे क्या है?<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>सीखो कि Nextflow द्वारा actually work करने के लिए use किए जाने वाले execution platform को कैसे change करें।</p>
 <hr />
 <h2 id="4-execution-platform-select">4. Execution platform select करें<a class="headerlink" href="#4-execution-platform-select" title="Permanent link">&para;</a></h2>
@@ -6201,19 +6502,19 @@ By default यह <code>local</code> पर set है, तो following configu
 <details class="abstract">
 <summary>उदाहरण</summary>
 <p>Example के लिए, same job जिसे 8 CPUs और 4GB RAM require होता है "my-science-work" queue पर execute होने के लिए backend के depending following different ways में express किया जाना चाहिए।</p>
-<div class="highlight"><span class="filename">SLURM के लिए Config / sbatch use करके submit करें</span><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="c1">#SBATCH -o /path/to/my/task/directory/my-task-1.log</span>
+<div class="highlight"><span class="filename">Config for SLURM / submit using sbatch</span><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="c1">#SBATCH -o /path/to/my/task/directory/my-task-1.log</span>
 <a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="c1">#SBATCH --no-requeue</span>
 <a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="c1">#SBATCH -c 8</span>
 <a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="c1">#SBATCH --mem 4096M</span>
 <a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="c1">#SBATCH -p my-science-work</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">PBS के लिए Config / qsub use करके submit करें</span><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="c1">#PBS -o /path/to/my/task/directory/my-task-1.log</span>
+<div class="highlight"><span class="filename">Config for PBS / submit using qsub</span><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="c1">#PBS -o /path/to/my/task/directory/my-task-1.log</span>
 <a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="c1">#PBS -j oe</span>
 <a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="c1">#PBS -q my-science-work</span>
 <a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a><span class="c1">#PBS -l nodes=1:ppn=5</span>
 <a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a><span class="c1">#PBS -l mem=4gb</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">SGE के लिए Config / qsub use करके submit करें</span><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="c1">#$ -o /path/to/my/task/directory/my-task-1.log</span>
+<div class="highlight"><span class="filename">Config for SGE / submit using qsub</span><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="c1">#$ -o /path/to/my/task/directory/my-task-1.log</span>
 <a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="c1">#$ -j y</span>
 <a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="c1">#$ -terse</span>
 <a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a><span class="c1">#$ -notify</span>
@@ -6226,9 +6527,9 @@ By default यह <code>local</code> पर set है, तो following configu
 यह एक standardized syntax provide करता है ताकि तुम relevant properties जैसे <a href="https://nextflow.io/docs/latest/reference/process.html#cpus"><code>cpus</code></a>, <a href="https://nextflow.io/docs/latest/reference/process.html#memory"><code>memory</code></a> और <a href="https://nextflow.io/docs/latest/reference/process.html#queue"><code>queue</code></a> (अन्य properties के लिए <a href="https://nextflow.io/docs/latest/reference/process.html#process-directives">process directives</a> देखें) सिर्फ एक बार specify कर सको।
 फिर, runtime पर, Nextflow उन settings को executor setting के based पर appropriate backend-specific scripts generate करने के लिए use करेगा।</p>
 <p>हम next section में उस standardized syntax को cover करेंगे।</p>
-<h3 id="_7">सीख<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_7">सारांश<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>अब तुम जानते हो कि different kinds of computing infrastructure use करने के लिए executor कैसे change करें।</p>
-<h3 id="_8">आगे क्या?<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_8">आगे क्या है?<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>सीखो कि Nextflow में resource allocations और limitations कैसे evaluate और express करें।</p>
 <hr />
 <h2 id="5-compute-resource-allocations-control">5. Compute resource allocations control करें<a class="headerlink" href="#5-compute-resource-allocations-control" title="Permanent link">&para;</a></h2>
@@ -6259,7 +6560,7 @@ Tabs पर click करना sure करो जो utilization results को 
 <h3 id="52-processes-resource-allocations-set">5.2. सभी processes के लिए resource allocations set करें<a class="headerlink" href="#52-processes-resource-allocations-set" title="Permanent link">&para;</a></h3>
 <p>Profiling show करती है कि हमारी training workflow में processes बहुत lightweight हैं, तो default memory allocation को 1GB per process तक reduce करते हैं।</p>
 <p>अपनी <code>nextflow.config</code> file में following add करो, pipeline parameters section से पहले:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">After</label><label for="__tabbed_12_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">बाद में</label><label for="__tabbed_12_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-63-1"> 1</a></span>
@@ -6328,7 +6629,7 @@ Tabs पर click करना sure करो जो utilization results को 
 <p>यह हम जो compute consume करते हैं उसकी amount reduce करने में help करेगा।</p>
 <h3 id="53-specific-process-resource-allocations-set">5.3. Specific process के लिए resource allocations set करें<a class="headerlink" href="#53-specific-process-resource-allocations-set" title="Permanent link">&para;</a></h3>
 <p>साथ ही, हम pretend करेंगे कि <code>cowpy</code> process को दूसरों से अधिक resources require होती हैं, बस demonstrate करने के लिए कि individual process के लिए allocations कैसे adjust करें।</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">After</label><label for="__tabbed_13_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">बाद में</label><label for="__tabbed_13_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-65-4"> 4</a></span>
@@ -6406,9 +6707,9 @@ Example के लिए, तुम्हारा cluster require कर सक
 <p>nf-core project ने दुनिया भर के various institutions द्वारा shared <a href="https://nf-co.re/configs/">collection of configuration files</a> compile की है, wide range of HPC और cloud executors को cover करते हुए।</p>
 <p>वे shared configs valuable हैं both उन लोगों के लिए जो वहाँ काम करते हैं और therefore अपनी institution की configuration को out of the box just utilize कर सकते हैं, और एक model के रूप में उन लोगों के लिए जो अपने खुद के infrastructure के लिए configuration develop करना देख रहे हैं।</p>
 </details>
-<h3 id="_9">सीख<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_9">सारांश<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>तुम जानते हो कि resource utilization assess करने के लिए profiling report कैसे generate करें और सभी processes के लिए और/या individual processes के लिए resource allocations कैसे modify करें, साथ ही HPC पर running के लिए resource limitations set करें।</p>
-<h3 id="_10">आगे क्या?<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_10">आगे क्या है?<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>सीखो कि preset configuration profiles कैसे set up करें और runtime पर उनके बीच switch करें।</p>
 <hr />
 <h2 id="6-preset-configurations-switch-profiles-use">6. Preset configurations के बीच switch करने के लिए profiles use करें<a class="headerlink" href="#6-preset-configurations-switch-profiles-use" title="Permanent link">&para;</a></h2>
@@ -6419,7 +6720,7 @@ Example के लिए, तुम्हारा cluster require कर सक
 <p>दो alternative profiles set up करते हैं; एक regular computer पर small scale loads run करने के लिए, जहाँ हम Docker containers use करेंगे, और एक Slurm scheduler के साथ university HPC पर running के लिए, जहाँ हम Conda packages use करेंगे।</p>
 <h4 id="611-profiles-set-up">6.1.1. Profiles set up करें<a class="headerlink" href="#611-profiles-set-up" title="Permanent link">&para;</a></h4>
 <p>अपनी <code>nextflow.config</code> file में following add करो, pipeline parameters section के बाद लेकिन output settings से पहले:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">After</label><label for="__tabbed_14_2">Before</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">बाद में</label><label for="__tabbed_14_2">पहले</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-69-15">15</a></span>
@@ -6529,7 +6830,7 @@ Example के लिए, तुम्हारा cluster require कर सक
 </code></pre></div>
 <details class="success">
 <summary>कमांड आउटपुट</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>
 <a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a><span class="go">Launching `hello-config.nf` [hungry_sanger] DSL2 - revision: 024d6361b5</span>
 <a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a>
@@ -6616,7 +6917,7 @@ Example के लिए, तुम्हारा cluster require कर सक
 </code></pre></div>
 <details class="success">
 <summary>कमांड आउटपुट</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a>
 <a id="__codelineno-76-3" name="__codelineno-76-3" href="#__codelineno-76-3"></a><span class="go">Launching `hello-config.nf` [modest_becquerel] DSL2 - revision: 024d6361b5</span>
 <a id="__codelineno-76-4" name="__codelineno-76-4" href="#__codelineno-76-4"></a>
@@ -6629,9 +6930,9 @@ Example के लिए, तुम्हारा cluster require कर सक
 </details>
 <p>यह Docker use करेगा जहाँ possible हो और <code>custom-outdir-config/test</code> के under outputs produce करेगा, और इस बार character comedic duo <code>dragonandcow</code> है।</p>
 <details class="abstract">
-<summary>फ़ाइल contents</summary>
+<summary>फ़ाइल सामग्री</summary>
 <div class="highlight"><span class="filename">custom-outdir-config/test/cowpy/cowpy-COLLECTED-test-output.txt</span><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="go"> _________</span>
-<a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a><span class="go">/ HOLà    \</span>
+<a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a><span class="go">/ HOLA    \</span>
 <a id="__codelineno-77-3" name="__codelineno-77-3" href="#__codelineno-77-3"></a><span class="go">| HELLO   |</span>
 <a id="__codelineno-77-4" name="__codelineno-77-4" href="#__codelineno-77-4"></a><span class="go">\ BONJOUR /</span>
 <a id="__codelineno-77-5" name="__codelineno-77-5" href="#__codelineno-77-5"></a><span class="go">---------</span>
@@ -6662,7 +6963,7 @@ Nextflow उन्हें automatically download करेगा जब तक
 </div>
 <h3 id="63-resolved-configuration-nextflow-config-use">6.3. Resolved configuration देखने के लिए <code>nextflow config</code> use करें<a class="headerlink" href="#63-resolved-configuration-nextflow-config-use" title="Permanent link">&para;</a></h3>
 <p>जैसा ऊपर noted है, sometimes same parameter profiles में different values पर set हो सकता है जिन्हें तुम combine करना चाहते हो।
-और more generally, कई places हैं जहाँ configuration के elements stored हो सकते हैं, और sometimes same properties different places में different values पर set हो सकती हैं।</p>
+And more generally, कई places हैं जहाँ configuration के elements stored हो सकते हैं, और sometimes same properties different places में different values पर set हो सकती हैं।</p>
 <p>Nextflow किसी भी conflicts को resolve करने के लिए set <a href="https://nextflow.io/docs/latest/config.html">order of precedence</a> apply करता है, लेकिन वह खुद determine करना tricky हो सकता है।
 और भले ही कुछ भी conflicting न हो, यह tedious हो सकता है सभी possible places को look up करना जहाँ चीज़ें configured हो सकती हैं।</p>
 <p>Fortunately, Nextflow में एक convenient utility tool included है जिसे <code>config</code> कहते हैं जो तुम्हारे लिए वह whole process automate कर सकता है।</p>
@@ -6745,10 +7046,10 @@ Nextflow उन्हें automatically download करेगा जब तक
 </code></pre></div>
 </details>
 <p>यह complex projects के लिए especially useful हो जाता है जिनमें configuration की multiple layers involve होती हैं।</p>
-<h3 id="_11">सीख<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h3 id="_11">सारांश<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>तुम जानते हो कि minimal hassle के साथ runtime पर preset configuration select करने के लिए profiles कैसे use करें।
 More generally, तुम जानते हो कि अपने workflow executions को different compute platforms suit करने के लिए कैसे configure करें और अपनी analyses की reproducibility enhance करें।</p>
-<h3 id="_12">आगे क्या?<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_12">आगे क्या है?<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>Celebrate करो और खुद को एक big pat on the back दो! तुमने अपना बहुत पहला Nextflow developer course complete कर लिया है।</p>
 <p>Final <a href="../next_steps/">course summary</a> पर जाओ review करने के लिए कि तुमने क्या सीखा और पता लगाओ कि आगे क्या आता है।</p>
 <hr />
@@ -6784,7 +7085,7 @@ More generally, तुम जानते हो कि अपने workflow ex
 - [ ] पहली encountered value
 - [ ] Neither; यह error cause करता है
 
-और जानें: [1.1. Default values को `nextflow.config` में move करें](#11-default-values-को-nextflowconfig-में-move-करें)
+और जानें: [1.1. Default values को `nextflow.config` में move करें](#11-move-default-values-to-nextflowconfig)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-1">
@@ -6798,7 +7099,7 @@ More generally, तुम जानते हो कि अपने workflow ex
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>और जानें: <a href="#11-default-values-को-nextflowconfig-में-move-करें">1.1. Default values को <code>nextflow.config</code> में move करें</a></p></section>
+    <section class="content hidden"><p>और जानें: <a href="#11-move-default-values-to-nextflowconfig">1.1. Default values को <code>nextflow.config</code> में move करें</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6832,7 +7133,7 @@ More generally, तुम जानते हो कि अपने workflow ex
 - [ ] पहला defined
 - [ ] यह error cause करता है
 
-और जानें: [3. Software packaging technology select करें](#3-software-packaging-technology-select-करें)
+और जानें: [3. Software packaging technology select करें](#3-select-a-software-packaging-technology)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-3">
@@ -6846,7 +7147,7 @@ More generally, तुम जानते हो कि अपने workflow ex
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>और जानें: <a href="#3-software-packaging-technology-select-करें">3. Software packaging technology select करें</a></p></section>
+    <section class="content hidden"><p>और जानें: <a href="#3-select-a-software-packaging-technology">3. Software packaging technology select करें</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6880,7 +7181,7 @@ Config file में specific process के लिए resource requirements �
 - [x] `#!groovy process { withName: 'processName' { memory = '4 GB' } }`
 - [ ] `#!groovy resources.processName.memory = '4 GB'`
 
-और जानें: [5.3. Specific process के लिए resource allocations set करें](#53-specific-process-के-लिए-resource-allocations-set-करें)
+और जानें: [5.3. Specific process के लिए resource allocations set करें](#53-set-resource-allocations-for-a-specific-process)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-5">
@@ -6894,7 +7195,7 @@ Config file में specific process के लिए resource requirements �
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>और जानें: <a href="#53-specific-process-के-लिए-resource-allocations-set-करें">5.3. Specific process के लिए resource allocations set करें</a></p></section>
+    <section class="content hidden"><p>और जानें: <a href="#53-set-resource-allocations-for-a-specific-process">5.3. Specific process के लिए resource allocations set करें</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6905,7 +7206,7 @@ Config file में specific process के लिए resource requirements �
 - [x] `-with-report`
 - [ ] `-with-profile`
 
-और जानें: [5.1. Resource utilization report generate करने के लिए workflow run करें](#51-resource-utilization-report-generate-करने-के-लिए-workflow-run-करें)
+और जानें: [5.1. Resource utilization report generate करने के लिए workflow run करें](#51-run-the-workflow-to-generate-a-resource-utilization-report)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-6">
@@ -6919,7 +7220,7 @@ Config file में specific process के लिए resource requirements �
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>और जानें: <a href="#51-resource-utilization-report-generate-करने-के-लिए-workflow-run-करें">5.1. Resource utilization report generate करने के लिए workflow run करें</a></p></section>
+    <section class="content hidden"><p>और जानें: <a href="#51-run-the-workflow-to-generate-a-resource-utilization-report">5.1. Resource utilization report generate करने के लिए workflow run करें</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6930,7 +7231,7 @@ Config file में specific process के लिए resource requirements �
 - [x] Maximum resources को cap करता है जो request किए जा सकते हैं
 - [ ] Resource usage monitor करता है
 
-और जानें: [5.5. Resource limits add करें](#55-resource-limits-add-करें)
+और जानें: [5.5. Resource limits add करें](#55-add-resource-limits)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-7">
@@ -6944,7 +7245,7 @@ Config file में specific process के लिए resource requirements �
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>और जानें: <a href="#55-resource-limits-add-करें">5.5. Resource limits add करें</a></p></section>
+    <section class="content hidden"><p>और जानें: <a href="#55-add-resource-limits">5.5. Resource limits add करें</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6955,7 +7256,7 @@ Nextflow में default executor क्या है?
 - [ ] `kubernetes`
 - [ ] `aws`
 
-और जानें: [4. Execution platform select करें](#4-execution-platform-select-करें)
+और जानें: [4. Execution platform select करें](#4-select-an-execution-platform)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-8">
@@ -6969,7 +7270,7 @@ Nextflow में default executor क्या है?
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>और जानें: <a href="#4-execution-platform-select-करें">4. Execution platform select करें</a></p></section>
+    <section class="content hidden"><p>और जानें: <a href="#4-select-an-execution-platform">4. Execution platform select करें</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -6980,7 +7281,7 @@ Nextflow run करते समय parameter file कैसे specify कर�
 - [x] `-params-file params.json`
 - [ ] `--input params.json`
 
-और जानें: [1.3. Parameter file use करें](#13-parameter-file-use-करें)
+और जानें: [1.3. Parameter file use करें](#13-use-a-parameter-file)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-9">
@@ -6994,7 +7295,7 @@ Nextflow run करते समय parameter file कैसे specify कर�
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>और जानें: <a href="#13-parameter-file-use-करें">1.3. Parameter file use करें</a></p></section>
+    <section class="content hidden"><p>और जानें: <a href="#13-use-a-parameter-file">1.3. Parameter file use करें</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -7005,7 +7306,7 @@ Profiles किसके लिए use की जा सकती हैं? (�
 - [x] Test parameters provide करने के लिए
 - [ ] New processes define करने के लिए
 
-और जानें: [6. Preset configurations के बीच switch करने के लिए profiles use करें](#6-preset-configurations-के-बीच-switch-करने-के-लिए-profiles-use-करें)
+और जानें: [6. Preset configurations के बीच switch करने के लिए profiles use करें](#6-use-profiles-to-switch-between-preset-configurations)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-10">
@@ -7019,7 +7320,7 @@ Profiles किसके लिए use की जा सकती हैं? (�
         <div class="quiz-feedback hidden"></div>
         <button type="submit" class="quiz-button">जमा करें</button>
     </form>
-    <section class="content hidden"><p>और जानें: <a href="#6-preset-configurations-के-बीच-switch-करने-के-लिए-profiles-use-करें">6. Preset configurations के बीच switch करने के लिए profiles use करें</a></p></section>
+    <section class="content hidden"><p>और जानें: <a href="#6-use-profiles-to-switch-between-preset-configurations">6. Preset configurations के बीच switch करने के लिए profiles use करें</a></p></section>
 </div>
 
 <!-- mkdocs-quiz-source
@@ -7030,7 +7331,7 @@ Single command में multiple profiles कैसे specify करते ह
 - [x] `-profile profile1,profile2`
 - [ ] `--profile profile1 --profile profile2`
 
-और जानें: [6. Preset configurations के बीच switch करने के लिए profiles use करें](#6-preset-configurations-के-बीच-switch-करने-के-लिए-profiles-use-करें)
+और जानें: [6. Preset configurations के बीच switch करने के लिए profiles use करें](#6-use-profiles-to-switch-between-preset-configurations)
 </quiz>
 -->
 <div class="quiz" data-show-correct="true" data-auto-submit="true" data-disable-after-submit="true" id="quiz-11">
@@ -7044,8 +7345,61 @@ Single command में multiple profiles कैसे specify करते ह
         <div class="quiz-feedback hidden"></div>
 
     </form>
-    <section class="content hidden"><p>और जानें: <a href="#6-preset-configurations-के-बीच-switch-करने-के-लिए-profiles-use-करें">6. Preset configurations के बीच switch करने के लिए profiles use करें</a></p></section>
-</div><style type="text/css">.quiz {
+    <section class="content hidden"><p>और जानें: <a href="#6-use-profiles-to-switch-between-preset-configurations">6. Preset configurations के बीच switch करने के लिए profiles use करें</a></p></section>
+</div><div id="quiz-progress-sidebar" aria-label="क्विज़ प्रगति" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    क्विज़ प्रगति
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          उत्तर दिए: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          सही: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          रीसेट
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="क्विज़ प्रगति" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        उत्तर दिए: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        सही: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        रीसेट
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -7092,10 +7446,12 @@ Single command में multiple profiles कैसे specify करते ह
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -8016,16 +8372,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -8659,9 +9005,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

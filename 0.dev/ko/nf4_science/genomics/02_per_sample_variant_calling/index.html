@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -163,6 +163,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -3190,7 +3221,7 @@
   <span class="md-ellipsis">
     
   
-    오리엔테이션
+    시작하기
   
 
     
@@ -3239,14 +3270,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/metadata/" class="md-nav__link">
+      <a href="../../../side_quests/essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    메타데이터와 메타 맵
+    필수 스크립팅 패턴
   
 
     
@@ -3295,6 +3326,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../side_quests/metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    메타데이터와 메타 맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
@@ -3302,7 +3361,63 @@
   <span class="md-ellipsis">
     
   
-    데이터 분할 및 그룹화
+    분할 및 그룹화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/nf_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nf-test를 활용한 테스트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    워크플로우 문제 해결
   
 
     
@@ -3350,15 +3465,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플러그인 개발
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    플러그인 개발
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../side_quests/debugging/" class="md-nav__link">
+      <a href="../../../side_quests/plugin_development/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    워크플로우 디버깅
+    플러그인 개발
   
 
     
@@ -3379,14 +3541,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    필수 Nextflow 스크립팅 패턴
+    파트 1: 플러그인 기초
   
 
     
@@ -3407,14 +3569,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    nf-test로 테스트하기
+    파트 2: 플러그인 프로젝트 생성
   
 
     
@@ -3423,6 +3585,182 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 3: 사용자 정의 함수
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 4: 테스트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 5: Trace Observer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 6: 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    요약
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    다음 단계
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4708,43 +5046,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -4814,22 +5115,22 @@
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">workflow</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nl">main:</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="c1">// Create input channel</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="c1">// 입력 채널 생성</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="c1">// Call processes</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="c1">// 프로세스 호출</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nl">publish:</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="c1">// Declare outputs to publish</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="c1">// 게시할 출력 선언</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="o">}</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">output</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="c1">// Configure publish targets</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="c1">// 게시 대상 설정</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="o">}</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">modules/samtools_index.nf</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#!/usr/bin/env nextflow</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cm">/*</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cm"> * Generate BAM index file</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cm"> * BAM 인덱스 파일 생성</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="cm"> */</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">process</span><span class="w"> </span><span class="n">SAMTOOLS_INDEX</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
@@ -4848,7 +5149,7 @@
 <div class="highlight"><span class="filename">modules/gatk_haplotypecaller.nf</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#!/usr/bin/env nextflow</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cm">/*</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cm"> * Call variants with GATK HaplotypeCaller</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cm"> * GATK HaplotypeCaller로 변이 호출</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="cm"> */</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">process</span><span class="w"> </span><span class="n">GATK_HAPLOTYPECALLER</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
@@ -4978,7 +5279,7 @@
 <span class="normal"><a href="#__codelineno-8-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="n">workflow</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-8-14" name="__codelineno-8-14"></a>
 <a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">    </span><span class="nl">main:</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="hll"><span class="w">    </span><span class="c1">// Create input channel (single file via CLI parameter)</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="hll"><span class="w">    </span><span class="c1">// 입력 채널 생성 (CLI 매개변수를 통한 단일 파일)</span>
 </span><a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="hll"><span class="w">    </span><span class="n">reads_ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">channel</span><span class="o">.</span><span class="na">fromPath</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">input</span><span class="o">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
@@ -4989,7 +5290,7 @@
 <span class="normal"><a href="#__codelineno-9-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="n">workflow</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-9-14" name="__codelineno-9-14"></a>
 <a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">    </span><span class="nl">main:</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">    </span><span class="c1">// Create input channel</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">    </span><span class="c1">// 입력 채널 생성</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -5024,7 +5325,7 @@
 <span class="normal"><a href="#__codelineno-10-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="cp">#!/usr/bin/env nextflow</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2"></a>
 <a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="cm">/*</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="cm"> * Generate BAM index file</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="cm"> * BAM 인덱스 파일 생성</span>
 <a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="cm"> */</span>
 <a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="n">process</span><span class="w"> </span><span class="n">SAMTOOLS_INDEX</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-10-7" name="__codelineno-10-7"></a>
@@ -5064,7 +5365,7 @@
 <span class="normal"><a href="#__codelineno-11-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="cp">#!/usr/bin/env nextflow</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2"></a>
 <a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="cm">/*</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="cm"> * Generate BAM index file</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="cm"> * BAM 인덱스 파일 생성</span>
 <a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="cm"> */</span>
 <a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="n">process</span><span class="w"> </span><span class="n">SAMTOOLS_INDEX</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-11-7" name="__codelineno-11-7"></a>
@@ -5119,10 +5420,10 @@
 <span class="normal"><a href="#__codelineno-14-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="n">workflow</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-14-15" name="__codelineno-14-15"></a>
 <a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="w">    </span><span class="nl">main:</span>
-<a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="w">    </span><span class="c1">// Create input channel (single file via CLI parameter)</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="w">    </span><span class="c1">// 입력 채널 생성 (CLI 매개변수를 통한 단일 파일)</span>
 <a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="w">    </span><span class="n">reads_ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">channel</span><span class="o">.</span><span class="na">fromPath</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">input</span><span class="o">)</span>
 <a id="__codelineno-14-19" name="__codelineno-14-19"></a>
-<a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="hll"><span class="w">    </span><span class="c1">// Create index file for input BAM file</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="hll"><span class="w">    </span><span class="c1">// 입력 BAM 파일에 대한 인덱스 파일 생성</span>
 </span><a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="hll"><span class="w">    </span><span class="n">SAMTOOLS_INDEX</span><span class="o">(</span><span class="n">reads_ch</span><span class="o">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
@@ -5136,10 +5437,10 @@
 <span class="normal"><a href="#__codelineno-15-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-14" name="__codelineno-15-14"></a><span class="n">workflow</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-15-15" name="__codelineno-15-15"></a>
 <a id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="w">    </span><span class="nl">main:</span>
-<a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="w">    </span><span class="c1">// Create input channel (single file via CLI parameter)</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="w">    </span><span class="c1">// 입력 채널 생성 (CLI 매개변수를 통한 단일 파일)</span>
 <a id="__codelineno-15-18" name="__codelineno-15-18"></a><span class="w">    </span><span class="n">reads_ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">channel</span><span class="o">.</span><span class="na">fromPath</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">input</span><span class="o">)</span>
 <a id="__codelineno-15-19" name="__codelineno-15-19"></a>
-<a id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="w">    </span><span class="c1">// Call processes</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="w">    </span><span class="c1">// 프로세스 호출</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -5165,7 +5466,7 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">genomics.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-22">22</a></span>
 <span class="normal"><a href="#__codelineno-17-23">23</a></span>
 <span class="normal"><a href="#__codelineno-17-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-22" name="__codelineno-17-22"></a><span class="w">    </span><span class="nl">publish:</span>
-<a id="__codelineno-17-23" name="__codelineno-17-23"></a><span class="w">    </span><span class="c1">// Declare outputs to publish</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23"></a><span class="w">    </span><span class="c1">// 게시할 출력 선언</span>
 <a id="__codelineno-17-24" name="__codelineno-17-24"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -5193,7 +5494,7 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">genomics.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-26">26</a></span>
 <span class="normal"><a href="#__codelineno-19-27">27</a></span>
 <span class="normal"><a href="#__codelineno-19-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-26" name="__codelineno-19-26"></a><span class="n">output</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-19-27" name="__codelineno-19-27"></a><span class="w">    </span><span class="c1">// Configure publish targets</span>
+<a id="__codelineno-19-27" name="__codelineno-19-27"></a><span class="w">    </span><span class="c1">// 게시 대상 설정</span>
 <a id="__codelineno-19-28" name="__codelineno-19-28"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -5212,7 +5513,7 @@
 </code></pre></div>
 <details class="success">
 <summary>명령 출력</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="go">┃ Launching `genomics.nf` [reverent_sinoussi] DSL2 - revision: 41d43ad7fe</span>
 <a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
@@ -5353,16 +5654,16 @@
 <span class="normal"><a href="#__codelineno-29-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-21" name="__codelineno-29-21"></a><span class="n">workflow</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-29-22" name="__codelineno-29-22"></a>
 <a id="__codelineno-29-23" name="__codelineno-29-23"></a><span class="w">    </span><span class="nl">main:</span>
-<a id="__codelineno-29-24" name="__codelineno-29-24"></a><span class="w">    </span><span class="c1">// Create input channel (single file via CLI parameter)</span>
+<a id="__codelineno-29-24" name="__codelineno-29-24"></a><span class="w">    </span><span class="c1">// 입력 채널 생성 (CLI 매개변수를 통한 단일 파일)</span>
 <a id="__codelineno-29-25" name="__codelineno-29-25"></a><span class="w">    </span><span class="n">reads_ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">channel</span><span class="o">.</span><span class="na">fromPath</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">input</span><span class="o">)</span>
 <a id="__codelineno-29-26" name="__codelineno-29-26"></a>
-<a id="__codelineno-29-27" name="__codelineno-29-27"></a><span class="hll"><span class="w">    </span><span class="c1">// Load the file paths for the accessory files (reference and intervals)</span>
+<a id="__codelineno-29-27" name="__codelineno-29-27"></a><span class="hll"><span class="w">    </span><span class="c1">// 보조 파일(레퍼런스 및 인터벌)의 파일 경로 로드</span>
 </span><a id="__codelineno-29-28" name="__codelineno-29-28"></a><span class="hll"><span class="w">    </span><span class="n">ref_file</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">reference</span><span class="o">)</span>
 </span><a id="__codelineno-29-29" name="__codelineno-29-29"></a><span class="hll"><span class="w">    </span><span class="n">ref_index_file</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">reference_index</span><span class="o">)</span>
 </span><a id="__codelineno-29-30" name="__codelineno-29-30"></a><span class="hll"><span class="w">    </span><span class="n">ref_dict_file</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">reference_dict</span><span class="o">)</span>
 </span><a id="__codelineno-29-31" name="__codelineno-29-31"></a><span class="hll"><span class="w">    </span><span class="n">intervals_file</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">intervals</span><span class="o">)</span>
 </span><a id="__codelineno-29-32" name="__codelineno-29-32"></a>
-<a id="__codelineno-29-33" name="__codelineno-29-33"></a><span class="w">    </span><span class="c1">// Create index file for input BAM file</span>
+<a id="__codelineno-29-33" name="__codelineno-29-33"></a><span class="w">    </span><span class="c1">// 입력 BAM 파일에 대한 인덱스 파일 생성</span>
 <a id="__codelineno-29-34" name="__codelineno-29-34"></a><span class="w">    </span><span class="n">SAMTOOLS_INDEX</span><span class="o">(</span><span class="n">reads_ch</span><span class="o">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -5377,10 +5678,10 @@
 <span class="normal"><a href="#__codelineno-30-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-21" name="__codelineno-30-21"></a><span class="n">workflow</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-30-22" name="__codelineno-30-22"></a>
 <a id="__codelineno-30-23" name="__codelineno-30-23"></a><span class="w">    </span><span class="nl">main:</span>
-<a id="__codelineno-30-24" name="__codelineno-30-24"></a><span class="w">    </span><span class="c1">// Create input channel (single file via CLI parameter)</span>
+<a id="__codelineno-30-24" name="__codelineno-30-24"></a><span class="w">    </span><span class="c1">// 입력 채널 생성 (CLI 매개변수를 통한 단일 파일)</span>
 <a id="__codelineno-30-25" name="__codelineno-30-25"></a><span class="w">    </span><span class="n">reads_ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">channel</span><span class="o">.</span><span class="na">fromPath</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">input</span><span class="o">)</span>
 <a id="__codelineno-30-26" name="__codelineno-30-26"></a>
-<a id="__codelineno-30-27" name="__codelineno-30-27"></a><span class="w">    </span><span class="c1">// Create index file for input BAM file</span>
+<a id="__codelineno-30-27" name="__codelineno-30-27"></a><span class="w">    </span><span class="c1">// 입력 BAM 파일에 대한 인덱스 파일 생성</span>
 <a id="__codelineno-30-28" name="__codelineno-30-28"></a><span class="w">    </span><span class="n">SAMTOOLS_INDEX</span><span class="o">(</span><span class="n">reads_ch</span><span class="o">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -5416,7 +5717,7 @@
 <span class="normal"><a href="#__codelineno-31-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="cp">#!/usr/bin/env nextflow</span>
 <a id="__codelineno-31-2" name="__codelineno-31-2"></a>
 <a id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="cm">/*</span>
-<a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="cm"> * Call variants with GATK HaplotypeCaller</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="cm"> * GATK HaplotypeCaller로 변이 호출</span>
 <a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="cm"> */</span>
 <a id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="n">process</span><span class="w"> </span><span class="n">GATK_HAPLOTYPECALLER</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-31-7" name="__codelineno-31-7"></a>
@@ -5466,7 +5767,7 @@
 <span class="normal"><a href="#__codelineno-32-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="cp">#!/usr/bin/env nextflow</span>
 <a id="__codelineno-32-2" name="__codelineno-32-2"></a>
 <a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="cm">/*</span>
-<a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="cm"> * Call variants with GATK HaplotypeCaller</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="cm"> * GATK HaplotypeCaller로 변이 호출</span>
 <a id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="cm"> */</span>
 <a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="n">process</span><span class="w"> </span><span class="n">GATK_HAPLOTYPECALLER</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-32-7" name="__codelineno-32-7"></a>
@@ -5541,10 +5842,10 @@ Nextflow가 런타임에 작업 디렉토리에 이들을 스테이징하도록 
 <span class="normal"><a href="#__codelineno-35-41">41</a></span>
 <span class="normal"><a href="#__codelineno-35-42">42</a></span>
 <span class="normal"><a href="#__codelineno-35-43">43</a></span>
-<span class="normal"><a href="#__codelineno-35-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-33" name="__codelineno-35-33"></a><span class="w">    </span><span class="c1">// Create index file for input BAM file</span>
+<span class="normal"><a href="#__codelineno-35-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-33" name="__codelineno-35-33"></a><span class="w">    </span><span class="c1">// 입력 BAM 파일에 대한 인덱스 파일 생성</span>
 <a id="__codelineno-35-34" name="__codelineno-35-34"></a><span class="w">    </span><span class="n">SAMTOOLS_INDEX</span><span class="o">(</span><span class="n">reads_ch</span><span class="o">)</span>
 <a id="__codelineno-35-35" name="__codelineno-35-35"></a>
-<a id="__codelineno-35-36" name="__codelineno-35-36"></a><span class="hll"><span class="w">    </span><span class="c1">// Call variants from the indexed BAM file</span>
+<a id="__codelineno-35-36" name="__codelineno-35-36"></a><span class="hll"><span class="w">    </span><span class="c1">// 인덱싱된 BAM 파일에서 변이 호출</span>
 </span><a id="__codelineno-35-37" name="__codelineno-35-37"></a><span class="hll"><span class="w">    </span><span class="n">GATK_HAPLOTYPECALLER</span><span class="o">(</span>
 </span><a id="__codelineno-35-38" name="__codelineno-35-38"></a><span class="hll"><span class="w">        </span><span class="n">reads_ch</span><span class="o">,</span>
 </span><a id="__codelineno-35-39" name="__codelineno-35-39"></a><span class="hll"><span class="w">        </span><span class="n">SAMTOOLS_INDEX</span><span class="o">.</span><span class="na">out</span><span class="o">,</span>
@@ -5557,13 +5858,13 @@ Nextflow가 런타임에 작업 디렉토리에 이들을 스테이징하도록 
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">genomics.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-33">33</a></span>
-<span class="normal"><a href="#__codelineno-36-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-33" name="__codelineno-36-33"></a><span class="w">    </span><span class="c1">// Create index file for input BAM file</span>
+<span class="normal"><a href="#__codelineno-36-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-33" name="__codelineno-36-33"></a><span class="w">    </span><span class="c1">// 입력 BAM 파일에 대한 인덱스 파일 생성</span>
 <a id="__codelineno-36-34" name="__codelineno-36-34"></a><span class="w">    </span><span class="n">SAMTOOLS_INDEX</span><span class="o">(</span><span class="n">reads_ch</span><span class="o">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
-<p>Hello Nextflow 교육 시리즈에서 <code>*.out</code> 구문을 인식할 수 있어야 합니다. Nextflow에 <code>SAMTOOLS_INDEX</code>가 출력한 채널을 가져와 <code>GATK_HAPLOTYPECALLER</code> 프로세스 호출에 연결하도록 지시하고 있습니다.</p>
+<p>Hello Nextflow 교육 시리즈에서 <code>*.out</code> 구문을 인식할 수 있어야 합니다. Nextflow에 <code>SAMTOOLS_INDEX</code>가 출력한 채널을 가져와 <code>GATK_HAPLOTYPECALLER</code> process 실행에 연결하도록 지시하고 있습니다.</p>
 <div class="admonition note">
 <p class="admonition-title">참고</p>
 <p>입력이 프로세스 호출에서 프로세스의 입력 블록에 나열된 것과 정확히 동일한 순서로 제공된다는 점에 주목하세요.
@@ -5647,7 +5948,7 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 </code></pre></div>
 <details class="success">
 <summary>명령 출력</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
 <a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="go">┃ Launching `genomics.nf` [grave_volta] DSL2 - revision: 4790abc96a</span>
 <a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>
@@ -5764,7 +6065,7 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 <p>재미있는 점: 이것은 <em>작동할 수도</em> 있고, <em>실패할 수도</em> 있습니다. 예를 들어, 다음은 성공한 실행입니다:</p>
 <details class="success">
 <summary>명령 출력</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>
 <a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="go">┃ Launching `genomics.nf` [peaceful_yalow] DSL2 - revision: a256d113ad</span>
 <a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>
@@ -5776,7 +6077,7 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 <p>워크플로우 실행이 성공했다면 다음과 같은 오류가 발생할 때까지 다시 실행하세요:</p>
 <details class="failure">
 <summary>명령 출력</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>
 <a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="go">┃ Launching `genomics.nf` [loving_pasteur] DSL2 - revision: d2a8e63076</span>
 <a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>
@@ -5808,7 +6109,7 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 <h3 id="33">3.3. 문제 해결<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <p>작업 디렉토리를 검사하고 <code>view()</code> 연산자를 사용하여 무엇이 잘못되었는지 파악하겠습니다.</p>
 <h4 id="331">3.3.1. 관련 호출에 대한 작업 디렉토리 확인<a class="headerlink" href="#331" title="Permanent link">&para;</a></h4>
-<p>콘솔 출력에 나열된 실패한 <code>GATK_HAPLOTYPECALLER</code> 프로세스 호출의 작업 디렉토리 내부를 살펴보세요.</p>
+<p>콘솔 출력에 나열된 실패한 <code>GATK_HAPLOTYPECALLER</code> process 실행의 작업 디렉토리 내부를 살펴보세요.</p>
 <details class="abstract">
 <summary>디렉토리 내용</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="go">work/a5/fa9fd0994b6beede5fb9ea073596c2</span>
@@ -5823,9 +6124,9 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 </code></pre></div>
 </details>
 <p>이 디렉토리에 나열된 BAM 파일과 BAM 인덱스의 이름에 특히 주의하세요: <code>reads_son.bam</code>과 <code>reads_father.bam.bai</code>.</p>
-<p>뭐라고요? Nextflow가 이 프로세스 호출의 작업 디렉토리에 인덱스 파일을 스테이징했지만 잘못된 것입니다. 어떻게 이런 일이 발생할 수 있을까요?</p>
+<p>뭐라고요? Nextflow가 이 process 실행의 작업 디렉토리에 인덱스 파일을 스테이징했지만 잘못된 것입니다. 어떻게 이런 일이 발생할 수 있을까요?</p>
 <h4 id="332-view">3.3.2. <a href="https://www.nextflow.io/docs/latest/reference/operator.html#view">view() 연산자</a>를 사용하여 채널 내용 검사<a class="headerlink" href="#332-view" title="Permanent link">&para;</a></h4>
-<p>워크플로우 본문의 <code>GATK_HAPLOTYPECALLER</code> 프로세스 호출 전에 다음 두 줄을 추가하여 채널의 내용을 확인하세요:</p>
+<p>워크플로우 본문의 <code>GATK_HAPLOTYPECALLER</code> process 실행 전에 다음 두 줄을 추가하여 채널의 내용을 확인하세요:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">후</label><label for="__tabbed_19_2">전</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -5838,11 +6139,11 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 <span class="normal"><a href="#__codelineno-54-42">42</a></span>
 <span class="normal"><a href="#__codelineno-54-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-54-36" name="__codelineno-54-36"></a><span class="w">    </span><span class="n">SAMTOOLS_INDEX</span><span class="o">(</span><span class="n">reads_ch</span><span class="o">)</span>
 <a id="__codelineno-54-37" name="__codelineno-54-37"></a>
-<a id="__codelineno-54-38" name="__codelineno-54-38"></a><span class="hll"><span class="w">    </span><span class="c1">// temporary diagnostics</span>
+<a id="__codelineno-54-38" name="__codelineno-54-38"></a><span class="hll"><span class="w">    </span><span class="c1">// 임시 진단</span>
 </span><a id="__codelineno-54-39" name="__codelineno-54-39"></a><span class="hll"><span class="w">    </span><span class="n">reads_ch</span><span class="o">.</span><span class="na">view</span><span class="o">()</span>
 </span><a id="__codelineno-54-40" name="__codelineno-54-40"></a><span class="hll"><span class="w">    </span><span class="n">SAMTOOLS_INDEX</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">view</span><span class="o">()</span>
 </span><a id="__codelineno-54-41" name="__codelineno-54-41"></a>
-<a id="__codelineno-54-42" name="__codelineno-54-42"></a><span class="w">    </span><span class="c1">// Call variants from the indexed BAM file</span>
+<a id="__codelineno-54-42" name="__codelineno-54-42"></a><span class="w">    </span><span class="c1">// 인덱싱된 BAM 파일에서 변이 호출</span>
 <a id="__codelineno-54-43" name="__codelineno-54-43"></a><span class="w">    </span><span class="n">GATK_HAPLOTYPECALLER</span><span class="o">(</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -5852,7 +6153,7 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 <span class="normal"><a href="#__codelineno-55-38">38</a></span>
 <span class="normal"><a href="#__codelineno-55-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-55-36" name="__codelineno-55-36"></a><span class="w">    </span><span class="n">SAMTOOLS_INDEX</span><span class="o">(</span><span class="n">reads_ch</span><span class="o">)</span>
 <a id="__codelineno-55-37" name="__codelineno-55-37"></a>
-<a id="__codelineno-55-38" name="__codelineno-55-38"></a><span class="w">    </span><span class="c1">// Call variants from the indexed BAM file</span>
+<a id="__codelineno-55-38" name="__codelineno-55-38"></a><span class="w">    </span><span class="c1">// 인덱싱된 BAM 파일에서 변이 호출</span>
 <a id="__codelineno-55-39" name="__codelineno-55-39"></a><span class="w">    </span><span class="n">GATK_HAPLOTYPECALLER</span><span class="o">(</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -6040,7 +6341,7 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 <p>이번에는(그리고 매번) 모든 것이 올바르게 실행되어야 합니다:</p>
 <details class="success">
 <summary>명령 출력</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>
 <a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a><span class="go">┃ Launching `genomics.nf` [special_goldstine] DSL2 - revision: 4cbbf6ea3e</span>
 <a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>
@@ -6070,7 +6371,7 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 </code></pre></div>
 </details>
 <p>관련 파일을 튜플로 묶음으로써 올바른 파일이 항상 워크플로우를 통해 함께 이동하도록 보장했습니다.
-이제 워크플로우는 임의의 수의 샘플을 안정적으로 처리하지만, 구성에서 개별적으로 나열하는 것은 확장성이 좋지 않습니다.
+이제 워크플로우는 임의의 수의 샘플을 안정적으로 처리하지만, 설정에서 개별적으로 나열하는 것은 확장성이 좋지 않습니다.
 다음 단계에서는 파일에서 입력을 읽는 것으로 전환하겠습니다.</p>
 <h3 id="_7">핵심 정리<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>워크플로우가 여러 샘플에서 (독립적으로) 실행되도록 만드는 방법을 알게 되었습니다.</p>
@@ -6169,7 +6470,7 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">genomics.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-74-24">24</a></span>
 <span class="normal"><a href="#__codelineno-74-25">25</a></span>
 <span class="normal"><a href="#__codelineno-74-26">26</a></span>
-<span class="normal"><a href="#__codelineno-74-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-74-24" name="__codelineno-74-24"></a><span class="hll"><span class="w">    </span><span class="c1">// Create input channel from a CSV file listing input file paths</span>
+<span class="normal"><a href="#__codelineno-74-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-74-24" name="__codelineno-74-24"></a><span class="hll"><span class="w">    </span><span class="c1">// CSV 파일에서 입력 채널 생성 (입력 파일 경로 목록)</span>
 </span><a id="__codelineno-74-25" name="__codelineno-74-25"></a><span class="hll"><span class="w">    </span><span class="n">reads_ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">channel</span><span class="o">.</span><span class="na">fromPath</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">input</span><span class="o">)</span>
 </span><a id="__codelineno-74-26" name="__codelineno-74-26"></a><span class="hll"><span class="w">            </span><span class="o">.</span><span class="na">splitCsv</span><span class="o">(</span><span class="nl">header:</span><span class="w"> </span><span class="kc">true</span><span class="o">)</span>
 </span><a id="__codelineno-74-27" name="__codelineno-74-27"></a><span class="hll"><span class="w">            </span><span class="o">.</span><span class="na">map</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">file</span><span class="o">(</span><span class="n">row</span><span class="o">.</span><span class="na">reads_bam</span><span class="o">)</span><span class="w"> </span><span class="o">}</span>
@@ -6177,7 +6478,7 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">genomics.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-75-24">24</a></span>
-<span class="normal"><a href="#__codelineno-75-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-75-24" name="__codelineno-75-24"></a><span class="w">    </span><span class="c1">// Create input channel (single file via CLI parameter)</span>
+<span class="normal"><a href="#__codelineno-75-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-75-24" name="__codelineno-75-24"></a><span class="w">    </span><span class="c1">// 입력 채널 생성 (CLI 매개변수를 통한 단일 파일)</span>
 <a id="__codelineno-75-25" name="__codelineno-75-25"></a><span class="w">    </span><span class="n">reads_ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">channel</span><span class="o">.</span><span class="na">fromPath</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">input</span><span class="o">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -6195,7 +6496,7 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 </code></pre></div>
 <details class="success">
 <summary>명령 출력</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="go">N E X T F L O W   ~  version 25.10.2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a>
 <a id="__codelineno-77-3" name="__codelineno-77-3" href="#__codelineno-77-3"></a><span class="go">┃ Launching `genomics.nf` [sick_albattani] DSL2 - revision: 46d84642f6</span>
 <a id="__codelineno-77-4" name="__codelineno-77-4" href="#__codelineno-77-4"></a>
@@ -6207,10 +6508,63 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 <p>이전과 동일한 결과를 생성해야 합니다. 간단한 변이 호출 워크플로우에 원하는 모든 기본 기능이 이제 있습니다.</p>
 <h3 id="_9">핵심 정리<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>BAM 파일을 인덱싱하고 GATK를 사용하여 샘플별 변이 호출을 적용하는 다단계 모듈식 워크플로우를 만드는 방법을 알게 되었습니다.</p>
-<p>더 일반적으로, 유전체학 파일 형식과 도구 요구 사항의 특이성을 고려하여 실제 작업을 수행하는 간단한 유전체학 파이프라인을 구축하기 위해 필수 Nextflow 구성 요소와 로직을 사용하는 방법을 배웠습니다.</p>
+<p>더 일반적으로, 유전체학 파일 형식과 도구 요구 사항의 특이성을 고려하여 실제 작업을 수행하는 간단한 유전체학 파이프라인을 구축하기 위해 필수 Nextflow 구성 요소와 로직을 사용하는 방법을 학습했습니다.</p>
 <h3 id="_10">다음 단계<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>휴식을 취하세요! 많은 내용이었습니다.</p>
-<p>기분이 상쾌해지면 <a href="../03_joint_calling/">파트 3</a>으로 이동하세요. 여기서는 이 간단한 샘플별 변이 호출 워크플로우를 데이터에 공동 변이 호출을 적용하도록 변환하는 방법을 배우게 됩니다.</p><style type="text/css">.quiz {
+<p>기분이 상쾌해지면 <a href="../03_joint_calling/">파트 3</a>으로 이동하세요. 여기서는 이 간단한 샘플별 변이 호출 워크플로우를 데이터에 공동 변이 호출을 적용하도록 변환하는 방법을 학습합니다.</p><div id="quiz-progress-sidebar" aria-label="퀴즈 진행 상황" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    퀴즈 진행 상황
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          답변함: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          정답: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          초기화
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="퀴즈 진행 상황" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        답변함: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        정답: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        초기화
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -6257,10 +6611,12 @@ Nextflow에서 입력은 위치 기반이므로 동일한 순서를 <em>반드�
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -7181,16 +7537,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -7824,9 +8170,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

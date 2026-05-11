@@ -39,7 +39,7 @@
       
       
       <link rel="icon" href="../../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -159,6 +159,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -375,40 +433,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -456,7 +487,7 @@
   <span class="md-ellipsis">
     
   
-    Startseite
+    Home
   
 
     
@@ -1579,7 +1610,7 @@
   <span class="md-ellipsis">
     
   
-    Teil 2: Variantenerkennung pro Probe
+    02 per sample variant calling
   
 
     
@@ -2311,7 +2342,7 @@
   <span class="md-ellipsis">
     
   
-    Orientierung
+    Erste Schritte
   
 
     
@@ -2360,6 +2391,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wesentliche Scripting-Muster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/working_with_files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verarbeitung von Datei-Eingaben
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../side_quests/metadata/" class="md-nav__link">
         
   
@@ -2388,34 +2475,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/working_with_files/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Datei-Eingabeverarbeitung
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
@@ -2423,7 +2482,7 @@
   <span class="md-ellipsis">
     
   
-    Splitting und Grouping
+    Aufteilen und Gruppieren
   
 
     
@@ -2444,14 +2503,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/workflows_of_workflows/" class="md-nav__link">
+      <a href="../../../side_quests/nf_test/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Workflows von Workflows
+    Index
   
 
     
@@ -2479,7 +2538,7 @@
   <span class="md-ellipsis">
     
   
-    Debugging von Workflows
+    Workflows debuggen
   
 
     
@@ -2500,14 +2559,89 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../../side_quests/workflows_of_workflows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Grundlegende Nextflow-Scripting-Muster
+    Workflows of Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin-Entwicklung
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plugin-Entwicklung
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin-Entwicklung
   
 
     
@@ -2528,14 +2662,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Testen mit nf-test
+    Teil 1: Plugin-Grundlagen
   
 
     
@@ -2544,6 +2678,210 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teil 2: Ein Plugin-Projekt erstellen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teil 3: Eigene Funktionen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teil 4: Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teil 5: Trace Observers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teil 6: Konfiguration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zusammenfassung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nächste Schritte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3393,43 +3731,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -3580,24 +3881,24 @@
 <p>Wir haben also dynamisch eine Eingabe von einer CLI an einen Parameter übergeben. Wir haben das als Eingabe an den Prozess übergeben und der Prozess hat das interpretiert und in einen Script-Block eingefügt, der dann dynamisch die Ausgabe dieses Skriptergebnisses geändert hat. Ziemlich cool.</p>
 <p>Ziemlich komplexe Logik mit sehr wenig Syntax hier. Und du kannst hoffentlich sehen, wie das jetzt skaliert. Und so bauen wir wirklich die Logik und die Anpassbarkeit unserer Pipelines in das Nextflow-Skript ein.</p>
 <h2 id="34-standardwerte-fur-kommandozeilen-parameter-verwenden">3.4. Standardwerte für Kommandozeilen-Parameter verwenden<a class="headerlink" href="#34-standardwerte-fur-kommandozeilen-parameter-verwenden" title="Permanent link">&para;</a></h2>
-<p>Okay, das ist großartig. Das Problem ist jetzt aber, dass ich jedes Mal, wenn ich diese Pipeline ausführe, dash input machen muss, damit sie läuft.</p>
-<p>Wenn ich versuche, ohne diesen Parameter zu laufen, wird Nextflow jetzt einen Fehler werfen und sagen, dass es diesen Parameter brauchte und er nicht gesetzt wurde. Und es wusste also nicht, was zu tun ist.</p>
+<p>Okay, das ist großartig. Das Problem ist jetzt aber, dass ich jedes Mal, wenn ich diese Pipeline ausführe, <code>--input</code> angeben muss, damit sie läuft.</p>
+<p>Wenn ich versuche, ohne diesen Parameter zu laufen, wird Nextflow jetzt einen Fehler werfen und sagen, dass dieser Parameter benötigt wurde, aber nicht gesetzt war. Es wusste also nicht, was zu tun ist.</p>
 <p>Das ist übrigens eine coole neue Sache. In der Vergangenheit wäre Nextflow einfach mit einem leeren String gelaufen, und du hättest alle möglichen seltsamen Fehler gehabt, die schwer zu verstehen gewesen wären. Aber im neuen Nextflow-Syntax-Parser ist es etwas vorsichtiger und sagt es dir sofort.</p>
-<p>Wir wollen also nicht immer jede einzelne Option angeben. Es ist gute Praxis, vernünftige Standards anzugeben. Wie machen wir das also in unserem Skript?</p>
-<p>Du wirst bemerken, dass wir, als wir das geschrieben haben, einfach <em>params.input</em> direkt dort eingefügt haben, wo wir es verwenden. Die offensichtliche Lösung ist also, dass wir einen Standard definieren, und wir tun das oben im Skript hier in einem speziellen Params-Block im Workflow. Das ist im Workflow-Skript hier.</p>
-<p>Wieder etwas neue Syntax hier, also pass auf. Das ist wirklich cooles Zeug. Wir haben den Namen des Parameters, der hier erwartet wird.</p>
-<p>Und dann nach diesem Doppelpunkt-Zeichen definieren wir einen Typ der Variable. Du musst das nicht tun, du kannst es einfach leer lassen, aber es ist wirklich schön. Es sagt Nextflow, dass wir einen String erwarten und ihn als solchen behandeln.</p>
-<p>Wenn wir stattdessen zum Beispiel eine Zahl wollen, könnten wir float schreiben, und das würde sagen, wir wollen eine Gleitkommazahl. Und wenn wir versuchen, damit zu laufen, wird es einen Fehler werfen. Wenn wir ihm einen String geben, der kein Float ist. Und es wird ihn auch als solchen übergeben. Wenn wir string machen, dann weiß es, dass es ein String ist. Und selbst wenn es führende Nullen hat und ganz numerisch ist, wird es ihn trotzdem als tatsächlichen String übergeben.</p>
-<p>Diese Typsicherheit ist also eine sehr neue Funktion von Nextflow, aber wirklich mächtig, um deinen Code sicherer zu schreiben und auszuführen.</p>
-<p>Dann danach haben wir ein Gleichheitszeichen und dann den Standardwert hier. Nextflow wurde ursprünglich in Barcelona geschrieben, also scheint es angemessen, dass wir etwas Spanisches hier haben, <em>"Holà mundo!"</em> als Standard.</p>
-<p>Richtig, ich werde das Skript speichern, zurückgehen, das Skript wieder ohne <em>--input</em> ausführen. Und diesmal sollte es laufen und es wird unsere neue Datei oben in <em>results</em> erstellen. Und in dieser Datei steht jetzt <em>"Holà mundo!"</em>.</p>
-<p>Das ist aber nur ein Standard, also bedeutet es nicht, dass wir nicht immer noch das Gleiche wie vorher tun können. Wenn ich zurückgehe und mein altes Skript hier finde, <em>"Hej Världen"</em>, weil ich <em>--input</em> auf der Kommandozeile mache, wird das diesen Standard überschreiben und das wieder in der output.txt-Datei verwenden.</p>
+<p>Wir wollen also nicht immer jede einzelne Option angeben. Es ist gute Praxis, sinnvolle Standardwerte anzugeben. Wie machen wir das also in unserem Skript?</p>
+<p>Du wirst bemerken, dass wir, als wir das geschrieben haben, <em>params.input</em> einfach direkt dort eingefügt haben, wo wir es verwenden. Die naheliegende Lösung ist also, einen Standardwert zu definieren. Das machen wir oben im Skript in einem speziellen Params-Block im Workflow. Das ist hier im Workflow-Skript.</p>
+<p>Wieder etwas neue Syntax, also pass auf. Das ist wirklich cooles Zeug. Wir haben den Namen des Parameters, der hier erwartet wird.</p>
+<p>Und dann nach diesem Doppelpunkt definieren wir einen Typ der Variable. Das musst du nicht tun, du kannst es einfach leer lassen, aber es ist wirklich praktisch. Es sagt Nextflow, dass wir einen String erwarten, und behandelt ihn entsprechend.</p>
+<p>Wenn wir stattdessen zum Beispiel eine Zahl wollen, könnten wir <code>float</code> schreiben, und das würde bedeuten, wir wollen eine Gleitkommazahl. Wenn wir dann versuchen, damit zu laufen, und ihm einen String übergeben, der kein Float ist, wird es einen Fehler werfen. Und es wird ihn auch als solchen übergeben. Wenn wir <code>string</code> angeben, weiß Nextflow, dass es ein String ist. Und selbst wenn er führende Nullen hat und rein numerisch ist, wird er trotzdem als tatsächlicher String übergeben.</p>
+<p>Diese Typsicherheit ist eine sehr neue Funktion von Nextflow, aber wirklich mächtig, um deinen Code sicherer zu schreiben und auszuführen.</p>
+<p>Danach haben wir ein Gleichheitszeichen und dann den Standardwert. Nextflow wurde ursprünglich in Barcelona geschrieben, also scheint es passend, dass wir hier etwas Spanisches haben: <em>"Hola mundo!"</em> als Standard.</p>
+<p>Gut, ich speichere das Skript, gehe zurück und führe das Skript wieder ohne <em>--input</em> aus. Und diesmal sollte es laufen und unsere neue Datei in <em>results</em> erstellen. Und in dieser Datei steht jetzt <em>"Hola mundo!"</em>.</p>
+<p>Das ist aber nur ein Standardwert, also bedeutet das nicht, dass wir nicht trotzdem dasselbe wie vorher tun können. Wenn ich zurückgehe und mein altes Skript hier finde, <em>"Hej Världen"</em>, und <em>--input</em> auf der Kommandozeile angebe, wird das den Standardwert überschreiben und diesen wieder in der output.txt-Datei verwenden.</p>
 <p>Das im Skript ist also nur der Standardwert, den ich setze.</p>
-<p>Während wir unseren Workflow aufbauen, um komplexer zu sein und mehr Parameter einzuschließen, wird dieser Params-Block oben im Skript anfangen, sie alle an einem Ort zu sammeln.</p>
-<p>Und du endest mit dieser ziemlich schönen Symmetrie in deinem Skript, wo du effektiv alle deine Workflow-Eingaben hier und deine Workflow-Ausgaben unten hast. Und es ist sehr klar, was die Schnittstelle deines Workflows zur Außenwelt ist. Du kannst also eine neue Pipeline sehr schnell mit der neuen Syntax aufnehmen und verstehen, wie man sie verwendet.</p>
-<p>Eine letzte coole Sache. Wir müssen keinen Standardwert damit setzen. Wenn wir params input machen, aber keinen Standardwert setzen, dann sagt es Nextflow, dass dieser Parameter erforderlich ist, und wieder wird die Pipeline nicht ohne ihn laufen, aber sie wird dir eine nützlichere Fehlermeldung geben, anstatt etwas darüber, dass es null ist.</p>
-<p>Es sagt also, wir erwarten, dass seine Eingabe erforderlich ist, aber sie wurde nicht auf der Kommandozeile angegeben. Sehr schön.</p>
-<p>Okay, hoffentlich ist jetzt klar, wie man seine Nextflow-Pipeline mit variablen Eingaben und Parametern einrichtet, wie man den Standard setzt, die Typen setzt, es könnte ein Boolean true-false-Flag oder eine Ganzzahl oder verschiedene Typen hier sein. Wie man sie in deinen Workflow übergibt, wo es durchgeht, und dann in deinen Prozess interpoliert. Und du weißt auch, wie man diese auf der Kommandozeile anpasst, wenn du Nextflow startest. Das fängt an, interessanter auszusehen als unser einfacher Bash-Befehl.</p>
+<p>Während wir unseren Workflow komplexer aufbauen und mehr Parameter einschließen, wird dieser Params-Block oben im Skript anfangen, sie alle an einem Ort zu sammeln.</p>
+<p>Und du erhältst eine ziemlich schöne Symmetrie in deinem Skript: Du hast effektiv alle deine Workflow-Eingaben hier oben und deine Workflow-Ausgaben unten. Es ist sehr klar, was die Schnittstelle deines Workflows zur Außenwelt ist. Du kannst also eine neue Pipeline mit der neuen Syntax sehr schnell aufnehmen und verstehen, wie man sie verwendet.</p>
+<p>Eine letzte coole Sache. Wir müssen keinen Standardwert setzen. Wenn wir <code>params.input</code> angeben, aber keinen Standardwert setzen, teilt das Nextflow mit, dass dieser Parameter erforderlich ist. Die Pipeline wird dann ohne ihn nicht laufen, aber du bekommst eine nützlichere Fehlermeldung, anstatt etwas über einen null-Wert.</p>
+<p>Es sagt also: Wir erwarten, dass die Eingabe erforderlich ist, aber sie wurde nicht auf der Kommandozeile angegeben. Sehr schön.</p>
+<p>Okay, hoffentlich ist jetzt klar, wie man seine Nextflow-Pipeline mit variablen Eingaben und Parametern einrichtet: wie man den Standardwert setzt, die Typen festlegt – es könnte ein Boolean true/false-Flag, eine Ganzzahl oder verschiedene andere Typen sein. Wie man sie in den Workflow übergibt, wo sie durchlaufen und dann in den Prozess interpoliert werden. Und du weißt auch, wie man diese auf der Kommandozeile anpasst, wenn du Nextflow startest. Das fängt an, interessanter auszusehen als unser einfacher Bash-Befehl.</p>
 <h2 id="4-workflow-ausfuhrungen-verwalten">4. Workflow-Ausführungen verwalten<a class="headerlink" href="#4-workflow-ausfuhrungen-verwalten" title="Permanent link">&para;</a></h2>
 <p>Okay. Was kommt als Nächstes? Für den letzten Teil dieses Kapitels werden wir ein bisschen darüber sprechen, wie man all die verschiedenen Workflow-Ausführungen verwaltet. Wenn du in meiner Seitenleiste hier und im Explorer unter work schaust, wirst du sehen, dass ich eine Reihe verschiedener Pipelines ausgeführt habe und diese Work-Verzeichnisse ziemlich lang werden, es gibt viele davon.</p>
 <p>Und die andere Sache ist, wie ich vorher sagte, jedes Mal, wenn ich diese Pipeline erneut ausführe, erstellt sie einen neuen Satz von Work-Verzeichnissen, und sie führt alle Prozesse von Grund auf neu aus, was eine gute Sache ist. Das ist beabsichtigtes Verhalten. Es ist reproduzierbar und regeneriert alles frisch. Aber es ist offensichtlich, wenn du sehr lang laufende Prozesse ausführst, ärgerlich, deine Pipeline immer von Anfang an starten zu müssen, wenn sie auf halbem Weg abgestürzt ist, oder wenn du etwas am Ende der Pipeline änderst.</p>
@@ -3627,7 +3928,60 @@
 <p>Wenn du jetzt zu Teil Eins, Hello World, auf der Webseite runterscrollst, wirst du ein kleines Quiz sehen, und das ist etwas Neues, das wir für diese Version des Nextflow-Trainings gemacht haben. Und du kannst durchgehen und dich selbst abfragen, um zu überprüfen, dass du das gesamte Material verstanden hast, das wir in diesem Kapitel gemacht haben.</p>
 <p>Das wird nicht an uns gesendet oder so, es wird nur in deinem Browser gespeichert. Wir wissen also nicht, was deine Antworten sind, aber es ist nur eine kleine Selbstüberprüfung, um sicherzustellen, dass du nichts verpasst oder missverstanden hast. Und du kannst es so oft versuchen, wie du willst.</p>
 <p>Wenn du wie ich bist, möchtest du vielleicht im Terminal in deiner VS Code-Instanz bleiben, in diesem Fall kannst du den <em>quiz</em>-Befehl eingeben und dann einfach sagen, in welchem Kapitel du bist. Wir machen also <em>"Hello World"</em>, und dann kannst du genau die gleichen Quizfragen machen, die im Webbrowser sind, aber einfach in deinem Terminal.</p>
-<p>Cool. Okay. Hoffe, du genießt das. Hab ein bisschen Spaß und wir sehen uns im nächsten Kapitel in nur einer Minute, um alles über Nextflow-Kanäle zu sprechen.</p><style type="text/css">.quiz {
+<p>Cool. Okay. Hoffe, du genießt das. Hab ein bisschen Spaß und wir sehen uns im nächsten Kapitel in nur einer Minute, um alles über Nextflow-Kanäle zu sprechen.</p><div id="quiz-progress-sidebar" aria-label="Quiz-Fortschritt" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    Quiz-Fortschritt
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          Beantwortet: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          Richtig: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          Zurücksetzen
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz-Fortschritt" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        Beantwortet: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        Richtig: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        Zurücksetzen
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -3674,10 +4028,12 @@
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -4598,16 +4954,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -5241,9 +5587,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

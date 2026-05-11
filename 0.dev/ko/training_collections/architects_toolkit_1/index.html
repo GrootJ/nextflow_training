@@ -20,7 +20,7 @@
 <link href="/pt/" hreflang="pt" rel="alternate"/>
 <link href="/tr/" hreflang="tr" rel="alternate"/>
 <link href="../../assets/img/nextflow-icon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.5" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
 <title>아키텍트 툴킷 I - training.nextflow.io</title>
 <link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
@@ -44,6 +44,50 @@
         </a>
 </div>
 <div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+<a class="md-button" href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6" target="_blank">
+    More info
+    <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span>
+</a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+</div>
+</aside>
 </div>
 <div data-md-color-scheme="default" data-md-component="outdated" hidden="">
 </div>
@@ -194,26 +238,6 @@
 </nav>
 </header>
 <div class="md-container" data-md-component="container">
-<nav aria-label="Quiz Progress" class="quiz-progress-mobile md-nav" id="quiz-progress-mobile" style="display: none;">
-<!-- mkdocs-quiz progress sidebar (mobile) -->
-<div class="quiz-progress-bar">
-<div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-<div class="quiz-progress-bar-correct" style="width: 0%"></div>
-</div>
-<div data-md-component="quiz-progress">
-<div class="quiz-correct-reset">
-<span class="md-ellipsis">
-<span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-</span>
-<span class="md-ellipsis">
-<span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-</span>
-<a class="quiz-reset-all-link" href="#" style="color: var(--md-primary-fg-color); text-decoration: none;">
-<span data-quiz-translate="Reset">Reset</span>
-</a>
-</div>
-</div>
-</nav>
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
@@ -1059,7 +1083,7 @@
 <span class="md-ellipsis">
     
   
-    오리엔테이션
+    시작하기
   
 
     
@@ -1079,11 +1103,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../side_quests/metadata/">
+<a class="md-nav__link" href="../../side_quests/essential_scripting_patterns/">
 <span class="md-ellipsis">
     
   
-    메타데이터와 메타 맵
+    필수 스크립팅 패턴
   
 
     
@@ -1103,11 +1127,47 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../side_quests/metadata/">
+<span class="md-ellipsis">
+    
+  
+    메타데이터와 메타 맵
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../side_quests/splitting_and_grouping/">
 <span class="md-ellipsis">
     
   
-    데이터 분할 및 그룹화
+    분할 및 그룹화
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../side_quests/nf_test/">
+<span class="md-ellipsis">
+    
+  
+    nf-test를 활용한 테스트
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../side_quests/debugging/">
+<span class="md-ellipsis">
+    
+  
+    워크플로우 문제 해결
   
 
     
@@ -1126,12 +1186,35 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../side_quests/debugging/">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
 <span class="md-ellipsis">
     
   
-    워크플로우 디버깅
+    플러그인 개발
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    플러그인 개발
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../side_quests/plugin_development/">
+<span class="md-ellipsis">
+    
+  
+    플러그인 개발
   
 
     
@@ -1139,11 +1222,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../side_quests/essential_scripting_patterns/">
+<a class="md-nav__link" href="../../side_quests/plugin_development/01_plugin_basics/">
 <span class="md-ellipsis">
     
   
-    필수 Nextflow 스크립팅 패턴
+    파트 1: 플러그인 기초
   
 
     
@@ -1151,16 +1234,91 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../side_quests/nf-test/">
+<a class="md-nav__link" href="../../side_quests/plugin_development/02_create_project/">
 <span class="md-ellipsis">
     
   
-    nf-test로 테스트하기
+    파트 2: 플러그인 프로젝트 생성
   
 
     
   </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../side_quests/plugin_development/03_custom_functions/">
+<span class="md-ellipsis">
+    
+  
+    파트 3: 사용자 정의 함수
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../side_quests/plugin_development/04_build_and_test/">
+<span class="md-ellipsis">
+    
+  
+    파트 4: 테스트
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../side_quests/plugin_development/05_observers/">
+<span class="md-ellipsis">
+    
+  
+    파트 5: Trace Observer
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../side_quests/plugin_development/06_configuration/">
+<span class="md-ellipsis">
+    
+  
+    파트 6: 설정
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../side_quests/plugin_development/summary/">
+<span class="md-ellipsis">
+    
+  
+    요약
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../side_quests/plugin_development/next_steps/">
+<span class="md-ellipsis">
+    
+  
+    다음 단계
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1710,40 +1868,6 @@
 </div>
 </div>
 </div>
-<div aria-label="Quiz Progress" id="quiz-progress-sidebar" style="display: none;">
-<!-- mkdocs-quiz progress sidebar (desktop) -->
-<label class="md-nav__title">
-<span class="md-nav__icon md-icon"></span>
-<span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-</label>
-<ul class="md-nav__list" data-md-component="quiz-progress">
-<li class="md-nav__item">
-<div class="md-nav__link">
-<span class="md-ellipsis">
-<span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-</div>
-</li>
-<li class="md-nav__item">
-<div class="md-nav__link">
-<div class="quiz-progress-bar">
-<div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-<div class="quiz-progress-bar-correct" style="width: 0%"></div>
-</div>
-</div>
-</li>
-<li class="md-nav__item">
-<div class="md-nav__link quiz-correct-reset">
-<span class="md-ellipsis">
-<span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-<a class="quiz-reset-all-link" href="#" style="color: var(--md-primary-fg-color); text-decoration: none;">
-<span data-quiz-translate="Reset">Reset</span>
-</a>
-</div>
-</li>
-</ul>
-</div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <a class="md-content__button md-icon" href="https://github.com/nextflow-io/training/edit/master/docs/training_collections/architects_toolkit_1.md" rel="edit" title="이 페이지를 편집">
@@ -1754,32 +1878,32 @@
 </a>
 <h1 id="i"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> 아키텍트 툴킷 I<a class="headerlink" href="#i" title="Permanent link">¶</a></h1>
 <p><span class="ai-translation-notice"><span class="twemoji ai-translation-notice-icon"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"></path></svg></span> AI 지원 번역 - <a href="https://github.com/nextflow-io/training/blob/master/TRANSLATING.md">자세히 알아보기 및 개선 제안</a></span></p>
-<p>트레이닝 컬렉션은 고급 교육 자료(<a href="../../side_quests">Side Quests</a>라고 함)를 통한 선별된 학습 경로를 제공합니다. 이 컬렉션은 견고하고 확장 가능한 workflow를 구축하기 위해 자주 함께 사용되는 네 가지 필수 주제를 다룹니다.</p>
+<p>트레이닝 컬렉션은 고급 교육 자료(<a href="../../side_quests/">Side Quests</a>라고 함)를 통한 선별된 학습 경로를 제공합니다. 이 컬렉션은 견고하고 확장 가능한 워크플로우를 구축하기 위해 자주 함께 사용되는 네 가지 필수 주제를 다룹니다.</p>
 <h2 id="_1"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> 학습 목표<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>이 컬렉션을 완료하면 다음에 대한 경험을 얻게 됩니다:</p>
 <ul>
-<li><strong>복잡한 모듈식 workflow 아키텍처</strong> - 여러 workflow를 응집력 있는 pipeline으로 결합하기</li>
-<li><strong>포괄적인 테스트 전략</strong> - workflow의 신뢰성과 유지 관리 가능성 보장하기</li>
-<li><strong>메타데이터 관리</strong> - workflow 전반에 걸쳐 샘플별 메타데이터를 효과적으로 처리하기</li>
+<li><strong>복잡한 모듈식 워크플로우 아키텍처</strong> - 여러 워크플로우를 응집력 있는 파이프라인으로 결합하기</li>
+<li><strong>포괄적인 테스트 전략</strong> - 워크플로우의 신뢰성과 유지 관리 가능성 보장하기</li>
+<li><strong>메타데이터 관리</strong> - 워크플로우 전반에 걸쳐 샘플별 메타데이터를 효과적으로 처리하기</li>
 <li><strong>고급 데이터 처리</strong> - 효율적인 데이터 분할 및 그룹화 패턴 구현하기</li>
 </ul>
-<p>이러한 기술을 통해 실제 애플리케이션을 위한 견고하고 확장 가능하며 유지 관리 가능한 Nextflow workflow를 구축할 수 있습니다.</p>
+<p>이러한 기술을 통해 실제 애플리케이션을 위한 견고하고 확장 가능하며 유지 관리 가능한 Nextflow 워크플로우를 구축할 수 있습니다.</p>
 <h2 id="_2"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> 대상 및 사전 요구 사항<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>이 컬렉션은 기본 Nextflow 교육을 완료하고 고급 workflow 패턴, 테스트 전략, 데이터 및 메타데이터 처리 기법에 대해 더 깊이 배우고자 하는 사용자를 위해 설계되었습니다.</p>
+<p>이 컬렉션은 기본 Nextflow 교육을 완료하고 고급 워크플로우 패턴, 테스트 전략, 데이터 및 메타데이터 처리 기법에 대해 더 깊이 배우고자 하는 사용자를 위해 설계되었습니다.</p>
 <p><strong>사전 요구 사항</strong></p>
 <ul>
 <li><a href="../../hello_nextflow/">Hello Nextflow</a> 교육 완료 또는 이에 상응하는 경험</li>
 <li>Nextflow 구문 및 개념에 대한 기본적인 이해</li>
-<li>기본 workflow 개발 패턴에 대한 이해</li>
+<li>기본 워크플로우 개발 패턴에 대한 이해</li>
 <li>명령줄 도구 사용 경험</li>
 </ul>
 <h2 id="_3"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> 컬렉션 내용<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<p>이 컬렉션은 상호 보완적인 workflow 엔지니어링 주제를 다루는 네 개의 Side Quest로 구성됩니다:</p>
+<p>이 컬렉션은 상호 보완적인 워크플로우 엔지니어링 주제를 다루는 네 개의 Side Quest로 구성됩니다:</p>
 <ol>
-<li><strong><a href="../../side_quests/workflows_of_workflows">Workflows of Workflows</a></strong> - 복잡한 workflow 아키텍처 및 구성</li>
-<li><strong><a href="../../side_quests/nf-test">Testing with nf-test</a></strong> - Nextflow workflow를 위한 테스트 전략</li>
-<li><strong><a href="../../side_quests/metadata">Metadata</a></strong> - Nextflow channel의 항목에 대한 메타데이터 처리</li>
-<li><strong><a href="../../side_quests/splitting_and_grouping">Splitting and Grouping</a></strong> - 고급 데이터 처리 패턴</li>
+<li><strong><a href="../../side_quests/workflows_of_workflows/">Workflows of Workflows</a></strong> - 복잡한 워크플로우 아키텍처 및 구성</li>
+<li><strong><a href="../../side_quests/nf_test/">Testing with nf-test</a></strong> - Nextflow 워크플로우를 위한 테스트 전략</li>
+<li><strong><a href="../../side_quests/metadata/">Metadata</a></strong> - Nextflow 채널의 항목에 대한 메타데이터 처리</li>
+<li><strong><a href="../../side_quests/splitting_and_grouping/">Splitting and Grouping</a></strong> - 고급 데이터 처리 패턴</li>
 </ol>
 <p>각 Side Quest는 독립적인 개념을 다루는 자체 완결형이지만, 주제에 대한 논리적 진행을 위해 위에 나열된 순서대로 완료하는 것을 권장합니다.</p>
 <h2 id="_4"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> 이 컬렉션 사용 방법<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
@@ -1793,7 +1917,60 @@
 <li>컬렉션을 모두 완료하면 아래 버튼을 클릭하여 매우 짧은 설문조사를 작성해 주십시오. 여러분의 피드백은 모든 사람을 위한 교육 자료를 지속적으로 개선하는 데 도움이 됩니다.</li>
 </ol>
 <p><a href="https://seqera.typeform.com/to/Q9pc2YKw"><img alt="Take the survey" src="https://img.shields.io/badge/Take%20the-Survey-blue?style=flat-square"/></a></p>
-<p>시작할 준비가 되셨나요? 위의 첫 번째 모듈부터 시작하십시오!</p><style type="text/css">.quiz {
+<p>시작할 준비가 되셨나요? 위의 첫 번째 모듈부터 시작하십시오!</p><div aria-label="퀴즈 진행 상황" id="quiz-progress-sidebar" style="display: none;">
+<!-- mkdocs-quiz progress sidebar (desktop) -->
+<label class="md-nav__title">
+<span class="md-nav__icon md-icon"></span>
+    퀴즈 진행 상황
+  </label>
+<ul class="md-nav__list" data-md-component="quiz-progress">
+<li class="md-nav__item">
+<div class="md-nav__link">
+<span class="md-ellipsis">
+          답변함: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+</div>
+</li>
+<li class="md-nav__item">
+<div class="md-nav__link">
+<div class="quiz-progress-bar">
+<div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+<div class="quiz-progress-bar-correct" style="width: 0%"></div>
+</div>
+</div>
+</li>
+<li class="md-nav__item">
+<div class="md-nav__link quiz-correct-reset">
+<span class="md-ellipsis">
+          정답: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+<a class="quiz-reset-all-link" href="#" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          초기화
+        </a>
+</div>
+</li>
+</ul>
+</div>
+<nav aria-label="퀴즈 진행 상황" class="quiz-progress-mobile md-nav" id="quiz-progress-mobile" style="display: none;">
+<!-- mkdocs-quiz progress sidebar (mobile) -->
+<div class="quiz-progress-bar">
+<div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+<div class="quiz-progress-bar-correct" style="width: 0%"></div>
+</div>
+<div data-md-component="quiz-progress">
+<div class="quiz-correct-reset">
+<span class="md-ellipsis">
+        답변함: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+</span>
+<span class="md-ellipsis">
+        정답: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+</span>
+<a class="quiz-reset-all-link" href="#" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        초기화
+      </a>
+</div>
+</div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -1840,10 +2017,12 @@
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -2764,16 +2943,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -3407,9 +3576,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

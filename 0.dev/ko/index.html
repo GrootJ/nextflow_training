@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -163,6 +163,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
                 
@@ -512,19 +543,19 @@
   <a href="#nextflow_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nextflow 교육 과정 목록
+        Nextflow 교육 과정 카탈로그
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Nextflow 교육 과정 목록">
+    <nav class="md-nav" aria-label="Nextflow 교육 과정 카탈로그">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nextflow-for-newcomers" class="md-nav__link">
+  <a href="#nextflow_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nextflow for Newcomers
+        Nextflow 입문자를 위한 과정
       
     </span>
   </a>
@@ -532,10 +563,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#nextflow-for-science" class="md-nav__link">
+  <a href="#nextflow_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nextflow for Science
+        과학 연구를 위한 Nextflow
       
     </span>
   </a>
@@ -543,10 +574,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#from-nextflow-to-nf-core" class="md-nav__link">
+  <a href="#nextflow-nf-core" class="md-nav__link">
     <span class="md-ellipsis">
       
-        From Nextflow to nf-core
+        Nextflow에서 nf-core로
       
     </span>
   </a>
@@ -554,10 +585,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#advanced-nextflow-training" class="md-nav__link">
+  <a href="#nextflow_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advanced Nextflow Training
+        Nextflow 심화 교육
       
     </span>
   </a>
@@ -2604,7 +2635,7 @@
   <span class="md-ellipsis">
     
   
-    오리엔테이션
+    시작하기
   
 
     
@@ -2653,14 +2684,14 @@
   
   
     <li class="md-nav__item">
-      <a href="side_quests/metadata/" class="md-nav__link">
+      <a href="side_quests/essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    메타데이터와 메타 맵
+    필수 스크립팅 패턴
   
 
     
@@ -2709,6 +2740,34 @@
   
   
     <li class="md-nav__item">
+      <a href="side_quests/metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    메타데이터와 메타 맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
@@ -2716,7 +2775,63 @@
   <span class="md-ellipsis">
     
   
-    데이터 분할 및 그룹화
+    분할 및 그룹화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="side_quests/nf_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nf-test를 활용한 테스트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="side_quests/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    워크플로우 문제 해결
   
 
     
@@ -2764,15 +2879,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플러그인 개발
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    플러그인 개발
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="side_quests/debugging/" class="md-nav__link">
+      <a href="side_quests/plugin_development/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    워크플로우 디버깅
+    플러그인 개발
   
 
     
@@ -2793,14 +2955,14 @@
   
   
     <li class="md-nav__item">
-      <a href="side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    필수 Nextflow 스크립팅 패턴
+    파트 1: 플러그인 기초
   
 
     
@@ -2821,14 +2983,14 @@
   
   
     <li class="md-nav__item">
-      <a href="side_quests/nf-test/" class="md-nav__link">
+      <a href="side_quests/plugin_development/02_create_project/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    nf-test로 테스트하기
+    파트 2: 플러그인 프로젝트 생성
   
 
     
@@ -2837,6 +2999,182 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 3: 사용자 정의 함수
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 4: 테스트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 5: Trace Observer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 6: 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    요약
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    다음 단계
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3290,19 +3628,19 @@
   <a href="#nextflow_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nextflow 교육 과정 목록
+        Nextflow 교육 과정 카탈로그
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Nextflow 교육 과정 목록">
+    <nav class="md-nav" aria-label="Nextflow 교육 과정 카탈로그">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nextflow-for-newcomers" class="md-nav__link">
+  <a href="#nextflow_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nextflow for Newcomers
+        Nextflow 입문자를 위한 과정
       
     </span>
   </a>
@@ -3310,10 +3648,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#nextflow-for-science" class="md-nav__link">
+  <a href="#nextflow_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nextflow for Science
+        과학 연구를 위한 Nextflow
       
     </span>
   </a>
@@ -3321,10 +3659,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#from-nextflow-to-nf-core" class="md-nav__link">
+  <a href="#nextflow-nf-core" class="md-nav__link">
     <span class="md-ellipsis">
       
-        From Nextflow to nf-core
+        Nextflow에서 nf-core로
       
     </span>
   </a>
@@ -3332,10 +3670,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#advanced-nextflow-training" class="md-nav__link">
+  <a href="#nextflow_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advanced Nextflow Training
+        Nextflow 심화 교육
       
     </span>
   </a>
@@ -3540,43 +3878,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -3609,49 +3910,49 @@
 <div class="grid cards">
 <ul>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <strong>자율 학습 과정</strong></p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <strong>셀프 서비스 과정</strong></p>
 <hr />
 <p><strong>Nextflow 커뮤니티 교육 포털에 오신 것을 환영합니다!</strong></p>
-<p>아래 나열된 교육 과정은 자율 학습 자료로 사용할 수 있도록 설계되었습니다.
-Github Codespaces를 통해 제공되는 웹 기반 환경이나 자체 환경에서 언제든지 원하는 시간에 학습할 수 있습니다.</p>
-<p><a class="md-button md-button--primary mt-1" href="#catalog-of-nextflow-training-courses">과정 둘러보기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
+<p>아래에 나열된 교육 과정은 셀프 서비스 방식으로 활용할 수 있도록 설계되었습니다.
+Github Codespaces를 통해 제공되는 웹 기반 환경이나 본인의 환경에서 언제든지 학습할 수 있습니다.</p>
+<p><a class="md-button md-button--primary mt-1" href="#catalog-of-nextflow-training-courses">과정 살펴보기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </li>
 <li>
 <p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> <strong>추가 정보</strong></p>
 <hr />
 <details class="warning">
 <summary>버전 호환성</summary>
-<p><!-- Any update to this content needs to be copied to the local installation page -->
-<strong>2026년 1월부터 별도로 명시되지 않는 한, 모든 Nextflow 교육 과정은 엄격한 구문이 활성화된 Nextflow 버전 25.10.2 이상을 필요로 합니다.</strong></p>
-<p>버전 요구 사항 및 엄격한 구문에 대한 자세한 내용은 <a href="https://nextflow.io/docs/latest/strict-syntax.html">Nextflow 문서 마이그레이션 가이드</a>를 참조하세요.</p>
-<p>이전 구문에 해당하는 구버전 교육 자료는 이 웹페이지 메뉴 바의 버전 선택기를 통해 이용할 수 있습니다.</p>
+<p><!-- 이 내용을 업데이트할 경우 로컬 설치 페이지에도 동일하게 반영해야 합니다 -->
+<strong>2026년 1월부터 별도로 명시되지 않는 한, 모든 Nextflow 교육 과정은 strict syntax가 활성화된 Nextflow 버전 25.10.2 이상을 필요로 합니다.</strong></p>
+<p>버전 요구 사항 및 strict syntax에 대한 자세한 내용은 <a href="https://nextflow.io/docs/latest/strict-syntax.html">Nextflow 문서 마이그레이션 가이드</a>를 참조하세요.</p>
+<p>이전 syntax에 해당하는 구버전 교육 자료는 이 웹페이지 메뉴 바의 버전 선택기를 통해 확인할 수 있습니다.</p>
 </details>
 <details class="terminal">
 <summary>환경 옵션</summary>
-<p>교육에 필요한 모든 것이 사전 설치된 웹 기반 교육 환경을 Github Codespaces를 통해 제공합니다(무료 GitHub 계정 필요).</p>
-<p><a href="https://codespaces.new/nextflow-io/training?quickstart=1&amp;ref=master"><img alt="Open in GitHub Codespaces" src="https://github.com/codespaces/badge.svg" /></a></p>
-<p>이 방법이 적합하지 않은 경우, 다른 <a href="envsetup/">환경 옵션</a>을 참조하세요.</p>
+<p>교육에 필요한 모든 것이 사전 설치된 웹 기반 교육 환경을 제공합니다. Github Codespaces를 통해 이용할 수 있습니다(무료 GitHub 계정 필요).</p>
+<p><a href="https://codespaces.new/nextflow-io/training?quickstart=1&amp;ref=master"><img alt="GitHub Codespaces에서 열기" src="https://github.com/codespaces/badge.svg" /></a></p>
+<p>이 방법이 적합하지 않은 경우, 다른 <a href="envsetup/">환경 옵션</a>을 확인하세요.</p>
 </details>
 <details class="learning">
 <summary>교육 이벤트</summary>
-<p>구조화된 이벤트의 일부로 Nextflow 교육을 받고 싶으시다면, 다양한 기회가 있습니다. 다음 옵션을 확인하시기 바랍니다:</p>
+<p>구조화된 이벤트 형태로 Nextflow 교육을 받고 싶다면 다양한 기회가 있습니다. 다음 옵션을 확인해 보세요:</p>
 <ul>
-<li>커뮤니티 팀이 분기별로 주최하는 <strong><a href="">Training Weeks</a></strong></li>
-<li><strong><a href="https://seqera.io/events/">Seqera Events</a></strong>에는 Seqera가 주최하는 대면 교육 이벤트가 포함됩니다('Seqera Sessions' 및 'Nextflow Summit' 검색)</li>
-<li><strong><a href="">Nextflow Ambassadors</a></strong>는 지역 커뮤니티를 위한 이벤트를 주최합니다</li>
-<li><strong><a href="https://nf-co.re/events">nf-core events</a></strong>에는 커뮤니티 해커톤이 포함됩니다</li>
+<li>커뮤니티 팀이 분기별로 주관하는 <strong><a href="">Training Weeks</a></strong></li>
+<li>Seqera가 주관하는 대면 교육 이벤트를 포함한 <strong><a href="https://seqera.io/events/">Seqera Events</a></strong> ('Seqera Sessions' 및 'Nextflow Summit' 검색)</li>
+<li>지역 커뮤니티를 위한 이벤트를 주관하는 <strong><a href="">Nextflow Ambassadors</a></strong></li>
+<li>커뮤니티 해커톤을 포함한 <strong><a href="https://nf-co.re/events">nf-core events</a></strong></li>
 </ul>
 </details>
 <details class="people">
 <summary>강사를 위한 정보</summary>
-<p>자체 교육을 진행하는 강사라면, 적절한 출처를 표시하는 한 교육 포털에서 직접 자료를 사용하실 수 있습니다. 자세한 내용은 아래 '크레딧 및 기여'를 참조하세요.</p>
-<p>또한, 교육 활동을 더 잘 지원할 수 있는 방법에 대한 의견을 듣고 싶습니다! <a href="mailto:community@seqera.io">community@seqera.io</a> 또는 커뮤니티 포럼(<a href="help/">도움말</a> 페이지 참조)으로 연락 주시기 바랍니다.</p>
+<p>자체 교육을 진행하는 강사라면 적절한 출처를 표기하는 한 교육 포털의 자료를 직접 사용하실 수 있습니다. 자세한 내용은 아래 '크레딧 및 기여' 항목을 참조하세요.</p>
+<p>또한 교육 활동을 더 잘 지원할 수 있는 방법에 대한 의견을 환영합니다! <a href="mailto:community@seqera.io">community@seqera.io</a> 또는 커뮤니티 포럼(<a href="help/">도움말</a> 페이지 참조)으로 연락해 주세요.</p>
 </details>
 <details class="licensing">
-<summary>오픈소스 라이선스 및 기여 정책</summary>
+<summary>오픈 소스 라이선스 및 기여 정책</summary>
 <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img align="right" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)" src="assets/img/cc_by-nc-sa.svg" /></a></p>
-<p>이 교육 자료는 <a href="https://seqera.io">Seqera</a>에서 개발 및 유지 관리하며, 커뮤니티의 이익을 위해 오픈소스 라이선스(<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>)로 공개됩니다. 이 자료를 라이선스 범위를 벗어나는 방식으로 사용하고자 하는 경우(상업적 사용 및 재배포에 대한 제한 사항 참고), <a href="mailto:community@seqera.io">community@seqera.io</a>로 연락하여 요청 사항을 논의해 주시기 바랍니다.</p>
-<p>커뮤니티의 개선 사항, 수정 및 버그 리포트를 환영합니다. 모든 페이지의 오른쪽 상단에는 코드 저장소로 연결되는 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg></span> 아이콘이 있으며, 여기에서 문제를 보고하거나 풀 리퀘스트를 통해 교육 소스 자료에 대한 변경 사항을 제안할 수 있습니다. 자세한 내용은 저장소의 <code>README.md</code>를 참조하세요.</p>
+<p>이 교육 자료는 <a href="https://seqera.io">Seqera</a>가 개발 및 유지 관리하며, 커뮤니티의 이익을 위해 오픈 소스 라이선스(<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>) 하에 공개되었습니다. 라이선스 범위를 벗어나는 방식으로 이 자료를 사용하고자 하는 경우(상업적 이용 및 재배포 제한 사항 참고), <a href="mailto:community@seqera.io">community@seqera.io</a>로 문의해 주세요.</p>
+<p>커뮤니티의 개선 사항, 수정 및 버그 리포트를 환영합니다. 각 페이지 오른쪽 상단의 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg></span> 아이콘을 클릭하면 코드 저장소로 연결되며, 이슈를 보고하거나 pull request를 통해 교육 소스 자료의 변경을 제안할 수 있습니다. 자세한 내용은 저장소의 <code>README.md</code>를 참조하세요.</p>
 </details>
 </li>
 </ul>
@@ -3662,81 +3963,134 @@ Github Codespaces를 통해 제공되는 웹 기반 환경이나 자체 환경�
 피드백과 개선 제안을 환영합니다.
 자세한 내용은 <a href="https://github.com/nextflow-io/training/blob/master/TRANSLATING.md">번역 가이드</a>를 참조하세요.</p>
 </div>
-<h2 id="nextflow_1">Nextflow 교육 과정 목록<a class="headerlink" href="#nextflow_1" title="Permanent link">&para;</a></h2>
+<h2 id="nextflow_1">Nextflow 교육 과정 카탈로그<a class="headerlink" href="#nextflow_1" title="Permanent link">&para;</a></h2>
 <div class="grid cards">
 <ul>
 <li>
 <p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.12 10H19V8.2h-3.62l-2-3.33c-.3-.5-.84-.84-1.46-.84-.18 0-.34.03-.5.08L6 5.8V11h1.8V7.33l2.11-.66L6 22h1.8l2.87-8.11L13 17v5h1.8v-6.41l-2.49-4.54.73-2.87M14 3.8c1 0 1.8-.8 1.8-1.8S15 .2 14 .2 12.2 1 12.2 2 13 3.8 14 3.8"/></svg></span> <strong>입문 트랙</strong></p>
 <hr />
-<h3 class="mt-1" id="nextflow-for-newcomers"><span class="twemoji nextflow-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.19 14.19 6 18l3.81-8.19L18 6m-6-4A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 8.9a1.1 1.1 0 0 0-1.1 1.1 1.1 1.1 0 0 0 1.1 1.1 1.1 1.1 0 0 0 1.1-1.1 1.1 1.1 0 0 0-1.1-1.1"/></svg></span> Nextflow for Newcomers<a class="headerlink" href="#nextflow-for-newcomers" title="Permanent link">&para;</a></h3>
-<p>Nextflow를 처음 접하는 분들을 위한 도메인 독립적 과정입니다. 각 과정은 학습자가 단계적으로 기술을 쌓을 수 있도록 설계된 일련의 교육 모듈로 구성됩니다.</p>
+<h3 class="mt-1" id="nextflow_2"><span class="twemoji nextflow-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.19 14.19 6 18l3.81-8.19L18 6m-6-4A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 8.9a1.1 1.1 0 0 0-1.1 1.1 1.1 1.1 0 0 0 1.1 1.1 1.1 1.1 0 0 0 1.1-1.1 1.1 1.1 0 0 0-1.1-1.1"/></svg></span> Nextflow 입문자를 위한 과정<a class="headerlink" href="#nextflow_2" title="Permanent link">&para;</a></h3>
+<p>Nextflow를 처음 접하는 분들을 위한 도메인 비특화 과정입니다. 각 과정은 학습자가 단계적으로 역량을 쌓을 수 있도록 설계된 일련의 교육 모듈로 구성됩니다.</p>
 <details class="courses">
-<summary><strong>Hello Nextflow:</strong> 자체 파이프라인 개발 학습</summary>
-<p>이 과정은 간단하지만 완전히 기능하는 파이프라인을 개발할 수 있을 만큼 충분히 상세하게 Nextflow 언어의 핵심 구성 요소를 다루며, 파이프라인 설계, 개발 및 구성 관행의 주요 요소를 포함합니다.</p>
+<summary><strong>Hello Nextflow:</strong> 나만의 파이프라인 개발 학습</summary>
+<p>이 과정은 간단하지만 완전히 기능하는 파이프라인을 개발할 수 있을 만큼 Nextflow 언어의 핵심 구성 요소를 충분히 다루며, 파이프라인 설계, 개발 및 설정 방법의 핵심 요소도 포함합니다.</p>
 <p><a class="md-button md-button--secondary" href="hello_nextflow/">Hello Nextflow 교육 시작하기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </details>
 <details class="courses">
 <summary><strong>Nextflow Run:</strong> 기존 파이프라인 실행 학습</summary>
-<p>Hello Nextflow 개발자 과정을 기반으로 하되 코드에 대한 집중도를 낮춘, Nextflow 파이프라인 실행 및 구성에 대한 간결한 소개입니다. 실행, 출력, 기본 코드 구조 및 다양한 컴퓨팅 환경에 대한 구성을 다룹니다.</p>
+<p>Nextflow 파이프라인 실행 및 설정에 대한 간결한 입문 과정으로, Hello Nextflow 개발자 과정을 기반으로 하되 코드에 대한 비중이 적습니다. 실행, 출력, 기본 코드 구조, 다양한 컴퓨팅 환경을 위한 설정을 다룹니다.</p>
 <p><a class="md-button md-button--secondary" href="nextflow_run/">Nextflow Run 교육 시작하기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </details>
 <hr />
-<h3 class="mt-1" id="nextflow-for-science"><span class="twemoji nextflow-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.46 6.28 11.05 9c-2.58.26-4.55 2.41-4.55 5a5 5 0 0 0 5 5c2.05 0 3.81-1.23 4.58-3H13.5v-2h8v2h-2.25a8.05 8.05 0 0 1-2.46 4h2.71v2h-16v-2h2.71a8 8 0 0 1-2.71-6c0-3.63 2.46-6.8 5.96-7.72m3.28-4.21.76 1.3.86-.5 3.5 6.06-3.47 2-3.5-6.06.87-.5-.76-1.3z"/></svg></span> Nextflow for Science<a class="headerlink" href="#nextflow-for-science" title="Permanent link">&para;</a></h3>
-<p>'Hello Nextflow'에서 제시된 개념과 구성 요소를 특정 과학적 사용 사례에 적용하는 방법을 학습합니다.</p>
+<h3 class="mt-1" id="nextflow_3"><span class="twemoji nextflow-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.46 6.28 11.05 9c-2.58.26-4.55 2.41-4.55 5a5 5 0 0 0 5 5c2.05 0 3.81-1.23 4.58-3H13.5v-2h8v2h-2.25a8.05 8.05 0 0 1-2.46 4h2.71v2h-16v-2h2.71a8 8 0 0 1-2.71-6c0-3.63 2.46-6.8 5.96-7.72m3.28-4.21.76 1.3.86-.5 3.5 6.06-3.47 2-3.5-6.06.87-.5-.76-1.3z"/></svg></span> 과학 연구를 위한 Nextflow<a class="headerlink" href="#nextflow_3" title="Permanent link">&para;</a></h3>
+<p>'Hello Nextflow'에서 소개된 개념과 구성 요소를 특정 과학적 활용 사례에 적용하는 방법을 학습합니다.</p>
 <details class="courses">
-<summary><strong>Nextflow for Genomics</strong> (변이 검출)</summary>
-<p>자체 유전체학 파이프라인을 개발하고자 하는 연구자를 위한 과정입니다. 변이 검출 사용 사례를 사용하여 간단하지만 기능적인 유전체학 파이프라인을 개발하는 방법을 보여줍니다.</p>
+<summary><strong>Nextflow for Genomics</strong> (변이 분석)</summary>
+<p>자체 유전체 파이프라인 개발을 원하는 연구자를 위한 과정입니다. 변이 분석 활용 사례를 통해 간단하지만 기능적인 유전체 파이프라인을 개발하는 방법을 학습합니다.</p>
 <p><a class="md-button md-button--secondary" href="nf4_science/genomics/">Nextflow for Genomics 교육 시작하기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </details>
 <details class="courses">
 <summary><strong>Nextflow for RNAseq</strong> (bulk RNAseq)</summary>
-<p>자체 RNAseq 파이프라인을 개발하고자 하는 연구자를 위한 과정입니다. bulk RNAseq 처리 사용 사례를 사용하여 간단하지만 기능적인 RNAseq 파이프라인을 개발하는 방법을 보여줍니다.</p>
+<p>자체 RNAseq 파이프라인 개발을 원하는 연구자를 위한 과정입니다. bulk RNAseq 처리 활용 사례를 통해 간단하지만 기능적인 RNAseq 파이프라인을 개발하는 방법을 학습합니다.</p>
 <p><a class="md-button md-button--secondary" href="nf4_science/rnaseq/">Nextflow for RNAseq 교육 시작하기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </details>
 <details class="courses">
 <summary><strong>Nextflow for Imaging</strong> (공간 오믹스)</summary>
-<p>분석 파이프라인을 실행하고 사용자 정의하는 방법을 배우고자 하는 이미징 및 공간 오믹스 연구자를 위한 과정입니다. nf-core/molkart 파이프라인을 사용하여 생물학적으로 관련된 파이프라인을 제공하고, Nextflow 파이프라인 워크플로우를 실행, 구성 및 입력 관리하는 방법을 보여줍니다.</p>
+<p>이미징 및 공간 오믹스 분야의 연구자 중 분석 파이프라인을 실행하고 맞춤화하는 방법을 학습하고자 하는 분들을 위한 과정입니다. nf-core/molkart 파이프라인을 활용하여 생물학적으로 관련성 있는 파이프라인을 통해 Nextflow 파이프라인 워크플로우의 실행, 설정 및 입력 관리 방법을 학습합니다.</p>
 <p><a class="md-button md-button--secondary" href="nf4_science/imaging/">Nextflow for Imaging 교육 시작하기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </details>
 </li>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 5.5c1.09 0 2-.92 2-2a2 2 0 0 0-2-2c-1.11 0-2 .88-2 2 0 1.08.89 2 2 2M9.89 19.38l1-4.38L13 17v6h2v-7.5l-2.11-2 .61-3A7.3 7.3 0 0 0 19 13v-2c-1.91 0-3.5-1-4.31-2.42l-1-1.58c-.4-.62-1-1-1.69-1-.31 0-.5.08-.81.08L6 8.28V13h2V9.58l1.79-.7L8.19 17l-4.9-1-.4 2z"/></svg></span> <strong>고급 트랙</strong></p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 5.5c1.09 0 2-.92 2-2a2 2 0 0 0-2-2c-1.11 0-2 .88-2 2 0 1.08.89 2 2 2M9.89 19.38l1-4.38L13 17v6h2v-7.5l-2.11-2 .61-3A7.3 7.3 0 0 0 19 13v-2c-1.91 0-3.5-1-4.31-2.42l-1-1.58c-.4-.62-1-1-1.69-1-.31 0-.5.08-.81.08L6 8.28V13h2V9.58l1.79-.7L8.19 17l-4.9-1-.4 2z"/></svg></span> <strong>심화 트랙</strong></p>
 <hr />
-<h3 class="mt-1" id="from-nextflow-to-nf-core"><span class="twemoji nextflow-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 14v-3.09c-.72-.33-1.39-.73-2-1.2V14zm-2 4H3v-2H1v-2h2V7h2v1.43C6.8 10 9.27 11 12 11s5.2-1 7-2.57V7h2v7h2v2h-2v2h-2v-2H5zm12-7.09V14h2V9.71c-.61.47-1.28.87-2 1.2M16 14v-2.68c-.64.23-1.31.4-2 .52V14zm-3 0v-2.04L12 12l-1-.04V14zm-3 0v-2.16c-.69-.12-1.36-.29-2-.52V14z"/></svg></span> From Nextflow to nf-core<a class="headerlink" href="#from-nextflow-to-nf-core" title="Permanent link">&para;</a></h3>
+<h3 class="mt-1" id="nextflow-nf-core"><span class="twemoji nextflow-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 14v-3.09c-.72-.33-1.39-.73-2-1.2V14zm-2 4H3v-2H1v-2h2V7h2v1.43C6.8 10 9.27 11 12 11s5.2-1 7-2.57V7h2v7h2v2h-2v2h-2v-2H5zm12-7.09V14h2V9.71c-.61.47-1.28.87-2 1.2M16 14v-2.68c-.64.23-1.31.4-2 .52V14zm-3 0v-2.04L12 12l-1-.04V14zm-3 0v-2.16c-.69-.12-1.36-.29-2-.52V14z"/></svg></span> Nextflow에서 nf-core로<a class="headerlink" href="#nextflow-nf-core" title="Permanent link">&para;</a></h3>
 <p><a href="https://nf-co.re/">nf-core</a> 커뮤니티 프로젝트의 코드와 모범 사례를 활용하는 방법을 학습합니다.</p>
-<p>이 과정은 Nextflow 기초부터 nf-core 모범 사례까지 학습할 수 있도록 도와줍니다.
-nf-core 커뮤니티가 파이프라인을 구축하는 방법과 이유를 이해하고, 기여하고 이러한 기술을 재사용하는 방법을 배웁니다.</p>
+<p>이 과정들은 Nextflow 기초부터 nf-core 모범 사례까지 단계적으로 학습할 수 있도록 도와줍니다.
+nf-core 커뮤니티가 파이프라인을 구축하는 방법과 이유를 이해하고, 이러한 기법에 기여하고 재사용하는 방법을 학습합니다.</p>
 <details class="courses">
 <summary><strong>Hello nf-core:</strong> nf-core 시작하기</summary>
-<p><a href="https://nf-co.re/">nf-core</a> 준수 파이프라인을 실행하고 개발하고자 하는 개발자를 위한 과정입니다. nf-core 템플릿과 개발 모범 사례를 따르는 간단하지만 완전히 기능하는 파이프라인을 개발할 수 있을 만큼 충분히 상세하게 nf-core 파이프라인의 구조를 다루며, 기존 nf-core 모듈을 사용하는 방법도 포함합니다.</p>
+<p><a href="https://nf-co.re/">nf-core</a> 호환 파이프라인을 실행하고 개발하고자 하는 개발자를 위한 과정입니다. nf-core 템플릿과 개발 모범 사례를 따르는 간단하지만 완전히 기능하는 파이프라인을 개발하고, 기존 nf-core 모듈을 활용할 수 있을 만큼 nf-core 파이프라인의 구조를 충분히 다룹니다.</p>
 <p><a class="md-button md-button--secondary" href="hello_nf-core/">Hello nf-core 교육 시작하기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </details>
 <hr />
-<h3 class="mt-1" id="advanced-nextflow-training"><span class="twemoji nextflow-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"/></svg></span> Advanced Nextflow Training<a class="headerlink" href="#advanced-nextflow-training" title="Permanent link">&para;</a></h3>
-<p>실제 사용 사례를 해결하기 위한 Nextflow 파이프라인 개발 및 배포를 위한 고급 개념과 메커니즘을 학습합니다.</p>
+<h3 class="mt-1" id="nextflow_4"><span class="twemoji nextflow-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"/></svg></span> Nextflow 심화 교육<a class="headerlink" href="#nextflow_4" title="Permanent link">&para;</a></h3>
+<p>실제 활용 사례를 해결하기 위한 Nextflow 파이프라인 개발 및 배포의 고급 개념과 메커니즘을 학습합니다.</p>
 <details class="courses">
-<summary><strong>Side Quests:</strong> 독립적인 주제에 대한 심화 학습</summary>
-<p>특정 주제에 대한 범위를 넓히거나 기술을 심화하고자 하는 Nextflow 개발자를 위한 독립적인 단기 과정입니다. 선형적으로 제시되지만 원하는 순서대로 수강할 수 있습니다(각 단기 과정 개요의 의존성 참조).</p>
-<p><a class="md-button md-button--secondary" href="side_quests/">Side Quests 둘러보기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
+<summary><strong>Side Quests:</strong> 단독 주제 심층 학습</summary>
+<p>특정 주제에 대한 역량을 넓히거나 심화하고자 하는 Nextflow 개발자를 위한 단독 실행형 단기 과정입니다. 순서대로 제시되지만 어떤 순서로든 학습할 수 있습니다(각 단기 과정 개요의 의존성 참조).</p>
+<p><a class="md-button md-button--secondary" href="side_quests/">Side Quests 살펴보기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </details>
 <details class="courses">
-<summary><strong>Training Collections:</strong> Side Quests를 통한 권장 학습 경로</summary>
-<p>Training Collections는 특정 주제나 사용 사례를 중심으로 포괄적인 학습 경험을 제공하기 위해 여러 Side Quests를 결합합니다.</p>
-<p><a class="md-button md-button--secondary" href="training_collections/">Training Collections 둘러보기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
+<summary><strong>Training Collections:</strong> Side Quests를 통한 추천 학습 경로</summary>
+<p>Training Collections는 특정 주제나 활용 사례를 중심으로 포괄적인 학습 경험을 제공하기 위해 여러 Side Quests를 결합합니다.</p>
+<p><a class="md-button md-button--secondary" href="training_collections/">Training Collections 살펴보기 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></a></p>
 </details>
 </li>
 </ul>
 </div>
 <div class="admonition info">
 <p class="admonition-title">아카이브된 교육 자료를 찾고 계신가요?</p>
-<p>구버전 교육 자료(Fundamentals Training, Advanced Training 및 기타 실험적 과정)는 Nextflow 3.0 엄격한 구문과 호환되지 않아 교육 포털에서 제거되었습니다.
-이러한 자료가 필요한 경우, 2026년 1월 이전의 <a href="https://github.com/nextflow-io/training">git 히스토리</a>에서 이용할 수 있습니다.</p>
+<p>구버전 교육 자료(Fundamentals Training, Advanced Training 및 기타 실험적 과정)는 Nextflow 3.0 strict syntax와 호환되지 않아 교육 포털에서 제거되었습니다.
+해당 자료가 필요한 경우 2026년 1월 이전의 <a href="https://github.com/nextflow-io/training">git history</a>에서 확인할 수 있습니다.</p>
 </div>
 <hr />
 <div class="homepage_logos">
 <p><img alt="Seqera" src="assets/img/seqera_logo.png#only-light" /></p>
 <p><img alt="Seqera" src="assets/img/seqera_logo_dark.png#only-dark" /></p>
-</div><style type="text/css">.quiz {
+</div><div id="quiz-progress-sidebar" aria-label="퀴즈 진행 상황" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    퀴즈 진행 상황
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          답변함: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          정답: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          초기화
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="퀴즈 진행 상황" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        답변함: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        정답: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        초기화
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -3783,10 +4137,12 @@ nf-core 커뮤니티가 파이프라인을 구축하는 방법과 이유를 이�
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -4707,16 +5063,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -5350,9 +5696,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

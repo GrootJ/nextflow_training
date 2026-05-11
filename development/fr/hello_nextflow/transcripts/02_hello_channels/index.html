@@ -39,7 +39,7 @@
       
       
       <link rel="icon" href="../../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -159,6 +159,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -375,40 +433,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -2311,7 +2342,7 @@
   <span class="md-ellipsis">
     
   
-    Orientation
+    Premiers pas
   
 
     
@@ -2339,7 +2370,7 @@
   <span class="md-ellipsis">
     
   
-    Environnement de Développement
+    Index
   
 
     
@@ -2360,14 +2391,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/metadata/" class="md-nav__link">
+      <a href="../../../side_quests/essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Métadonnées et meta maps
+    Modèles de Scripting Essentiels
   
 
     
@@ -2416,14 +2447,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/splitting_and_grouping/" class="md-nav__link">
+      <a href="../../../side_quests/metadata/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Division et regroupement
+    Métadonnées et meta maps
   
 
     
@@ -2444,14 +2475,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/workflows_of_workflows/" class="md-nav__link">
+      <a href="../../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Workflows de workflows
+    Séparation et regroupement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/nf_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tests avec nf-test
   
 
     
@@ -2479,7 +2538,7 @@
   <span class="md-ellipsis">
     
   
-    Débogage des Workflows
+    Résolution des problèmes dans les Workflows
   
 
     
@@ -2500,14 +2559,89 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../../side_quests/workflows_of_workflows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Modèles de Script Nextflow Essentiels
+    Workflows de Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Développement de plugins
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Développement de plugins
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Développement de plugins
   
 
     
@@ -2528,14 +2662,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Tests avec nf-test
+    Partie 1 : Les bases des plugins
   
 
     
@@ -2544,6 +2678,210 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 2 : Créer un projet de plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 3 : Fonctions personnalisées
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 4 : Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 5 : Observateurs de trace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partie 6 : Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Résumé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prochaines étapes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3330,43 +3668,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -3466,7 +3767,7 @@
 <p>Si vous êtes intéressé·e par comment faire ceci avec les meilleures pratiques, il y a une quête secondaire sur <em>training.nextflow.io</em>, qui concerne spécifiquement les métadonnées et les meta maps, donc vous pouvez creuser là pour plus de détails.</p>
 <h2 id="3-fournir-plusieurs-entrees-via-un-tableau">3. Fournir plusieurs entrées via un tableau<a class="headerlink" href="#3-fournir-plusieurs-entrees-via-un-tableau" title="Permanent link">&para;</a></h2>
 <p>D'accord. Ensuite nous allons explorer un peu comment les canaux sont structurés et comment ils diffèrent d'autres types de structures de données dans le langage de codage. Et je vais réfléchir un peu à comment je pourrais potentiellement utiliser un tableau, qui pourrait être un concept familier si vous venez d'autres langages.</p>
-<p>Puis-je utiliser un tableau dans un canal ? Essayons. Je vais créer un tableau, et j'ai copié ceci de la documentation, <em>"greetings_array"</em> et <em>"Hello", "Bonjour"</em> et <em>"Holà"</em>. Et ensuite je vais mettre ça ici au lieu de mes chaînes codées en dur. Donc je vais dire "channel.of" <em>"greetings_array"</em>, passant ce tableau dans un canal. Essayons.</p>
+<p>Puis-je utiliser un tableau dans un canal ? Essayons. Je vais créer un tableau, et j'ai copié ceci de la documentation, <em>"greetings_array"</em> et <em>"Hello", "Bonjour"</em> et <em>"Hola"</em>. Et ensuite je vais mettre ça ici au lieu de mes chaînes codées en dur. Donc je vais dire "channel.of" <em>"greetings_array"</em>, passant ce tableau dans un canal. Essayons.</p>
 <p>Ouvrir le terminal, et exécuter le pipeline.</p>
 <p>D'accord. Vous pouvez voir que l'instruction view ici a bien affiché notre tableau comme prévu, mais ensuite tout ce texte rouge, ou il ne sera pas rouge si vous avez toujours <em>"-ansi-log"</em> désactivé, mais tout ce texte rouge nous dit que quelque chose s'est mal passé.</p>
 <p>Nous n'avons plus une belle coche verte ici. Nous avons une croix rouge, et si je rends juste ceci un peu plus large pour que ce soit plus facile à lire, Nextflow nous dit ce qui s'est mal passé.</p>
@@ -3504,24 +3805,24 @@
 <h2 id="42-utiliser-loperateur-splitcsv-pour-analyser-le-fichier">4.2. Utiliser l'opérateur splitCsv() pour analyser le fichier<a class="headerlink" href="#42-utiliser-loperateur-splitcsv-pour-analyser-le-fichier" title="Permanent link">&para;</a></h2>
 <p>D'accord, jetons un œil à ce canal et voyons à quoi il ressemble. Nous pouvons faire <em>".view"</em>, et j'ai copié ceci du site web. Donc <em>.view</em>, et nous avons une closure dynamique ici et nous disons un nom de variable "<em>csv"</em> comme entrée. Donc c'est le contenu du canal, et nous disons avant splitCsv, et voici à quoi il ressemble.</p>
 <p>Si je l'exécute à nouveau, il échouera toujours, mais il nous montrera ce qui est à l'intérieur de ce canal. Ce n'est pas particulièrement excitant. C'est cette variable <em>path</em>. Donc vous pouvez voir que c'est juste une chaîne ici parce qu'elle est affichée dans un terminal, mais c'est un objet <em>path</em>, qui contient les informations et les métadonnées sur ce fichier.</p>
-<p>Nous ne voulons pas passer les métadonnées du fichier à l'entrée. Nous voulons passer le contenu de ce fichier. Si nous regardons le fichier <em>greetings.csv</em>, vous pouvez voir ici qu'il a ces différentes variables ici. <em>Hello, Bonjour, Holà</em> à nouveau. Et ce sont les choses que nous voulons vraiment passer à notre processus, pas juste le fichier lui-même comme un seul objet.</p>
+<p>Nous ne voulons pas passer les métadonnées du fichier à l'entrée. Nous voulons passer le contenu de ce fichier. Si nous regardons le fichier <em>greetings.csv</em>, vous pouvez voir ici qu'il a ces différentes variables. <em>Hello, Bonjour, Hola</em> à nouveau. Et ce sont les choses que nous voulons vraiment passer à notre processus, pas juste le fichier lui-même comme un seul objet.</p>
 <p>Donc nous devons analyser ce fichier CSV. Nous devons le déballer, accéder au contenu du fichier CSV, et ensuite passer le contenu dans le canal au processus.</p>
 <p>Comme vous pouvez probablement le dire d'après le message de journal, nous voulons utiliser <em>splitCsv</em>, qui est un autre opérateur, un autre opérateur de canal. Donc si je fais "<em>dot" "s"</em>, et ensuite vous pouvez voir qu'il est auto-suggéré. Oups, <em>splitCsv</em> et des parenthèses.</p>
 <p>Et ensuite après <em>splitCsv</em>, je vais mettre une autre instruction <em>view</em> juste pour que nous puissions voir à quoi ça ressemble après. Exécutons le pipeline et voyons ce que nous avons.</p>
 <p>D'accord. Il a toujours échoué, mais d'une manière nouvelle et excitante, ce qui est un progrès.</p>
 <p>Cette fois encore, nous avons un problème avec notre script, qui a été rendu. Maintenant. Nous n'avons plus le chemin final, mais nous avons un tableau de variables, qui ressemble beaucoup à l'erreur que nous avons eue plus tôt quand nous passions un tableau comme entrée fixe.</p>
-<p>Avec notre journalisation de l'opérateur view, nous pouvons voir avant <em>splitCsv</em> c'était le path. Et effectivement, après <em>splitCsv</em>, nous avons trois sorties différentes et chacune de ces sorties ressemble énormément à chacune des lignes du fichier <em>greetings.csv</em>, ce qui a du sens.</p>
-<p>Donc ce qui s'est passé ici est que Nextflow a analysé ce fichier CSV nous donnant trois objets, un tableau pour chaque ligne du fichier CSV. Donc ensuite trois fois nous avons passé un tableau de variables au canal au lieu d'une seule valeur de chaîne.</p>
+<p>Avec notre journalisation de l'opérateur view, nous pouvons voir qu'avant <em>splitCsv</em> c'était le path. Et effectivement, après <em>splitCsv</em>, nous avons trois sorties différentes et chacune de ces sorties ressemble énormément à chacune des lignes du fichier <em>greetings.csv</em>, ce qui a du sens.</p>
+<p>Donc ce qui s'est passé ici est que Nextflow a analysé ce fichier CSV en nous donnant trois objets, un tableau pour chaque ligne du fichier CSV. Donc ensuite trois fois nous avons passé un tableau de variables au canal au lieu d'une seule valeur de chaîne.</p>
 <p>D'accord, donc la dernière fois que nous avons eu ce problème, nous avons utilisé <em>flatten</em>. Essayons juste très rapidement. Essayer flatten et voir ce qui se passe.</p>
 <p>Je peux appeler ces variables comme je veux. Donc je vais l'appeler <em>myarray</em> parce que ce n'est plus vraiment un CSV. Essayons de l'exécuter à nouveau et voyons ce qui se passe avec <em>flatten</em>.</p>
 <p>Donc cette fois nous allons exécuter, nous avons analysé le CSV en trois objets tableau, et ensuite nous l'avons aplati. Et cette fois il a réussi. Et le pipeline Nextflow s'est exécuté. Cependant vous pouvez voir que <em>flatten</em> va vraiment à fond et aplatit tout. Et donc nous obtenons trois entrées de tableau indépendantes pour chaque ligne. Et donc il a exécuté le processus trois fois pour chaque ligne d'un CSV. Et maintenant nous avons tout un tas de fichiers de résultats, et 123, 456, et toutes sortes de choses, pas juste cette première colonne du CSV, qui est ce que nous voulions vraiment.</p>
 <h2 id="43-utiliser-loperateur-map-pour-extraire-les-messages-daccueil">4.3. Utiliser l'opérateur map() pour extraire les messages d'accueil<a class="headerlink" href="#43-utiliser-loperateur-map-pour-extraire-les-messages-daccueil" title="Permanent link">&para;</a></h2>
 <p>Donc comment accédons-nous juste à la première colonne ? Si flatten est trop simpliste ici, nous avons besoin d'un opérateur plus complexe où nous pouvons réellement personnaliser et lui dire ce que nous voulons du CSV.</p>
-<p>Pour faire ça, nous allons utiliser <em>map</em>. Essentiellement <em>map</em> dit juste, exécuter du code, une fonction sur chaque élément que je reçois et faire une sorte de transformation dessus. Et parce que c'est si flexible, vous le verrez apparaître dans le code Nextflow tout le temps.</p>
-<p>Par lui-même, il ne fait rien. Donc nous ne voulons pas de parenthèses régulières, nous voulons une closure ici et nous devons lui dire quoi faire. Donc je vais dire <em>"row"</em>, parce qu'on lui donne des lignes du CSV, donc c'est un nom de variable logique. C'est l'entrée. Et je veux retourner juste le premier élément de ce tableau.</p>
-<p>Les tableaux dans Nextflow sont basés sur zéro, donc nous allons dire juste le premier élément, qui est row zéro. Si nous voulions la deuxième colonne, je pourrais être un ou la troisième colonne être deux, et ainsi de suite. Nous pouvons retourner ce que nous voulons ici, mais je vais retourner juste la première valeur.</p>
+<p>Pour faire ça, nous allons utiliser <em>map</em>. Essentiellement <em>map</em> dit juste, exécuter du code, une fonction sur chaque élément qui m'est donné et effectuer une sorte de transformation dessus. Et parce qu'il est si flexible, vous le verrez apparaître dans le code Nextflow tout le temps.</p>
+<p>Par lui-même, il ne fait rien. Donc nous ne voulons pas de parenthèses régulières, nous voulons une closure ici et nous devons lui dire quoi faire. Donc je vais dire <em>"row"</em>, parce qu'on lui donne des lignes du CSV, c'est donc un nom de variable logique. C'est l'entrée. Et je veux retourner juste le premier élément de ce tableau.</p>
+<p>Les tableaux dans Nextflow sont basés sur zéro, donc nous allons dire juste le premier élément, qui est row zéro. Si nous voulions la deuxième colonne, ce serait un, ou la troisième colonne ce serait deux, et ainsi de suite. Nous pouvons retourner ce que nous voulons ici, mais je vais retourner juste la première valeur.</p>
 <p>Et maintenant, nous pouvons exécuter le pipeline à nouveau et voir s'il fait ce que nous attendons.</p>
-<p>Effectivement, après <em>splitCsv</em> nous avons nos tableaux, et ensuite après le <em>map</em>, nous avons nos belles chaînes propres, juste <em>"Hello", "Bonjour"</em> et <em>"Holà"</em>. Et le pipeline fait maintenant ce que nous voulons qu'il fasse. Fantastique.</p>
+<p>Effectivement, après <em>splitCsv</em> nous avons nos tableaux, et ensuite après le <em>map</em>, nous avons nos belles chaînes propres, juste <em>"Hello", "Bonjour"</em> et <em>"Hola"</em>. Et le pipeline fait maintenant ce que nous voulons qu'il fasse. Fantastique.</p>
 <p>Donc nous pouvons nous débarrasser de toutes ces commandes view maintenant. Nous n'en avons plus besoin.</p>
 <h2 id="recapitulatif">Récapitulatif<a class="headerlink" href="#recapitulatif" title="Permanent link">&para;</a></h2>
 <p>Nous avons terminé notre débogage et voici le code avec lequel nous finissons. Prenant notre paramètre CLI appelé <em>input</em>, qui est classé comme un <em>Path</em>. Nextflow trouve le path, le charge, et comprend le fichier CSV. Retourne toutes les différentes lignes. Et ensuite nous mappons juste le premier élément de cette ligne dans le canal qui donne en quelque sorte le contenu du canal, qui est passé au processus.</p>
@@ -3535,7 +3836,60 @@
 <p>Ce n'est pas la même chose que la programmation régulière en Python ou d'autres langages. Nous n'utilisons pas d'instructions <em>if</em> ici, c'est de la programmation de flux fonctionnelle utilisant des canaux et des opérateurs. Donc c'est un peu différent, mais c'est aussi super puissant.</p>
 <p>C'est la fin de ce chapitre. Allez faire une petite pause et je vous verrai dans la prochaine vidéo pour la partie trois où nous allons parcourir Hello Workflow, et parler un peu plus des workflows.</p>
 <p>Tout comme le chapitre précédent, il y a quelques questions de quiz en bas de la page web ici, donc vous pouvez les parcourir rapidement et vous assurer que vous comprenez toutes les différentes parties du matériel que nous venons de faire. Et à part ça, je vous verrai dans la prochaine vidéo. Merci beaucoup.</p>
-<p>D'accord.</p><style type="text/css">.quiz {
+<p>D'accord.</p><div id="quiz-progress-sidebar" aria-label="Progression du quiz" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    Progression du quiz
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          Répondu : <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          Correctes : <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          Réinitialiser
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Progression du quiz" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        Répondu : <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        Correctes : <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        Réinitialiser
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -3582,10 +3936,12 @@
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -4506,16 +4862,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -5149,9 +5495,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

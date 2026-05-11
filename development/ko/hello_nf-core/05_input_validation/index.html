@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -163,6 +163,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -1617,7 +1648,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        다음 단계는?
+        다음 단계
       
     </span>
   </a>
@@ -2838,7 +2869,7 @@
   <span class="md-ellipsis">
     
   
-    오리엔테이션
+    시작하기
   
 
     
@@ -2887,14 +2918,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/metadata/" class="md-nav__link">
+      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    메타데이터와 메타 맵
+    필수 스크립팅 패턴
   
 
     
@@ -2943,6 +2974,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../side_quests/metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    메타데이터와 메타 맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
@@ -2950,7 +3009,63 @@
   <span class="md-ellipsis">
     
   
-    데이터 분할 및 그룹화
+    분할 및 그룹화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/nf_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nf-test를 활용한 테스트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    워크플로우 문제 해결
   
 
     
@@ -2998,15 +3113,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플러그인 개발
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    플러그인 개발
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../side_quests/debugging/" class="md-nav__link">
+      <a href="../../side_quests/plugin_development/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    워크플로우 디버깅
+    플러그인 개발
   
 
     
@@ -3027,14 +3189,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    필수 Nextflow 스크립팅 패턴
+    파트 1: 플러그인 기초
   
 
     
@@ -3055,14 +3217,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    nf-test로 테스트하기
+    파트 2: 플러그인 프로젝트 생성
   
 
     
@@ -3071,6 +3233,182 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 3: 사용자 정의 함수
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 4: 테스트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 5: Trace Observer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 6: 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    요약
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    다음 단계
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3801,7 +4139,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        다음 단계는?
+        다음 단계
       
     </span>
   </a>
@@ -4006,43 +4344,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -4090,15 +4391,15 @@
 <h3 id="01">0.1. 검증이 중요한 이유<a class="headerlink" href="#01" title="Permanent link">&para;</a></h3>
 <p>파이프라인을 두 시간 동안 실행했는데, 사용자가 잘못된 확장자를 가진 파일을 제공하여 실패하는 상황을 상상해 보십시오. 또는 수수께끼 같은 오류를 디버깅하는 데 몇 시간을 소비한 끝에 매개변수의 철자가 잘못되었다는 것을 발견하는 경우도 있습니다. 입력 검증이 없으면 이러한 시나리오가 흔하게 발생합니다.</p>
 <p>다음 예시를 고려해 보십시오:</p>
-<div class="highlight"><span class="filename">검증이 없는 경우</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>nextflow<span class="w"> </span>run<span class="w"> </span>my-pipeline<span class="w"> </span>--input<span class="w"> </span>data.txt<span class="w"> </span>--output<span class="w"> </span>results
+<div class="highlight"><span class="filename">Without validation</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>nextflow<span class="w"> </span>run<span class="w"> </span>my-pipeline<span class="w"> </span>--input<span class="w"> </span>data.txt<span class="w"> </span>--output<span class="w"> </span>results
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">...2시간 후...</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">...2 hours later...</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="go">ERROR ~ No such file: &#39;data.fq.gz&#39;</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="go">  Expected FASTQ format but received TXT</span>
 </code></pre></div>
 <p>파이프라인이 잘못된 입력을 받아들이고 실패하기 전까지 몇 시간 동안 실행되었습니다. 적절한 검증이 있는 경우:</p>
-<div class="highlight"><span class="filename">검증이 있는 경우</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>nextflow<span class="w"> </span>run<span class="w"> </span>my-pipeline<span class="w"> </span>--input<span class="w"> </span>data.txt<span class="w"> </span>--output<span class="w"> </span>results
+<div class="highlight"><span class="filename">With validation</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>nextflow<span class="w"> </span>run<span class="w"> </span>my-pipeline<span class="w"> </span>--input<span class="w"> </span>data.txt<span class="w"> </span>--output<span class="w"> </span>results
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="go">ERROR ~ Validation of pipeline parameters failed!</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -4110,12 +4411,12 @@
 <p>파이프라인이 명확하고 실행 가능한 오류 메시지와 함께 즉시 실패합니다. 이는 시간, 컴퓨팅 리소스, 그리고 좌절을 절약해 줍니다.</p>
 <h3 id="02-nf-schema">0.2. nf-schema 플러그인<a class="headerlink" href="#02-nf-schema" title="Permanent link">&para;</a></h3>
 <p><a href="https://nextflow-io.github.io/nf-schema/latest/">nf-schema 플러그인</a>은 Nextflow 파이프라인에 포괄적인 검증 기능을 제공하는 Nextflow 플러그인입니다.
-nf-schema는 모든 Nextflow workflow에서 작동하지만, 모든 nf-core 파이프라인의 표준 검증 솔루션입니다.</p>
+nf-schema는 모든 Nextflow 워크플로우에서 작동하지만, 모든 nf-core 파이프라인의 표준 검증 솔루션입니다.</p>
 <p>nf-schema는 여러 주요 기능을 제공합니다:</p>
 <ul>
 <li><strong>매개변수 검증</strong>: <code>nextflow_schema.json</code>에 대해 파이프라인 매개변수 검증</li>
 <li><strong>샘플 시트 검증</strong>: <code>assets/schema_input.json</code>에 대해 입력 파일 검증</li>
-<li><strong>채널 변환</strong>: 검증된 샘플 시트를 Nextflow channel로 변환</li>
+<li><strong>채널 변환</strong>: 검증된 샘플 시트를 Nextflow 채널로 변환</li>
 <li><strong>도움말 텍스트 생성</strong>: 스키마 정의로부터 <code>--help</code> 출력 자동 생성</li>
 <li><strong>매개변수 요약</strong>: 기본값과 다른 매개변수를 표시</li>
 </ul>
@@ -4180,16 +4481,16 @@ nf-schema는 모든 Nextflow workflow에서 작동하지만, 모든 nf-core 파�
 </div>
 <h3 id="04">0.4. 검증은 언제 발생해야 합니까?<a class="headerlink" href="#04" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>graph LR
-    A[사용자가 파이프라인 실행] --&gt; B[매개변수 검증]
-    B --&gt;|✓ 유효함| C[입력 데이터 검증]
-    B --&gt;|✗ 유효하지 않음| D[오류: 매개변수 수정]
-    C --&gt;|✓ 유효함| E[파이프라인 실행]
-    C --&gt;|✗ 유효하지 않음| F[오류: 입력 데이터 수정]</code></pre>
+    A[User runs pipeline] --&gt; B[Parameter validation]
+    B --&gt;|✓ Valid| C[Input data validation]
+    B --&gt;|✗ Invalid| D[Error: Fix parameters]
+    C --&gt;|✓ Valid| E[Pipeline executes]
+    C --&gt;|✗ Invalid| F[Error: Fix input data]</code></pre>
 <p>검증은 파이프라인 process가 실행되기 <strong>전에</strong> 발생하여 빠른 피드백을 제공하고 컴퓨팅 시간 낭비를 방지해야 합니다.</p>
-<p>이제 이러한 원칙을 실제로 적용해 보겠습니다. 매개변수 검증부터 시작하겠습니다.</p>
+<p>이제 이러한 원칙을 실제로 적용합니다. 매개변수 검증부터 시작하겠습니다.</p>
 <hr />
 <h2 id="1-nextflow_schemajson">1. 매개변수 검증 (nextflow_schema.json)<a class="headerlink" href="#1-nextflow_schemajson" title="Permanent link">&para;</a></h2>
-<p>파이프라인에 매개변수 검증을 추가하는 것부터 시작하겠습니다. 이는 <code>--input</code>, <code>--outdir</code>, <code>--batch</code>와 같은 명령줄 플래그를 검증합니다.</p>
+<p>파이프라인에 매개변수 검증을 추가하는 것부터 시작합니다. 이는 <code>--input</code>, <code>--outdir</code>, <code>--batch</code>와 같은 명령줄 플래그를 검증합니다.</p>
 <h3 id="11">1.1. 입력 파일 검증을 건너뛰도록 검증 구성<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
 <p>nf-core 파이프라인 템플릿은 이미 nf-schema가 설치되고 구성되어 제공됩니다:</p>
 <ul>
@@ -4199,29 +4500,29 @@ nf-schema는 모든 Nextflow workflow에서 작동하지만, 모든 nf-core 파�
 </ul>
 <p>검증 동작은 <code>nextflow.config</code>의 <code>validation{}</code> 범위를 통해 제어됩니다.</p>
 <p>매개변수 검증을 먼저 작업할 것이고(이 섹션) 섹션 2까지 입력 데이터 스키마를 구성하지 않을 것이므로, 일시적으로 nf-schema에게 <code>input</code> 매개변수의 파일 내용 검증을 건너뛰도록 지시해야 합니다.</p>
-<p><code>nextflow.config</code>를 열고 <code>validation</code> 블록을 찾으십시오(246줄 근처). 입력 파일 검증을 건너뛰기 위해 <code>ignoreParams</code>를 추가하십시오:</p>
+<p><code>nextflow.config</code>를 열고 <code>validation</code> 블록을 찾으십시오(247줄 근처). 입력 파일 검증을 건너뛰기 위해 <code>ignoreParams</code>를 추가하십시오:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">후</label><label for="__tabbed_1_2">전</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-246">246</a></span>
-<span class="normal"><a href="#__codelineno-5-247">247</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-247">247</a></span>
 <span class="normal"><a href="#__codelineno-5-248">248</a></span>
 <span class="normal"><a href="#__codelineno-5-249">249</a></span>
-<span class="normal"><a href="#__codelineno-5-250">250</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-246" name="__codelineno-5-246"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-5-247" name="__codelineno-5-247"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
-<a id="__codelineno-5-248" name="__codelineno-5-248"></a><span class="hll"><span class="w">    </span><span class="n">ignoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;input&#39;</span><span class="o">]</span>
-</span><a id="__codelineno-5-249" name="__codelineno-5-249"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
-<a id="__codelineno-5-250" name="__codelineno-5-250"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-5-250">250</a></span>
+<span class="normal"><a href="#__codelineno-5-251">251</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-247" name="__codelineno-5-247"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-5-248" name="__codelineno-5-248"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
+<a id="__codelineno-5-249" name="__codelineno-5-249"></a><span class="hll"><span class="w">    </span><span class="n">ignoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;input&#39;</span><span class="o">]</span>
+</span><a id="__codelineno-5-250" name="__codelineno-5-250"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
+<a id="__codelineno-5-251" name="__codelineno-5-251"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-246">246</a></span>
-<span class="normal"><a href="#__codelineno-6-247">247</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-247">247</a></span>
 <span class="normal"><a href="#__codelineno-6-248">248</a></span>
-<span class="normal"><a href="#__codelineno-6-249">249</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-246" name="__codelineno-6-246"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-6-247" name="__codelineno-6-247"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
-<a id="__codelineno-6-248" name="__codelineno-6-248"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
-<a id="__codelineno-6-249" name="__codelineno-6-249"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-6-249">249</a></span>
+<span class="normal"><a href="#__codelineno-6-250">250</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-247" name="__codelineno-6-247"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-6-248" name="__codelineno-6-248"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
+<a id="__codelineno-6-249" name="__codelineno-6-249"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
+<a id="__codelineno-6-250" name="__codelineno-6-250"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -4243,7 +4544,7 @@ nf-schema는 모든 Nextflow workflow에서 작동하지만, 모든 nf-core 파�
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="s1">&#39;&quot;input_output_options&quot;&#39;</span><span class="w"> </span>nextflow_schema.json
 </code></pre></div>
 <p>매개변수 스키마는 그룹으로 구성됩니다. 다음은 <code>input_output_options</code> 그룹입니다:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">core-hello/nextflow_schema.json (발췌)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">core-hello/nextflow_schema.json (excerpt)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-8-10">10</a></span>
 <span class="normal"><a href="#__codelineno-8-11">11</a></span>
@@ -4309,7 +4610,7 @@ nf-schema는 모든 Nextflow workflow에서 작동하지만, 모든 nf-core 파�
 <details class="info">
 <summary>스키마 매개변수는 어디에서 왔습니까?</summary>
 <p>스키마 검증은 <code>nextflow.config</code>를 매개변수 정의의 기본으로 사용합니다.
-workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)에서 선언된 매개변수는 스키마 검증기에 의해 자동으로 <strong>인식되지 않습니다</strong>.</p>
+워크플로우 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)에서 선언된 매개변수는 스키마 검증기에 의해 자동으로 <strong>인식되지 않습니다</strong>.</p>
 <p>이는 항상 <code>nextflow.config</code>에서 파이프라인 매개변수를 선언한 다음 <code>nextflow_schema.json</code>에서 검증 규칙을 정의해야 함을 의미합니다.</p>
 </details>
 <h3 id="13-batch">1.3. batch 매개변수 추가<a class="headerlink" href="#13-batch" title="Permanent link">&para;</a></h3>
@@ -4318,13 +4619,13 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nf-core<span class="w"> </span>pipelines<span class="w"> </span>schema<span class="w"> </span>build
 </code></pre></div>
 <p>다음과 같은 내용이 표시될 것입니다:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="go">                                      ,--./,-.</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="go">      ___     __   __   __   ___     /,-._.--\</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="go">|\ | |__  __ /  ` /  \ |__) |__         }  {</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="go">| \| |       \__, \__/ |  \ |___     \`-._,-`-,</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="go">                                      `._,._,&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="go">                                          ,--./,-.</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="go">          ___     __   __   __   ___     /,-._.--~\</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="go">    |\ | |__  __ /  ` /  \ |__) |__         }  {</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="go">    | \| |       \__, \__/ |  \ |___     \`-._,-`-,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="go">                                          `._,._,&#39;</span>
 <a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="go">nf-core/tools version 3.5.2 - https://nf-co.re</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="go">    nf-core/tools version 3.5.2 - https://nf-co.re</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
 <a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="go">INFO     [✓] Default parameters match schema validation</span>
 <a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="go">INFO     [✓] Pipeline schema looks valid (found 17 params)</span>
@@ -4356,7 +4657,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <h3 id="14">1.4. 변경 사항 확인<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="s1">&#39;&quot;input_output_options&quot;&#39;</span><span class="w"> </span>nextflow_schema.json
 </code></pre></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">core-hello/nextflow_schema.json (발췌)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">core-hello/nextflow_schema.json (excerpt)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-13-10">10</a></span>
 <span class="normal"><a href="#__codelineno-13-11">11</a></span>
@@ -4404,7 +4705,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 </span></code></pre></div></td></tr></table></div>
 <p><code>batch</code> 매개변수가 스키마에 추가되었고 "required" 필드가 이제 <code>["input", "outdir", "batch"]</code>를 표시하는 것을 확인할 수 있습니다.</p>
 <h3 id="15">1.5. 매개변수 검증 테스트<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
-<p>이제 매개변수 검증이 올바르게 작동하는지 테스트해 보겠습니다.</p>
+<p>이제 매개변수 검증이 올바르게 작동하는지 테스트합니다.</p>
 <p>먼저 필수 <code>input</code> 매개변수 없이 실행해 보십시오:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>--outdir<span class="w"> </span>test-results<span class="w"> </span>-profile<span class="w"> </span>docker
 </code></pre></div>
@@ -4424,24 +4725,24 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 </code></pre></div>
 <details class="success">
 <summary>명령 출력</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="go"> N E X T F L O W   ~  version 25.04.3</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="go"> N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="go">Launching `./main.nf` [peaceful_wozniak] DSL2 - revision: b9e9b3b8de</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="go">executor &gt;  local (8)</span>
 <a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="go">[de/a1b2c3] CORE_HELLO:HELLO:sayHello (3)       | 3 of 3 ✔</span>
 <a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="go">[4f/d5e6f7] CORE_HELLO:HELLO:convertToUpper (3) | 3 of 3 ✔</span>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="go">[8a/b9c0d1] CORE_HELLO:HELLO:CAT_CAT (test)     | 1 of 1 ✔</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="go">[8a/b9c0d1] CORE_HELLO:HELLO:FIND_CONCATENATE (test)     | 1 of 1 ✔</span>
 <a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="go">[e2/f3a4b5] CORE_HELLO:HELLO:COWPY (test)       | 1 of 1 ✔</span>
 <a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="go">-[core/hello] Pipeline completed successfully-</span>
 </code></pre></div>
 </details>
 <p>파이프라인이 성공적으로 실행되어야 하며 <code>batch</code> 매개변수가 이제 검증됩니다.</p>
 <h3 id="_1">핵심 정리<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>대화형 <code>nf-core pipelines schema build</code> 도구를 사용하여 <code>nextflow_schema.json</code>에 매개변수를 추가하는 방법을 배웠고 실제로 매개변수 검증을 확인했습니다.
+<p>대화형 <code>nf-core pipelines schema build</code> 도구를 사용하여 <code>nextflow_schema.json</code>에 매개변수를 추가하는 방법을 학습했고 실제로 매개변수 검증을 확인했습니다.
 웹 인터페이스가 모든 JSON Schema 구문을 처리해 주므로 오류가 발생하기 쉬운 수동 JSON 편집 없이도 복잡한 매개변수 스키마를 쉽게 관리할 수 있습니다.</p>
 <h3 id="_2">다음 단계는?<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>이제 매개변수 검증이 작동하니 입력 데이터 파일 내용에 대한 검증을 추가해 보겠습니다.</p>
+<p>이제 매개변수 검증이 작동하니 입력 데이터 파일 내용에 대한 검증을 추가합니다.</p>
 <hr />
 <h2 id="2-schema_inputjson">2. 입력 데이터 검증 (schema_input.json)<a class="headerlink" href="#2-schema_inputjson" title="Permanent link">&para;</a></h2>
 <p>입력 CSV 파일의 내용에 대한 검증을 추가하겠습니다.
@@ -4452,7 +4753,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 </code></pre></div>
 <div class="highlight"><span class="filename">assets/greetings.csv</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Hello,en,87
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>Bonjour,fr,96
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Holà,es,98
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Hola,es,98
 </code></pre></div>
 <p>이것은 다음과 같은 간단한 CSV입니다:</p>
 <ul>
@@ -4473,7 +4774,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 </ol>
 <p>이를 객체 배열로 구조화하며, 각 객체는 최소한 <code>greeting</code> 필드를 가집니다.</p>
 <h3 id="23">2.3. 스키마 파일 업데이트<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
-<p>nf-core 파이프라인 템플릿은 paired-end 시퀀싱 데이터를 위해 설계된 기본 <code>assets/schema_input.json</code>을 포함합니다.
+<p>nf-core 파이프라인 템플릿은 페어드 엔드 시퀀싱 데이터를 위해 설계된 기본 <code>assets/schema_input.json</code>을 포함합니다.
 이를 우리의 인사말 사용 사례에 맞는 더 간단한 스키마로 교체해야 합니다.</p>
 <p><code>assets/schema_input.json</code>을 열고 <code>properties</code>와 <code>required</code> 섹션을 교체하십시오:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">후</label><label for="__tabbed_2_2">전</label></div>
@@ -4509,7 +4810,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <span class="normal"><a href="#__codelineno-20-28">28</a></span>
 <span class="normal"><a href="#__codelineno-20-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="p">{</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">    </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json-schema.org/draft/2020-12/schema&quot;</span><span class="p">,</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">    </span><span class="nt">&quot;$id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/core/hello/main/assets/schema_input.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">    </span><span class="nt">&quot;$id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/core/hello/master/assets/schema_input.json&quot;</span><span class="p">,</span>
 <a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;core/hello pipeline - params.input schema&quot;</span><span class="p">,</span>
 <a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Schema for the greetings file provided with params.input&quot;</span><span class="p">,</span>
 <a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">,</span>
@@ -4573,7 +4874,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <span class="normal"><a href="#__codelineno-21-32">32</a></span>
 <span class="normal"><a href="#__codelineno-21-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="p">{</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">    </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json-schema.org/draft/2020-12/schema&quot;</span><span class="p">,</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">    </span><span class="nt">&quot;$id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/core/hello/main/assets/schema_input.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">    </span><span class="nt">&quot;$id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/core/hello/master/assets/schema_input.json&quot;</span><span class="p">,</span>
 <a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;core/hello pipeline - params.input schema&quot;</span><span class="p">,</span>
 <a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Schema for the file provided with params.input&quot;</span><span class="p">,</span>
 <a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">,</span>
@@ -4631,7 +4932,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <span class="normal"><a href="#__codelineno-22-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="hll">greeting,language,score
 </span><a id="__codelineno-22-2" name="__codelineno-22-2"></a>Hello,en,87
 <a id="__codelineno-22-3" name="__codelineno-22-3"></a>Bonjour,fr,96
-<a id="__codelineno-22-4" name="__codelineno-22-4"></a>Holà,es,98
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a>Hola,es,98
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -4639,7 +4940,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <span class="normal"><a href="#__codelineno-23-2">2</a></span>
 <span class="normal"><a href="#__codelineno-23-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>Hello,en,87
 <a id="__codelineno-23-2" name="__codelineno-23-2"></a>Bonjour,fr,96
-<a id="__codelineno-23-3" name="__codelineno-23-3"></a>Holà,es,98
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a>Hola,es,98
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -4655,13 +4956,13 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <li>각 항목이 행에 해당하는 Groovy 리스트를 반환</li>
 <li>검증이 실패하면 도움이 되는 오류 메시지를 발생시킴</li>
 </ol>
-<p>입력 처리 코드를 업데이트해 보겠습니다:</p>
-<p><code>subworkflows/local/utils_nfcore_hello_pipeline/main.nf</code>를 열고 입력 channel을 생성하는 섹션을 찾으십시오(80줄 근처).</p>
+<p>입력 처리 코드를 업데이트합니다:</p>
+<p><code>subworkflows/local/utils_nfcore_hello_pipeline/main.nf</code>를 열고 입력 채널을 생성하는 섹션을 찾으십시오(80줄 근처).</p>
 <p>다음을 수행해야 합니다:</p>
 <ol>
 <li><code>samplesheetToList</code> 함수 사용 (템플릿에 이미 import됨)</li>
 <li>입력 검증 및 파싱</li>
-<li>workflow를 위해 인사말 문자열만 추출</li>
+<li>워크플로우를 위해 인사말 문자열만 추출</li>
 </ol>
 <p>먼저 <code>samplesheetToList</code> 함수가 파일 상단에 이미 import되어 있음을 확인하십시오 (nf-core 템플릿에 기본적으로 포함됨):</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">core-hello/subworkflows/local/utils_nfcore_hello_pipeline/main.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
@@ -4698,7 +4999,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <a id="__codelineno-24-16" name="__codelineno-24-16"></a><span class="n">include</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">UTILS_NFCORE_PIPELINE</span><span class="w">     </span><span class="o">}</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="s1">&#39;../../nf-core/utils_nfcore_pipeline&#39;</span>
 <a id="__codelineno-24-17" name="__codelineno-24-17"></a><span class="n">include</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">UTILS_NEXTFLOW_PIPELINE</span><span class="w">   </span><span class="o">}</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="s1">&#39;../../nf-core/utils_nextflow_pipeline&#39;</span>
 </code></pre></div></td></tr></table></div>
-<p>이제 channel 생성 코드를 업데이트하십시오:</p>
+<p>이제 채널 생성 코드를 업데이트하십시오:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">후</label><label for="__tabbed_4_2">전</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -4748,7 +5049,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <p>변경된 내용을 분석해 보겠습니다:</p>
 <ol>
 <li><strong><code>samplesheetToList(params.input, "${projectDir}/assets/schema_input.json")</code></strong>: 스키마에 대해 입력 파일을 검증하고 리스트를 반환</li>
-<li><strong><code>Channel.fromList(...)</code></strong>: 리스트를 Nextflow channel로 변환</li>
+<li><strong><code>channel.fromList(...)</code></strong>: 리스트를 Nextflow 채널로 변환</li>
 </ol>
 <p>이것으로 <code>samplesheetToList</code>와 JSON 스키마를 사용한 입력 데이터 검증의 구현이 완료됩니다.</p>
 <p>이제 입력 데이터 스키마를 구성했으므로, 앞서 추가한 임시 무시 설정을 제거할 수 있습니다.</p>
@@ -4757,32 +5058,32 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">후</label><label for="__tabbed_5_2">전</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-246">246</a></span>
-<span class="normal"><a href="#__codelineno-27-247">247</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-247">247</a></span>
 <span class="normal"><a href="#__codelineno-27-248">248</a></span>
-<span class="normal"><a href="#__codelineno-27-249">249</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-246" name="__codelineno-27-246"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-27-247" name="__codelineno-27-247"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
-<a id="__codelineno-27-248" name="__codelineno-27-248"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
-<a id="__codelineno-27-249" name="__codelineno-27-249"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-27-249">249</a></span>
+<span class="normal"><a href="#__codelineno-27-250">250</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-247" name="__codelineno-27-247"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-27-248" name="__codelineno-27-248"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
+<a id="__codelineno-27-249" name="__codelineno-27-249"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
+<a id="__codelineno-27-250" name="__codelineno-27-250"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-246">246</a></span>
-<span class="normal"><a href="#__codelineno-28-247">247</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-247">247</a></span>
 <span class="normal"><a href="#__codelineno-28-248">248</a></span>
 <span class="normal"><a href="#__codelineno-28-249">249</a></span>
-<span class="normal"><a href="#__codelineno-28-250">250</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-246" name="__codelineno-28-246"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-28-247" name="__codelineno-28-247"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
-<a id="__codelineno-28-248" name="__codelineno-28-248"></a><span class="hll"><span class="w">    </span><span class="n">ignoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;input&#39;</span><span class="o">]</span>
-</span><a id="__codelineno-28-249" name="__codelineno-28-249"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
-<a id="__codelineno-28-250" name="__codelineno-28-250"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-28-250">250</a></span>
+<span class="normal"><a href="#__codelineno-28-251">251</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-247" name="__codelineno-28-247"></a><span class="n">validation</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-28-248" name="__codelineno-28-248"></a><span class="w">    </span><span class="n">defaultIgnoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;genomes&quot;</span><span class="o">]</span>
+<a id="__codelineno-28-249" name="__codelineno-28-249"></a><span class="hll"><span class="w">    </span><span class="n">ignoreParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;input&#39;</span><span class="o">]</span>
+</span><a id="__codelineno-28-250" name="__codelineno-28-250"></a><span class="w">    </span><span class="n">monochromeLogs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">monochrome_logs</span>
+<a id="__codelineno-28-251" name="__codelineno-28-251"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 <p>이제 nf-schema는 매개변수 타입과 입력 파일 내용을 모두 검증할 것입니다.</p>
 <h3 id="27">2.7. 입력 검증 테스트<a class="headerlink" href="#27" title="Permanent link">&para;</a></h3>
-<p>유효한 입력과 유효하지 않은 입력을 모두 테스트하여 검증이 작동하는지 확인해 보겠습니다.</p>
+<p>유효한 입력과 유효하지 않은 입력을 모두 테스트하여 검증이 작동하는지 확인합니다.</p>
 <h4 id="271">2.7.1. 유효한 입력으로 테스트<a class="headerlink" href="#271" title="Permanent link">&para;</a></h4>
 <p>먼저 유효한 입력으로 파이프라인이 성공적으로 실행되는지 확인하십시오.
 검증이 작동하므로 더 이상 <code>--validate_params false</code>가 필요하지 않습니다!</p>
@@ -4799,7 +5100,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="go">executor &gt;  local (8)</span>
 <a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="go">[c1/39f64a] CORE_HELLO:HELLO:sayHello (1)       | 3 of 3 ✔</span>
 <a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="go">[44/c3fb82] CORE_HELLO:HELLO:convertToUpper (3) | 3 of 3 ✔</span>
-<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="go">[62/80fab2] CORE_HELLO:HELLO:CAT_CAT (test)     | 1 of 1 ✔</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="go">[62/80fab2] CORE_HELLO:HELLO:FIND_CONCATENATE (test)     | 1 of 1 ✔</span>
 <a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="go">[e1/4db4fd] CORE_HELLO:HELLO:COWPY (test)       | 1 of 1 ✔</span>
 <a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="go">-[core/hello] Pipeline completed successfully-</span>
 </code></pre></div>
@@ -4808,7 +5109,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <code>--character</code>에 대한 경고는 스키마에 정의되지 않았기 때문에 정보 제공용입니다.
 원한다면 배운 것을 사용하여 해당 매개변수에 대한 검증도 추가할 수 있습니다!</p>
 <h4 id="272">2.7.2. 유효하지 않은 입력으로 테스트<a class="headerlink" href="#272" title="Permanent link">&para;</a></h4>
-<p>검증 통과는 항상 기분 좋지만, 검증이 실제로 오류를 잡아내는지 확인해 보겠습니다.</p>
+<p>검증 통과는 항상 기분 좋지만, 검증이 실제로 오류를 잡아내는지 확인합니다.</p>
 <p>유효하지 않은 컬럼 이름을 가진 테스트 파일을 만들기 위해 먼저 <code>greetings.csv</code> 파일의 복사본을 만드십시오:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>cp<span class="w"> </span>assets/greetings.csv<span class="w"> </span>assets/invalid_greetings.csv
 </code></pre></div>
@@ -4822,7 +5123,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <span class="normal"><a href="#__codelineno-32-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="hll">message,language,score
 </span><a id="__codelineno-32-2" name="__codelineno-32-2"></a>Hello,en,87
 <a id="__codelineno-32-3" name="__codelineno-32-3"></a>Bonjour,fr,96
-<a id="__codelineno-32-4" name="__codelineno-32-4"></a>Holà,es,98
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a>Hola,es,98
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -4832,7 +5133,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <span class="normal"><a href="#__codelineno-33-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="hll">greeting,language,score
 </span><a id="__codelineno-33-2" name="__codelineno-33-2"></a>Hello,en,87
 <a id="__codelineno-33-3" name="__codelineno-33-3"></a>Bonjour,fr,96
-<a id="__codelineno-33-4" name="__codelineno-33-4"></a>Holà,es,98
+<a id="__codelineno-33-4" name="__codelineno-33-4"></a>Hola,es,98
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -4843,7 +5144,7 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 </code></pre></div>
 <details class="failure">
 <summary>명령 출력</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="go">N E X T F L O W   ~  version 24.10.4</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="go">N E X T F L O W   ~  version 25.10.4</span>
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
 <a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="go">Launching `./main.nf` [trusting_ochoa] DSL2 - revision: b9e9b3b8de</span>
 <a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
@@ -4852,17 +5153,17 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="go">  outdir             : test-results</span>
 <a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
 <a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="go">Generic options</span>
-<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="go">  trace_report_suffix: 2025-01-27_03-16-04</span>
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="go">  trace_report_suffix: 2025-11-21_07-35-12</span>
 <a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>
 <a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="go">Core Nextflow options</span>
 <a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="go">  runName            : trusting_ochoa</span>
 <a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="go">  containerEngine    : docker</span>
-<a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="go">  launchDir          : /workspace/hello-nf-core</span>
-<a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="go">  workDir            : /workspace/hello-nf-core/work</span>
-<a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="go">  projectDir         : /workspace/hello-nf-core</span>
-<a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="go">  userName           : user</span>
+<a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="go">  launchDir          : /workspaces/training/hello-nf-core/core-hello</span>
+<a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="go">  workDir            : /workspaces/training/hello-nf-core/core-hello/work</span>
+<a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="go">  projectDir         : /workspaces/training/hello-nf-core/core-hello</span>
+<a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="go">  userName           : root</span>
 <a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a><span class="go">  profile            : docker</span>
-<a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="go">  configFiles        : /workspace/hello-nf-core/nextflow.config</span>
+<a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="go">  configFiles        : /workspaces/training/hello-nf-core/core-hello/nextflow.config</span>
 <a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a>
 <a id="__codelineno-35-22" name="__codelineno-35-22" href="#__codelineno-35-22"></a><span class="go">!! Only displaying parameters that differ from the pipeline defaults !!</span>
 <a id="__codelineno-35-23" name="__codelineno-35-23" href="#__codelineno-35-23"></a><span class="go">------------------------------------------------------</span>
@@ -4894,9 +5195,62 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 <p class="admonition-title">추가 읽을거리</p>
 <p>고급 검증 기능과 패턴에 대해 자세히 알아보려면 <a href="https://nextflow-io.github.io/nf-schema/latest/">nf-schema 문서</a>를 확인하십시오. <code>nf-core pipelines schema build</code> 명령은 복잡한 스키마를 관리하기 위한 대화형 GUI를 제공합니다.</p>
 </div>
-<h3 id="_4">다음 단계는?<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">다음 단계<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>Hello nf-core 교육 과정의 다섯 개 파트를 모두 완료했습니다!</p>
-<p><a href="summary.md">Summary</a>로 계속 진행하여 구축하고 배운 내용을 돌아보십시오.</p><style type="text/css">.quiz {
+<p><a href="../next_steps/">Summary</a>로 계속 진행하여 구축하고 배운 내용을 돌아보십시오.</p><div id="quiz-progress-sidebar" aria-label="퀴즈 진행 상황" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    퀴즈 진행 상황
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          답변함: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          정답: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          초기화
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="퀴즈 진행 상황" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        답변함: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        정답: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        초기화
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -4943,10 +5297,12 @@ workflow 스크립트의 다른 곳(<code>main.nf</code> 또는 모듈 파일)�
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -5867,16 +6223,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -6510,9 +6856,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();

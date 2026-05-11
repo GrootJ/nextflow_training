@@ -43,7 +43,7 @@
       
       
       <link rel="icon" href="../../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -163,6 +163,64 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div style="text-align: center">
+  Nextflow Training Week (2025-Q1):
+  <strong>March 10-14, 2025</strong>
+  <a
+    class="md-button"
+    href="https://community.seqera.io/t/nextflow-training-week-2025-q1/1775/6"
+    target="_blank"
+  >
+    More info
+    <span class="twemoji"
+      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"
+        ></path></svg
+    ></span>
+  </a>
+</div>
+<style type="text/css">
+  .md-banner {
+    display: none;
+  }
+</style>
+
+<script>
+  (function () {
+    function hideAnnouncement() {
+      var announcementDate = new Date(
+        "2025-03-15T00:00:00Z",
+      );
+      var currentDate = new Date();
+      var banner = document.querySelector(".md-banner");
+      if (banner && currentDate <= announcementDate) {
+        banner.style.display = "block";
+      }
+    }
+
+    // Run on initial load
+    hideAnnouncement();
+
+    // Hook into XHR to run after each page update
+    var originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function () {
+      this.addEventListener("load", function () {
+        setTimeout(hideAnnouncement, 0); // Ensure it runs after the request completes
+      });
+      return originalOpen.apply(this, arguments);
+    };
+  })();
+</script>
+ 
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -379,40 +437,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -2199,7 +2230,7 @@
   <a href="#22-docker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2. Docker 구성 및 파이프라인 실행
+        2.2. Docker 설정 및 파이프라인 실행
       
     </span>
   </a>
@@ -2232,7 +2263,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        핵심 사항
+        핵심 정리
       
     </span>
   </a>
@@ -2313,7 +2344,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        핵심 사항
+        핵심 정리
       
     </span>
   </a>
@@ -2383,7 +2414,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        핵심 사항
+        핵심 정리
       
     </span>
   </a>
@@ -2453,7 +2484,7 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        핵심 사항
+        핵심 정리
       
     </span>
   </a>
@@ -2886,7 +2917,7 @@
   <span class="md-ellipsis">
     
   
-    오리엔테이션
+    시작하기
   
 
     
@@ -2935,14 +2966,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/metadata/" class="md-nav__link">
+      <a href="../../../side_quests/essential_scripting_patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    메타데이터와 메타 맵
+    필수 스크립팅 패턴
   
 
     
@@ -2991,6 +3022,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../side_quests/metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    메타데이터와 메타 맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../side_quests/splitting_and_grouping/" class="md-nav__link">
         
   
@@ -2998,7 +3057,63 @@
   <span class="md-ellipsis">
     
   
-    데이터 분할 및 그룹화
+    분할 및 그룹화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/nf_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nf-test를 활용한 테스트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    워크플로우 문제 해결
   
 
     
@@ -3046,15 +3161,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_11" id="__nav_6_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플러그인 개발
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    플러그인 개발
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../side_quests/debugging/" class="md-nav__link">
+      <a href="../../../side_quests/plugin_development/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    워크플로우 디버깅
+    플러그인 개발
   
 
     
@@ -3075,14 +3237,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/essential_scripting_patterns/" class="md-nav__link">
+      <a href="../../../side_quests/plugin_development/01_plugin_basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    필수 Nextflow 스크립팅 패턴
+    파트 1: 플러그인 기초
   
 
     
@@ -3103,14 +3265,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../side_quests/nf-test/" class="md-nav__link">
+      <a href="../../../side_quests/plugin_development/02_create_project/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    nf-test로 테스트하기
+    파트 2: 플러그인 프로젝트 생성
   
 
     
@@ -3119,6 +3281,182 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/03_custom_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 3: 사용자 정의 함수
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/04_build_and_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 4: 테스트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/05_observers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 5: Trace Observer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/06_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트 6: 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    요약
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../side_quests/plugin_development/next_steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    다음 단계
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3630,7 +3968,7 @@
   <a href="#22-docker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2. Docker 구성 및 파이프라인 실행
+        2.2. Docker 설정 및 파이프라인 실행
       
     </span>
   </a>
@@ -3663,7 +4001,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        핵심 사항
+        핵심 정리
       
     </span>
   </a>
@@ -3744,7 +4082,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        핵심 사항
+        핵심 정리
       
     </span>
   </a>
@@ -3814,7 +4152,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        핵심 사항
+        핵심 정리
       
     </span>
   </a>
@@ -3884,7 +4222,7 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        핵심 사항
+        핵심 정리
       
     </span>
   </a>
@@ -4100,43 +4438,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -4166,11 +4467,11 @@
 <h1 id="2-nf-coremolkart">파트 2: nf-core/molkart 실행하기<a class="headerlink" href="#2-nf-coremolkart" title="Permanent link">&para;</a></h1>
 <p><span class="ai-translation-notice"><span class="twemoji ai-translation-notice-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg></span> AI 지원 번역 - <a href="https://github.com/nextflow-io/training/blob/master/TRANSLATING.md">자세히 알아보기 및 개선 제안</a></span></p>
 <p>Part 1에서는 간단한 Hello World 워크플로를 실행하여 Nextflow 실행의 기본 사항을 이해했습니다.
-이제 실제 바이오이미징 파이프라인인 <strong>nf-core/molkart</strong>를 실행하겠습니다.</p>
+이제 실제 바이오이미징 파이프라인인 <strong>nf-core/molkart</strong>를 실행합니다.</p>
 <p>이 파이프라인은 Resolve Bioscience의 Molecular Cartography 공간 전사체학 데이터를 처리합니다.
 하지만 여기서 배우는 Nextflow 패턴은 모든 nf-core 파이프라인이나 프로덕션 워크플로에 적용됩니다.</p>
 <h2 id="1-nf-core">1. nf-core 파이프라인 이해하기<a class="headerlink" href="#1-nf-core" title="Permanent link">&para;</a></h2>
-<p>파이프라인을 실행하기 전에 nf-core가 무엇이며 워크플로 실행에 왜 중요한지 이해하겠습니다.</p>
+<p>파이프라인을 실행하기 전에 nf-core가 무엇이며 워크플로 실행에 왜 중요한지 살펴보겠습니다.</p>
 <h3 id="11-nf-core">1.1. nf-core란 무엇인가?<a class="headerlink" href="#11-nf-core" title="Permanent link">&para;</a></h3>
 <p><a href="https://nf-co.re/">nf-core</a>는 고품질 Nextflow 파이프라인의 커뮤니티 기반 컬렉션입니다.
 모든 nf-core 파이프라인은 동일한 구조와 규칙을 따르므로, 하나를 실행하는 방법을 배우면 모든 파이프라인을 실행할 수 있습니다.</p>
@@ -4204,7 +4505,7 @@
 </ul>
 <hr />
 <h2 id="2-molkart">2. 테스트 데이터로 molkart 실행하기<a class="headerlink" href="#2-molkart" title="Permanent link">&para;</a></h2>
-<p>시작하기 전에 molkart 저장소를 로컬에 클론하여 코드를 검사할 수 있도록 하겠습니다:</p>
+<p>시작하기 전에 molkart 저장소를 로컬에 클론하여 코드를 검사할 수 있도록 합니다:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>/workspaces/training/nf4-science/imaging
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>--branch<span class="w"> </span><span class="m">1</span>.2.0<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>https://github.com/nf-core/molkart
 </code></pre></div>
@@ -4217,7 +4518,7 @@ Nextflow는 요청된 파이프라인 버전을 자동으로 <code>$HOME/.nextfl
 </div>
 <h3 id="21">2.1. 컨테이너 요구사항 이해하기<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p>전체 파이프라인을 실행하기 전에 컨테이너가 nf-core 파이프라인에 왜 필수적인지 알아보겠습니다.</p>
-<p>molkart 테스트 구성의 테스트 데이터셋과 매개변수를 사용하여 파이프라인을 실행해 보겠습니다:</p>
+<p>molkart 테스트 설정의 테스트 데이터셋과 매개변수를 사용하여 파이프라인을 실행해 보겠습니다:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>./molkart<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--input<span class="w"> </span><span class="s1">&#39;data/samplesheet.csv&#39;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--mindagap_tilesize<span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="se">\</span>
@@ -4227,7 +4528,7 @@ Nextflow는 요청된 파이프라인 버전을 자동으로 <code>$HOME/.nextfl
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span>--segmentation_method<span class="w"> </span><span class="s2">&quot;mesmer,cellpose,stardist&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span>--outdir<span class="w"> </span>results
 </code></pre></div>
-<p>이 매개변수들을 분석해 보겠습니다:</p>
+<p>이 매개변수들을 살펴보겠습니다:</p>
 <ul>
 <li><code>--input</code>: 샘플 메타데이터가 포함된 샘플시트 경로</li>
 <li><code>--mindagap_tilesize</code>, <code>--mindagap_boxsize</code>, <code>--mindagap_loopnum</code>: 그리드 패턴 채우기를 위한 매개변수</li>
@@ -4279,10 +4580,10 @@ Nextflow는 요청된 파이프라인 버전을 자동으로 <code>$HOME/.nextfl
 <p>이 줄은 Nextflow에게 다음과 같이 알려줍니다: "이 프로세스를 실행하려면 필요한 모든 소프트웨어가 포함된 Docker 이미지 <code>ghcr.io/schapirolabor/molkart-local:v0.0.4</code>를 사용하세요."</p>
 <p>각 프로세스는 필요한 도구를 제공하는 컨테이너 이미지를 선언합니다.
 하지만 Nextflow는 사용자가 지시할 때만 이러한 컨테이너를 사용합니다!</p>
-<p><strong>해결책: 구성에서 Docker 활성화</strong></p>
-<h3 id="22-docker">2.2. Docker 구성 및 파이프라인 실행<a class="headerlink" href="#22-docker" title="Permanent link">&para;</a></h3>
+<p><strong>해결책: 설정에서 Docker 활성화</strong></p>
+<h3 id="22-docker">2.2. Docker 설정 및 파이프라인 실행<a class="headerlink" href="#22-docker" title="Permanent link">&para;</a></h3>
 <p>Docker를 활성화하려면 <code>nextflow.config</code> 파일에서 <code>docker.enabled</code>를 <code>false</code>에서 <code>true</code>로 변경해야 합니다.</p>
-<p>구성 파일을 여세요:</p>
+<p>설정 파일을 여세요:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>code<span class="w"> </span>nextflow.config
 </code></pre></div>
 <p><code>docker.enabled = false</code>를 <code>docker.enabled = true</code>로 변경하세요:</p>
@@ -4306,7 +4607,7 @@ Nextflow는 요청된 파이프라인 버전을 자동으로 <code>$HOME/.nextfl
 </code></pre></div>
 <p>이번에는 Nextflow가:</p>
 <ol>
-<li>구성에서 <code>docker.enabled = true</code> 설정을 읽습니다</li>
+<li>설정에서 <code>docker.enabled = true</code> 설정을 읽습니다</li>
 <li>필요한 Docker 이미지를 가져옵니다 (처음만)</li>
 <li>각 프로세스를 지정된 컨테이너 내에서 실행합니다</li>
 <li>모든 도구가 컨테이너 내에서 사용 가능하므로 성공적으로 실행됩니다</li>
@@ -4406,7 +4707,7 @@ Nextflow는 요청된 파이프라인 버전을 자동으로 <code>$HOME/.nextfl
 <p>파이프라인이 따르는 nf-core 규칙 때문에 이 출력이 Hello World 예제보다 더 상세하다는 것을 알 수 있습니다:</p>
 <ul>
 <li>파이프라인이 버전과 로고를 표시합니다</li>
-<li>구성 매개변수가 표시됩니다</li>
+<li>설정 매개변수가 표시됩니다</li>
 <li>여러 프로세스가 병렬로 실행됩니다 (여러 프로세스 라인으로 표시)</li>
 <li>프로세스 이름에는 전체 모듈 경로가 포함됩니다 (예: <code>NFCORE_MOLKART:MOLKART:MINDAGAP_MINDAGAP</code>)</li>
 </ul>
@@ -4423,7 +4724,7 @@ Nextflow는 요청된 파이프라인 버전을 자동으로 <code>$HOME/.nextfl
 <li><strong>입력 식별자</strong>: 괄호 안의 샘플 이름</li>
 <li><strong>진행률</strong>: 완료 백분율 및 개수 (예: <code>1 of 1 ✔</code>)</li>
 </ul>
-<h3 id="_1">핵심 사항<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_1">핵심 정리<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>테스트 데이터로 nf-core 파이프라인을 실행하고 실행 출력을 해석하는 방법을 알게 되었습니다.</p>
 <h3 id="_2">다음 단계<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>결과를 찾는 위치와 해석하는 방법을 배웁니다.</p>
@@ -4460,7 +4761,7 @@ Nextflow는 요청된 파이프라인 버전을 자동으로 <code>$HOME/.nextfl
 <li><strong>pipeline_info/</strong>: 실행 보고서 및 로그</li>
 </ul>
 <h3 id="32-multiqc">3.2. MultiQC 보고서 검사하기<a class="headerlink" href="#32-multiqc" title="Permanent link">&para;</a></h3>
-<p>MultiQC 보고서는 모든 파이프라인 단계의 품질 메트릭을 집계하는 포괄적인 HTML 파일입니다.</p>
+<p>MultiQC 보고서는 모든 파이프라인 단계의 품질 메트릭을 결합하는 포괄적인 HTML 파일입니다.</p>
 <p>파일 브라우저에서 보고서를 연 다음 "Show Preview" 버튼을 클릭하여 VS Code에서 직접 렌더링된 내용을 확인하세요.</p>
 <p>보고서에는 다음이 포함됩니다:</p>
 <ul>
@@ -4470,7 +4771,7 @@ Nextflow는 요청된 파이프라인 버전을 자동으로 <code>$HOME/.nextfl
 <li>감지된 세포 및 스팟 수</li>
 </ul>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p class="admonition-title">팁</p>
 <p>MultiQC 보고서는 일반적으로 모든 nf-core 파이프라인에 포함됩니다.
 항상 파이프라인 실행 및 데이터 품질에 대한 높은 수준의 개요를 제공합니다.</p>
 </div>
@@ -4510,10 +4811,10 @@ Nextflow가 여러 분할 방법을 병렬로 처리하여 결과를 쉽게 비�
 <li>캐시된 작업과 실행된 작업</li>
 </ul>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p class="admonition-title">팁</p>
 <p>이러한 보고서는 리소스 할당을 최적화하고 성능 문제를 해결하는 데 매우 유용합니다.</p>
 </div>
-<h3 id="_3">핵심 사항<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">핵심 정리<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>파이프라인 출력물을 찾고, 품질 관리 보고서를 검사하고, 실행 메트릭에 액세스하는 방법을 알게 되었습니다.</p>
 <h3 id="_4">다음 단계<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>작업 디렉토리와 Nextflow가 중간 파일을 관리하는 방법에 대해 배웁니다.</p>
@@ -4522,7 +4823,7 @@ Nextflow가 여러 분할 방법을 병렬로 처리하여 결과를 쉽게 비�
 <p>Hello World 예제와 마찬가지로 모든 실제 작업은 <code>work/</code> 디렉토리에서 발생합니다.</p>
 <h3 id="41">4.1. 작업 디렉토리 구조 이해하기<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
 <p>작업 디렉토리에는 실행된 각 작업에 대한 하위 디렉토리가 포함됩니다.
-22개의 작업이 있는 이 파이프라인의 경우 22개의 작업 하위 디렉토리가 있습니다.</p>
+12개의 작업이 있는 이 파이프라인의 경우 12개의 작업 하위 디렉토리가 있습니다.</p>
 <p>작업 디렉토리를 나열하세요:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>ls<span class="w"> </span>-d<span class="w"> </span>work/*/*/<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-5
 </code></pre></div>
@@ -4544,14 +4845,14 @@ Nextflow가 여러 분할 방법을 병렬로 처리하여 결과를 쉽게 비�
 <li>작업당 여러 입력 및 출력 파일</li>
 </ul>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p class="admonition-title">팁</p>
 <p>프로세스가 실패하면 해당 작업 디렉토리로 이동하여 <code>.command.err</code>에서 오류 메시지를 검사하고, 문제를 디버그하기 위해 <code>.command.sh</code>를 수동으로 다시 실행할 수도 있습니다.</p>
 </div>
 <h3 id="43">4.3. 작업 디렉토리 정리<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
 <p>여러 파이프라인 실행을 거치면서 작업 디렉토리가 상당히 커질 수 있습니다.
 Part 1에서 배운 것처럼 <code>nextflow clean</code>을 사용하여 이전 실행의 작업 디렉토리를 제거할 수 있습니다.</p>
 <p>하지만 대용량 중간 파일이 있는 nf-core 파이프라인의 경우 정기적으로 정리하는 것이 특히 중요합니다.</p>
-<h3 id="_5">핵심 사항<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_5">핵심 정리<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>nf-core 파이프라인이 작업 디렉토리를 구성하는 방법과 디버깅을 위해 개별 작업을 검사하는 방법을 이해했습니다.</p>
 <h3 id="_6">다음 단계<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>Nextflow 캐시와 실패한 파이프라인 실행을 재개하는 방법에 대해 배웁니다.</p>
@@ -4597,14 +4898,67 @@ Part 1에서 배운 것처럼 <code>nextflow clean</code>을 사용하여 이전
 <li>계산을 다시 하지 않고 추가 출력물을 추가하려는 경우</li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">경고</p>
 <p>입력 데이터, 파이프라인 코드 또는 매개변수를 변경하지 않은 경우에만 재개가 작동합니다.
 이 중 하나를 변경하면 Nextflow는 영향을 받는 작업을 올바르게 다시 실행합니다.</p>
 </div>
-<h3 id="_7">핵심 사항<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_7">핵심 정리<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>성공한 작업을 반복하지 않고 파이프라인을 효율적으로 다시 실행하기 위해 <code>-resume</code>을 사용하는 방법을 알게 되었습니다.</p>
 <h3 id="_8">다음 단계<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>이제 테스트 데이터로 nf-core/molkart를 실행할 수 있으므로 자신의 데이터셋에 맞게 구성하는 방법을 배울 준비가 되었습니다.</p><style type="text/css">.quiz {
+<p>이제 테스트 데이터로 nf-core/molkart를 실행할 수 있으므로 자신의 데이터셋에 맞게 설정하는 방법을 배울 준비가 되었습니다.</p><div id="quiz-progress-sidebar" aria-label="퀴즈 진행 상황" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    퀴즈 진행 상황
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          답변함: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          정답: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          초기화
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="퀴즈 진행 상황" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        답변함: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        정답: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        초기화
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -4651,10 +5005,12 @@ Part 1에서 배운 것처럼 <code>nextflow clean</code>을 사용하여 이전
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -5575,16 +5931,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -6218,9 +6564,6 @@ window.mkdocsQuizConfig = {
   function initializePage() {
     // Initialize tracker
     quizTracker.init();
-
-    // Translate template elements
-    translateTemplateElements();
 
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();
