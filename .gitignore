@@ -5,13 +5,14 @@
 work/
 .work/
 .nextflow*
-results
 transcript-index
-.vscode
 .playwright-mcp/
 .preview-release/
 __pycache__
 *.pyc
+
+# VS Code
+.vscode/
 
 # Gradle build artifacts
 .gradle/
@@ -25,6 +26,7 @@ docs/*/site_build/
 # Python virtual environments
 .venv/
 _scripts/.venv/
+.myVirtEnv/
 
 # Tutorial working directories (created by learners during exercises)
 hello-nf-core/core-hello/
@@ -61,6 +63,3 @@ output/
 *.idx
 *.bw
 *.bigWig
-
-# VS Code
-.vscode/
