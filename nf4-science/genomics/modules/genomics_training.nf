@@ -1,3 +1,5 @@
+#!/usr/bin/env nextflow
+
 // Module INCLUDE statements
 include { SAMTOOLS_INDEX } from './modules/samtools_index.nf'
 
