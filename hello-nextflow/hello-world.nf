@@ -1,16 +1,26 @@
 #!/usr/bin/env nextflow
 
 /*
+ * Pipeline parameters
+ */
+params {
+    input: String = 'Hola mundo!'
+}
+
+/*
  * Use echo to print 'Hello World!' to a file
  */
 process sayHello {
+
+    input:
+    val greeting
 
     output:
     path 'output.txt'
 
     script:
     """
-    echo 'Hello World!' > output.txt
+    echo '${greeting}' > output.txt
     """
 }
 
@@ -18,5 +28,14 @@ workflow {
 
     main:
     // emit a greeting
-    sayHello()
+    sayHello(params.input)
+
+    publish:
+    first_output = sayHello.out
+}
+
+output {
+    first_output {
+        path 'hello_world'
+        mode 'copy'    }
 }

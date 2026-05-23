@@ -5,14 +5,17 @@
  */
 process SAMTOOLS_INDEX {
 
-    container
+    container community.wave.seqera.io/library/samtools:1.20--b5dfbd93de237464
 
     input:
+    val bam
 
     output:
+    path "${bam}_index" // emit: bam_index
 
     script:
     """
-
+    samtools index '${bam}'
     """
+
 }
