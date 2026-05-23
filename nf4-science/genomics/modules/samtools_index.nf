@@ -1,4 +1,4 @@
-#!/usr/bin/env nextflow
+// do not add shebang #!/usr/bin/env nextflow
 
 /*
  * Generate BAM index file
@@ -12,7 +12,7 @@ process SAMTOOLS_INDEX {
     val bam
 
     output:
-    path "${bam}_index" // emit: bam_index
+    path "${bam}.bai", emit: bam_index
 
     script:
     """
