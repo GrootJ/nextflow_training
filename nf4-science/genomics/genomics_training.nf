@@ -8,7 +8,7 @@ include { SAMTOOLS_INDEX } from './modules/samtools_index.nf'
  */
 params {
     // Primary input
-    input: Path = "../data/bam/reads_mother.bam" //"${projectDir}/data/bam/reads_mother.bam"
+    input: Path = "data/bam/reads_mother.bam" //"${projectDir}/data/bam/reads_mother.bam"
 }
 
 workflow {
