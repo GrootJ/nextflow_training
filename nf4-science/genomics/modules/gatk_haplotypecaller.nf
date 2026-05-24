@@ -1,18 +1,37 @@
-#!/usr/bin/env nextflow
+// #!/usr/bin/env nextflow
 
 /*
  * Call variants with GATK HaplotypeCaller
  */
+
+
+//the GATK command takes a BAM file (-I), a reference genome (-R), and an intervals file (-L),
+// and produces a VCF file (-O) along with its index. The tool also expects the BAM index, reference index,
+// and reference dictionary to be co-located with their respective files.
+
 process GATK_HAPLOTYPECALLER {
 
-    container
+    container 'community.wave.seqera.io/library/gatk4:4.5.0.0--730ee8817e436867'
 
     input:
+    // note: index and dictionary files GATK needs co-located w BAM and reference files - not GATK inputs but nextflow needs to stage them in work-dir
+    path input_bam
+    path input_bam_index
+    path ref_fasta
+    path ref_index
+    path ref_dict
+    path interval_list
 
     output:
+    path "${input_bam}.vcf", emit: vcf
+    path "${input_bam}.vcf.idx", emit: idx // not GATK primary output but is output and needs management
 
     script:
     """
-
+    gatk HaplotypeCaller \
+        -R '${ref_fasta}' \
+        -I '${input_bam}' \
+        -O '${input_bam}.vcf' \
+        -L '${interval_list}'
     """
 }
