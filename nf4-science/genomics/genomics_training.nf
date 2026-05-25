@@ -9,7 +9,7 @@ include { GATK_HAPLOTYPECALLER } from './modules/gatk_haplotypecaller.nf'
  */
 params {
     // Primary input
-    input //: Path = "data/bam/reads_mother.bam" // arrays of paths cannot use typed declarations
+    input: Path //= "data/bam/reads_mother.bam" // arrays of paths cannot use typed declarations - but samples sheet should have typed declaration
     // Accessory files
     reference: Path
     reference_index: Path
@@ -22,6 +22,8 @@ workflow {
     main:
     // create a channel for inputs (single file via CLI parameter)
     reads_ch = channel.fromPath(params.input)
+            .splitCsv(header: true)
+            .map { row -> file(row.reads_bam) }
 
     // Load the file paths for the accessory files (reference and intervals)
     ref_file        = file(params.reference)
@@ -31,7 +33,7 @@ workflow {
 
     // index BAM
     SAMTOOLS_INDEX(reads_ch)
-    SAMTOOLS_INDEX.out.view()
+    // SAMTOOLS_INDEX.out.view() // see output files (locations)
 
     // call variants with GATK HaplotypeCaller
      GATK_HAPLOTYPECALLER(

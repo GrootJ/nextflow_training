@@ -15,8 +15,7 @@ process GATK_HAPLOTYPECALLER {
 
     input:
     // note: index and dictionary files GATK needs co-located w BAM and reference files - not GATK inputs but nextflow needs to stage them in work-dir
-    path input_bam
-    path input_bam_index
+    tuple path (input_bam), path(input_bam_index)
     path ref_fasta
     path ref_index
     path ref_dict
