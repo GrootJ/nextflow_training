@@ -1,4 +1,4 @@
-// do not add shebang #!/usr/bin/env nextflow
+// do not add shebang in module on macbook (unlike in gitpod) #!/usr/bin/env nextflow
 
 /*
  * Generate BAM index file
@@ -12,7 +12,8 @@ process SAMTOOLS_INDEX {
     path bam
 
     output:
-    path "${bam}.bai", emit: bam_index
+    tuple path(bam), path("${bam}.bai")
+    // path "${bam}.bai", emit: bam_index
 
     script:
     """

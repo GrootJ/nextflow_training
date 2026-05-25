@@ -1,4 +1,4 @@
-// #!/usr/bin/env nextflow
+// do not add shebang in module on macbook (unlike in gitpod) #!/usr/bin/env nextflow
 
 /*
  * Call variants with GATK HaplotypeCaller

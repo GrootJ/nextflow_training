@@ -9,7 +9,7 @@ include { GATK_HAPLOTYPECALLER } from './modules/gatk_haplotypecaller.nf'
  */
 params {
     // Primary input
-    input: Path = "data/bam/reads_mother.bam" //"${projectDir}/data/bam/reads_mother.bam"
+    input //: Path = "data/bam/reads_mother.bam" // arrays of paths cannot use typed declarations
     // Accessory files
     reference: Path
     reference_index: Path
@@ -31,11 +31,11 @@ workflow {
 
     // index BAM
     SAMTOOLS_INDEX(reads_ch)
+    SAMTOOLS_INDEX.out.view()
 
     // call variants with GATK HaplotypeCaller
      GATK_HAPLOTYPECALLER(
-        reads_ch,
-        SAMTOOLS_INDEX.out.bam_index,
+        SAMTOOLS_INDEX.out, // SAMTOOLS_INDEX.out contains the tuple of bam and bam_index
         ref_file,
         ref_index_file,
         ref_dict_file,
@@ -43,16 +43,15 @@ workflow {
     )
 
     publish:
-    bam_index = SAMTOOLS_INDEX.out.bam_index
+    indexed_bam = SAMTOOLS_INDEX.out
     vcf = GATK_HAPLOTYPECALLER.out.vcf
     vcf_idx = GATK_HAPLOTYPECALLER.out.idx
 
 }
 
 output {
-    bam_index {
+    indexed_bam {
         path 'bam'
-        mode 'copy'
     }
     vcf {
         path 'vcf'
