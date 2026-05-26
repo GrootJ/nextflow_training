@@ -3,6 +3,7 @@
 // Module INCLUDE statements
 include { SAMTOOLS_INDEX } from './modules/samtools_index.nf'
 include { GATK_HAPLOTYPECALLER } from './modules/gatk_haplotypecaller.nf'
+include { GATK_JOINTGENOTYPING } from './modules/gatk_jointgenotyping.nf'
 
 /*
  * Pipeline parameters
@@ -15,6 +16,8 @@ params {
     reference_index: Path
     reference_dict: Path
     intervals: Path
+    // Base name for final output file
+    cohort_name: String
 }
 
 workflow {
@@ -37,17 +40,35 @@ workflow {
 
     // call variants with GATK HaplotypeCaller
      GATK_HAPLOTYPECALLER(
-        SAMTOOLS_INDEX.out, // SAMTOOLS_INDEX.out contains the tuple of bam and bam_index
+        SAMTOOLS_INDEX.out, // SAMTOOLS_INDEX.out contains the tuple of bam and bam_index for each bam
         ref_file,
         ref_index_file,
         ref_dict_file,
         intervals_file
     )
 
+    // Collect variant calling outputs across samples
+    all_gvcfs_ch = GATK_HAPLOTYPECALLER.out.vcf.collect()
+    all_idxs_ch = GATK_HAPLOTYPECALLER.out.idx.collect()
+
+       // call variants with GATK HaplotypeCaller
+     GATK_JOINTGENOTYPING(
+        all_gvcfs_ch,
+        all_idxs_ch,
+        intervals_file,
+        ref_file,
+        ref_index_file,
+        ref_dict_file,
+        params.cohort_name
+    )
+
     publish:
     indexed_bam = SAMTOOLS_INDEX.out
-    vcf = GATK_HAPLOTYPECALLER.out.vcf
-    vcf_idx = GATK_HAPLOTYPECALLER.out.idx
+    gvcf = GATK_HAPLOTYPECALLER.out.vcf
+    gvcf_idx = GATK_HAPLOTYPECALLER.out.idx
+    //gdb = GATK_JOINTGENOTYPING.out.gdb
+    joint_vcf = GATK_JOINTGENOTYPING.out.vcf
+    joint_vcf_idx = GATK_JOINTGENOTYPING.out.idx
 
 }
 
@@ -55,10 +76,20 @@ output {
     indexed_bam {
         path 'bam'
     }
-    vcf {
-        path 'vcf'
+    gvcf {
+        path 'gvcf'
     }
-    vcf_idx {
-        path 'vcf'
+    gvcf_idx {
+        path 'gvcf'
     }
+/*     gdb {
+        path 'gdb'
+    } */
+    joint_vcf {
+        path '.'
+    }
+    joint_vcf_idx {
+        path '.'
+    }
+
 }
