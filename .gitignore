@@ -63,3 +63,6 @@ output/
 *.idx
 *.bw
 *.bigWig
+
+# data file with fully exposed local paths (do not track this file in git)
+/Users/joostgroot/Work_local/NextFlow/nextflow_projects/test_training/training/nf4-science/genomics/data/samplesheet.csv
