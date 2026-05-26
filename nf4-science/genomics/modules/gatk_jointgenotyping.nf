@@ -5,7 +5,9 @@
  */
 process GATK_JOINTGENOTYPING {
 
-    container 'community.wave.seqera.io/library/gatk4:4.5.0.0--730ee8817e436867'
+    container 'community.wave.seqera.io/library/gatk4:4.5.0.0--730ee8817e436867' // note this is linux amd64 container - set runOptions = '--platform linux/amd64' in config in nextflow.config to emulate amd64 on Apple Silicon arm64
+    // not use the arm64/Apple Silicon container container 'community.wave.seqera.io/library/gatk4:4.5.0.0--dbae85cde81c9e2b'
+    // arms64 container crashes with gatk_jointgenotyping - GenomicsDBImport failes to load an embedded native GenomicsDB/TileDB .so which appears AMD64-only
 
     input:
     // note: all_gvcfs and all_gvcfs_indeces are gvcfs and gvcf_indeces collected with .collect
@@ -18,7 +20,7 @@ process GATK_JOINTGENOTYPING {
     val cohort_name
 
     output:
-    path "${cohort_name}_gdb"     , emit: gdb
+    // path "${cohort_name}_gdb"     , emit: gdb
     path "${cohort_name}.joint.vcf"     , emit: vcf
     path "${cohort_name}.joint.vcf.idx" , emit: idx // not GATK primary output but is output and needs management
 
