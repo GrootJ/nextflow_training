@@ -4,7 +4,7 @@
 include { FASTQC } from './modules/fastqc.nf'
 include { TRIM_GALORE } from './modules/trim_galore.nf'
 include { HISAT2_ALIGN } from './modules/hisat2_align.nf'
-
+include { MULTIQC } from './modules/multiqc.nf'
 /*
  * Pipeline parameters
  */
@@ -13,6 +13,8 @@ include { HISAT2_ALIGN } from './modules/hisat2_align.nf'
 params {
     input: Path //= "data/reads/reads_1.fastq.gz" // arrays of paths cannot use typed declarations - but samples sheet should have typed declaration
     hisat2_index_zip: Path // Reference genome archive
+    // Report ID
+    report_id: String
     // genome_fasta: Path // Reference genome FASTA file
     // genome_gtf: Path // Reference genome GTF file
 }
@@ -23,6 +25,9 @@ workflow {
 
     // Create input channel from a file path
     reads_ch = channel.fromPath(params.input)
+    .splitCsv(header: true)
+    .map { row -> file(row.fastq_path) }
+    .view()
 
     // Call processes
     // initial QC on raw reads
@@ -39,6 +44,19 @@ workflow {
         // file(params.genome_gtf)
     )
 
+    // Comprehensive QC report generation
+    // Comprehensive QC report generation
+    multiqc_files_ch = channel.empty().mix(
+        FASTQC.out.zip,
+        FASTQC.out.html,
+        TRIM_GALORE.out.trimming_reports,
+        TRIM_GALORE.out.fastqc_reports,
+        HISAT2_ALIGN.out.log,
+    )
+    multiqc_files_list = multiqc_files_ch.collect()
+
+    MULTIQC(multiqc_files_list, params.report_id)
+
     publish:
     // Declare outputs to publish
     fastqc_html = FASTQC.out.html
@@ -48,6 +66,7 @@ workflow {
     trimming_fastqc = TRIM_GALORE.out.fastqc_reports
     bam = HISAT2_ALIGN.out.bam
     align_log = HISAT2_ALIGN.out.log
+    multiqc_html = MULTIQC.out.multiqc_report
 
 }
 
@@ -72,5 +91,8 @@ output {
     }
     align_log {
         path 'align'
+    }
+    multiqc_html {
+        path 'multiqc'
     }
 }
