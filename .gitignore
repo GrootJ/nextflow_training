@@ -65,4 +65,9 @@ output/
 *.bigWig
 
 # data file with fully exposed local paths (do not track this file in git)
-/data/samplesheet.csv
+nf4-science/*/data/*-end.csv
+nf4-science/*/data/samplesheet.csv
+side-quests/*/data/sample*.csv
+side-quests/*/data/datasheet.csv
+
+
